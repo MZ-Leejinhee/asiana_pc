@@ -1,0 +1,78 @@
+.renew2025 {
+  footer {
+    background: #fff;
+    .foot_menuwrap {
+      dl {
+        dt {
+          a {
+            color: #454B52;
+          }
+        }
+        dd {
+          ul {
+            li {
+              a {
+                color: #1F1D1D;
+              }
+            }
+          }
+        }
+      }
+    }
+    address {
+      .info_wrap {
+        li {
+          ul {
+            li {
+              color: #2C2A27;
+              &::before {
+                background: #78716E;
+              }
+              .corp {
+                color: #454B52;
+              }
+            }
+          }
+        }
+      }
+      .copy_area {
+        .copy {
+          color: #2C2A27;
+        }
+      }
+      .btn_popup {
+        border: 0;
+        color: #2C2A27;
+        &::after {
+          display: none;
+        }
+      }
+      .special_logo {
+        display: none;
+      }
+      .sns_wrap {
+        .sns_list {
+          li {
+            a {
+              width: 50px;
+              height: 50px;
+              background: url("../image/main/renew2025/footer_sns.png");
+              &.youtube {
+                background-position: 0 0;
+              }
+              &.instagram {
+                background-position: -50px 0;
+              }
+              &.facebook {
+                background-position: -100px 0;
+              }
+              &.twitter {
+                background-position: -150px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
