@@ -22,7 +22,9 @@
 -->
 <!-- 이벤트 3개이상 swiper -->
 <div class="event_slider_wrap _event-slider">
-  <div class="swiper-container event_slider">
+  <!-- 클래스 변경 event_slider2 202507 -->
+  <div class="swiper-container event_slider2">
+    <!-- //클래스 변경 event_slider2 202507 -->
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <div class="event_card_wrap">
@@ -31,6 +33,9 @@
             <div class="evt_img">
               <img src="https://ozimg.flyasiana.com/temp/image/20250313/f2cd8c50-3241-408f-92b6-eb2102a5c9a6.jpeg"
                 alt="">
+              <!-- 북마크 위치 이동 202507-->
+              <div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span></div>
+              <!-- //북마크 위치 이동 202507-->
             </div>
             <div class="evt_info">
               <dl>
@@ -43,7 +48,7 @@
                 </dd>
               </dl>
             </div>
-            <div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span></div>
+            <!-- 북마크 위치 이동 202507-->
           </a>
         </div>
       </div>
@@ -54,6 +59,9 @@
             <div class="evt_img">
               <img src="https://ozimg.flyasiana.com/temp/image/20240201/3ce8d05f-e070-4d93-974f-5ba87014ca75.jpeg"
                 alt="">
+              <!-- 북마크 위치 이동 202507-->
+              <div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span></div>
+              <!-- //북마크 위치 이동 202507-->
             </div>
             <div class="evt_info">
               <dl>
@@ -66,7 +74,7 @@
                 </dd>
               </dl>
             </div>
-            <div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span></div>
+            <!-- 북마크 위치 이동 202507-->
           </a>
         </div>
       </div>
@@ -77,6 +85,9 @@
             <div class="evt_img">
               <img src="https://ozimg.flyasiana.com/temp/image/20240514/76907f75-a0bb-408d-842b-3ded220d45e6.jpeg"
                 alt="">
+              <!-- 북마크 위치 이동 202507-->
+              <div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span></div>
+              <!-- //북마크 위치 이동 202507-->
             </div>
             <div class="evt_info">
               <dl>
@@ -89,7 +100,7 @@
                 </dd>
               </dl>
             </div>
-            <div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span></div>
+            <!-- 북마크 위치 이동 202507-->
           </a>
         </div>
       </div>
@@ -100,6 +111,9 @@
             <div class="evt_img">
               <img src="https://ozimg.flyasiana.com/temp/image/20250509/0e623dfa-7273-4e6d-a121-dd4fc8684eb3.jpeg"
                 alt="">
+              <!-- 북마크 위치 이동 202507-->
+              <div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span></div>
+              <!-- //북마크 위치 이동 202507-->
             </div>
             <div class="evt_info">
               <dl>
@@ -112,7 +126,7 @@
                 </dd>
               </dl>
             </div>
-            <div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span></div>
+            <!-- 북마크 위치 이동 202507-->
           </a>
         </div>
       </div>
@@ -123,6 +137,9 @@
             <div class="evt_img">
               <img src="https://ozimg.flyasiana.com/temp/image/20250513/d82fb697-7bf6-4339-9a80-47e4875e0be9.jpeg"
                 alt="">
+              <!-- 북마크 위치 이동 202507-->
+              <div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span></div>
+              <!-- //북마크 위치 이동 202507-->
             </div>
             <div class="evt_info">
               <dl>
@@ -135,48 +152,64 @@
                 </dd>
               </dl>
             </div>
-            <div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span></div>
+            <!-- 북마크 위치 이동 202507-->
           </a>
         </div>
       </div>
     </div>
   </div>
-  <div class="swiper_btnarea">
-    <a href="#none" class="btn_prev evt_prev" title="이전 슬라이드">&gt;이전 슬라이드</a>
-    <a href="#none" class="btn_next evt_next" title="다음 슬라이드">&gt;다음 슬라이드</a>
+  <!-- wrap 추가 202507 -->
+  <div class="btn_wrap">
+    <div class="swiper_btnarea">
+      <a href="#none" class="btn_prev evt_prev" title="이전 슬라이드">>이전 슬라이드</a>
+      <a href="#none" class="btn_next evt_next" title="다음 슬라이드">>다음 슬라이드</a>
+    </div>
+    <div class="swiper_control white">
+      <div class="swiper-pagination evt_paging"></div>
+    </div>
+    <!-- 전체보기 버튼 추가 202507 -->
+    <a href="#none"
+      onClick="action_logging({pagecode:'01_evt_02'}); cms.goToLink('/C/KR/KO/event/index?menuId=CM201802220000728482');"
+      class="btn_arrlink new_btn_arrlink">
+      전체보기
+    </a>
+    <!-- //전체보기 버튼 추가 202507 -->
   </div>
-  <div class="swiper_control white">
-    <div class="swiper-pagination evt_paging">
+  <!-- //wrap 추가 202507 -->
+  <!-- thumbs swiper 추가 202507 -->
+  <div class="event_thumb_wrap">
+    <div class="event_thumb_box event_thumb_swiper swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide is-active">
+          <p class="info_img">
+            <img src="https://ozimg.flyasiana.com/temp/image/20250313/f2cd8c50-3241-408f-92b6-eb2102a5c9a6.jpeg" alt="">
+          </p>
+        </div>
+        <div class="swiper-slide">
+          <p class="info_img">
+            <img src="https://ozimg.flyasiana.com/temp/image/20240201/3ce8d05f-e070-4d93-974f-5ba87014ca75.jpeg" alt="">
+          </p>
+        </div>
+        <div class="swiper-slide">
+          <p class="info_img">
+            <img src="https://ozimg.flyasiana.com/temp/image/20240514/76907f75-a0bb-408d-842b-3ded220d45e6.jpeg" alt="">
+          </p>
+        </div>
+        <div class="swiper-slide">
+          <p class="info_img">
+            <img src="https://ozimg.flyasiana.com/temp/image/20250509/0e623dfa-7273-4e6d-a121-dd4fc8684eb3.jpeg" alt="">
+          </p>
+        </div>
+        <div class="swiper-slide">
+          <p class="info_img">
+            <img src="https://ozimg.flyasiana.com/temp/image/20250513/d82fb697-7bf6-4339-9a80-47e4875e0be9.jpeg" alt="">
+          </p>
+        </div>
+      </div>
     </div>
   </div>
+  <!-- //thumbs swiper 추가 202507 -->
 </div>
-<!--// 이벤트 3개이상 swiper -->
-<!-- 이벤트 2개일때 -->
-<div class="event_wrapper tween _event-twin" style="display:none;">
-  $DATA$
-</div>
-<!--// 이벤트 2개일때 -->
-<!-- 이벤트 1개일때 -->
-<div class="event_wrapper single _event-single" style="display:none;">
-  $DATA$
-</div>
-<!--// 이벤트 1개일때 -->
-<!-- 이벤트가 없을 경우 -->
-<div class="noevent_wrapper">
-  <div class="evt_info">
-    <h2>이벤트</h2>
-    <p class="desc">현재 진행중인 이벤트가 없습니다.</p>
-    <div class="btn_wrap">
-      <button type="button" class="btn_S white" onclick="location.href='./event/end/list'">종료된 이벤트 보기</button>
-      <button type="button" class="btn_S white" onclick="location.href='./event/winner/list'">당첨자 발표
-        확인</button>
-    </div>
-  </div>
-  <div class="evt_img">
-    <img src="https://flyasiana.com/C/pc/image/main/event-asiana-character.png" alt="event-default-images">
-  </div>
-</div>
-<!-- // 이벤트가 없을 경우 -->
 <div class="belt_banner" style="display:none;">
   <div class="swiper-container banner_gallery_center">
     <div class="swiper-wrapper">

@@ -5,6 +5,7 @@
       dl {
         dt {
           a {
+            font-weight: 500;
             color: #454B52;
           }
         }
@@ -12,6 +13,7 @@
           ul {
             li {
               a {
+                font-weight: 300;
                 color: #1F1D1D;
               }
             }
@@ -20,13 +22,16 @@
       }
     }
     address {
+      padding: 0 0 80px;
       .info_wrap {
         li {
           ul {
             li {
-              color: #2C2A27;
+              font-size: 14px;
+              color: #807F7E;
               &::before {
                 background: #78716E;
+                opacity: 0.3;
               }
               .corp {
                 color: #454B52;
@@ -36,13 +41,31 @@
         }
       }
       .copy_area {
+        margin-top: 42px;
         .copy {
           color: #2C2A27;
+          opacity: 0.6;
+          margin-right: 20px;
         }
       }
       .btn_popup {
+        position: relative;
+        padding: 0 0 0 20px;
         border: 0;
         color: #2C2A27;
+        opacity: 0.6;
+        font-size: 14px;
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 13px;
+          background: #78716E;
+          opacity: 0.3;
+        }
         &::after {
           display: none;
         }
@@ -69,6 +92,20 @@
               &.twitter {
                 background-position: -150px 0;
               }
+            }
+          }
+        }
+      }
+      .qrcode {
+        width: 271px;
+        margin-top: 40px;
+        border-radius: 0;
+        > ul {
+          li {
+            width: 135px;
+            border-radius: 0;
+            > div:first-child {
+              display: none;
             }
           }
         }

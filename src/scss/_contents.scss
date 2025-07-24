@@ -1,28 +1,172 @@
 .renew2025 {
-  &.main_notibox {
-    // cookie
-    .notice_fixing {}
-    // 긴급공지
-    .notice_slide_fixing {
-      max-width: 1216px;
-      bottom: -167px;
-      left: 50%;
-      transform: translateX(-50%);
+  // 긴급공지
+  .notice_slide {
+    position: relative;
+    width: 100%;
+    max-width: 1216px;
+    padding: 0 40px;
+    margin: 20px auto 0;
+    border-radius: 12px;
+    background-color: #fff;
+    box-sizing: border-box;
+    .notice_slideWrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 44px;
+      margin: 0 auto;
+      overflow: hidden;
+      .noti_inner {
+        width: 100%;
+        .fl {
+          max-width: 832px;
+          .text_type2 {
+            padding-left: 24px;
+            background: url("../image/main/renew2025/ico_important.svg") no-repeat center;
+            background-position: left top 7px;
+            font-weight: 500;
+            color: #040404;
+            a {
+              margin-left: 8px;
+              background: none;
+              &::after {
+                content: '';
+                display: inline-block;
+                width: 8px;
+                height: 15px;
+                background: url("../image/main/renew2025/ico_arrB_black.svg") no-repeat center;
+              }
+            }
+          }
+        }
+      }
+      .swipe_etc {
+        flex-shrink: 0;
+      }
+      .btn_control_box {
+        gap: 8px;
+        >div {            
+          &:first-child {
+            max-width: 190px;
+            input[type="checkbox"] {
+              & + label {
+                padding: 0 0 0 19px;
+                font-size: 14px;
+                font-weight: 300;
+                letter-spacing: -0.5px;
+                background: url("../image/main/renew2025/img_checkbox_off.png") no-repeat left center;
+              }
+            }
+          }
+        }
+        .noti_btn_box {
+          width: 58px;
+          margin: 0 0 0 4px;
+          a {
+            width: 16px;
+            height: 16px;
+            background: url("../image/main/renew2025/noti_prev.svg");
+            &.btn_next {
+              transform: rotate(180deg);
+            }
+          }
+          .text_pagination {
+            width: 20px;
+            font-size: 12px;
+            flex-shrink: 0;
+            margin: 0;
+            span {
+              &:nth-child(2) {
+                margin: 0;
+              }
+            }
+          }
+        }
+        .ps {
+          display: flex;
+          align-items: center;
+          a {
+            width: 16px;
+            height: 16px;
+            margin-left: -4px;
+            margin-right: 16px;
+            background-position: 0 0;
+            background: url("../image/main/renew2025/noti_pause.svg") no-repeat center;
+          }
+          a.stop {
+            //재생 아이콘 추가
+          }
+        }
+        .noti_close {
+          flex-shrink: 0;
+          width: 16px;
+          height: 16px;
+          background-position: 0 0;
+          background: url("../image/main/renew2025/ico_close.svg") no-repeat center;
+        }
+      }
     }
-    .notice {
-      .notice_slideWrap {
-        height: 44px;
-        border-radius: 12px;
-        .swiper-slide {
-          &.white_and_black {
-            border-top: 0;
+    .noti_detail {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 52px;
+      width: 1216px;
+      max-height: 405px;
+      overflow-y: auto;
+      padding: 24px 40px 0;
+      background-color: #fff;
+      border-radius: 12px;
+      color: #040404;
+      text-align: left;
+      box-sizing: border-box;
+      z-index: 350;
+      .noti_tit {
+        margin-bottom: 6px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .noti_txt {
+        font-size: 14px;
+        max-height: 256px;
+        overflow-y: auto;
+        p+ul {
+          margin: 8px 0;
+        }
+        a {
+          color: #1A5EBE;
+          text-decoration: underline;
+        }      
+      }
+      .noti_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 12px 0;
+        margin-top: 14px;
+        border-top: 1px solid #DAD8D2;
+        background-color: #fff;
+        &_close {
+          position: relative;
+          font-size: 14px;
+          &::after {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 10px;
+            margin: 2px 0 0 2px;
+            background: url("../image/main/renew2025/ico_arrB_black.svg") no-repeat center;
+            transform: rotate(180deg);
           }
         }
       }
     }
-    .noti_inner {
-      padding: 0 40px;
-    }
+  }
+
+  // cookie
+  .main_notibox {    
+    .notice_fixing {}
   }
 
   // common
@@ -57,394 +201,464 @@
 
   // quick service
   .quick-service {
-    position: relative;
-    left: 0;
+    position: absolute;
+    left: 50%;
+    top: 0;
     width: 1216px;
-    min-height: 219px;
+    min-height: 242px;
     padding: 16px 40px 28px;
     margin: 20px auto 17px !important;
-    background-color: rgba(255, 255, 255, 0.96);
-    border: 1px solid #DAD8D2; //임시
     border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.96);    
     transform: none !important;
     box-shadow: none;
-    // nav
-    &__nav {
-      position: relative;
-      top: 0;
-      height: 44px;
-      border-bottom: 1px solid #DAD8D2;
-      margin-bottom: 16px;
-      &-btn {
-        position: relative;
-        min-width: auto;
-        max-width: fit-content;
-        box-sizing: border-box;
-        padding: 12px 8px 16px;
-        border-radius: 0;
-        background-color: transparent;
-        color: #2C2A27;
-        font-size: 16px;
-        font-weight: 300;
-        transition: 0.1s all;
-        &::after {
+    z-index: 300;
+    transform: translate(-50%, 0%) !important;
+  }
+  // nav 버튼
+  .quick-service__nav {
+    position: relative;
+    top: 0;
+    height: 44px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #918B87;
+    gap: 20px;
+    &-btn {
+      min-width: auto;
+      max-width: fit-content;
+      padding: 14px 8px;
+      border-radius: 0;
+      background: transparent !important;
+      color: #2C2A27;
+      font-size: 16px;
+      font-weight: 300;
+      box-sizing: border-box;
+      transition: 0.1s all;
+      &::after {
+        display: none;
+      }
+      >div {
+        >span {
           display: none;
         }
-        > div {
-          > span {
-            display: none;
-          }
-        }
-        &--is-active {
-          color: #000;
-          font-weight: bold;
-          &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -1px;
-            display: block;
-            width: 100%;
-            height: 3px;
-            background-color: #2C2A27;
-          }
+      }
+      &--is-active {
+        color: #000;
+        font-weight: bold;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -1px;
+          display: block;
+          width: 100%;
+          height: 4px;
+          background-color: #2C2A27;
+          clip-path: polygon(8px 0%, calc(100% - 8px) 0%, 100% 100%, 0% 100%);
         }
       }
     }
-    // item common
-    &__item {
-      // inner title
-      .section_text_copy {
-        .desc {
-
-        }
-      }
-      // inner input wrap
-      .inquiry_wrapper {
-        .white_step_box {
-
-        }
-        .quick_step_wrap {
-          .input_wrap {
-            .ipt_elt {
-              
-            }
-          }
-          .exam_txt {
-            &.eservationInquiry_txt {
-              span {
-
-              }
-            }
-          }
-          .eservationInquiry_btn_area {
-            
-          }
-        }
+  }
+  // content 공통
+  .quick-service__item {
+    .inquiry_wrapper {
+      box-shadow: none;
+      .white_step_box {
+        padding: 0;
       }
     }
-
-    // reservation 
-    .quick_reservation_wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      width: 100%;
-      background: transparent;
-      padding: 0;
-      border-radius: 0;
-      .quick_tab_wrap {
+  }  
+  .section_text_copy {
+    .desc {
+      padding: 12px 8px;
+      color: #080707;
+      opacity: 0.8;
+      line-height: 1.1;
+    }
+  }
+  .section_copy {
+    display: none;
+  }
+  .schedule_summary {
+    display: none !important;
+  }
+  .quick_tab_wrap {
+    display: flex;
+    align-items: center;
+    .line {
+      height: 18px;
+      background: #DAD8D2;
+      margin: 0 12px;
+    }
+    // 구간 탭
+    .tab_triptype {
+      float: none;
+      margin-right: 20px;
+      > ul {
+        background: #E9E8E3;
+        border-radius: 30px;
         display: flex;
         align-items: center;
-        gap: 16px;
-        .line {
-          height: 18px;
-          background: #DAD8D2;
-          margin: 0;
-        }
-        .col_box {
-          display: flex;
-          align-items: center;
-          gap: 32px;
-          &:last-child {
-            margin-left: auto;
-          }
-          > div {
-            + div {
-              position: relative;
-              &::before {
-                content: '';
-                position: absolute;
-                left: -16px;
-                top: 50%;
-                width: 1px;
-                height: 18px;
-                background-color: #DAD8D2;
-                transform: translateY(-50%);
-              }
-            }
-          } 
-        }
-        .tab_triptype {
-          margin-right: 9px;
-          ul {
-            background-color: #F2F0EB;
-            border-radius: 30px;
-            li {
-              min-width: 90px;
-              width: fit-content;
-              background-color: transparent;
-              border-radius: 30px;
-              &::before {
-                display: none;
-              }
-              a {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 40px;
-                padding: 10px 32px;
-                color: #454B52;
-                font-size: 14px;
-                font-weight: 500;
-                line-height: 1;
-                .arrow{
-                  &::after {
-                    width: 16px;
-                    height: 16px;
-                    background: url("../image/main/renew2025/ico_arrR_gray.png") no-repeat;
-                  }
-                }
-              }
-              &.on {
-                a {
-                  border-radius: 30px;
-                  border: none;
-                  color: #fff;
-                  font-weight: 700;
-                }
-              }
-            }
-          }
-        }
-        .mile_use {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          height: 44px;
-          padding: 0;
-          border-radius: 0;
+        li {
+          float: none;
+          min-width: 90px;
+          width: fit-content;
           background-color: transparent;
-          .txt {
-            margin-right: 0;
-            color: #2C2A27;
-            font-size: 14px;
-            font-weight: 700;
+          border-radius: 30px;
+          &::before {
+            display: none;
           }
-          .btn_toggle_box {
-            margin-top: 0;
-            .switch {
-              width: 30px;
-              height: 20px;
-              input {
-                width: 32px;
-                height: 20px;
-                &:checked {
-                  + .slider {
-                    background-color: #d60815;
-                    &::before {
-                      transform: translateX(12px);
-                    }
-                  }       
-                }
-              }
-              .slider {
-                width: 32px;
-                height: 20px;
-                background-color: #C3C0B9;
-                border-radius: 12px;
-                box-shadow: none;
-                &::before {
-                  content: '';
-                  left: 3px;
-                  bottom: 3px;
-                  width: 14px;
-                  height: 14px;
-                  border: 0;
-                  box-shadow: none;
-                  border-radius: 50%;
-                }
-              }
-            }
+          &:last-child {
+            min-width: 113px;
           }
-        }
-        .favroute_wrap {
-          .flex {
+          a {
             display: flex;
             align-items: center;
             justify-content: center;
-            .txt {
-              color: #2C2A27;
-              font-size: 14px;
+            height: 40px;
+            padding: 10px 32px;
+            color: #454B52;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1;
+            .arrow{
+              display: flex;
+              align-items: center;
+              gap: 4px;
+              &::after {
+                width: 16px;
+                height: 16px;
+                margin: 0;
+                background: url("../image/main/renew2025/ico_arrR_gray.png") no-repeat;
+              }
+            }
+          }
+          &.on {
+            a {
+              border-radius: 30px;
+              border: none;
+              color: #fff;
+              background: #F60000;
               font-weight: 700;
             }
-            .fav_star {
-              width: auto;
-              height: auto;
-              margin-left: 10px;
-              background-color: transparent;
-              border-radius: 0;
-              &::after {
-                position: relative;
-                top: 2px;
-                left: 0;
-                width: 18px;
-                height: 18px;
-                background: url("../image/main/renew2025/ico_star_off.png") no-repeat center;
-              }
+          }
+        } 
+      }
+    }
+    // 마일리지 사용
+    .mile_use {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      height: 44px;
+      padding: 0;
+      border-radius: 0;
+      background-color: transparent;
+      .txt {
+        margin-right: 0;
+        color: #2C2A27;
+        font-size: 14px;
+      }
+      .btn_toggle_box {
+        margin-top: 0;
+        .switch {
+          width: 30px;
+          height: 20px;
+          input {
+            width: 32px;
+            height: 20px;
+            &:checked {
+              + .slider {
+                background-color: #F60000;
+                &::before {
+                  transform: translateX(12px);
+                }
+              }       
             }
           }
-        }
-        .main_date_lookup_area {
-          float: none;
-          top: 0;
-          transform: translateY(0);
-          padding-left: 0;
-          .date_lookup_area {
-            // 체크박스 이미지 교체
-            input[type="checkbox"] {
-              & + label {
-                padding: 0 0 0 24px;
-                color: #2C2A27;
-                font-size: 14px;
-                font-weight: 700;
-              }
-            }
-          }
-        }
-        .main_right_btnSet {
-          button {
-            display: inline-flex;
-            align-items: center;
-            min-height: auto;
-            padding: 0;
-            margin-left: 0;
-            border: 0 !important;
-            background-color: transparent;
-            color: #2C2A27 !important;
-            font-size: 14px;
-            text-decoration: underline;
+          .slider {
+            width: 32px;
+            height: 20px;
+            background-color: #C3C0B9;
+            border-radius: 12px;
+            box-shadow: none;
             &::before {
-              width: 20px;
-              height: 20px;
-              margin-right: 6px;
-              background: url("../image/main/renew2025/ico_coupon.png") no-repeat center;
+              content: '';
+              left: 3px;
+              bottom: 3px;
+              width: 14px;
+              height: 14px;
+              border: 0;
+              box-shadow: none;
+              border-radius: 50%;
             }
           }
         }
       }
-      .btn_mile_wrap {}
-      .quick_step_wrap {
-        .input_wrap {
-          gap: 8px;
-          .ipt_elt {
-            height: 63px;
-            box-sizing: border-box;
+    }
+    // 관심노선
+    .favroute_wrap {
+      float: none;
+      .fav_star {
+        width: auto;
+        height: auto;
+        margin-left: 0;
+        background-color: transparent;
+        border-radius: 0;    
+        &::after {
+          position: relative;
+          top: 2px;
+          left: 0;
+          width: 18px;
+          height: 18px;
+          background: url("../image/main/renew2025/ico_star_off.png") no-repeat center;
+        }
+        &.on {
+          //관심노선 on
+        }
+      }
+    }
+    .rgt_wrap {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    // 가까운 날짜 조회
+    .main_date_lookup_area {
+      float: none;
+      top: 0;
+      transform: translateY(0);
+      padding-left: 0;
+      .date_lookup_area {
+        // 체크박스 이미지 교체
+        input[type="checkbox"] {
+          & + label {
+            padding: 0 0 0 20px;
+            color: #2C2A27;
+            font-size: 14px;
+            background: url("../image/main/renew2025/img_checkbox_off.png") no-repeat left center;
+          }
+        }
+      }
+    }
+    .main_right_btnSet {
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      position: relative;
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 18px;
+        background: #DAD8D2;
+        margin: 0 12px;
+      }
+      button {
+        display: inline-flex;
+        align-items: center;
+        min-height: 20px;
+        padding: 0;
+        margin-left: 0;
+        border: 0 !important;
+        background-color: transparent;
+        color: #2C2A27 !important;
+        font-size: 14px;
+        font-weight: 400 !important;
+        text-decoration: underline;
+        &::before {
+          width: 20px;
+          height: 20px;
+          margin-right: 6px;
+          background: url("../image/main/renew2025/ico_coupon.png") no-repeat left center;
+        }
+      }
+    }
+  }
+  .quick_step_wrap {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    .input_wrap {
+      width: 100%;
+      gap: 16px;
+      align-items: center;
+      .ipt_elt {
+        height: 48px;
+        input[type="text"] {
+          height: 48px;
+          padding: 0 30px 0 4px;
+          border-bottom: 1.5px solid #78716E;
+          font-size: 14px;
+          line-height: 48px;
+          &::placeholder {
+            color: #2C2A27;
+          }
+        }
+        &::before {
+          bottom: 12px;
+          width: 24px;
+          height: 24px;
+        }
+        label {
+          font-size: 14px;
+        }
+        &.loct {
+          &::before {
+            width: 17px;
+            background: url("../image/main/renew2025/ico_loc.svg") no-repeat;
+          }
+          label {
+            bottom: 34px;
+          }
+        }
+        &.calr {
+          &::before {
+            background: url("../image/main/renew2025/ico_cal.svg") no-repeat;
+          }
+        }
+        &.psng {
+          &::before {
+            background: url("../image/main/renew2025/ico_person.svg") no-repeat;
+          }
+        }
+        &.seat {
+          &::before {
+            background: url("../image/main/renew2025/ico_seat.svg") no-repeat;
+          }
+        }
+      }
+      select {
+        height: 48px;
+        background-color: #E9E8E3;
+        color: #2C2A27;
+        font-size: 14px;
+        &:hover {
+          background-color: #fff;
+        }
+      }
+      .shadow_layer {
+        border-radius: 16px;
+      }
+      .calendar_layer {
+        .calendar_top {
+          border-radius: 16px 16px 0 0;
+        }
+        .btn_step_wrap {
+          border-radius: 0 0 16px 16px;
+        }
+      }
+    }
+    .btn_revsearch {
+      width: 138px;
+      padding: 18px 16px;
+      border-radius: 12px;
+      background-color: #454B52;
+      border-color: #454B52;
+    }
+    .exam_txt {
+      position: relative;
+      width: 100%;
+      margin-top: 8px;
+      .text_type1 {
+        float: none;
+        padding-left: 12px;
+        color: #000;
+        font-size: 14px;
+        font-weight: 400;
+        min-width: auto;
+        letter-spacing: -0.42px;
+        line-height: 1.3;
+        &::before {
+          width: 4px;
+          height: 4px;
+          background: #000;
+          border-radius: 100%;
+          margin: -4px 4px 0 0;
+        }
+      }
+    }
+  }
+  // content 개별
+  // 항공권 예약
+  .quick-reservation {
+    .quick_reservation_wrap {
+      width: 100%;
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
+    }
+    .quick_step_wrap {
+      .input_wrap {
+        gap: 16px;
+        justify-content: flex-start;
+        .ipt_elt {
+          input[type="text"] {
+            width: 172px !important;
+          }
+          .btn_airport {
+            bottom: 8px;
+          }
+          &.loct {
             &::before {
-              right: 20px;
-              height: 20px;
-              background-position: 0 0;
-              z-index: 3;
+              left: 4px;
+              bottom: 12px;
+              height: 31px;
+              font-size: 24px;
+              font-weight: 900;
+              letter-spacing: -0.72px;
+              background: transparent;
             }
-            &.loct {
-              label {
-                bottom: 26px;
-                z-index: 3;
-              }
-            }
-            &.calr {
-              &::before {
-                background: url("../image/main/renew2025/ico_cal.png") no-repeat;
-              }
-            }
-            &.psng {
-              &::before {
-                background: url("../image/main/renew2025/ico_person.png") no-repeat;
-              }
-            }
-            &.seat {
-              &::before {
-                background: url("../image/main/renew2025/ico_seat.png") no-repeat;
-              }
-            }
-
             label {
-              font-size: 14px;
-              color: #2C2A27;
+              left: -4px;
+              text-align: right;
             }
             input[type="text"] {
-              // width: auto !important;
-              // max-width: 222px;
-              padding: 16px 20px;
-              height: 63px;
-              line-height: 63px;
-              color: #181818;
-              border: 2px solid #78716E;
-              border-radius: 12px;
-              background: #fff;
-              font-size: 14px;
-              font-weight: bold;
-              &:placeholder {
-                color: #2C2A27;
+              padding: 0 4px;
+            }
+            &.spot_proven {
+              &.on {
+                &::before {
+                  display: none;
+                }
+                label {
+                  opacity: 0;
+                }
               }
+              &::before {
+                content: "From";
+                width: 62px;                
+                color: #181818;
+              }
+              
             }
-            .btn_airport,
-            .btn_spot {
-              right: 14px;
-            }
-          }
-          .quickbookings_change {
-            display: flex;
-            align-items: center;
-            a {
-              width: 20px;
-              height: 20px;
-              background: url("../image/main/renew2025/ico_change.png") no-repeat center;
+            &.spot_destin {
+              &::before {
+                content: "To";
+                width: 28px;
+                color: #78716E;
+              }
             }
           }
         }
-        .ipt_loc_wrap {
+        .quickbookings_change {
           display: flex;
           align-items: center;
-          width: 340px;
-          height: 63px;
-          padding: 16px 20px;
-          border: 2px solid #78716e;
-          border-radius: 12px;
-          box-sizing: border-box;
-          .ipt_elt {
-            &::before {
-              display: none;
-            }
-            input[type="text"] {
-              max-width: 120px;
-              padding: 0;
-              height: 31px;
-              line-height: normal;
-              color: #2C2A27;
-              border: none;
-              border-radius: 0;
-              font-weight: 400;
-            }
+          margin: 0 -3px;
+          a {
+            width: 30px;
+            height: 30px;
+            background: url("../image/main/renew2025/ico_change.svg") no-repeat center;
           }
         }
         .btn_revsearch {
           position: relative;
           box-sizing: border-box;
-          width: 123px;
-          min-height: 63px;
-          padding: 18px 20px 18px 36px;
+          width: 162px;
+          min-height: 58px;
+          padding: 14px 20px 14px 36px;
           border: 1px solid #F2F0EB;
           border-radius: 12px;
           background-color: #F60000;
@@ -454,7 +668,7 @@
           &::before {
             content: '';
             position: absolute;
-            left: 16px;
+            left: 28px;
             display: block;
             width: 20px;
             height: 21px;
@@ -462,37 +676,152 @@
           }
         }
       }
+      // 스타얼라이언스, 출국 귀국편 다른여정
+      .btn_mile_wrap {
+        display: none;
+        margin-top: 8px;
+        .flex_wrap {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }        
+        .btn_arrlink {
+          height: 20px;
+          margin-left: 20px;
+          font-weight: 500;
+          line-height: 1.5;
+          &::after {
+            width: 16px;
+            height: 16px;
+            margin-left: 0;
+            background: url("../image/main/renew2025/ico_arrR_gray.png") no-repeat center;
+          }
+        }
+      }      
     }
-    // reservation_inquiry
-    .quick-reservation_inquiry {}
-    // check_in
-    .quick-check_in {}
-    // departure_and_arrival_inquiries
-    .quick-departure_and_arrival_inquiries {}
   }
+  // 예약 조회
+  .section02 {
+    .quick_step_wrap {
+      .input_wrap {
+        .ipt_elt {
+          input[type="text"] {
+             width: 152px !important;
+          }
+        }
+        #reservationId {
+          width: 142px !important;
+        }
+      }
+      .exam_txt {
+        .kr_exclusive {
+          position: absolute;
+          right: 160px;
+        }
+      }
+    }
+  }
+  // 체크인
+  .section03 {
+    .quick_step_wrap {
+      .input_wrap {
+        .ipt_elt {
+          input[type="text"] {
+            width: 234px !important;
+          }
+        }
+      }
+      .exam_txt {
+        > span {
+          position: absolute;
+          top: -3px;
+          right: 318px;
+        }
+      }
+      .reserve_list_wrap {
+        margin-top: 0;
+        background: transparent;
+        .unview_txt {
+          background: transparent;
+          padding: 0 4px;
+          border-bottom: 0;
+          .text_type2 {
+            padding-left: 20px;
+            font-size: 14px;
+            line-height: 1.3;
+            background: url("../image/main/renew2025/ico_important_gray.svg") no-repeat left center;
+          }
+        }
+      }
+    }
+  }
+  // 출도착 조회
+  .section04 {
+    .quick_step_wrap {
+      .input_wrap {
+        .ipt_elt {
+          input[type="text"] {
+            width: 234px !important;
+          }
+        }
+      }
+      .exam_txt {
+        height: 20px;
+        > span {
+          position: absolute;
+          right: 304px;
+        }
+      }
+    }
+  }
+
   // main_slide
   .main_slideWrap {
-    .main_slider_wrap {
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 282px;
+    .main_slider_wrap2 {
+      position: relative;
+      overflow: hidden;
       max-width: 1216px;
+      width: 100%;
       min-height: 404px;
       max-height: 404px;
+      height: 404px;
       padding-bottom: 40px;
       margin: 0 auto;
       .swiper-slide {
         background-color: transparent;
+        text-align: center;
+        font-size: 18px;
+        display: block;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        font: 0/0 a;
+        > a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
         .swiper_slide_two_view {
           display: none;
         }
       }
       .mp_wrap {
         position: relative;
-        left: auto;
-        bottom: auto;
         display: flex;
         width: 100%;
         margin-top: 12px;
         z-index: 100;
         .swiper-pagination {
+          position: relative;
+          display: flex;
+          align-items: center;
           width: 100%;
           height: 28px;
           border-radius: 2px;
@@ -502,10 +831,11 @@
             flex-basis: 0;
             width: 50px; 
             height: 4px;
-            border-radius: 0;
-            margin: 0;
             background-color: #F2F0EB;
-            border: 0;
+            font-size: 1px;
+            text-indent: -99999px;
+            opacity: 1;
+            border-radius: 2px;
             &:first-child {
               border-radius: 2px 0 0 2px;
             }
@@ -515,8 +845,7 @@
           }
           .swiper-pagination-bullet-active {
             background-color: #2C2A27;
-            border-radius: 2px !important;
-            border: 0;
+            border-radius: 2px;
           }
         }
         .swiper-counter {
@@ -584,6 +913,11 @@
       display: none;
     }
   }
+  // scroll motion
+  .scroll_down {
+    display: none !important;
+  }
+
   // special price 
   .special_slider_wrap_area {
     max-width: 1216px;
@@ -591,7 +925,7 @@
     margin: 0 auto;
     .special_slider_tit_area {
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: space-between;
       width: auto;
       margin: 0;
@@ -631,11 +965,26 @@
     .special_slider_wrap {
       position: relative;
       width: 1216px;
+      margin: 0 auto !important;
       .swiper-slide {
         width: 292px !important;
         height: 512px !important;
         margin-right: 16px !important;
         box-shadow: none;
+        &.on {
+          width: 520px !important;
+          height: 512px;
+          .img_wrap {
+            border-radius: 20px;
+            &::after {
+              border-radius: 20px;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
       }
       .swiper_btnarea {
         a {
@@ -645,6 +994,7 @@
           border-radius: 0;
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
+          cursor: pointer;
         }
         a.btn_prev {
           left: 0;
@@ -697,19 +1047,35 @@
           }
           .class {
             position: absolute;
-            left: 12px;
+            left: 0;
             top: -16px;
-            padding: 4px 12px 6px;
-            border-radius: 4px;
+            padding: 4px 10px 6px 12px;
             color: #fff;
             font-size: 14px;
             font-weight: bold;
+            &::after {
+              content: "";
+              position: absolute;
+              top: 0;
+              right: -5px;
+              width: 20px;
+              height: 100%;
+              transform: skewX(-20deg);
+              z-index: -1;
+            }
             &.economy {
-              background: #FF3058;
+              background-color: #FF3058;
+              &::after {
+                background-color: #ff3b59;
+              }
             }
             &.business {
-              background: #492E91;
+              background-color: #492E91;
+              &::after {
+                background-color: #492E91;
+              }
             }
+            
           }
           .place {
             span {
@@ -720,15 +1086,16 @@
                 font-weight: 500;
               }
               &:nth-child(3) {
+                max-width: 228px;
                 font-size: 18px;
               }
             }
             .arrow {
-              width: 22px;
-              height: 22px;
-              margin: 0 2px 0 0;
+              width: 24px;
+              height: 24px;
+              margin: -2px 2px 0 0;
               background-position: 0 0;
-              background: url("../image/main/renew2025/ico_airplane_b_02.png");
+              background: url("../image/main/renew2025/ico_airplane_b_02.svg") no-repeat center;
             }
           }
           .flex {
@@ -763,7 +1130,7 @@
       position: relative;
       top: 0;
       height: auto;
-      margin-top: 80px;
+      margin: 80px auto 100px;
       a {
         position: relative;
         display: block;
@@ -774,10 +1141,214 @@
       }
     }
   }
-  // event 
+  // event
+  .event_title_area {
+    display: none;
+  }  
   .event_slider_wrap {
     width: 1216px;
     margin: 80px auto;
+    .event_slider2 {
+      .swiper-wrapper {
+        position: relative;
+      }
+      .swiper-slide {
+        max-width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        &.swiper-slide-active {
+          opacity: 1;
+          visibility: visible;
+          position: relative;
+          z-index: 1;
+        }
+      }
+    }
+    .swiper_btnarea {
+      position: relative;
+      width: auto;
+      top: auto;
+      left: auto;
+      display: flex;
+      align-items: center;      
+      order: 2;
+      a {
+        position: relative;        
+        width: 28px;
+        height: 28px;
+        border-radius: 0;
+        background-position: center;
+        &.btn_prev {
+          left: auto;
+          background: url("../image/main/renew2025/slide_prev.png");
+        }
+        &.btn_next {
+          right: auto;
+          background: url("../image/main/renew2025/slide_next.png");
+        }
+      }
+    }
+    .swiper_control {
+      display: block;
+      margin-top: 0;
+      .swiper-pagination {
+        font-size: 16px;
+        bottom: auto;
+        .current {
+          font-weight: bold;
+          color: #121212;
+        }
+        .total {
+          color: #78716e;
+        }
+      }
+    }
+    .btn_arrlink {
+      &.new_btn_arrlink {
+        position: absolute;
+        right: 0;
+        display: inline-flex;
+        align-items: center;
+        width: 90px;
+        min-width: auto;
+        height: 30px;
+        padding: 0 12px;
+        border: 1px solid #dad8d2;
+        border-radius: 20px;
+        color: #78716e;
+        background-color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 30px;
+        &::after {
+          content: "";
+          width: 12px;
+          height: 24px;
+          margin-left: 2px;
+          margin-right: 0;
+          background: url(../image/main/renew2025/ico_arrR_gray2.png) no-repeat center;
+        }
+      }
+    }
+    .btn_wrap {
+      position: absolute;
+      right: 0;
+      top: 57%;
+      width: 568px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      z-index: 1;
+    }
+    .event_card_wrap {
+      display: block;
+      width: 100%;
+      height: 386px;
+      .event_card {
+        display: flex;
+        gap: 48px;
+        .evt_img {
+          width: 600px;
+          height: 100%;
+          border-radius: 20px;
+          flex-shrink: 0;
+          position: relative;
+        }
+        .evt_info {
+          height: auto;
+          max-height: 144px;
+          background: transparent;
+          padding: 0;
+          margin: 20px 0 54px;
+          box-sizing: border-box;
+          dl {
+            dt {
+              .sub_txt {
+                padding: 0;
+                height: auto;
+                font-size: 18px;
+                border: none;
+                margin: 0;
+                background-color: transparent;
+                border-radius: 0;
+                color: #FF3058 !important;
+              }
+              .tit {
+                max-height: 80px;
+                margin-top: 8px;
+                font-size: 30px;
+              }
+            }
+            dd {
+              position: relative;
+              left: auto;
+              bottom: auto;
+              margin-top: 20px;
+              .date_info {
+                color: #78716E;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .event_thumb_wrap {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      width: 568px;
+      height: 118px;
+      .swiper-slide {
+        cursor: pointer;
+        opacity: 0.6;
+        &.is-active {
+          opacity: 1;
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #FF3058;
+            border-radius: 12px;
+            box-sizing: border-box;
+          }
+        }
+      }
+      .info_img {
+        width: 184px;
+        height: 118px;
+        border-radius: 12px;
+        img {
+          max-width: 100%;
+          object-fit: cover;
+          border-radius: 12px;
+        }
+      }      
+    }
+  }
+  .section05 {
+    .bookmark_wrap {
+      width: 52px;
+      height: 52px;
+      right: 20px;
+      top: 20px;
+      .btn_bookmark42 {
+        width: 52px;
+        height: 52px; 
+        background-image: url("../image/main/renew2025/evt_bookmark_off.png");
+        background-position: center;
+      }
+    }
   }
   // notice + ext service
   .noti_ext_wrap {
@@ -858,13 +1429,14 @@
                   width: 22px;
                   height: 22px;
                   padding-bottom: 0;
-                  margin-left: 0;
+                  margin: 2px 0 0 0;
                   border: 0;
                   border-radius: 8px;
                   font-size: 0;
                   background-color: #FFB81C;
                   color: #fff;
                   vertical-align: middle;
+                  flex-shrink: 0;
                   &::after {
                     content: "N";
                     display: block;
@@ -893,6 +1465,7 @@
                   .txt_notice {
                     display: inline-flex;
                     align-items: center;
+                    flex-shrink: 0;
                     font-size: 14px;
                     min-width: 32px;
                     height: 22px;
@@ -902,13 +1475,18 @@
                     color: #fff;
                     background-color: #273591;
                     padding: 2px 6px 3px;
-                    margin-top: 0;
-                    margin-right: 4px;
+                    margin: 2px 0 0 0;
                     font-weight: 500;
+                    & + .new_flag {
+                      margin-left: 4px;
+                    }
+                  }
+                  > a {
+                    margin-left: 12px;
                   }
                 }
                 p {
-                  max-width: 370px;
+                  max-width: 530px;
                   color: #000;
                   font-weight: 500;
                   line-height: 1.1;
@@ -976,6 +1554,7 @@
               }
               dl {
                 dt {
+                  position: relative;
                   font-size: 20px;
                   text-align: left;
                   img.logo {
@@ -996,6 +1575,20 @@
                   }
                 }
               }
+              &:not(.insurance){
+                dl {
+                  dt {
+                    &::after {
+                      content: '';
+                      display: inline-block;
+                      position: absolute;
+                      width: 24px;
+                      height: 24px;
+                      background: url("../image/main/renew2025/ico_arrR_white.png") no-repeat center;
+                    }
+                  }
+                }                
+              }
             }
           }
         }
@@ -1012,6 +1605,9 @@
     }
   }
   //right wing subbtn
+  .right_wing_subbtn {
+    display: none !important;
+  }
   .right_wing {
     position: fixed;
     top: 50%;
@@ -1041,7 +1637,7 @@
             top: 20px;
             width: 32px;
             height: 22px;
-            background: url("../image/main/renew2025/ico_loc.png") no-repeat;
+            background: url("../image/main/renew2025/ico_pin.svg") no-repeat;
             animation: rotate-axis 2.5s cubic-bezier(0.53, 0, 0.51, 1) infinite;
             transform-style: preserve-3d;
             backface-visibility: hidden;
@@ -1064,7 +1660,7 @@
               font-size: 16px;
               font-weight: 500;
               color: #000;
-              transition: background-color 0.2s;
+              transition: background-color 0.3s, color 0.3s;
               .new_flag {
                 display: inline-block;
                 margin: 4px 0 0 4px;
@@ -1078,7 +1674,7 @@
                 width: 0;
                 height: 20px;
                 margin-right: 4px;
-                background: url("../image/main/renew2025/ico_airplane_w.png") no-repeat;
+                background: url("../image/main/renew2025/ico_airplane_w.svg") no-repeat;
                 transform: translateX(-20px);
                 transition: transform 0.3s, opacity 0.3s;
                 opacity: 0;
@@ -1094,8 +1690,11 @@
             }
             &.black {
               a {
+                &:hover {
+                  color: #000;
+                }
                 &::before {
-                  background: url("../image/main/renew2025/ico_airplane_b.png") no-repeat;
+                  background: url("../image/main/renew2025/ico_airplane_b.svg") no-repeat;
                 }
               }
             }
@@ -1142,6 +1741,23 @@
           }
         }
       }
+      .btn_coupon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 160px;
+        height: 66px;
+        margin-top: 8px;
+        border-radius: 20px;
+        background-color: #FFF3CB;
+        &_text {
+          font-size: 0;
+          display: block;
+          width: 52px;
+          height: 52px;
+          background: url("../image/main/renew2025/ico_gift.svg") no-repeat center;
+        }
+      }
       .btn_chatbot {
         display: flex;
         align-items: center;
@@ -1151,14 +1767,15 @@
         margin-top: 8px;
         border-radius: 20px;
         background-color: #F2F3F4;
-        > span {
+        &-text {
           font-size: 0;
           width: 56px;
           height: 42px;
           animation: bounceDownUp 4s ease-in infinite;
-          background: url("../image/main/renew2025/ico_chatbot.png") no-repeat center;
+          background: url("../image/main/renew2025/ico_chatbot.svg") no-repeat center;
         }
       }
+      
       #goTop {
         display: block !important;
         width: 160px;

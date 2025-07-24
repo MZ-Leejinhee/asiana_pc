@@ -4,7 +4,9 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57TCD7W" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <div id="wrap" class="main">
+  <!-- renewal class :: renew2025 추가-->
+  <div id="wrap" class="main renew2025">
+  <!-- //renewal class :: renew2025 추가-->
     <!-- header -->
     
     <div class="main_header_wrap">
@@ -12,309 +14,12 @@
         <a href="#contents_area">컨텐츠 바로가기</a>
         <a href="#nav">주요메뉴 바로가기</a>
       </div>
-      <div class="main_notibox renew2025" style="display:block;">
+      <div class="main_notibox" style="display:block;">
         <!-- @@@include('./include/cookie_notice.html') -->
-        <!-- @@@include('./include/top_notice.html') -->
       <!-- 태블릿 전용 -->
       </div>
-      <!-- util_wrap -->
-      <div class="util_wrap">
-        <div class="inner">
-          <div class="fav_link">
-            <ul>
-              <li>
-                <a href="#none"
-                  onClick="action_logging({pagecode:'01_TOP_02'}); cms.goToLink('http://dutyfree.flyasiana.com/ko', '_blank');">
-                  기내 면세점
-                </a>
-              </li>
-              <li>
-                <a href="#none" id="corporatePlusGo" class="corporate_area">
-                  기업우대
-                  <div class="corporate_box">
-                    <img
-                      src="https://ozimg.flyasiana.com/editor/image/20230410/b537ac67-0778-45fe-970c-36dd07c8e8ba.png"
-                      alt="가방 아이콘">
-                    <p>출장 항공권 구매</p>
-                  </div>
-                </a>
-                <div class="corporate_layer_wrap" id="corporatePlus" style="display:none;">
-                  <div class="dim_layer corporatePlusClose"></div>
-                  <div class="layer_pop"
-                    style="position:fixed;width:600px; left:50%; top:50%; margin:0; transform:translateX(-300px) translateY(-50.2%)"
-                    tabindex="0">
-                    <div class="pop_cont">
-                      <h4>Asiana Corporate Plus 로 이동</h4>
-                      <p class="pop_tit st3">
-                        Asiana Corporate Plus 는 기업 고객을 위한 아시아나의 특별한 기업 우대 프로그램입니다. 개인 특가와 혜택 및 조건이 상이하므로 예매시 참고하시기 바랍니다.
-                        (단, 기업우대혜택은 기업우대 발권시에만 적용)
-                      </p>
-                    </div>
-                    <div class="btn_wrap_ceType2">
-                      <button type="button" class="btn_M white confirm-cancel corporatePlusClose">
-                        취소
-                      </button>
-                      <button type="button"
-                        onClick="action_logging({pagecode:'01_TOP_09'}); cms.goToLink('/I/KR/KO/ACTQuick.do', '_blank');"
-                        class="btn_M red confirm-ok ">
-                        확인
-                      </button>
-                    </div>
-                    <button class="dim_close corporatePlusClose">
-                      <span class="hidden">
-                        닫기
-                      </span>
-                    </button>
-                  </div>
-                </div>
-                <script>
-                  document.addEventListener("DOMContentLoaded", function () {
-                    $('#corporatePlusGo').on('click', function (e) {
-                      e.preventDefault();
-                      $('#corporatePlus').css('display', 'block').find('.confirm-ok').on('click', function (e) {
-                        $('#corporatePlus').css('display', 'none');
-                      });
-                    });
-                    $('.corporatePlusClose').on('click', function (e) {
-                      e.preventDefault();
-                      $('#corporatePlus').css('display', 'none');
-                    });
-                  });
-                </script>
-              </li>
-            </ul>
-          </div>
-          <div class="util_menu">
-            <ul>
-              <li>
-                <style>
-                  .join_event_btn_a {
-                    color: white;
-                    font-size: 12px;
-                    line-height: 1;
-                  }
-                </style>
-                <div class="new_subscription ">
-                  <div>
-                    <a class="join_event_btn_a" href="/C/KR/KO/event/detail/CM202201270001564905" target="_blank">
-                      신규회원 웰컴쿠폰
-                    </a>
-                    <a class="join_event_btn_x" href="javascript:void(0);" title="닫기">
-                      <span class="hidden">
-                        닫기
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <a href='#none'
-                  onClick="action_logging({pagecode:'01_TOP_03'}); cms.goToLink('/I/KR/KO/viewLogin.do?callType=IBE&amp;menuId=CM201802220000728453');">
-                  로그인
-                </a>
-              </li>
-              <li class="new_h_line">
-                <a href="#none"
-                  onClick="action_logging({pagecode:'01_TOP_05'}); cms.goToLink('/C/KR/KO/event/index?menuId=CM201802220000728482');">
-                  이벤트
-                </a>
-              </li>
-              <li class="new_h_line">
-                <a href='#none'
-                  onClick="action_logging({pagecode:'01_TOP_06'}); cms.goToLink('/C/KR/KO/customer/main?menuId=CM201802220000728474');">
-                  고객서비스
-                </a>
-                <ul>
-                  <li>
-                    <a href="#none" onclick="cms.goToLink('/C/KR/KO/customer/notice/list');">
-                      공지사항
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#none" onclick="cms.goToLink('/C/KR/KO/customer/guidance/index');">
-                      자주찾는질문
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#none" onclick="cms.goToLink('/C/KR/KO/customer/form-download/list');">
-                      양식다운로드
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#none" onclick="cms.goToLink('/C/KR/KO/customer/voc');">
-                      고객의 말씀
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="lang_select01">
-                <a class="btn_language" href="javascript:sharpNothig();"
-                  onclick="action_logging({pagecode:'01_TOP_07'});" title="지역/언어 선택 열기">
-                  <span class='country01'>
-                    대한민국
-                    <span>|</span>
-                    한국어
-                  </span>
-                </a>
-                <div class="layer_wrap language_area" id="layerLanguage">
-                  <input type="hidden" name="nation" id="nation" value="KR" />
-                  <input type="hidden" name="lang" id="lang" value="KO" />
-                  <form name="frmRegLan" id="frmRegLan">
-                    <input type="hidden" name="changeLangCode" value="false" />
-                  </form>
-                  <div class="dim_layer"></div>
-                  <div class="layer_pop" tabindex="0">
-                    <div class="pop_cont">
-                      <h4>
-                        <img
-                          src="https://ozimg.flyasiana.com/editor/image/20240404/6187ac86-1333-487f-a6d8-5815e01a5b70.png">
-                        <span>지역/언어 선택</span>
-                      </h4>
-                      <div class="scroll_cont">
-                        <div class="nationLanguage">
-                          <h5>동북아시아</h5>
-                          <div>
-                            <ul>
-                              <li class="country_KR">
-                                <p>대한민국</p>
-                                <div data-countrylanguage="KR"></div>
-                              </li>
-                              <li class="country_JP">
-                                <p>일본</p>
-                                <div data-countrylanguage="JP"></div>
-                              </li>
-                              <li class="country_CN">
-                                <p>중국</p>
-                                <div data-countrylanguage="CN"></div>
-                              </li>
-                              <li class="country_HK">
-                                <p>중국, 홍콩</p>
-                                <div data-countrylanguage="HK"></div>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="nationLanguage">
-                          <h5>동남아시아</h5>
-                          <div>
-                            <ul>
-                              <li class="country_VN">
-                                <p>베트남</p>
-                                <div data-countrylanguage="VN"></div>
-                              </li>
-                              <li class="country_SG">
-                                <p>싱가포르</p>
-                                <div data-countrylanguage="SG"></div>
-                              </li>
-                              <li class="country_ID">
-                                <p>인도네시아</p>
-                                <div data-countrylanguage="ID"></div>
-                              </li>
-                              <li class="country_PH">
-                                <p>필리핀</p>
-                                <div data-countrylanguage="PH"></div>
-                              </li>
-                              <li class="country_TH">
-                                <p>태국</p>
-                                <div data-countrylanguage="TH"></div>
-                              </li>
-                              <li class="country_KH">
-                                <p>캄보디아</p>
-                                <div data-countrylanguage="KH"></div>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="halfAndhalf_area">
-                          <div class="nationLanguage">
-                            <h5>미주</h5>
-                            <div>
-                              <ul>
-                                <li class="country_US">
-                                  <p>미국</p>
-                                  <div data-countrylanguage="US"></div>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="nationLanguage">
-                            <h5>대양주</h5>
-                            <div>
-                              <ul>
-                                <li class="country_AU">
-                                  <p>호주</p>
-                                  <div data-countrylanguage="AU"></div>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="nationLanguage">
-                          <h5>유럽</h5>
-                          <div>
-                            <ul>
-                              <li class="country_DE">
-                                <p>독일</p>
-                                <div data-countrylanguage="DE"></div>
-                              </li>
-                              <li class="country_FR">
-                                <p>프랑스</p>
-                                <div data-countrylanguage="FR"></div>
-                              </li>
-                              <li class="country_GB">
-                                <p>영국</p>
-                                <div data-countrylanguage="GB"></div>
-                              </li>
-                              <li class="country_IT">
-                                <p>이탈리아</p>
-                                <div data-countrylanguage="IT"></div>
-                              </li>
-                              <li class="country_TR">
-                                <p>튀르키예</p>
-                                <div data-countrylanguage="TR"></div>
-                              </li>
-                              <li class="country_ES">
-                                <p>스페인</p>
-                                <div data-countrylanguage="ES"></div>
-                              </li>
-                              <li class="country_CZ">
-                                <p>체코</p>
-                                <div data-countrylanguage="CZ"></div>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="nationLanguage">
-                          <h5>몽골/중앙아시아</h5>
-                          <div>
-                            <ul>
-                              <li class="country_MN">
-                                <p>몽골</p>
-                                <div data-countrylanguage="MN"></div>
-                              </li>
-                              <li class="country_UZ">
-                                <p>우즈베키스탄</p>
-                                <div data-countrylanguage="UZ"></div>
-                              </li>
-                              <li class="country_KZ">
-                                <p>카자흐스탄</p>
-                                <div data-countrylanguage="KZ"></div>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <a href="javascript:sharpNothig();" class="dim_close lang_close">
-                      <span class="hidden">
-                        닫기
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <!-- util_wrap --> 
+      @@@include('./include/header_util.html')
       <!-- util_wrap -->
       <!-- header -->
       @@@include('./include/header.html')
@@ -327,10 +32,13 @@
       <div class="section section01 section05"
         style="background-image:url('https://ozimg.flyasiana.com/temp/image/20190121/42038ccd-a6a7-4846-ad39-a32c4c4b57f8.jpeg');">
         <div class="slide velocont" id="contents_area">
+          <!-- 상단 긴급 공지 위치 변경 202507 -->
+          @@@include('./include/top_notice.html')
+          <!-- //상단 긴급 공지 위치 변경 202507 -->
           <div class="slide_inner">
             <span class="layer_bgBlack"></span>
-            @@@include('./include/quick_service.html')
             @@@include('./include/main_slide.html')
+            @@@include('./include/quick_service.html')
           </div>
           <a href="javascript:void(0);" class="btn_fold focus_out_motion" id="foldSection1">
             <span class="hidden">
@@ -338,7 +46,7 @@
             </span>
           </a>
         </div>
-        <!-- <div class="scroll_down">
+        <div class="scroll_down">
           <a href="javascript:void(0);" class="scroll_down_btn" title="SCROLL DOWN" onclick="action_logging({pagecode:'01_MVE_01'});">
             <div class="scroll_motion_frame">
               <div class="scroll_shape">
@@ -350,15 +58,17 @@
               </div>
             </div>
           </a>
-        </div> -->
+        </div>
         <div class="contents_area">
           @@@include('./include/price_slide.html')
-          <!-- @@@include('./include/event.html') -->
+          @@@include('./include/event.html')
+          <!-- 공지사항, 제휴서비스 noti_ext_wrap,inner div 태그 추가 202507 -->
           <div class="noti_ext_wrap">
             <div class="inner">
               @@@include('./include/notice_ext_service.html')
             </div>
           </div>
+          <!-- //공지사항, 제휴서비스 noti_ext_wrap,inner div 태그 추가 202507 -->
           @@@include('./include/right_quick_menu.html')
         </div>
       </div>
@@ -395,7 +105,7 @@
   <script type="text/javascript" src="https://flyasiana.com/C/pc/js/util.js"></script>
   <!-- JavaScript area for CMS-->
   <!-- PC 메인 리뉴얼 js -->
-  <!-- <script type="text/javascript" src="/C/pc/js/renew2025.js"></script> -->
+  <script type="text/javascript" src="/C/pc/js/renew2025.js"></script>
   <!-- //PC 메인 리뉴얼 js -->
   <div id="_dummy-coupon" style="display: none;"></div>
   <div id="_dummy-lang" style="display: none;">KO</div>

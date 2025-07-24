@@ -1,6 +1,7 @@
 import gulp from "gulp";
 import del from "del";
 import ws from "gulp-webserver";
+import image from "gulp-imagemin";
 import fileinclude from "gulp-file-include";
 import postcss from "gulp-postcss";
 import autoprefixer from "autoprefixer";
@@ -13,6 +14,10 @@ const routes = {
     watch: "src/**/*.html",
     src: "src/**/*.html",
     dest: "build",
+  },
+  img: {
+    src: "src/images/**/*.{jpg, jpeg, png, gif}",
+    dest: "build/C/pc/image/main",
   },
   scss: {
     watch: "src/scss/**/*.scss",
@@ -51,6 +56,12 @@ const html = () =>
     basepath: '@file'
   }))
   .pipe(gulp.dest(routes.html.dest));
+
+const img = () =>
+  gulp
+  .src(routes.img.src)
+  .pipe(image())
+  .pipe(gulp.dest(routes.img.dest));
 
 const scss = () =>
   gulp
@@ -94,6 +105,7 @@ const gh = () => gulp.src("build/**/*").pipe(ghPages());
 
 const watch = () => {
   gulp.watch(routes.html.watch, html);
+  gulp.watch(routes.img.src, img);
   gulp.watch(routes.scss.watch, scss);
   gulp.watch(routes.css.watch, css);
   gulp.watch(routes.font.watch, font);
@@ -101,8 +113,8 @@ const watch = () => {
   gulp.watch(routes.jslib.watch, jslib);
 };
 
-const prepare = gulp.series([font, css, js, jslib]);
-const C = gulp.series([html, scss, css, js, jslib]);
+const prepare = gulp.series([font, img, css, js, jslib]);
+const C = gulp.series([html, img, scss, css, js, jslib]);
 const live = gulp.parallel([webserver, watch]);
 
 export const dev = gulp.series([prepare, C]);

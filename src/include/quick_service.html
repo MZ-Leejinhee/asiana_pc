@@ -47,48 +47,9 @@
   </div>
   <div data-content="reservation" class="quick-service__item quick-reservation quick-service__item--is-active">
     <h3 class="hidden">항공권 예약</h3>
-    <input type="hidden" id="currentDate" value='2025-06-26' />
-    <input type="hidden" id="ghCurrentDate" value='202506261618' />
-    <input type="hidden" id="familyMemberCount" value='' />
-    <input type="hidden" id="loginUserAcno" value='' />
-    <input type="hidden" id="loginUserAge" value='13' />
-    <input type="hidden" id="emptyBookConditionData"
-      value='{"officeId":"","tripType":"RT","domIntType":"I","deductionType":"","userData":null,"segmentConditionDatas":[{"flightId":"","segmentNo":"","departureArea":"","departureCountry":"","departureCity":"","departureCityName":"","departureAirport":"","departureAirportName":"","arrivalArea":"","arrivalCountry":"","arrivalCity":"","arrivalCityName":"","arrivalAirport":"","arrivalAirportName":"","direct":"","departureDateTime":"","arrivalDateTime":"","cabinClassList":["R"],"cabinClassNameList":[],"exchangeSegment":false,"flownSegment":false,"recommendId":"","flightSegmentId":"","beforeArrivalDate":"","bookingClass":"","codeShare":"","preAssignSeat":false,"operationCarrierCode":"","fareFamilyDiscountRate":"","flightConditionDatas":null,"otherFareFamily":[],"commercialFareFamily":[]},{"flightId":"","segmentNo":"","departureArea":"","departureCountry":"","departureCity":"","departureCityName":"","departureAirport":"","departureAirportName":"","arrivalArea":"","arrivalCountry":"","arrivalCity":"","arrivalCityName":"","arrivalAirport":"","arrivalAirportName":"","direct":"","departureDateTime":"","arrivalDateTime":"","cabinClassList":["R"],"cabinClassNameList":[],"exchangeSegment":false,"flownSegment":false,"recommendId":"","flightSegmentId":"","beforeArrivalDate":"","bookingClass":"","codeShare":"","preAssignSeat":false,"operationCarrierCode":"","fareFamilyDiscountRate":"","flightConditionDatas":null,"otherFareFamily":[],"commercialFareFamily":[]}],"passengerConditionDatas":null,"contactDatas":null,"onlineCouponData":null,"bizType":"","airlineSearchType":"","ptcCode":"","pointOfSale":"","searchCurrency":"","mixedCabinCode":"","paymentType":"","mobileFlag":false,"starAlliance":false,"atc":false,"childOnly":false,"parentPnrAlpha":"","bookForAnother":false,"pageTicket":"","jsessionId":"","eventCFF":"","salesType":"","deepLinkId":"","bigEventSeqNo":"","bigEventDetailSeqNo":"","deepLinkDate":"","onlyUpgradeSearch":false,"travellerPTCInfoWithJson":"","mixedBoadingLevel":false,"actNo":"","actMNo":"","actGrade":"","amount":"","mileage":"","currency":"","cffList":[],"staffSKElement_STFS":"","staffSKElement_STFD":"","staffSKElement_limitHour":"","staff_systemId":"","staff_arnkYn":"","notSelectCoupon":"","countUnmatchAcno":0,"miscPricingRecords":null,"sublo":false,"offlineOnhold":false}' />
-    <input type="hidden" name="serviceType" id="serviceType" value="" />
-    <input type="hidden" name="corporateCode" id="corporateCode" value="" />
-    <input type="hidden" name="discount" id="discount" value="" />
-    <input type="hidden" name="promoCode" id="promoCode" value="" />
-    <input type="hidden" name="serialNo" id="serialNo" value="" />
-    <input type="hidden" name="couponCode" id="couponCode" value="" />
-    <input type="hidden" name="eventName" id="eventName" value="" />
-    <input type="hidden" name="accumMileYN" id="accumMileYN" value="" />
-    <input type="hidden" name="currency" id="currency" value="CNY" />
-    <form name="registTravelForm" id="registTravelForm" method="post" onsubmit="return false;">
-      <input type="hidden" name="bookConditionData" id="bookConditionData" value="" />
-      <input type="hidden" name="sessionUniqueKey" id="sessionUniqueKeyR" value="" />
-      <input type="hidden" name="mainQuick" id="mainQuick" value=true />
-      <input type="hidden" name="viewCalendar" id="viewCalendar" value="" />
-    </form>
-    <input type="hidden" name="exposeKrPaypal" id="exposeKrPaypal" value="Y" />
-    <form name="lowerPriceForm" id="lowerPriceForm">
-      <input type="hidden" name="lower_DepArea" id="lower_DepArea" value="" />
-      <input type="hidden" name="lower_DepCity" id="lower_DepCity" value="" />
-      <input type="hidden" name="lower_DepCityName" id="lower_DepCityName" value="" />
-      <input type="hidden" name="lower_DepStn" id="lower_DepStn" value="" />
-      <input type="hidden" name="lower_DepStnName" id="lower_DepStnName" value="" />
-      <input type="hidden" name="lower_ArrArea" id="lower_ArrArea" value="" />
-      <input type="hidden" name="lower_ArrCity" id="lower_ArrCity" value="" />
-      <input type="hidden" name="lower_ArrCityName" id="lower_ArrCityName" value="" />
-      <input type="hidden" name="lower_ArrStn" id="lower_ArrStn" value="" />
-      <input type="hidden" name="lower_ArrStnName" id="lower_ArrStnName" value="" />
-      <input type="hidden" name="lower_ArrDirect" id="lower_ArrDirect" value="" />
-      <input type="hidden" name="lower_CabinClass" id="lower_CabinClass" value="" />
-      <input type="hidden" name="lower_DomIntType" id="lower_DomIntType" value="" />
-      <input type="hidden" name="lower_TripType" id="lower_TripType" value="" />
-    </form>
     <div class="quick_reservation_wrap">
       <div class="quick_tab_wrap">
-        <!-- 마일리지 사용, 구간 순서 변경 -->
+        <!-- 마일리지 사용, 구간 순서 변경 202507 -->
         <div class="tab_triptype">
           <ul>
             <li class="on">
@@ -115,15 +76,12 @@
           </div>
         </div>
         <span class="line"></span>
+        <!-- //마일리지 사용, 구간 순서 변경 202507 -->
         <div class="favroute_wrap">
-          <!-- 구조 변경 -->
-          <div class="flex">
-            <p class="txt">관심노선</p>
-            <a href="#none" class="fav_star" id="favoriteRoute" style="display: block;"
-              onClick="action_logging({pagecode:'01_book_04'});">
-              <span class="hidden">관심노선으로 빠른여정 선택</span>
-            </a>
-          </div>
+          <a href="#none" class="fav_star" id="favoriteRoute" style="display: block;"
+            onClick="action_logging({pagecode:'01_book_04'});">
+            <span class="hidden">관심노선으로 빠른여정 선택</span>
+          </a>
           <div class="shadow_layer intRoute">
             <div class="inner">
               <div class="route_list">
@@ -136,118 +94,107 @@
             <a href="#none" class="layer_close" id="closeFavoriteRoute"><span class="hidden">닫기</span></a>
           </div>
         </div>
-        <div class="main_date_lookup_area">
-          <div class="date_lookup_area" id="viewCalendarDiv">
-            <input type="checkbox" id="viewCalendarChk" name="viewCalendarChk"><label for="viewCalendarChk">가까운 날짜
-              조회</label>
+        <!-- div wrap 추가 202507 -->
+        <div class="rgt_wrap">
+          <div class="main_date_lookup_area">
+            <div class="date_lookup_area" id="viewCalendarDiv">
+              <input type="checkbox" id="viewCalendarChk" name="viewCalendarChk"><label for="viewCalendarChk">가까운 날짜
+                조회</label>
+            </div>
+          </div>
+          <div class="btn_wrap_riType2 coup1 main_right_btnSet">
+            <button type="button" class="btn_M btn_couponIcon" id="btn_coupon_layer"
+              style="border: solid 1px #b3000b;color: rgba(34,42,115,.8);font-weight: bold;">쿠폰 조회</button>
           </div>
         </div>
-        <!-- 라인 추가 -->
-        <span class="line"></span>
-        <div class="btn_wrap_riType2 coup1 main_right_btnSet">
-          <button type="button" class="btn_M btn_couponIcon" id="btn_coupon_layer"
-            style="border: solid 1px #b3000b;color: rgba(34,42,115,.8);font-weight: bold;">쿠폰 조회</button>
-        </div>
-        <div class="btn_mile_wrap">
-          <a href="#none" class="btn_arrlink" id="starAlliance">스타얼라이언스</a>
-          <a href="#none" class="btn_arrlink" id="openJawRED">출국/귀국편 출발 지역이 다른 여정</a>
-        </div>
+        <!-- //div wrap 추가 202507 -->
       </div>
       <div class="quick_step_wrap">
         <div class="input_wrap" name="itineraryR">
-          <!-- 구조 변경 -->
-          <div class="ipt_loc_wrap">
-            <div class="ipt_elt loct spot_proven">
-              <input type="hidden" id="departureAreaR" name="departureAreaR" value="">
-              <input type="hidden" id="departureAirportR" name="departureAirportR" value="">
-              <input type="hidden" id="departureCityR" name="departureCityR" value="">
-              <input type="hidden" id="departureCityNameR" name="departureCityNameR" value="">
-              <input type="hidden" id="departureAirportNameR" name="departureAirportNameR" value="">
-              <label for="txtDepartureAirportR" class="spot_place" id="labelDepartureAirportR"
-                name="spot_place">출발지</label>
-              <input type="text" id="txtDepartureAirportR" name="txtDepartureAirportR" class="spotentry" depArrType="dep"
-                style="width:165px;">
+          <div class="ipt_elt loct spot_proven">
+            <input type="hidden" id="departureAreaR" name="departureAreaR" value="">
+            <input type="hidden" id="departureAirportR" name="departureAirportR" value="">
+            <input type="hidden" id="departureCityR" name="departureCityR" value="">
+            <input type="hidden" id="departureCityNameR" name="departureCityNameR" value="">
+            <input type="hidden" id="departureAirportNameR" name="departureAirportNameR" value="">
+            <label for="txtDepartureAirportR" class="spot_place" id="labelDepartureAirportR" name="spot_place">출발지</label>
+            <input type="text" id="txtDepartureAirportR" name="txtDepartureAirportR" class="spotentry" depArrType="dep"
+              style="width:165px;">
+            <input type="hidden" name="default" area="" airport="">
+            <a href="#none" class="btn_airport airport_open" id="btn_depAllAirport1" name="btn_layer1" seg="dep1" depArrType="dep"
+              onclick="javascript:onClickAirportIcon(this, 'R');"><span class="hidden">전체도시보기</span></a>
+          </div>
+          <div class="shadow_layer search_flight" name="shadow_layer">
+            <div class="inner">
+              <div class="search_layer">
+                <div class="search_lately" name="search_lately">
+                  <p class="title">최근 검색</p>
+                </div>
+                <div class="route_list search_auto" id="divDepAirportACR" name="search_auto" target="txtDepartureAirportR">
+                  <p class="title">자동 완성</p>
+                  <div class="empty_box" name="empty_box">매칭되는 공항이 없습니다.</div>
+                </div>
+              </div>
               <input type="hidden" name="default" area="" airport="">
-              <a href="#none" class="btn_airport airport_open" id="btn_depAllAirport1" name="btn_layer1" seg="dep1"
-                depArrType="dep" onclick="javascript:onClickAirportIcon(this, 'R');"><span
-                  class="hidden">전체도시보기</span></a>
+              <button type="button" class="btn_popup airport_open" id="btn_depAllAirport1" name="btn_layer1" seg="dep1"
+                depArrType="dep" onclick="javascript:showAirportLayer(this, 'R');">전체도시보기</button>
             </div>
-            <div class="shadow_layer search_flight" name="shadow_layer">
-              <div class="inner">
-                <div class="search_layer">
-                  <div class="search_lately" name="search_lately">
-                    <p class="title">최근 검색</p>
-                  </div>
-                  <div class="route_list search_auto" id="divDepAirportACR" name="search_auto"
-                    target="txtDepartureAirportR">
-                    <p class="title">자동 완성</p>
-                    <div class="empty_box" name="empty_box">매칭되는 공항이 없습니다.</div>
-                  </div>
+            <a href="#none" class="layer_close"><span class="hidden">닫기</span></a>
+          </div>
+          <div class="quickbookings_change">
+            <a href="javascript:swapLocations();">
+              <span class="hidden">체인지 버튼</span>
+            </a>
+          </div>
+          <div class="ipt_elt loct spot_destin">
+            <input type="hidden" id="arrivalAreaR" name="arrivalAreaR" value="">
+            <input type="hidden" id="arrivalAirportR" name="arrivalAirportR" value="">
+            <input type="hidden" id="arrivalCityR" name="arrivalCityR" value="">
+            <input type="hidden" id="arrivalCityNameR" name="arrivalCityNameR" value="">
+            <input type="hidden" id="arrivalAirportNameR" name="arrivalAirportNameR" value="">
+            <input type="hidden" id="arrivalDirectR" name="arrivalDirectR" value="">
+            <label for="txtArrivalAirportR" class="spot_place" id="labelArrivalAirportR" name="spot_place">도착지</label>
+            <input type="text" id="txtArrivalAirportR" name="txtArrivalAirportR" class="spotentry" depArrType="arr"
+              style="width:165px;">
+            <input type="hidden" name="default" area="" airport="">
+            <a href="#none" class="btn_airport airport_open" id="btn_arrAllAirport1" name="btn_layer1" seg="arr1" depArrType="arr"
+              onclick="javascript:onClickAirportIcon(this, 'R');"><span class="hidden">전체도시보기</span></a>
+          </div>
+          <div class="shadow_layer search_flight to" name="shadow_layer">
+            <div class="inner">
+              <div class="search_layer">
+                <div class="search_lately" name="search_lately">
+                  <p class="title">최근 검색</p>
                 </div>
-                <input type="hidden" name="default" area="" airport="">
-                <button type="button" class="btn_popup airport_open" id="btn_depAllAirport1" name="btn_layer1" seg="dep1"
-                  depArrType="dep" onclick="javascript:showAirportLayer(this, 'R');">전체도시보기</button>
+                <div class="route_list search_auto" id="divArrAirportACR" name="search_auto" target="txtArrivalAirportR">
+                  <p class="title">자동 완성</p>
+                  <div class="empty_box" name="empty_box">매칭되는 공항이 없습니다.</div>
+                </div>
               </div>
-              <a href="#none" class="layer_close"><span class="hidden">닫기</span></a>
-            </div>
-            <div class="quickbookings_change">
-              <a href="javascript:swapLocations();">
-                <span class="hidden">체인지 버튼</span>
-              </a>
-            </div>
-            <div class="ipt_elt loct spot_destin">
-              <input type="hidden" id="arrivalAreaR" name="arrivalAreaR" value="">
-              <input type="hidden" id="arrivalAirportR" name="arrivalAirportR" value="">
-              <input type="hidden" id="arrivalCityR" name="arrivalCityR" value="">
-              <input type="hidden" id="arrivalCityNameR" name="arrivalCityNameR" value="">
-              <input type="hidden" id="arrivalAirportNameR" name="arrivalAirportNameR" value="">
-              <input type="hidden" id="arrivalDirectR" name="arrivalDirectR" value="">
-              <label for="txtArrivalAirportR" class="spot_place" id="labelArrivalAirportR" name="spot_place">도착지</label>
-              <input type="text" id="txtArrivalAirportR" name="txtArrivalAirportR" class="spotentry" depArrType="arr"
-                style="width:165px;">
               <input type="hidden" name="default" area="" airport="">
-              <a href="#none" class="btn_airport airport_open" id="btn_arrAllAirport1" name="btn_layer1" seg="arr1"
-                depArrType="arr" onclick="javascript:onClickAirportIcon(this, 'R');"><span
-                  class="hidden">전체도시보기</span></a>
+              <button type="button" class="btn_popup airport_open" id="btn_arrAllAirport1" name="btn_layer1" seg="arr1"
+                depArrType="arr" onclick="javascript:showAirportLayer(this, 'R');">전체도시보기</button>
             </div>
-            <div class="shadow_layer search_flight to" name="shadow_layer">
-              <div class="inner">
-                <div class="search_layer">
-                  <div class="search_lately" name="search_lately">
-                    <p class="title">최근 검색</p>
-                  </div>
-                  <div class="route_list search_auto" id="divArrAirportACR" name="search_auto"
-                    target="txtArrivalAirportR">
-                    <p class="title">자동 완성</p>
-                    <div class="empty_box" name="empty_box">매칭되는 공항이 없습니다.</div>
-                  </div>
-                </div>
-                <input type="hidden" name="default" area="" airport="">
-                <button type="button" class="btn_popup airport_open" id="btn_arrAllAirport1" name="btn_layer1" seg="arr1"
-                  depArrType="arr" onclick="javascript:showAirportLayer(this, 'R');">전체도시보기</button>
+            <a href="#none" class="layer_close"><span class="hidden">닫기</span></a>
+          </div>
+          <div class="shadow_layer case2 select_airport" id="depAllAirportR" name="allAirportR" style="display: none;">
+            <div class="inner">
+              <h4 class="hidden">공항 선택</h4>
+              <h5 class="hidden">국제선</h5>
+              <div class="flights_list national">
               </div>
-              <a href="#none" class="layer_close"><span class="hidden">닫기</span></a>
-            </div>
-            <div class="shadow_layer case2 select_airport" id="depAllAirportR" name="allAirportR" style="display: none;">
-              <div class="inner">
-                <h4 class="hidden">공항 선택</h4>
-                <h5 class="hidden">국제선</h5>
-                <div class="flights_list national">
+              <div class="recent_search_wrap">
+                <h4>최근 검색</h4>
+                <div class="recent_srch_box" name="recent_srch_box">
                 </div>
-                <div class="recent_search_wrap">
-                  <h4>최근 검색</h4>
-                  <div class="recent_srch_box" name="recent_srch_box">
-                  </div>
-                  <div class="btn_area">
-                    <button type="button" class="btn_M gray"
-                      onclick="javascript:clickNextStep('allAirportR', 'R');">다음</button>
-                  </div>
+                <div class="btn_area">
+                  <button type="button" class="btn_M gray" onclick="javascript:clickNextStep('allAirportR', 'R');">다음</button>
                 </div>
               </div>
-              <a href="#none" class="layer_close">
-                <span class="hidden">닫기</span>
-              </a>
             </div>
+            <a href="#none" class="layer_close">
+              <span class="hidden">닫기</span>
+            </a>
           </div>
           <div class="ipt_elt calr calendar_wrap" id="divCalendarContainer">
             <label for="sCalendarR" name="calDesc"><span class="hidden">날짜 선택</span></label>
@@ -582,9 +529,10 @@
               쿠폰보기</button>
             <a href="#none" class="layer_close"><span class="hidden">닫기</span></a>
           </div>
-          <!-- 버튼명 변경 -->
+          <!-- 버튼명 변경 202507-->
           <button type="button" id="registTravel" class="btn_L gray btn_revsearch"
             onclick="javascript:registTravelV();">항공권 조회</button>
+          <!-- //버튼명 변경 202507-->
           <div class="layer_wrap" id="changeCoupon">
             <div class="dim_layer"></div>
             <div class="layer_pop" style="width:550px;">
@@ -991,6 +939,16 @@
             </div>
           </div>
         </div>
+        <!-- 위치 이동 202507 -->
+        <div class="btn_mile_wrap">
+          <!-- flex_wrap 추가 202507 -->
+          <div class="flex_wrap">
+            <a href="#none" class="btn_arrlink" id="starAlliance">스타얼라이언스</a>
+            <a href="#none" class="btn_arrlink" id="openJawRED">출국/귀국편 출발 지역이 다른 여정</a>
+          </div>
+          <!-- //flex_wrap 추가 202507 -->
+        </div>
+        <!-- //위치 이동 202507 -->
       </div>
     </div>
     <script type="text/javascript">
@@ -1221,6 +1179,12 @@
                 <label for="passengerFirstName"><span class="hidden">탑승객 이름</span></label>
                 <input type="text" id="passengerFirstName" placeholder="탑승객 이름">
               </div>
+              <!-- 예약조회 버튼 위치 이동 202507-->
+              <div class="eservationInquiry_btn_area">
+                <button type="button" id="goPNRList" class="btn_M gray btn_revsearch" onclick="javascript:PNRListV();">예약
+                  조회</button>
+              </div>
+              <!-- //예약조회 버튼 위치 이동 202507-->
             </div>
             <p class="exam_txt eservationInquiry_txt">
               <span class="text_type1 ext1">예약번호는 8자리 숫자 또는 6자리 영문/숫자를 입력하세요.</span>
@@ -1228,10 +1192,6 @@
                 <span class="text_type1 ext4">국내선 한글 예약인 경우, 한글 성과 이름을 입력하세요.</span>
               </span>
             </p>
-            <div class="eservationInquiry_btn_area">
-              <button type="button" id="goPNRList" class="btn_M gray btn_revsearch" onclick="javascript:PNRListV();">예약
-                조회</button>
-            </div>
           </div>
         </div>
       </div>
@@ -1253,11 +1213,6 @@
       <div id="schedule_summaryC" class="schedule_summary">
       </div>
       <div class="inquiry_wrapper no_onlinecheck noevent" id="inquiryCheckin">
-        <div class="reserve_list_wrap" id="checkInListDiv">
-          <div class="unview_txt">
-            <p class="text_type2 gray">팝업 차단 해제 후 이용해주시기 바랍니다.
-          </div>
-        </div>
         <div id="defaultCheckInSearch" class="white_step_box">
           <div class="quick_step_wrap">
             <div class="input_wrap" name="itineraryC">
@@ -1268,9 +1223,10 @@
                 </select>
               </div>
               <div class="ipt_elt">
-                <label for="checkinNum"><span class="hidden">8자리 숫자 또는 6자리 영문/숫자</span></label>
+                <!-- label, placeholder, input width 변경 -->
+                <label for="checkinNum"><span class="hidden">예약번호</span></label>
                 <input type="text" id="checkinNum" maxlength="8"
-                  style="width:335px; ime-mode: disabled; text-transform: uppercase;" placeholder="8자리 숫자 또는 6자리 영문/숫자"
+                  style="width:234px; ime-mode: disabled; text-transform: uppercase;" placeholder="예약번호"
                   onkeyup="this.value=this.value.replace(/[^a-zA-z0-9]/g,'')">
               </div>
               <div class="ipt_elt">
@@ -1290,6 +1246,13 @@
                 <span class="text_type1 ext2">예시 : &nbsp;KIM</span>
               </span>
             </p>
+            <!-- 위치 이동 202507 -->
+            <div class="reserve_list_wrap" id="checkInListDiv">
+              <div class="unview_txt">
+                <p class="text_type2 gray">팝업 차단 해제 후 이용해주시기 바랍니다.
+              </div>
+            </div>
+            <!-- //위치 이동 202507 -->
           </div>
         </div>
       </div>

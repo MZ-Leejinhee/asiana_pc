@@ -272,8 +272,7 @@
 				<a href="#contents_area">컨텐츠 바로가기</a>
 				<a href="#nav">주요메뉴 바로가기</a>
 			</div>
-			<div class="main_notibox renew2025" style="display:block;">
-				<!-- @@@include('./include/cookie_notice.html') -->
+			<div class="main_notibox" style="display:block;">
 				<!-- 쿠키알림띠 하단 고정 포커스 1번 -->
 				<div class="cookie notice gray notice_fixing" id="cookieNotice" style="display:none;">
 					<div class="noti_inner">
@@ -290,95 +289,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- @@@include('./include/top_notice.html') -->
-				<!-- 긴급공지 알림띠 포커스2번 -->
-				<div class="notice urgent notice_slide notice_slide_fixing" style="">
-					<div class="notice_slideWrap swiper-container-vertical" style="overflow:hidden;">
-						<div class="swiper-wrapper disabled" style="transform: translate3d(0px, -50px, 0px); transition-duration: 0ms;">
-							<div
-								class="swiper-slide urgent white_and_black swiper-slide-duplicate swiper-slide-duplicate-active swiper-slide-prev"
-								data-key="CM202412160002523311" style="height: 50px;" data-swiper-slide-index="0">
-								<div class="noti_inner">
-									<div class="fl">
-										<p class="text_type2 white">
-											대한민국 전자여행허가제(K-ETA)한시 면제 기간 연장 알림 (~ 2025. 12. 31.)
-											<a href="#/C/JP/KO/customer/notice/detail?id=CM202412130002523320" class="btn_arrow black _link_url"
-												onclick="action_logging({pagecode:'01_TOP_08'});" data-link-type="URL"
-												data-link-url="/C/JP/KO/customer/notice/detail?id=CM202412130002523320" data-link-target="_self">
-												자세히보기
-											</a>
-										</p>
-									</div>
-								</div>
-							</div>
-							<div
-								class="swiper-slide urgent white_and_black swiper-slide-active swiper-slide-duplicate-next swiper-slide-duplicate-prev"
-								data-key="CM202412160002523311" style="height: 50px;" data-swiper-slide-index="0">
-								<div class="noti_inner">
-									<div class="fl">
-										<p class="text_type2 white">
-											대한민국 전자여행허가제(K-ETA)한시 면제 기간 연장 알림 (~ 2025. 12. 31.)
-											<a href="#/C/JP/KO/customer/notice/detail?id=CM202412130002523320" class="btn_arrow black _link_url"
-												onclick="action_logging({pagecode:'01_TOP_08'});" data-link-type="URL"
-												data-link-url="/C/JP/KO/customer/notice/detail?id=CM202412130002523320" data-link-target="_self">
-												자세히보기
-											</a>
-										</p>
-									</div>
-								</div>
-							</div>
-							<div
-								class="swiper-slide urgent white_and_black swiper-slide-duplicate swiper-slide-duplicate-active swiper-slide-next"
-								data-key="CM202412160002523311" style="height: 50px;" data-swiper-slide-index="0">
-								<div class="noti_inner">
-									<div class="fl">
-										<p class="text_type2 white">
-											대한민국 전자여행허가제(K-ETA)한시 면제 기간 연장 알림 (~ 2025. 12. 31.)
-											<a href="#/C/JP/KO/customer/notice/detail?id=CM202412130002523320" class="btn_arrow black _link_url"
-												onclick="action_logging({pagecode:'01_TOP_08'});" data-link-type="URL"
-												data-link-url="/C/JP/KO/customer/notice/detail?id=CM202412130002523320" data-link-target="_self">
-												자세히보기
-											</a>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swipe_etc notice_box_control">
-							<!-- If we need pagination -->
-							<div class="se_top">
-								<div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span
-										class="swiper-pagination-bullet swiper-pagination-bullet-active"></span></div>
-							</div>
-							<div class="fr">
-								<div class="btn_control_box">
-									<div>
-										<input type="checkbox" id="noti_chk" class="white_black_area">
-										<label for="noti_chk">오늘 하루 이 창을 열지 않기</label>
-									</div>
-									<div class="noti_btn_box">
-										<a href="#" class="btn_prev white_black_area" style="visibility: hidden;">
-											이전 슬라이드
-										</a>
-										<div class="text_pagination white_black_area">
-											<span class="bullets_index">1</span><span>/</span><span class="bullets_length">1</span>
-										</div>
-										<a href="#" class="btn_next white_black_area" style="visibility: hidden;">
-											다음 슬라이드
-										</a>
-									</div>
-									<div class="ps">
-										<a href="javascript:void(0);" class="white_black_area stop" style="visibility: hidden;">
-											<span class="hidden">play button</span>
-										</a>
-									</div>
-									<a href="javascript:sharpNothig();" class="noti_close"
-										onclick="javascript:action_logging({pagecode:'01_TOP_08'});"><span class="hidden">공지영역 닫기</span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<!-- 상단 긴급 공지 위치 변경 202507 -->
 				<!-- 태블릿 전용 -->
 			</div>
 			<!-- util_wrap -->
@@ -988,6 +899,15 @@
 											</ul>
 										</li>
 									</ul>
+									<!-- gnb banner 추가 202507-->
+									<div class="gnb_banner">
+										<a onclick="" href="#" target="_self">
+											<div class="img_wrap">
+												<img src="/C/PC/image/main/renew2025/header_bnr_01.png" alt="온라인 신규회원 웰컴쿠폰 프로모션">
+											</div>
+										</a>
+									</div>
+									<!--// gnb banner 추가 202507-->
 								</div>
 							</li>
 							<li>
@@ -1391,6 +1311,15 @@
 											</ul>
 										</li>
 									</ul>
+									<!-- gnb banner 추가 202507-->
+									<div class="gnb_banner">
+										<a onclick="" href="#" target="_self">
+											<div class="img_wrap">
+												<img src="/C/PC/image/main/renew2025/header_bnr_02.png" alt="성공을 향한 출장의 시작 아시아나 쇼퍼서비스">
+											</div>
+										</a>
+									</div>
+									<!--// gnb banner 추가 202507-->
 								</div>
 							</li>
 							<li>
@@ -1904,18 +1833,19 @@
 											<a onclick="action_logging_common_gnb(this);loadingOpen('entire'); return false;"
 												href="/C/KR/KO/menu/id/CM201802220000728385" target="_self"
 												data-id="CM201802220000728385">매직보딩패스</a>
+											<!-- 매직보딩패스 이미지 변경 202507 -->
 											<ul class="nav_d3">
 												<li>
 													<a onclick="loadingOpen('entire');" href="/C/KR/KO/menu/id/CM201802220000728385"
 														target="_self">
 														<div class="img_wrap">
-															<img
-																src="https://ozimg.flyasiana.com/temp/image/20200506/ac76b8cf-3e9f-4b89-adbf-3771280b9179.jpeg"
-																alt="Magic Boarding Pass 탑승권으로 할인받는 다양한 제휴사 혜택" style="height:100%;">
+															<img src="/C/PC/image/main/renew2025/header_bnr_03.png"
+																alt="Magic Boarding Pass 탑승권으로 할인받는 다양한 제휴사 혜택">
 														</div>
 													</a>
 												</li>
 											</ul>
+											<!-- //매직보딩패스 이미지 변경 202507 -->
 											<!--// 20200221 퍼블수정가능부분 -->
 											<!--// 매직보딩패스 하위뎁스 배너 위치 변경 20200221 CM201802220000728385 예외처리 -->
 											<!-- 매직보딩패스 하위뎁스 배너 위치 변경 20200221 -->
@@ -2157,16 +2087,17 @@
 										</li>
 									</ul>
 									<!-- gnb banner -->
-									<div class="gnb_banner">
+									<!-- 마일리지 사용법 이미지 변경, type2 클래스 삭제 202507 -->
+									<div class="gnb_banner type2">
 										<a onclick="loadingOpen('entire');"
 											href="https://flyasiana.com/C/KR/KO/event/detail/CM202405100002497063" target="_self">
 											<div class="img_wrap">
 												<img
-													src="https://ozimg.flyasiana.com/temp/image/20240910/d7551e5a-ec6c-4787-9bb3-e2f5fddfbea5.jpeg"
-													alt="한눈에 보는 마일리지 사용법" style="height:100%;">
+													src="/C/PC/image/main/renew2025/header_bnr_04.png" alt="한눈에 보는 마일리지 사용법">
 											</div>
 										</a>
 									</div>
+									<!-- //마일리지 사용법 이미지 변경,type2 클래스 삭제 202507 -->
 									<!--// gnb banner -->
 								</div>
 							</li>
@@ -2351,7 +2282,102 @@
 				<div class="slide velocont" id="contents_area">
 					<div class="slide_inner">
 						<span class="layer_bgBlack"></span>
-						<!-- @@@include('./include/quick_service.html') -->
+						<div class="main_slideWrap">
+							<div class="main_layerPop"></div>
+							<!-- main_slider_wrap2 클래스명 변경 202507 -->
+							<div class="main_slider_wrap2">
+								<!-- //main_slider_wrap2 클래스명 변경 202507 -->
+								<div class="swiper-wrapper">
+									<div class="swiper-slide" data-b1=""
+										style="background-image:url('/C/PC/image/main/renew2025/img_main_01.png');">
+										<a onclick="action_logging({pagecode:'01_Big_Banner1'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
+											href="/C/KR/KO/event/detail/CM202506120002525298" title="새창열림" target="_self">
+											<div class="swiper_slide_two_view"
+												style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250619/eb1a92fe-e764-4f2d-9d85-00628db24516.png');">
+												네이버페이 결제 시 포인트 적립 및 할인 쿠폰 혜택! #최대2만원포인트적립 #일본/몽골/중앙아시아/미주 #쿠폰
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide" data-b1=""
+										style="background-image:url('/C/PC/image/main/renew2025/img_main_02.png');">
+										<a onclick="action_logging({pagecode:'01_Big_Banner2'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
+											href="/C/KR/KO/customer/notice/detail?id=CM202506180002525337" title="새창열림" target="_self">
+											<div class="swiper_slide_two_view"
+												style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250623/7439e03a-be1e-4dbe-861a-6b676fc09bff.png');">
+												여름에 새롭게 만나는 인천-푸껫 7월 25일 운항 재개 매일 운항하는 편리한 스케줄로 지금 바로 이용해보세요!
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide" data-b1=""
+										style="background-image:url('/C/PC/image/main/renew2025/img_main_03.png');">
+										<a onclick="action_logging({pagecode:'01_Big_Banner3'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
+											href="/C/KR/KO/customer/notice/detail?id=CM202506190002525330" title="새창열림" target="_self">
+											<div class="swiper_slide_two_view"
+												style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250625/10afa408-016a-4447-b4d3-bfe36e3ea37b.png');">
+												지방출발 해외 여행의 정석 환승 전용 내항기+국제선 탑승수속도, 수하물도 한 번에 끝! 여행의 여유를 경험해보세요
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide" data-b1=""
+										style="background-image:url('/C/PC/image/main/renew2025/img_main_04.png');">
+										<a onclick="action_logging({pagecode:'01_Big_Banner4'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
+											href="/C/KR/KO/event/detail/CM202506170002525293" title="새창열림" target="_self">
+											<div class="swiper_slide_two_view"
+												style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250623/2c0718f2-b926-4ca1-aaba-bf33b87b7a8d.png');">
+												밀레니엄 호텔 런던 제휴 프로모션 항공권 할인에 호텔 혜택, 기내 Wi-Fi까지 늦기 전에, 지금 바로 예약!
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide" data-b1=""
+										style="background-image:url('/C/PC/image/main/renew2025/img_main_05.png');">
+										<a onclick="action_logging({pagecode:'01_Big_Banner5'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
+											href="/C/KR/KO/event/detail/CM202506120002525297" title="새창열림" target="_self">
+											<div class="swiper_slide_two_view"
+												style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250617/160b9bfa-6c21-4381-8347-e0613da52f6d.png');">
+												쉼을 담을 시간, 안녕 하와이 #6월 부 매일 운항 #할인 쿠폰 #르네상스 호텔 제휴 할인
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide" data-b1=""
+										style="background-image:url('/C/PC/image/main/renew2025/img_main_06.png');">
+										<a onclick="action_logging({pagecode:'01_Big_Banner6'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
+											href="/C/KR/KO/event/detail/CM202505230002525048" title="새창열림" target="_self">
+											<div class="swiper_slide_two_view"
+												style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250616/3134c777-2c5b-43f0-a486-c4a84040c034.png');">
+												마일리지 나우 마일리지 항공권 할인 노선을 확인하세요!
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide" data-b1=""
+										style="background-image:url('/C/PC/image/main/renew2025/img_main_07.png');">
+										<a onclick="action_logging({pagecode:'01_Big_Banner7'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
+											href="/C/KR/KO/event/detail/CM202506130002525288" title="새창열림" target="_self">
+											<div class="swiper_slide_two_view"
+												style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250618/7285d1ed-b257-4083-993a-a1c9266418e5.png');">
+												스토리텔링으로 만나는 궁궐투어 feat.매직보딩패스 #역사 속으로 시간 여행
+											</div>
+										</a>
+									</div>
+								</div>
+								<!-- 구조 변경, 카운터 추가, 이미지 src 변경 202507-->
+								<div class="mp_wrap">
+									<div class="swiper-pagination"></div>
+									<div class="swiper-counter">
+										<span class="current">01</span> / <span class="total">00</span>
+									</div>
+									<a href="javascript:void(0);" class="sb swiper-button-prev" title="이전 슬라이드"></a>
+									<a href="javascript:void(0);" class="sb swiper-button-next" title="다음 슬라이드"></a>
+									<div class="ps">
+										<a href="javascript:void(0);">
+											<!-- 이미지 src 변경 202507-->
+											<img class="pause" src="/C/pc/image/main/renew2025/slide_pause.png" alt="정지(pause)">
+											<img class="play" src="/C/pc/image/main/renew2025/slide_play.png" alt="재생(play)">
+										</a>
+									</div>
+								</div>
+								<!-- //구조 변경, 카운터 추가, 이미지 src 변경 202507-->
+							</div>
+						</div>
 						<div class="quick-service">
 							<div class="quick-service__nav">
 								<button type="button" data-nav="reservation"
@@ -2444,18 +2470,7 @@
 								</form>
 								<div class="quick_reservation_wrap">
 									<div class="quick_tab_wrap">
-										<div class="mile_use">
-											<span class="txt">마일리지 사용</span>
-											<div class="btn_toggle_box">
-												<label class="switch" for="allChecked">
-													<span class="hidden">OFF</span>
-													<input type="checkbox" id="allChecked" data-type="all_ck_item" autocomplete="off"
-														title="마일리지 사용">
-													<span class="slider"></span>
-												</label>
-											</div>
-										</div>
-										<span class="line"></span>
+										<!-- 마일리지 사용, 구간 순서 변경 202507 -->
 										<div class="tab_triptype">
 											<ul>
 												<li class="on">
@@ -2471,6 +2486,18 @@
 												</li>
 											</ul>
 										</div>
+										<div class="mile_use">
+											<span class="txt">마일리지 사용</span>
+											<div class="btn_toggle_box">
+												<label class="switch" for="allChecked">
+													<span class="hidden">OFF</span>
+													<input type="checkbox" id="allChecked" data-type="all_ck_item" autocomplete="off" title="마일리지 사용">
+													<span class="slider"></span>
+												</label>
+											</div>
+										</div>
+										<span class="line"></span>
+										<!-- //마일리지 사용, 구간 순서 변경 202507 -->
 										<div class="favroute_wrap">
 											<a href="#none" class="fav_star" id="favoriteRoute" style="display: block;"
 												onClick="action_logging({pagecode:'01_book_04'});">
@@ -2488,20 +2515,21 @@
 												<a href="#none" class="layer_close" id="closeFavoriteRoute"><span class="hidden">닫기</span></a>
 											</div>
 										</div>
-										<div class="main_date_lookup_area">
-											<div class="date_lookup_area" id="viewCalendarDiv">
-												<input type="checkbox" id="viewCalendarChk" name="viewCalendarChk"><label
+										<!-- div wrap 추가 202507 -->
+										<div class="rgt_wrap">
+											<div class="main_date_lookup_area">
+												<div class="date_lookup_area" id="viewCalendarDiv">
+													<input type="checkbox" id="viewCalendarChk" name="viewCalendarChk"><label
 													for="viewCalendarChk">가까운 날짜 조회</label>
+												</div>
 											</div>
+											<div class="btn_wrap_riType2 coup1 main_right_btnSet">
+												<button type="button" class="btn_M btn_couponIcon" id="btn_coupon_layer"
+													style="border: solid 1px #b3000b;color: rgba(34,42,115,.8);font-weight: bold;">쿠폰 조회</button>
+											</div>
+											<!-- btn_mile_wrap 위치 이동 202507 -->
 										</div>
-										<div class="btn_wrap_riType2 coup1 main_right_btnSet">
-											<button type="button" class="btn_M btn_couponIcon" id="btn_coupon_layer"
-												style="border: solid 1px #b3000b;color: rgba(34,42,115,.8);font-weight: bold;">쿠폰 조회</button>
-										</div>
-										<div class="btn_mile_wrap">
-											<a href="#none" class="btn_arrlink" id="starAlliance">스타얼라이언스</a>
-											<a href="#none" class="btn_arrlink" id="openJawRED">출국/귀국편 출발 지역이 다른 여정</a>
-										</div>
+										<!-- //div wrap 추가 202507 -->
 									</div>
 									<div class="quick_step_wrap">
 										<div class="input_wrap" name="itineraryR">
@@ -2938,8 +2966,10 @@
 													쿠폰보기</button>
 												<a href="#none" class="layer_close"><span class="hidden">닫기</span></a>
 											</div>
+											<!-- 버튼명 변경 202507-->
 											<button type="button" id="registTravel" class="btn_L gray btn_revsearch"
-												onclick="javascript:registTravelV();">조회</button>
+												onclick="javascript:registTravelV();">항공권 조회</button>
+											<!-- //버튼명 변경 202507-->
 											<div class="layer_wrap" id="changeCoupon">
 												<div class="dim_layer"></div>
 												<div class="layer_pop" style="width:550px;">
@@ -3350,6 +3380,16 @@
 												</div>
 											</div>
 										</div>
+										<!-- 위치 이동 202507 -->
+										<div class="btn_mile_wrap">
+											<!-- flex_wrap 추가 202507 -->
+											<div class="flex_wrap">
+												<a href="#none" class="btn_arrlink" id="starAlliance">스타얼라이언스</a>
+												<a href="#none" class="btn_arrlink" id="openJawRED">출국/귀국편 출발 지역이 다른 여정</a>
+											</div>
+											<!-- //flex_wrap 추가 202507 -->
+										</div>
+										<!-- //위치 이동 202507 -->
 									</div>
 								</div>
 								<script type="text/javascript">
@@ -3583,6 +3623,13 @@
 														<label for="passengerFirstName"><span class="hidden">탑승객 이름</span></label>
 														<input type="text" id="passengerFirstName" placeholder="탑승객 이름">
 													</div>
+													<!-- 예약조회 버튼 위치 이동 202507-->
+													<div class="eservationInquiry_btn_area">
+														<button type="button" id="goPNRList" class="btn_M gray btn_revsearch"
+															onclick="javascript:PNRListV();">예약
+															조회</button>
+													</div>
+													<!-- //예약조회 버튼 위치 이동 202507-->
 												</div>
 												<p class="exam_txt eservationInquiry_txt">
 													<span class="text_type1 ext1">예약번호는 8자리 숫자 또는 6자리 영문/숫자를 입력하세요.</span>
@@ -3590,10 +3637,7 @@
 														<span class="text_type1 ext4">국내선 한글 예약인 경우, 한글 성과 이름을 입력하세요.</span>
 													</span>
 												</p>
-												<div class="eservationInquiry_btn_area">
-													<button type="button" id="goPNRList" class="btn_M gray btn_revsearch"
-														onclick="javascript:PNRListV();">예약 조회</button>
-												</div>
+												<!-- 예약조회 버튼 위치 이동 202507-->
 											</div>
 										</div>
 									</div>
@@ -3615,11 +3659,7 @@
 									<div id="schedule_summaryC" class="schedule_summary">
 									</div>
 									<div class="inquiry_wrapper no_onlinecheck noevent" id="inquiryCheckin">
-										<div class="reserve_list_wrap" id="checkInListDiv">
-											<div class="unview_txt">
-												<p class="text_type2 gray">팝업 차단 해제 후 이용해주시기 바랍니다.
-											</div>
-										</div>
+										<!-- 위치 이동 202507 -->
 										<div id="defaultCheckInSearch" class="white_step_box">
 											<div class="quick_step_wrap">
 												<div class="input_wrap" name="itineraryC">
@@ -3630,10 +3670,10 @@
 														</select>
 													</div>
 													<div class="ipt_elt">
-														<label for="checkinNum"><span class="hidden">8자리 숫자 또는 6자리 영문/숫자</span></label>
+														<!-- label, placeholder, input width 변경 -->
+														<label for="checkinNum"><span class="hidden">예약번호</span></label>
 														<input type="text" id="checkinNum" maxlength="8"
-															style="width:335px; ime-mode: disabled; text-transform: uppercase;"
-															placeholder="8자리 숫자 또는 6자리 영문/숫자"
+															style="width:234px; ime-mode: disabled; text-transform: uppercase;" placeholder="예약번호"
 															onkeyup="this.value=this.value.replace(/[^a-zA-z0-9]/g,'')">
 													</div>
 													<div class="ipt_elt">
@@ -3653,6 +3693,13 @@
 														<span class="text_type1 ext2">예시 : &nbsp;KIM</span>
 													</span>
 												</p>
+												<!-- 위치 이동 202507 -->
+												<div class="reserve_list_wrap" id="checkInListDiv">
+													<div class="unview_txt">
+														<p class="text_type2 gray">팝업 차단 해제 후 이용해주시기 바랍니다.
+													</div>
+												</div>
+												<!-- //위치 이동 202507 -->
 											</div>
 										</div>
 									</div>
@@ -3956,105 +4003,6 @@
 								</div>
 							</div>
 						</div>
-						<!-- @@@include('./include/main_slide.html') -->
-						<div class="main_slideWrap">
-							<div class="main_layerPop"></div>
-							<div class="main_slider_wrap">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide" data-b1=""
-										style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250619/67c34b48-fde7-4d81-a365-215e1f29f92b.jpeg');">
-										<a onclick="action_logging({pagecode:'01_Big_Banner1'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
-											href="/C/KR/KO/event/detail/CM202506120002525298" title="새창열림" target="_self">
-											<div class="swiper_slide_two_view"
-												style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250619/eb1a92fe-e764-4f2d-9d85-00628db24516.png');">
-												네이버페이 결제 시 포인트 적립 및 할인 쿠폰 혜택! #최대2만원포인트적립 #일본/몽골/중앙아시아/미주 #쿠폰
-											</div>
-										</a>
-									</div>
-									<div class="swiper-slide" data-b1=""
-										style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250623/8d04554c-7f78-429b-92ab-444bbaa718d5.jpeg');">
-										<a onclick="action_logging({pagecode:'01_Big_Banner2'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
-											href="/C/KR/KO/customer/notice/detail?id=CM202506180002525337" title="새창열림" target="_self">
-											<div class="swiper_slide_two_view"
-												style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250623/7439e03a-be1e-4dbe-861a-6b676fc09bff.png');">
-												여름에 새롭게 만나는 인천-푸껫 7월 25일 운항 재개 매일 운항하는 편리한 스케줄로 지금 바로 이용해보세요!
-											</div>
-										</a>
-									</div>
-									<div class="swiper-slide" data-b1=""
-										style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250625/d1033b9f-af1b-4f69-8a5d-d0ef17b20a24.jpeg');">
-										<a onclick="action_logging({pagecode:'01_Big_Banner3'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
-											href="/C/KR/KO/customer/notice/detail?id=CM202506190002525330" title="새창열림" target="_self">
-											<div class="swiper_slide_two_view"
-												style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250625/10afa408-016a-4447-b4d3-bfe36e3ea37b.png');">
-												지방출발 해외 여행의 정석 환승 전용 내항기+국제선 탑승수속도, 수하물도 한 번에 끝! 여행의 여유를 경험해보세요
-											</div>
-										</a>
-									</div>
-									<div class="swiper-slide" data-b1=""
-										style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250623/ed30d6b3-19f2-4761-a008-c4ae313f0f43.jpeg');">
-										<a onclick="action_logging({pagecode:'01_Big_Banner4'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
-											href="/C/KR/KO/event/detail/CM202506170002525293" title="새창열림" target="_self">
-											<div class="swiper_slide_two_view"
-												style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250623/2c0718f2-b926-4ca1-aaba-bf33b87b7a8d.png');">
-												밀레니엄 호텔 런던 제휴 프로모션 항공권 할인에 호텔 혜택, 기내 Wi-Fi까지 늦기 전에, 지금 바로 예약!
-											</div>
-										</a>
-									</div>
-									<div class="swiper-slide" data-b1=""
-										style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250617/621193c4-f544-4163-b557-b2388418e15f.jpeg');">
-										<a onclick="action_logging({pagecode:'01_Big_Banner5'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
-											href="/C/KR/KO/event/detail/CM202506120002525297" title="새창열림" target="_self">
-											<div class="swiper_slide_two_view"
-												style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250617/160b9bfa-6c21-4381-8347-e0613da52f6d.png');">
-												쉼을 담을 시간, 안녕 하와이 #6월 부 매일 운항 #할인 쿠폰 #르네상스 호텔 제휴 할인
-											</div>
-										</a>
-									</div>
-									<div class="swiper-slide" data-b1=""
-										style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250616/d30688c1-7233-438b-a70d-597f8859a424.jpeg');">
-										<a onclick="action_logging({pagecode:'01_Big_Banner6'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
-											href="/C/KR/KO/event/detail/CM202505230002525048" title="새창열림" target="_self">
-											<div class="swiper_slide_two_view"
-												style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250616/3134c777-2c5b-43f0-a486-c4a84040c034.png');">
-												마일리지 나우 마일리지 항공권 할인 노선을 확인하세요!
-											</div>
-										</a>
-									</div>
-									<div class="swiper-slide" data-b1=""
-										style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250618/ba3ba19b-a1a6-4e59-ba86-348a82b8b87f.jpeg');">
-										<a onclick="action_logging({pagecode:'01_Big_Banner7'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
-											href="/C/KR/KO/event/detail/CM202506130002525288" title="새창열림" target="_self">
-											<div class="swiper_slide_two_view"
-												style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250618/7285d1ed-b257-4083-993a-a1c9266418e5.png');">
-												스토리텔링으로 만나는 궁궐투어 feat.매직보딩패스 #역사 속으로 시간 여행
-											</div>
-										</a>
-									</div>
-									<div class="swiper-slide" data-b1=""
-										style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250609/f148d582-73e9-465a-a7f0-b35fea97084c.jpeg');">
-										<a onclick="action_logging({pagecode:'01_Big_Banner8'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
-											href="/C/KR/KO/customer/notice/detail?id=CM202506050002525206" title="새창열림" target="_self">
-											<div class="swiper_slide_two_view"
-												style="background-image:url('https://ozimg.flyasiana.com/temp/image/20250609/45a49da1-44e3-45c3-b750-1d9d8090a94f.png');">
-												호주 문화와 예술의 중심 남반구의 유럽, 멜버른 10월26일부 재운항
-											</div>
-										</a>
-									</div>
-								</div>
-								<div class="mp_wrap">
-									<div class="swiper-pagination"></div>
-									<div class="ps">
-										<a href="javascript:void(0);">
-											<img class="pause" src="/C/pc/image/common/icon_mt_pause.png" alt="정지(pause)">
-											<img class="play" src="/C/pc/image/common/icon_mt_play.png" alt="재생(play)">
-										</a>
-									</div>
-								</div>
-								<a href="javascript:void(0);" class="sb swiper-button-prev" title="이전 슬라이드"></a>
-								<a href="javascript:void(0);" class="sb swiper-button-next" title="다음 슬라이드"></a>
-							</div>
-						</div>
 					</div>
 					<a href="javascript:void(0);" class="btn_fold focus_out_motion" id="foldSection1">
 						<span class="hidden">
@@ -4077,14 +4025,15 @@
 					</a>
 				</div>
 				<div class="contents_area">
-					<!-- @@@include('./include/price_slide.html') -->
 					<div class="slide_inner">
 						<div class="special_slider_wrap_area">
 							<h3 class="hidden">특가 항공권</h3>
 							<div class="special_slider_tit_area">
+								<!-- 타이틀 변경 202507-->
 								<h2 class="special_slider_title">
-									최저가 간편 조회
+									최저가 항공권
 								</h2>
+								<!-- //타이틀 변경 202507 -->
 								<p class="special_slider_subtitle">
 									오늘부터 6개월 내 출발하는 항공편의 최저가와 출발일을 간편하게 조회하실 수 있습니다.
 								</p>
@@ -4095,7 +4044,9 @@
 								</a>
 							</div>
 							<div class="special_slider_wrap wrap_footer_area">
-								<div class="swiper-container special_slider">
+								<!-- class special_slider2 변경 202507 -->
+								<div class="swiper-container special_slider2">
+									<!-- //class special_slider2 변경 202507 -->
 									<div class="swiper-wrapper">
 										<div class="swiper-slide">
 											<a href="javascript:void(0);" class="spc_card" data-nat-cd="KR" data-dom-int-type="I"
@@ -4106,25 +4057,163 @@
 												</div>
 												<div class="info_desc">
 													<div>
+														<!-- 좌석등급 라벨 추가 202507 -->
+														<p class="class economy">
+															이코노미
+														</p>
+														<!-- //좌석등급 라벨 추가 202507 -->
 														<p class="place">
 															<span>서울 / 인천</span>
 															<span class="arrow round"><span class="hidden">에서</span></span>
 															<span>타이베이[台北]</span>
 														</p>
-														<p class="one_way_round_trip">
-															<span>
-																왕복
-															</span>
-														</p>
-														<p class="price">
-															<span class="currency">KRW</span>
-															<span class="num">302,700</span>
-															<span class="start_with">~<span class="hidden">부터</span></span>
-														</p>
+														<!-- flex div 태그 추가 202507 -->
+														<div class="flex">
+															<p class="one_way_round_trip">
+																<span>
+																	왕복
+																</span>
+															</p>
+															<p class="price">
+																<span class="currency">KRW</span>
+																<span class="num">302,700</span>
+																<span class="start_with">~<span class="hidden">부터</span></span>
+															</p>
+														</div>
+														<!-- //flex div 태그 추가 202507 -->
 													</div>
 												</div>
 											</a>
-											<div class="info_detail" id='info_detail_TPE'></div>
+											<div class="info_detail" id='info_detail_TPE'>
+												<!-- detail_inner 임시데이터 202507 -->
+												<div class="detail_inner">
+													<div class="route">
+														<div class="loca"> <span class="abbr">ICN</span> <span class="cname">서울 / 인천</span> </div>
+														<div class="mid"> <span class="hidden"></span> <span class="line left"></span> <span
+																class="plane"></span> <span class="line right"></span> </div>
+														<div class="loca"> <span class="abbr">HKT</span> <span class="cname">푸껫</span> </div>
+													</div>
+													<div class="graph_wrap">
+														<ul class="graph_list" style="height: 180px;">
+															<li> <a href="#none" onclick="javascript:cms.doSubmit(this);" style="height:41.359223300970875%">
+																	<div class="txt">
+																		<p class="date">2025.07</p>
+																		<p class="price"><span class="num">532,500</span>~</p>
+																	</div>
+																</a>
+																<form name="frmLowestPrice_2025.07" method="post"
+																	action="/I/KR/KO/LowerPriceSearchList.do?menuId=CM201802220000728256"> <input type="hidden"
+																		name="callerType" value="ADC_DestinationInfo"> <input type="hidden" name="tripType"
+																		value="RT"> <input type="hidden" name="departureArea" value="KR"> <input type="hidden"
+																		name="departureCity" value="SEL">
+																	<input type="hidden" name="departureAirport" value="ICN"> <input type="hidden"
+																		name="arrivalAirport" value="HKT"> <input type="hidden" name="period" value="6"> <input
+																		type="hidden" name="cabinClass" value="E">
+																	<input type="hidden" name="depDt" value="202507"> <input type="hidden" name="domIntType"
+																		value="I">
+																</form>
+															</li>
+															<li> <a href="#none" onclick="javascript:cms.doSubmit(this);" class="prc_min"
+																	style="height:26.990291262135923%">
+																	<div class="txt">
+																		<p class="date">2025.08</p>
+																		<p class="price"><span class="num">347,500</span>~</p>
+																	</div>
+																</a>
+																<form name="frmLowestPrice_2025.08" method="post"
+																	action="/I/KR/KO/LowerPriceSearchList.do?menuId=CM201802220000728256"> <input type="hidden"
+																		name="callerType" value="ADC_DestinationInfo"> <input type="hidden" name="tripType"
+																		value="RT"> <input type="hidden" name="departureArea" value="KR"> <input type="hidden"
+																		name="departureCity" value="SEL">
+																	<input type="hidden" name="departureAirport" value="ICN"> <input type="hidden"
+																		name="arrivalAirport" value="HKT"> <input type="hidden" name="period" value="6"> <input
+																		type="hidden" name="cabinClass" value="E">
+																	<input type="hidden" name="depDt" value="202508"> <input type="hidden" name="domIntType"
+																		value="I">
+																</form>
+															</li>
+															<li> <a href="#none" onclick="javascript:cms.doSubmit(this);" class="prc_min"
+																	style="height:26.990291262135923%">
+																	<div class="txt">
+																		<p class="date">2025.09</p>
+																		<p class="price"><span class="num">347,500</span>~</p>
+																	</div>
+																</a>
+																<form name="frmLowestPrice_2025.09" method="post"
+																	action="/I/KR/KO/LowerPriceSearchList.do?menuId=CM201802220000728256"> <input type="hidden"
+																		name="callerType" value="ADC_DestinationInfo"> <input type="hidden" name="tripType"
+																		value="RT"> <input type="hidden" name="departureArea" value="KR"> <input type="hidden"
+																		name="departureCity" value="SEL">
+																	<input type="hidden" name="departureAirport" value="ICN"> <input type="hidden"
+																		name="arrivalAirport" value="HKT"> <input type="hidden" name="period" value="6"> <input
+																		type="hidden" name="cabinClass" value="E">
+																	<input type="hidden" name="depDt" value="202509"> <input type="hidden" name="domIntType"
+																		value="I">
+																</form>
+															</li>
+															<li> <a href="#none" onclick="javascript:cms.doSubmit(this);" style="height:27.01359223300971%">
+																	<div class="txt">
+																		<p class="date">2025.10</p>
+																		<p class="price"><span class="num">347,800</span>~</p>
+																	</div>
+																</a>
+																<form name="frmLowestPrice_2025.10" method="post"
+																	action="/I/KR/KO/LowerPriceSearchList.do?menuId=CM201802220000728256"> <input type="hidden"
+																		name="callerType" value="ADC_DestinationInfo"> <input type="hidden" name="tripType"
+																		value="RT"> <input type="hidden" name="departureArea" value="KR"> <input type="hidden"
+																		name="departureCity" value="SEL">
+																	<input type="hidden" name="departureAirport" value="ICN"> <input type="hidden"
+																		name="arrivalAirport" value="HKT"> <input type="hidden" name="period" value="6"> <input
+																		type="hidden" name="cabinClass" value="E">
+																	<input type="hidden" name="depDt" value="202510"> <input type="hidden" name="domIntType"
+																		value="I">
+																</form>
+															</li>
+															<li> <a href="#none" onclick="javascript:cms.doSubmit(this);" style="height:100%">
+																	<div class="txt">
+																		<p class="date">2025.11</p>
+																		<p class="price"><span class="num">1,287,500</span>~</p>
+																	</div>
+																</a>
+																<form name="frmLowestPrice_2025.11" method="post"
+																	action="/I/KR/KO/LowerPriceSearchList.do?menuId=CM201802220000728256"> <input type="hidden"
+																		name="callerType" value="ADC_DestinationInfo"> <input type="hidden" name="tripType"
+																		value="RT"> <input type="hidden" name="departureArea" value="KR"> <input type="hidden"
+																		name="departureCity" value="SEL">
+																	<input type="hidden" name="departureAirport" value="ICN"> <input type="hidden"
+																		name="arrivalAirport" value="HKT"> <input type="hidden" name="period" value="6"> <input
+																		type="hidden" name="cabinClass" value="E">
+																	<input type="hidden" name="depDt" value="202511"> <input type="hidden" name="domIntType"
+																		value="I">
+																</form>
+															</li>
+															<li> <a href="#none" onclick="javascript:cms.doSubmit(this);" style="height:100%">
+																	<div class="txt">
+																		<p class="date">2025.12</p>
+																		<p class="price"><span class="num">1,287,500</span>~</p>
+																	</div>
+																</a>
+																<form name="frmLowestPrice_2025.12" method="post"
+																	action="/I/KR/KO/LowerPriceSearchList.do?menuId=CM201802220000728256"> <input type="hidden"
+																		name="callerType" value="ADC_DestinationInfo"> <input type="hidden" name="tripType"
+																		value="RT"> <input type="hidden" name="departureArea" value="KR"> <input type="hidden"
+																		name="departureCity" value="SEL">
+																	<input type="hidden" name="departureAirport" value="ICN"> <input type="hidden"
+																		name="arrivalAirport" value="HKT"> <input type="hidden" name="period" value="6"> <input
+																		type="hidden" name="cabinClass" value="E">
+																	<input type="hidden" name="depDt" value="202512"> <input type="hidden" name="domIntType"
+																		value="I">
+																</form>
+															</li>
+														</ul>
+													</div>
+													<div class="desc">
+														<p><span> <span class="date">2025.07.22 AM 02:01</span> 기준</span><span> 이코노미 / 왕복총액 / 단위 : KRW </span>
+														</p>
+													</div>
+												</div><a href="#none" class="spc_detail_close"><span class="hidden">닫기</span></a>
+												<!-- //detail_inner 임시데이터 202507 -->
+											</div>
 										</div>
 										<div class="swiper-slide">
 											<a href="javascript:void(0);" class="spc_card" data-nat-cd="KR" data-dom-int-type="I"
@@ -4135,21 +4224,30 @@
 												</div>
 												<div class="info_desc">
 													<div>
+														<!-- 좌석등급 라벨 추가 202507 -->
+														<p class="class business">
+															비즈니스
+														</p>
+														<!-- //좌석등급 라벨 추가 202507 -->
 														<p class="place">
 															<span>서울 / 인천</span>
 															<span class="arrow round"><span class="hidden">에서</span></span>
 															<span>런던 / 히드로</span>
 														</p>
-														<p class="one_way_round_trip">
-															<span>
-																왕복
-															</span>
-														</p>
-														<p class="price">
-															<span class="currency">KRW</span>
-															<span class="num">1,036,900</span>
-															<span class="start_with">~<span class="hidden">부터</span></span>
-														</p>
+														<!-- flex div 태그 추가 202507 -->
+														<div class="flex">
+															<p class="one_way_round_trip">
+																<span>
+																	왕복
+																</span>
+															</p>
+															<p class="price">
+																<span class="currency">KRW</span>
+																<span class="num">1,036,900</span>
+																<span class="start_with">~<span class="hidden">부터</span></span>
+															</p>
+														</div>
+														<!-- //flex div 태그 추가 202507 -->
 													</div>
 												</div>
 											</a>
@@ -4169,16 +4267,20 @@
 															<span class="arrow round"><span class="hidden">에서</span></span>
 															<span>오사카 / 간사이</span>
 														</p>
-														<p class="one_way_round_trip">
-															<span>
-																왕복
-															</span>
-														</p>
-														<p class="price">
-															<span class="currency">KRW</span>
-															<span class="num">203,400</span>
-															<span class="start_with">~<span class="hidden">부터</span></span>
-														</p>
+														<!-- flex div 태그 추가 202507 -->
+														<div class="flex">
+															<p class="one_way_round_trip">
+																<span>
+																	왕복
+																</span>
+															</p>
+															<p class="price">
+																<span class="currency">KRW</span>
+																<span class="num">203,400</span>
+																<span class="start_with">~<span class="hidden">부터</span></span>
+															</p>
+														</div>
+														<!-- //flex div 태그 추가 202507 -->
 													</div>
 												</div>
 											</a>
@@ -4198,16 +4300,20 @@
 															<span class="arrow round"><span class="hidden">에서</span></span>
 															<span>싱가포르</span>
 														</p>
-														<p class="one_way_round_trip">
-															<span>
-																왕복
-															</span>
-														</p>
-														<p class="price">
-															<span class="currency">KRW</span>
-															<span class="num">433,100</span>
-															<span class="start_with">~<span class="hidden">부터</span></span>
-														</p>
+														<!-- flex div 태그 추가 202507 -->
+														<div class="flex">
+															<p class="one_way_round_trip">
+																<span>
+																	왕복
+																</span>
+															</p>
+															<p class="price">
+																<span class="currency">KRW</span>
+																<span class="num">433,100</span>
+																<span class="start_with">~<span class="hidden">부터</span></span>
+															</p>
+														</div>
+														<!-- //flex div 태그 추가 202507 -->
 													</div>
 												</div>
 											</a>
@@ -4227,16 +4333,18 @@
 															<span class="arrow round"><span class="hidden">에서</span></span>
 															<span>삿포로 / 치토세 / 북해도(홋카이도)</span>
 														</p>
-														<p class="one_way_round_trip">
-															<span>
-																왕복
-															</span>
-														</p>
-														<p class="price">
-															<span class="currency">KRW</span>
-															<span class="num">233,700</span>
-															<span class="start_with">~<span class="hidden">부터</span></span>
-														</p>
+														<div class="flex">
+															<p class="one_way_round_trip">
+																<span>
+																	왕복
+																</span>
+															</p>
+															<p class="price">
+																<span class="currency">KRW</span>
+																<span class="num">233,700</span>
+																<span class="start_with">~<span class="hidden">부터</span></span>
+															</p>
+														</div>
 													</div>
 												</div>
 											</a>
@@ -4256,16 +4364,20 @@
 															<span class="arrow round"><span class="hidden">에서</span></span>
 															<span>파리 / 샤를 드 골</span>
 														</p>
-														<p class="one_way_round_trip">
-															<span>
-																왕복
-															</span>
-														</p>
-														<p class="price">
-															<span class="currency">KRW</span>
-															<span class="num">1,304,100</span>
-															<span class="start_with">~<span class="hidden">부터</span></span>
-														</p>
+														<!-- flex div 태그 추가 202507 -->
+														<div class="flex">
+															<p class="one_way_round_trip">
+																<span>
+																	왕복
+																</span>
+															</p>
+															<p class="price">
+																<span class="currency">KRW</span>
+																<span class="num">1,304,100</span>
+																<span class="start_with">~<span class="hidden">부터</span></span>
+															</p>
+														</div>
+														<!-- //flex div 태그 추가 202507 -->
 													</div>
 												</div>
 											</a>
@@ -4285,16 +4397,20 @@
 															<span class="arrow round"><span class="hidden">에서</span></span>
 															<span>마닐라</span>
 														</p>
-														<p class="one_way_round_trip">
-															<span>
-																왕복
-															</span>
-														</p>
-														<p class="price">
-															<span class="currency">KRW</span>
-															<span class="num">249,800</span>
-															<span class="start_with">~<span class="hidden">부터</span></span>
-														</p>
+														<!-- flex div 태그 추가 202507 -->
+														<div class="flex">
+															<p class="one_way_round_trip">
+																<span>
+																	왕복
+																</span>
+															</p>
+															<p class="price">
+																<span class="currency">KRW</span>
+																<span class="num">249,800</span>
+																<span class="start_with">~<span class="hidden">부터</span></span>
+															</p>
+														</div>
+														<!-- //flex div 태그 추가 202507 -->
 													</div>
 												</div>
 											</a>
@@ -4314,16 +4430,20 @@
 															<span class="arrow round"><span class="hidden">에서</span></span>
 															<span>호찌민</span>
 														</p>
-														<p class="one_way_round_trip">
-															<span>
-																왕복
-															</span>
-														</p>
-														<p class="price">
-															<span class="currency">KRW</span>
-															<span class="num">315,500</span>
-															<span class="start_with">~<span class="hidden">부터</span></span>
-														</p>
+														<!-- flex div 태그 추가 202507 -->
+														<div class="flex">
+															<p class="one_way_round_trip">
+																<span>
+																	왕복
+																</span>
+															</p>
+															<p class="price">
+																<span class="currency">KRW</span>
+																<span class="num">315,500</span>
+																<span class="start_with">~<span class="hidden">부터</span></span>
+															</p>
+														</div>
+														<!-- //flex div 태그 추가 202507 -->
 													</div>
 												</div>
 											</a>
@@ -4343,16 +4463,20 @@
 															<span class="arrow round"><span class="hidden">에서</span></span>
 															<span>광저우[廣州]</span>
 														</p>
-														<p class="one_way_round_trip">
-															<span>
-																왕복
-															</span>
-														</p>
-														<p class="price">
-															<span class="currency">KRW</span>
-															<span class="num">307,400</span>
-															<span class="start_with">~<span class="hidden">부터</span></span>
-														</p>
+														<!-- flex div 태그 추가 202507 -->
+														<div class="flex">
+															<p class="one_way_round_trip">
+																<span>
+																	왕복
+																</span>
+															</p>
+															<p class="price">
+																<span class="currency">KRW</span>
+																<span class="num">307,400</span>
+																<span class="start_with">~<span class="hidden">부터</span></span>
+															</p>
+														</div>
+														<!-- //flex div 태그 추가 202507 -->
 													</div>
 												</div>
 											</a>
@@ -4372,16 +4496,20 @@
 															<span class="arrow round"><span class="hidden">에서</span></span>
 															<span>상하이[上海] / 푸동</span>
 														</p>
-														<p class="one_way_round_trip">
-															<span>
-																왕복
-															</span>
-														</p>
-														<p class="price">
-															<span class="currency">KRW</span>
-															<span class="num">272,000</span>
-															<span class="start_with">~<span class="hidden">부터</span></span>
-														</p>
+														<!-- flex div 태그 추가 202507 -->
+														<div class="flex">
+															<p class="one_way_round_trip">
+																<span>
+																	왕복
+																</span>
+															</p>
+															<p class="price">
+																<span class="currency">KRW</span>
+																<span class="num">272,000</span>
+																<span class="start_with">~<span class="hidden">부터</span></span>
+															</p>
+														</div>
+														<!-- //flex div 태그 추가 202507 -->
 													</div>
 												</div>
 											</a>
@@ -4397,13 +4525,14 @@
 								<div class="special_slider_wrap_footer">
 									<a onclick="action_logging({pagecode:'01_BEST_03'});cms.goToLink($(this).attr('href'), $(this).attr('target'));return false;"
 										href="https://flyasiana.com/I/KR/KO/TargetSalesList.do?VxTm8==NjE2Nw==" target="_self">
-										<img src="https://ozimg.flyasiana.com/main_banner/202506/PC_BANNER_BESTOFFERJP_09.jpg">
+										<!-- 중간 배너 이미지 변경 202507 -->
+										<img src="/C/pc/image/main/renew2025/img_banner_bestoffer.png">
+										<!-- //중간 배너 이미지 변경 202507 -->
 									</a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- @@@include('./include/event.html') -->
 					<div class="section_text event_title_area">
 						<h2>이벤트</h2>
 						<p class="desc">아시아나항공만의 특별한 혜택을 누려보세요.</p>
@@ -4428,13 +4557,19 @@
 					-->
 					<!-- 이벤트 3개이상 swiper -->
 					<div class="event_slider_wrap _event-slider" style="">
-						<div class="swiper-container event_slider swiper-container-horizontal">
-							<div class="swiper-wrapper" style="transform: translate3d(-1110px, 0px, 0px); transition-duration: 0ms;">
+						<!-- 클래스 변경 event_slider2 202507 -->
+						<div class="swiper-container event_slider2">
+						<!-- //클래스 변경 event_slider2 202507 -->
+							<div class="swiper-wrapper">
 								<div class="swiper-slide">
 									<div class="event_card_wrap">
 										<a href="https://flyasiana.com/C/KR/KO/customer/notice/detail?id=CM202309150001942944" class="event_card" onclick="action_logging({pagecode:'01_evt_01'});">
 											<div class="evt_img">
 												<img src="https://ozimg.flyasiana.com/temp/image/20250313/f2cd8c50-3241-408f-92b6-eb2102a5c9a6.jpeg" alt="">
+												<!-- 북마크 위치 이동 202507-->
+												<div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span>
+												</div>
+												<!-- //북마크 위치 이동 202507-->
 											</div>
 											<div class="evt_info">
 												<dl>
@@ -4447,7 +4582,7 @@
 													</dd>
 												</dl>
 											</div>
-											<div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span></div>
+											<!-- 북마크 위치 이동 202507-->
 										</a>
 									</div>
 								</div>
@@ -4455,6 +4590,10 @@
 									<div class="event_card_wrap"> <a href="/C/KR/KO/event/detail/CM202201270001564905" class="event_card" onclick="action_logging({pagecode:'01_evt_01'});">
 											<div class="evt_img">
 												<img src="https://ozimg.flyasiana.com/temp/image/20240201/3ce8d05f-e070-4d93-974f-5ba87014ca75.jpeg" alt="">
+												<!-- 북마크 위치 이동 202507-->
+												<div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span>
+												</div>
+												<!-- //북마크 위치 이동 202507-->
 											</div>
 											<div class="evt_info">
 												<dl>
@@ -4467,7 +4606,7 @@
 													</dd>
 												</dl>
 											</div>
-											<div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span></div>
+											<!-- 북마크 위치 이동 202507-->
 										</a>
 									</div>
 								</div>
@@ -4476,6 +4615,10 @@
 										<a href="/C/KR/KO/event/detail/CM202405100002497066" class="event_card" onclick="action_logging({pagecode:'01_evt_01'});">
 											<div class="evt_img">
 												<img src="https://ozimg.flyasiana.com/temp/image/20240514/76907f75-a0bb-408d-842b-3ded220d45e6.jpeg" alt="">
+												<!-- 북마크 위치 이동 202507-->
+												<div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span>
+												</div>
+												<!-- //북마크 위치 이동 202507-->
 											</div>
 											<div class="evt_info">
 												<dl>
@@ -4488,7 +4631,7 @@
 													</dd>
 												</dl>
 											</div>
-											<div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span></div>
+											<!-- 북마크 위치 이동 202507-->
 										</a></div>
 								</div>
 								<div class="swiper-slide">
@@ -4496,6 +4639,10 @@
 										<a href="/C/KR/KO/event/detail/CM202505090002524892" class="event_card" onclick="action_logging({pagecode:'01_evt_01'});">
 											<div class="evt_img">
 												<img src="https://ozimg.flyasiana.com/temp/image/20250509/0e623dfa-7273-4e6d-a121-dd4fc8684eb3.jpeg" alt="">
+												<!-- 북마크 위치 이동 202507-->
+												<div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span>
+												</div>
+												<!-- //북마크 위치 이동 202507-->
 											</div>
 											<div class="evt_info">
 												<dl>
@@ -4508,7 +4655,7 @@
 													</dd>
 												</dl>
 											</div>
-											<div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span></div>
+											<!-- 북마크 위치 이동 202507-->
 										</a>
 									</div>
 								</div>
@@ -4517,6 +4664,10 @@
 										<a href="/C/KR/KO/event/detail/CM202505130002524937" class="event_card" onclick="action_logging({pagecode:'01_evt_01'});">
 											<div class="evt_img">
 												<img src="https://ozimg.flyasiana.com/temp/image/20250513/d82fb697-7bf6-4339-9a80-47e4875e0be9.jpeg" alt="">
+												<!-- 북마크 위치 이동 202507-->
+												<div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span>
+												</div>
+												<!-- //북마크 위치 이동 202507-->
 											</div>
 											<div class="evt_info">
 												<dl>
@@ -4529,25 +4680,63 @@
 													</dd>
 												</dl>
 											</div>
-											<div class="bookmark_wrap"><span class="btn_bookmark42"><span class="hidden">즐겨찾기 선택 안됨</span></span></div>
+											<!-- 북마크 위치 이동 202507-->
 										</a>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="swiper_btnarea">
-							<a href="javascript:sharpNothig();" class="btn_prev evt_prev" title="이전 슬라이드">&gt;이전 슬라이드</a>
-							<a href="javascript:sharpNothig();" class="btn_next evt_next" title="다음 슬라이드">&gt;다음 슬라이드</a>
+						<!-- wrap 추가 202507 -->
+						<div class="btn_wrap">
+							<div class="swiper_btnarea">
+								<a href="#none" class="btn_prev evt_prev" title="이전 슬라이드">>이전 슬라이드</a>
+								<a href="#none" class="btn_next evt_next" title="다음 슬라이드">>다음 슬라이드</a>
+							</div>
+							<div class="swiper_control white">
+								<div class="swiper-pagination evt_paging"></div>
+							</div>
+							<!-- 전체보기 버튼 추가 202507 -->
+							<a href="#none"
+								onClick="action_logging({pagecode:'01_evt_02'}); cms.goToLink('/C/KR/KO/event/index?menuId=CM201802220000728482');"
+								class="btn_arrlink new_btn_arrlink">
+								전체보기
+							</a>
+							<!-- 전체보기 버튼 추가 202507 -->//
 						</div>
-						<div class="swiper_control white">
-							<div class="swiper-pagination evt_paging swiper-pagination-clickable swiper-pagination-bullets">
-								<a href="#none" class="swiper-pagination-bullet swiper-pagination-bullet-active"><span class="hidden">1번째 슬라이드</span></a>
-								<a href="#none" class="swiper-pagination-bullet"><span class="hidden">2번째 슬라이드</span></a>
-								<a href="#none" class="swiper-pagination-bullet"><span class="hidden">3번째 슬라이드</span></a>
-								<a href="#none" class="swiper-pagination-bullet"><span class="hidden">4번째 슬라이드</span></a>
-								<a href="#none" class="swiper-pagination-bullet"><span class="hidden">5번째 슬라이드</span></a>
+						<!-- //wrap 추가 202507 -->
+						<!-- thumbs swiper 추가 202507 -->
+						<div class="event_thumb_wrap">
+							<div class="event_thumb_box event_thumb_swiper swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide is-active">
+										<p class="info_img">
+											<img src="https://ozimg.flyasiana.com/temp/image/20250313/f2cd8c50-3241-408f-92b6-eb2102a5c9a6.jpeg" alt="">
+										</p>
+									</div>
+									<div class="swiper-slide">
+										<p class="info_img">
+											<img src="https://ozimg.flyasiana.com/temp/image/20240201/3ce8d05f-e070-4d93-974f-5ba87014ca75.jpeg" alt="">
+										</p>
+									</div>
+									<div class="swiper-slide">
+										<p class="info_img">
+											<img src="https://ozimg.flyasiana.com/temp/image/20240514/76907f75-a0bb-408d-842b-3ded220d45e6.jpeg" alt="">
+										</p>
+									</div>
+									<div class="swiper-slide">
+										<p class="info_img">
+											<img src="https://ozimg.flyasiana.com/temp/image/20250509/0e623dfa-7273-4e6d-a121-dd4fc8684eb3.jpeg" alt="">
+										</p>
+									</div>
+									<div class="swiper-slide">
+										<p class="info_img">
+											<img src="https://ozimg.flyasiana.com/temp/image/20250513/d82fb697-7bf6-4339-9a80-47e4875e0be9.jpeg" alt="">
+										</p>
+									</div>
+								</div>
 							</div>
 						</div>
+						<!-- //thumbs swiper 추가 202507 -->
 					</div>
 					<!--// 이벤트 3개이상 swiper -->
 					<!-- 이벤트 2개일때 -->
@@ -4596,9 +4785,9 @@
 							</a>
 						</div>
 					</div>
+					<!-- 공지사항, 제휴서비스 noti_ext_wrap,inner div 태그 추가 202507 -->
 					<div class="noti_ext_wrap">
 						<div class="inner">
-							<!-- @@@include('./include/notice_ext_service.html') -->
 							<div class="notice_box">
 								<section>
 									<article>
@@ -4615,27 +4804,44 @@
 									</article>
 									<article>
 										<ul data-icon="공지">
+											<!-- 임시 데이터 202507 -->
 											<li class="flag_on">
 												<span class="txt_notice">공지</span>
+												<!-- new flag 위치 변경 202507-->
+												<span class="new_flag">NEW</span>
+												<!-- //new flag 위치 변경 202507-->
 												<a href="#CM202505070002524854" onclick="action_logging({pagecode:'01_NOTI_01'});">
 													<p title="부산/대구 - 인천 구간 환승 전용 내항기 운항 안내">부산/대구 - 인천 구간 환승 전용 내항기 운항 안내</p>
 													<span class="date_number">2025.05.09</span>
 												</a>
 											</li>
 											<li class="flag_on">
+												<span class="txt_notice">공지</span>
 												<a href="#CM202506190002525330" onclick="action_logging({pagecode:'01_NOTI_01'});">
 													<p title="부산/대구 환승 전용 내항기 온라인 예약 안내">부산/대구 환승 전용 내항기 온라인 예약 안내</p>
-													<span class="new_flag">NEW</span>
 													<span class="date_number">2025.06.25</span>
 												</a>
 											</li>
 											<li class="flag_on">
+												<span class="new_flag">NEW</span>
 												<a href="#CM202506230002525403" onclick="action_logging({pagecode:'01_NOTI_01'});">
 													<p title="에어부산 인천국제공항 터미널 이전 안내 (7월 29일부)  ">에어부산 인천국제공항 터미널 이전 안내 (7월 29일부) </p>
-													<span class="new_flag">NEW</span>
 													<span class="date_number">2025.06.24</span>
 												</a>
 											</li>
+											<li>
+												<a href="#CM202505070002524854" onclick="action_logging({pagecode:'01_NOTI_01'});">
+													<p title="부산/대구 - 인천 구간 환승 전용 내항기 운항 안내">부산/대구 - 인천 구간 환승 전용 내항기 운항 안내</p>
+													<span class="date_number">2025.05.09</span>
+												</a>
+											</li>
+											<li>
+												<a href="#CM202506190002525330" onclick="action_logging({pagecode:'01_NOTI_01'});">
+													<p title="부산/대구 환승 전용 내항기 온라인 예약 안내">부산/대구 환승 전용 내항기 온라인 예약 안내</p>
+													<span class="date_number">2025.06.25</span>
+												</a>
+											</li>
+											<!-- //임시 데이터 202507 -->
 										</ul>
 									</article>
 								</section>
@@ -4733,7 +4939,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- @@@include('./include/right_quick_menu.html') -->
+					<!-- //공지사항, 제휴서비스 noti_ext_wrap,inner div 태그 추가 202507 -->
 					<div class="right_wing_subbtn">
 						<div class="dragg_area">
 							<a href="javascript:void(0);" class="btnbox_area_btn" title="Quick Menu">
@@ -4767,9 +4973,58 @@
 							<span class="hidden">상단으로 이동</span>
 						</a>
 					</div>
+					<!-- 이번주 인기조회 영역 추가 202507 -->
+					<div class="right_wing">
+						<div class="inner">
+							<div class="best_week">
+								<p class="best_tit">
+									이번주 인기조회
+								</p>
+								<ul class="best_list">
+									<li>
+										<a href="#">
+											<span>로스앤젤레스</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span>도쿄</span>
+											<span class="new_flag">NEW</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span>사이판</span>
+										</a>
+									</li>
+									<li class="black">
+										<a href="#">
+											<span>프랑크푸르트</span>
+											<span class="new_flag">NEW</span>
+										</a>
+									</li>
+									<li class="black">
+										<a href="#">
+											<span>싱가포르</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<a class="btn_coupon" href="/C/KR/KO/event/detail/CM202201270001564905" title="새창" target="_blank">
+								<span class="btn_coupon_text">신규회원 웰컴쿠폰</span>
+							</a>
+							<a class="btn_chatbot" href="#" title="새창"
+								onclick="action_logging({pagecode:'01_GNB_08'}); fnOpenChatbot('All_PC_CB');return false;">
+								<span class="btn_chatbot-text">쳇봇</span>
+							</a>
+							<a href="javascript:void(0);" id="goTop" onClick="action_logging({pagecode:'01_MVE_02'});" title="상단으로 이동">
+								<span class="hidden">상단으로 이동</span>
+							</a>
+						</div>
+					</div>
+					<!-- //이번주 인기조회 영역 추가 202507 -->
 				</div>
 			</div>
-			<!-- @@@include('./include/footer.html') -->
 			<footer>
 				<div class="inner">
 					<!-- group_wrap -->
