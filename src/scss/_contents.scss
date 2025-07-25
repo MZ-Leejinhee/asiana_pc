@@ -680,6 +680,15 @@
               }
             }
           }
+          &:has(label span.abbr){
+            &::before {
+              display: none;
+            }
+            label {
+              left: 4px;
+              text-align: left;
+            }
+          }
         }
         .quickbookings_change {
           display: flex;
