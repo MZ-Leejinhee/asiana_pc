@@ -219,6 +219,23 @@
     box-shadow: none;
     z-index: 300;
     transform: translate(-50%, 0%) !important;
+    .shadow_layer {
+      border: 1px solid #F2F0EB;
+      border-radius: 16px;
+      .btn_step_wrap {
+        border-radius: 0 0 16px 16px;
+      }
+    }
+    .calendar_layer {
+      border-radius: 16px;
+      .calendar_top {
+        border-radius: 16px 16px 0 0;
+      }
+
+      .btn_step_wrap {
+        border-radius: 0 0 16px 16px;
+      }
+    }
   }
   // nav 버튼
   .quick-service__nav {
@@ -557,9 +574,13 @@
         }
       }
       .shadow_layer {
+        width: 1216px;
+        top: 130px !important;
+        border: 1px solid #F2F0EB;
         border-radius: 16px;
       }
       .calendar_layer {
+        width: 1216px;
         .calendar_top {
           border-radius: 16px 16px 0 0;
         }
@@ -1650,11 +1671,10 @@
   }
   .right_wing {
     position: fixed;
-    top: 50%;
+    bottom: 9.55%;
     right: 20px;
     width: 160px;
-    z-index: 1400;
-    transform: translateY(-50%);
+    z-index: 1000;
     .inner {
       .best_week {
         .best_tit {
