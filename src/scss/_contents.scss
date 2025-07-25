@@ -50,11 +50,21 @@
             max-width: 190px;
             input[type="checkbox"] {
               & + label {
-                padding: 0 0 0 19px;
+                padding: 0 0 0 24px;
                 font-size: 14px;
                 font-weight: 300;
                 letter-spacing: -0.5px;
                 background: url("../image/main/renew2025/img_checkbox_off.png") no-repeat left center;
+              }
+              &:hover {
+                & + label {
+                  background: url("../image/main/renew2025/img_checkbox_hover.png") no-repeat left center;
+                }
+              }
+              &:checked {
+                & + label {
+                  background: url("../image/main/renew2025/img_checkbox_on.png") no-repeat left center;
+                }
               }
             }
           }
@@ -94,7 +104,7 @@
             background: url("../image/main/renew2025/noti_pause.svg") no-repeat center;
           }
           a.stop {
-            //재생 아이콘 추가
+            background: url("../image/main/renew2025/noti_play.svg") no-repeat center;
           }
         }
         .noti_close {
@@ -162,11 +172,6 @@
         }
       }
     }
-  }
-
-  // cookie
-  .main_notibox {    
-    .notice_fixing {}
   }
 
   // common
@@ -415,7 +420,9 @@
           background: url("../image/main/renew2025/ico_star_off.png") no-repeat center;
         }
         &.on {
-          //관심노선 on
+          &::after {
+            background: url("../image/main/renew2025/ico_star_on.png") no-repeat center;
+          }
         }
       }
     }
@@ -435,10 +442,20 @@
         // 체크박스 이미지 교체
         input[type="checkbox"] {
           & + label {
-            padding: 0 0 0 20px;
+            padding: 0 0 0 25px;
             color: #2C2A27;
             font-size: 14px;
             background: url("../image/main/renew2025/img_checkbox_off.png") no-repeat left center;
+          }
+          &:hover {
+            & + label {
+              background: url("../image/main/renew2025/img_checkbox_hover.png") no-repeat left center;
+            }
+          }
+          &:checked {
+            & + label {
+              background: url("../image/main/renew2025/img_checkbox_on.png") no-repeat left center;
+            }
           }
         }
       }
@@ -1529,53 +1546,39 @@
             margin-right: 0;
             border-radius: 20px;
             a {
-              padding: 32px 0 20px 32px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 32px 20px;
               border: none;
               > div {
-                display: none;
+                position: relative;
+                top: auto;
+                left: auto;
+                height: auto;
+                justify-content: flex-start;
+                margin-bottom: 8px;
+                > div {
+                  font-size: 0;
+                }
               }
               &.insurance {
-                background: url("../image/main/renew2025/img_bg_insurance.png") no-repeat;
-              }
-              &.myrealtrip {
-                background: url("../image/main/renew2025/img_bg_myrealtrip.png") no-repeat;
+                background: url("../image/main/renew2025/ext_bg_insurance.png") no-repeat;
                 dl {
                   dt {
-                    color: #fff;
+                    color: #000;
                   }
                   dd {
                     .srv_info {
                       .desc {
-                        color: #fff;
+                        color: #000;
                       }
                     }
                   }
                 }
               }
-              dl {
-                dt {
-                  position: relative;
-                  font-size: 20px;
-                  text-align: left;
-                  img.logo {
-                    display: block;
-                    margin-bottom: 8px;
-                  }
-                }
-                dd {
-                  .srv_info {
-                    padding: 0;
-                    margin-top: 12px;
-                     .desc {
-                      color: #000;
-                      line-height: 1.4;
-                      font-weight: 300;
-                      text-align: left;
-                    };
-                  }
-                }
-              }
-              &:not(.insurance){
+              &.myrealtrip {
+                background: url("../image/main/renew2025/ext_bg_myrealtrip.png") no-repeat;
                 dl {
                   dt {
                     &::after {
@@ -1587,7 +1590,41 @@
                       background: url("../image/main/renew2025/ico_arrR_white.png") no-repeat center;
                     }
                   }
-                }                
+                }
+              }
+              &.a350_wifi {
+                background: url("../image/main/renew2025/ext_bg_wifi.png") no-repeat;
+                > div {
+                  display: none;
+                }
+              }
+              &.earlyseat {
+                background: url("../image/main/renew2025/ext_bg_earlyseat.png") no-repeat;
+                > div {
+                  display: none;
+                }
+              }
+              dl {
+                max-width: 250px;
+                dt {                  
+                  position: relative;
+                  color: #fff;
+                  font-size: 20px;
+                  text-align: left;
+                  line-height: 1.2;
+                }
+                dd {
+                  .srv_info {
+                    padding: 0;
+                    margin-top: 12px;
+                     .desc {
+                      color: #fff;
+                      line-height: 1.3;
+                      font-weight: 300;
+                      text-align: left;
+                    };
+                  }
+                }
               }
             }
           }

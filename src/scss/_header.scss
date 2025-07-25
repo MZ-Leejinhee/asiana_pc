@@ -139,4 +139,49 @@
       }
     }
   }
+
+  //nav_right
+  .nav_right {
+    margin-top: 20px;
+    .chatbot_area {
+      padding-right: 14px;
+      .btn_chatbot {
+        width: 48px;
+        height: 48px;
+        background: url("../image/main/renew2025/gnb_ico_chatbot.svg") no-repeat center;
+        &.on,
+        &:hover,
+        &:focus {
+          background: url("../image/main/renew2025/gnb_ico_chatbot.svg") no-repeat center;
+        }
+      }
+    }
+    .myasiana_area {
+      .btn_myasiana {
+        width: 48px;
+        height: 48px;
+        margin-right: 4px;
+        background: url("../image/main/renew2025/gnb_ico_myasiana_off.svg") no-repeat center;
+        &.on,
+        &:hover {
+          background: url("../image/main/renew2025/gnb_ico_myasiana_on.svg") no-repeat center;
+        }
+        .newnum {
+          top: 3px;
+          left: 26px;
+        }
+      }
+    }
+    .search_area {
+      .btn_search {
+        width: 48px;
+        height: 48px;
+        background: url("../image/main/renew2025/gnb_ico_search_off.svg") no-repeat center;
+        &.on,
+        &:hover {
+          background: url("../image/main/renew2025/gnb_ico_search_on.svg") no-repeat center;
+        }
+      }
+    }
+  }
 }
