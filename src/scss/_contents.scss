@@ -652,6 +652,11 @@
             label {
               left: -4px;
               text-align: right;
+              .abbr {
+                & + span {
+                  width: 92px;
+                }
+              }
             }
             input[type="text"] {
               padding: 0 4px;
