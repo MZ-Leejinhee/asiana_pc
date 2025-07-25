@@ -185,7 +185,6 @@ $(document).on('click', '.special_slider_wrap .spc_detail_close', function (e) {
   e.preventDefault();
   spcClose();
 });
-
 specialSlider2();
 
 //이벤트 슬라이드 설정

@@ -1433,9 +1433,12 @@
                 height: 74px;
                 padding: 27px 16px 27px 28px;
                 align-items: center;
-                border-bottom: 0;
-                & + li {
-                  border-top: 1px solid #C3C0B9;
+                border-bottom: 1px solid #C3C0B9;
+                &:last-child{
+                  border-bottom: 0;
+                }
+                &:hover {
+                  border-color: #78716E;
                 }
                 > a {
                   width: 100%;
@@ -1697,7 +1700,7 @@
               font-size: 16px;
               font-weight: 500;
               color: #000;
-              transition: background-color 0.3s, color 0.3s;
+              transition: all 0.3s;
               .new_flag {
                 display: inline-block;
                 margin: 4px 0 0 4px;
@@ -1708,12 +1711,13 @@
               }
               &::before {
                 content: '';
+                overflow: hidden;
                 width: 0;
                 height: 20px;
                 margin-right: 4px;
                 background: url("../image/main/renew2025/ico_airplane_w.svg") no-repeat;
-                transform: translateX(-20px);
-                transition: transform 0.3s, opacity 0.3s;
+                transform: translateX(-20px);                
+                transition: all 0.3s;
                 opacity: 0;
               }
               &:hover {
@@ -1722,6 +1726,7 @@
                   width: 20px;
                   opacity: 1;
                   transform: translateX(0);
+                  transition-delay: 0.1s;
                 }
               }
             }
