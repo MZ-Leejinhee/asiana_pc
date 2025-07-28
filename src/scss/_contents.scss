@@ -539,6 +539,12 @@
         label {
           font-size: 14px;
         }
+        &.on {
+          input[type="text"] {
+            cursor: initial;
+            border-color: #f60000;
+          }
+        }
         &.loct {
           &::before {
             width: 17px;
