@@ -84,8 +84,8 @@
       bottom: -5px;
     }
     .nav_cont {
-      left: -360px;
-      width: 1216px;
+      left: -362px;
+      width: 1236px;
       &.col3 {
         .nav_d2 {
           width: calc(100% - 266px);
@@ -107,9 +107,10 @@
           .nav_d2 {
             width: 100%;
             > li {
-              width: 18.7%;
+              width: 20%;
               &:last-child {
-                width: 266px;
+                width: 289px;
+                padding: 0 0 0 20px;
               }
             }
           }
