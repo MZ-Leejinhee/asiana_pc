@@ -22,6 +22,7 @@
     &.main {
       &.fixed_white{
         border-bottom: 1px solid #F2F0EB;
+        transition: none;
       }
     } 
     &.open {
@@ -155,6 +156,8 @@
 
   //nav_right
   .nav_right {
+    display: flex;
+    align-items: center;
     margin-top: 20px;
     .chatbot_area {
       padding-right: 14px;
