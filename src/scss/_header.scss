@@ -1,3 +1,86 @@
+// 다국어 분기 gnb 위치
+:lang(en) {
+  .renew2025 {
+    nav {
+      .nav_cont {
+        left: -430px;
+      }
+    }
+  }
+}
+:lang(ja) {
+  .renew2025 {
+    nav {
+      .nav_cont {
+        left: -430px;
+      }
+    }
+  }
+}
+:lang(cn) {
+  .renew2025 {
+    nav {
+      .nav_cont {
+        left: -446px;
+      }
+    }
+  }
+}
+:lang(zh) {
+  .renew2025 {
+    nav {
+      .nav_cont {
+        left: -480px;
+      }
+    }
+  }
+}
+:lang(vi) {
+  .renew2025 {
+    nav {
+      .nav_cont {
+        left: -338px;
+      }
+    }
+  }
+}
+:lang(es) {
+  .renew2025 {
+    nav {
+      .nav_cont {
+        left: -450px;
+      }
+    }
+  }
+}
+:lang(de) {
+  .renew2025 {
+    nav {
+      .nav_cont {
+        left: -374px;
+      }
+    }
+  }
+}
+:lang(fr) {
+  .renew2025 {
+    nav {
+      .nav_cont {
+        left: -374px;
+      }
+    }
+  }
+}
+:lang(ru) {
+  .renew2025 {    
+    nav {
+      .nav_cont {
+        left: -304px;
+      }
+    }
+  }
+}
+
 .renew2025 {
   // utill menu
   .new_subscription {
@@ -32,11 +115,17 @@
     }
     .h_inner {
       width: 1216px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       .logo {
         width: 242px;
         height: 24px;
-        margin: 30px 100px 0 0;
+        margin: 0;
         background: url("../image/main/renew2025/logo_header.svg") no-repeat;
+      }
+      &::after {
+        display: none;
       }
     } 
   }
@@ -85,13 +174,18 @@
       bottom: -5px;
     }
     .nav_cont {
-      left: -362px;
+      left: -446px;
       width: 1236px;
       &.col3 {
         .nav_d2 {
           width: calc(100% - 266px);
           > li {
             width: 33.33%;
+          }
+        }
+        &.wide {
+          .nav_d2 {
+            width: 100%;
           }
         }
       }
@@ -102,12 +196,10 @@
             width: 20%;
           }
         }
-      }
-      &.col5 {
         &.wide {
           .nav_d2 {
             width: 100%;
-            > li {
+            >li {
               width: 20%;
               &:last-child {
                 width: 289px;
@@ -160,7 +252,7 @@
   .nav_right {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 0;
     .chatbot_area {
       padding-right: 14px;
       .btn_chatbot {
