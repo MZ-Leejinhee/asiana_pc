@@ -26,6 +26,8 @@
             background-position: left top 7px;
             font-weight: 500;
             color: #040404;
+            text-align: left;
+            line-height: 1.2;
             a {
               margin-left: 8px;
               background: none;
@@ -34,6 +36,7 @@
                 display: inline-block;
                 width: 8px;
                 height: 15px;
+                margin-left: 4px;
                 background: url("../image/main/renew2025/ico_arrB_black.svg") no-repeat center;
               }
             }
@@ -1104,14 +1107,18 @@
           > div {
             width: 100%;
           }
-          .class {
+          .cls_tag {
             position: absolute;
             left: 0;
             top: -16px;
+            height: auto;
             padding: 4px 10px 6px 12px;
+            border-radius: 0;
+            background-color: #FF3058;
             color: #fff;
             font-size: 14px;
             font-weight: bold;
+            line-height: normal;
             &::after {
               content: "";
               position: absolute;
@@ -1120,13 +1127,8 @@
               width: 20px;
               height: 100%;
               transform: skewX(-20deg);
+              background-color: #ff3b59;
               z-index: -1;
-            }
-            &.economy {
-              background-color: #FF3058;
-              &::after {
-                background-color: #ff3b59;
-              }
             }
             &.business {
               background-color: #492E91;
@@ -1598,12 +1600,20 @@
             background: none;
             margin-right: 0;
             border-radius: 20px;
-            a {
+            .layer_wrap {
+              display: none;
+            }
+            a,
+            > div {
+              position: relative;
               display: flex;
               flex-direction: column;
               justify-content: center;
+              width: 100%;
+              height: 100%;
               padding: 32px 20px;
               border: none;
+              box-sizing: border-box;
               > div {
                 position: relative;
                 top: auto;
