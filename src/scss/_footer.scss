@@ -115,6 +115,7 @@
               width: 50px;
               height: 50px;
               background: url("../image/main/renew2025/footer_sns.png");
+              background-size: auto 50px;
               &.youtube {
                 background-position: 0 0;
               }
@@ -126,6 +127,15 @@
               }
               &.twitter {
                 background-position: -150px 0;
+              }
+              &.xiaohongshu {
+                background-position: -200px 0;
+              }
+              &.weibo {
+                background-position: -250px 0;
+              }
+              &.wechat {
+                background-position: -300px 0;
               }
             }
           }
