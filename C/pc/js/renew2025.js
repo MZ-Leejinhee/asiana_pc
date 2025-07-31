@@ -262,8 +262,7 @@ eventSlider2();
 // 스크롤 시 우측 탑 버튼
 $(window).on('scroll', function () {
   var document_scroll = $(document).scrollTop();
-  var window_height = $(window).height();
-  if (document_scroll > (window_height + 400)) {
+  if (document_scroll > 200) {
     $('#goTop').css('display', 'block');
   } else {
     $('#goTop').css('display', 'none');
