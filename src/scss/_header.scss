@@ -189,6 +189,14 @@
           }
         }
       }
+      &.col4 {
+        .nav_d2 {
+          width: calc(100% - 266px);
+          > li {
+            width: 25%;
+          }
+        }
+      }
       &.col5 {
         .nav_d2 {
           width: calc(100% - 266px);
@@ -206,6 +214,14 @@
                 padding: 0 0 0 20px;
               }
             }
+          }
+        }
+      }
+      &.col6 {
+        .nav_d2 {
+          width: calc(100% - 266px);
+          > li {
+            width: 16.66%;
           }
         }
       }
