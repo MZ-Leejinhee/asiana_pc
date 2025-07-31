@@ -605,12 +605,21 @@
       }
       .shadow_layer {
         width: 1280px;
-        top: 130px !important;
-        border: 1px solid #F2F0EB;
+        top: 120px !important;
         border-radius: 16px;
+        &.search_flight {
+          left: 0;
+          transform: inherit;
+          &.to {
+            left: 220px;
+          }
+        }
       }
       .calendar_layer {
         width: 1280px;
+        top: 120px !important;
+        left: 50%;
+        transform: translateX(-50%);
         .calendar_top {
           border-radius: 16px 16px 0 0;
         }
@@ -801,6 +810,15 @@
           right: 180px;
         }
       }
+      .shadow_layer {
+        &.search_flight {
+          left: 164px;
+          transform: inherit;
+          &.to {
+            left: 342px;
+          }
+        }
+      }
     }
   }
   // 체크인
@@ -852,6 +870,15 @@
         > span {
           position: absolute;
           right: 324px;
+        }
+      }
+      .shadow_layer {
+        &.search_flight {
+          left: 228px;
+          transform: inherit;
+          &.to {
+            left: 506px;
+          }
         }
       }
     }
