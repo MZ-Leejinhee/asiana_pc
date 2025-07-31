@@ -3,7 +3,7 @@
   .notice_slide {
     position: relative;
     width: 100%;
-    max-width: 1216px;
+    max-width: 1280px;
     padding: 0 40px;
     margin: 20px auto 0;
     border-radius: 12px;
@@ -137,7 +137,7 @@
       position: absolute;
       left: 0;
       top: 52px;
-      width: 1216px;
+      width: 1280px;
       max-height: 405px;
       overflow-y: auto;
       padding: 24px 40px 0;
@@ -233,7 +233,7 @@
     position: absolute;
     left: 50%;
     top: 0;
-    width: 1216px;
+    width: 1280px;
     min-height: 242px;
     padding: 16px 40px 28px;
     margin: 20px auto 17px !important;
@@ -268,7 +268,7 @@
     height: 44px;
     margin-bottom: 16px;
     border-bottom: 1px solid #918B87;
-    gap: 20px;
+    gap: 40px;
     &-btn {
       min-width: auto;
       max-width: fit-content;
@@ -277,7 +277,7 @@
       background: transparent !important;
       color: #2C2A27;
       font-size: 16px;
-      font-weight: 300;
+      font-weight: 400;
       box-sizing: border-box;
       transition: 0.1s all;
       &::after {
@@ -604,13 +604,13 @@
         }
       }
       .shadow_layer {
-        width: 1216px;
+        width: 1280px;
         top: 130px !important;
         border: 1px solid #F2F0EB;
         border-radius: 16px;
       }
       .calendar_layer {
-        width: 1216px;
+        width: 1280px;
         .calendar_top {
           border-radius: 16px 16px 0 0;
         }
@@ -664,7 +664,7 @@
         justify-content: flex-start;
         .ipt_elt {
           input[type="text"] {
-            width: 172px !important;
+            width: 184px !important;
           }
           .btn_airport {
             bottom: 8px;
@@ -788,17 +788,17 @@
       .input_wrap {
         .ipt_elt {
           input[type="text"] {
-             width: 152px !important;
+             width: 160px !important;
           }
         }
         #reservationId {
-          width: 142px !important;
+          width: 152px !important;
         }
       }
       .exam_txt {
         .kr_exclusive {
           position: absolute;
-          right: 160px;
+          right: 180px;
         }
       }
     }
@@ -809,7 +809,7 @@
       .input_wrap {
         .ipt_elt {
           input[type="text"] {
-            width: 234px !important;
+            width: 268px !important;
           }
         }
       }
@@ -817,7 +817,7 @@
         > span {
           position: absolute;
           top: -3px;
-          right: 318px;
+          right: 350px;
         }
       }
       .reserve_list_wrap {
@@ -843,7 +843,7 @@
       .input_wrap {
         .ipt_elt {
           input[type="text"] {
-            width: 234px !important;
+            width: 260px !important;
           }
         }
       }
@@ -851,7 +851,7 @@
         height: 20px;
         > span {
           position: absolute;
-          right: 304px;
+          right: 324px;
         }
       }
     }
@@ -866,7 +866,7 @@
     .main_slider_wrap2 {
       position: relative;
       overflow: hidden;
-      max-width: 1216px;
+      max-width: 1280px;
       width: 100%;
       min-height: 404px;
       max-height: 404px;
@@ -1002,7 +1002,7 @@
 
   // special price 
   .special_slider_wrap_area {
-    max-width: 1216px;
+    max-width: 1280px;
     padding-bottom: 0;
     margin: 0 auto;
     .special_slider_tit_area {
@@ -1046,10 +1046,10 @@
     }
     .special_slider_wrap {
       position: relative;
-      width: 1216px;
+      width: 1280px;
       margin: 0 auto !important;
       .swiper-slide {
-        width: 292px !important;
+        width: 308px !important;
         height: 520px !important;
         margin-right: 16px !important;
         box-shadow: none;
@@ -1108,7 +1108,7 @@
           border-radius: 20px 20px 0 0;
           overflow: hidden;
           img {
-            width: 292px;
+            width: 308px;
             height: 365px;
             object-fit: cover;            
             transform: scale(1);
@@ -1236,7 +1236,7 @@
     display: none;
   }  
   .event_slider_wrap {
-    width: 1216px;
+    width: 1280px;
     margin: 80px auto;
     .event_slider2 {
       .swiper-wrapper {
@@ -1329,7 +1329,7 @@
       position: absolute;
       right: 0;
       top: 57%;
-      width: 568px;
+      width: 632px;
       display: flex;
       align-items: center;
       gap: 20px;
@@ -1393,8 +1393,8 @@
       right: 0;
       bottom: 0;
       z-index: 1;
-      width: 568px;
-      height: 118px;
+      width: 632px;
+      height: 129px;
       .swiper-slide {
         cursor: pointer;
         opacity: 0.6;
@@ -1415,8 +1415,8 @@
         }
       }
       .info_img {
-        width: 184px;
-        height: 118px;
+        width: 200px;
+        height: 129px;
         border-radius: 12px;
         img {
           max-width: 100%;
@@ -1447,13 +1447,13 @@
     background-color: #F9F6F4;
     .inner {
       display: flex;
-      width: 1216px;
+      width: 1280px;
       margin: 0 auto;
       gap: 56px;
     }
     // notice
     .notice_box {
-      width: 754px;
+      width: 818px;
       margin: 0;
       section {
         flex-direction: column;
@@ -1881,20 +1881,47 @@
         }
       }
       .btn_chatbot {
+        position: relative;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         width: 160px;
         height: 66px;
         margin-top: 8px;
         border-radius: 20px;
-        background-color: #F2F3F4;
+        background-color: #FFC2D7;
         &-text {
           font-size: 0;
+          display: block;
           width: 56px;
           height: 42px;
           animation: bounceDownUp 4s ease-in infinite;
+          animation-play-state: running;
           background: url("../image/main/renew2025/ico_chatbot.svg") no-repeat center;
+        }
+        .hdlayer_wrap {
+          width: auto;
+          top: 58px;
+          right: 50%;
+          transform: translateX(50%);
+          z-index: 1;;
+          .arrow {
+            right: 76px;
+          }
+          .hdlayer {
+            padding: 10px 4px 10px 8px;
+            white-space: nowrap;
+          }
+        }
+        &:hover,
+        &:focus {
+          .hdlayer_wrap {
+            display: block;
+          }
+          .btn_chatbot-text {
+            animation-play-state: paused;
+          }
         }
       }      
       #goTop {

@@ -1,11 +1,14 @@
 .renew2025 {
   footer {
-    background: #fff;
+    background: #EFEFEF;
+    .inner {
+      width: 1280px;
+    }
     .foot_menuwrap {
       dl {
         dt {
           a {
-            font-weight: 500;
+            font-weight: 800;
             color: #454B52;
           }
         }
@@ -13,7 +16,7 @@
           ul {
             li {
               a {
-                font-weight: 300;
+                font-weight: 400;
                 color: #1F1D1D;
               }
             }
@@ -142,25 +145,8 @@
         }
       }
       .qrcode {
-        width: 232px;
-        margin-top: 40px;
-        border-radius: 0;
-        > ul {
-          li {
-            width: 108px;
-            border-radius: 0;
-            > div:first-child {
-              padding: 16px 23px;
-              background: #F9F6F4;
-              border-radius: 6px 6px 0 0;
-            }
-            > div:nth-child(2) {
-              img {
-                border-radius: 0 0 6px 6px;
-              }
-            }
-          }
-        }
+        position: absolute;
+        right: 0;
       }
     }
   }
