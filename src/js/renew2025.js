@@ -1,23 +1,48 @@
 // 긴급공지 슬라이드 설정
-$('.notice_slide').on('click', '.btn_arrow', function (e) {
-  e.preventDefault();
-  var $notice = $(this).closest('.notice_slide');
-  $notice.find('.noti_detail').stop(true, true).show();
-  $notice.find('.noti_btn_box').hide();
-  $notice.find('.ps').hide();
-  $notice.find('.btn_arrow').hide();
+function urgentNoticePopup() {
 
-  notices_Swiper.stopAutoplay();
-});
-$('.notice_slide').on('click', '.noti_btn_close', function (e) {
-  e.preventDefault();
-  var $notice = $(this).closest('.notice_slide');
-  $notice.find('.noti_detail').stop(true, true).hide();
-  $notice.find('.noti_btn_box').show();
-  $notice.find('.ps').show();
-  $notice.find('.btn_arrow').show();
-  notices_Swiper.startAutoplay();
-});
+  function showNoticePopup(noticeKey) {
+    var $noticeSlide = $('.notice_slide');
+    $noticeSlide.find('.noti_detail_wrap').hide();
+    $noticeSlide.find('.noti_detail_wrap[data-key="' + noticeKey + '"]').show();
+    $noticeSlide.find('.noti_btn_box, .ps, .btn_arrow').hide();
+
+    if (notices_Swiper && notices_Swiper.stopAutoplay) {
+      notices_Swiper.stopAutoplay();
+    }
+  }
+
+  function hideNoticePopup() {
+    var $noticeSlide = $('.notice_slide');
+    $noticeSlide.find('.noti_detail_wrap').hide();
+    $noticeSlide.find('.noti_btn_box, .ps, .btn_arrow').show();
+    if (notices_Swiper && notices_Swiper.startAutoplay) {
+      notices_Swiper.startAutoplay();
+    }
+  }
+
+  $('.notice_slide').on('click', '.btn_arrow', function (e) {
+    e.preventDefault();
+    var noticeKey = $(this).data('notice-key');
+    showNoticePopup(noticeKey);
+  });
+
+  $('.notice_slide').on('click', '.noti_btn_close', function (e) {
+    e.preventDefault();
+    hideNoticePopup();
+  });
+
+  $(document).on('click', function (e) {
+    var $target = $(e.target);
+    if (!$target.closest('.btn_arrow').length &&
+      !$target.closest('.noti_detail_wrap').length &&
+      !$target.closest('.notice_slide').length) {
+
+      hideNoticePopup();
+    }
+  });
+}
+urgentNoticePopup();
 
 // 퀵서비스 blur 처리 막기
 $('.quick-service__nav-btn, .sub_quick-service_btn').on('click', function (e) {
