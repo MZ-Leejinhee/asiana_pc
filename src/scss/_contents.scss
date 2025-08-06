@@ -1761,6 +1761,7 @@
     top: 43%;
     right: 20px;
     width: 160px;
+    transform: translateY(-10%);
     z-index: 1000;
     .inner {
       .best_week {
@@ -1928,11 +1929,15 @@
           background: url("../image/main/renew2025/ico_chatbot.svg") no-repeat center;
         }
         .hdlayer_wrap {
+          display: block;
           width: auto;
+          position: absolute;
           top: 58px;
           right: 50%;
           transform: translateX(50%);
-          z-index: 1;;
+          opacity: 0;
+          visibility: hidden;
+          z-index: 1;
           .arrow {
             right: 76px;
           }
@@ -1941,13 +1946,26 @@
             white-space: nowrap;
           }
         }
+        &.show,
         &:hover,
         &:focus {
           .hdlayer_wrap {
-            display: block;
+            opacity: 1;
+            visibility: visible;
           }
           .btn_chatbot-text {
             animation-play-state: paused;
+          }
+        }
+        &.top {
+          .hdlayer_wrap {
+            top: auto;
+            bottom: 62px;            
+            .arrow {
+              top: auto;
+              bottom: 2px;
+              transform: rotate(180deg);
+            }
           }
         }
       }      
@@ -1965,6 +1983,13 @@
           background: url("../image/main/renew2025/ico_arrT_black.png") no-repeat center;
         }
       }
+    }
+  }
+  @media (max-height: 850px) {
+    .right_wing {
+      top: auto;
+      bottom: 20px;
+      transform: translateY(0);
     }
   }
 }
