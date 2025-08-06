@@ -27,7 +27,7 @@ function urgentNoticePopup() {
     showNoticePopup(noticeKey);
   });
 
-  $('.notice_slide').on('click', '.noti_btn_close', function (e) {
+  $('.notice_slide').on('click', '.noti_btn_close, .noti_close', function (e) {
     e.preventDefault();
     hideNoticePopup();
   });
