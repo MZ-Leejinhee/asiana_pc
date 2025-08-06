@@ -293,3 +293,40 @@ $(window).on('scroll', function () {
     $('#goTop').css('display', 'none');
   }
 });
+
+// 플로팅 메뉴 챗봇 툴팁 위치
+(function() {
+  const $trigger = $('.right_wing .btn_chatbot');
+  const $tooltipWrap = $trigger.find('.hdlayer_wrap');
+
+  const tooltipPosition = function() {
+    if (!$trigger.hasClass('show')) {
+      return;
+    }
+
+    $trigger.removeClass('top');
+
+    const triggerOffset = $trigger.offset();
+    const tooltipHeight = $tooltipWrap.outerHeight();
+    const triggerHeight = $trigger.outerHeight();
+    const windowHeight = $(window).height();
+    const scrollTop = $(window).scrollTop();
+
+    if (triggerOffset.top + triggerHeight + tooltipHeight > windowHeight + scrollTop) {
+      $trigger.addClass('top');
+    }
+  };
+
+  $trigger.on('mouseenter', function() {
+    $(this).addClass('show');
+    tooltipPosition();
+  });
+
+  $trigger.on('mouseleave', function() {
+    $(this).removeClass('show top');
+  });
+
+  $(window).on('resize scroll', tooltipPosition);
+
+  tooltipPosition();
+})();
