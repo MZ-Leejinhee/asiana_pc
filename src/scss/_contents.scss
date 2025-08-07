@@ -240,11 +240,10 @@
     border-radius: 16px;
     background-color: rgba(255, 255, 255, 0.96);    
     transform: none !important;
-    box-shadow: none;
+    box-shadow: rgba(0, 0, 0, .05) 5px 5px 3px !important;
     z-index: 300;
     transform: translate(-50%, 0%) !important;
     .shadow_layer {
-      border: 1px solid #F2F0EB;
       border-radius: 16px;
       .btn_step_wrap {
         border-radius: 0 0 16px 16px;
@@ -1988,3 +1987,4 @@
   35% {transform: translateY(0);}
   100% {transform: translateY(0);}
 }
+// [E] main.css

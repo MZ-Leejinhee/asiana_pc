@@ -3,7 +3,7 @@
   .renew2025 {
     nav {
       .nav_cont {
-        left: -400px;
+        left: -373px;
       }
     }
   }
@@ -12,7 +12,7 @@
   .renew2025 {
     nav {
       .nav_cont {
-        left: -400px;
+        left: -373px;
       }
     }
   }
@@ -21,7 +21,7 @@
   .renew2025 {
     nav {
       .nav_cont {
-        left: -400px;
+        left: -392px;
       }
     }
   }
@@ -39,7 +39,7 @@
   .renew2025 {
     nav {
       .nav_cont {
-        left: -310px;
+        left: -264px;
       }
     }
   }
@@ -48,7 +48,7 @@
   .renew2025 {
     nav {
       .nav_cont {
-        left: -424px;
+        left: -392px;
       }
     }
   }
@@ -57,7 +57,7 @@
   .renew2025 {
     nav {
       .nav_cont {
-        left: -346px;
+        left: -306px;
       }
     }
   }
@@ -66,7 +66,7 @@
   .renew2025 {
     nav {
       .nav_cont {
-        left: -346px;
+        left: -306px;
       }
     }
   }
@@ -74,8 +74,16 @@
 :lang(ru) {
   .renew2025 {    
     nav {
+      .nav_list {
+        > li {
+          > a {
+            font-size: 18px;
+            padding: 0 30px;
+          }
+        }
+      }
       .nav_cont {
-        left: -278px;
+        left: -284px;
       }
     }
   }
@@ -176,7 +184,7 @@
       bottom: -5px;
     }
     .nav_cont {
-      left: -416px;
+      left: -394px;
       width: 1280px;
       &.col3 {
         .nav_d2 {
