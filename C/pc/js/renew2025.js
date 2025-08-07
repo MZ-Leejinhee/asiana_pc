@@ -51,6 +51,16 @@ $('.quick-service__nav-btn, .sub_quick-service_btn').on('click', function (e) {
   };
 });
 
+// 퀵서비스 마일리지사용 체크 시 여백
+$(document).on('change', '.mile_use input:checkbox', function() {
+  var thisBtn = $(this);
+  if(thisBtn.is(':checked')){
+    $('.quick-reservation .quick_step_wrap').css('margin-top', '-1px');
+  }else{
+    $('.quick-reservation .quick_step_wrap').css('margin-top', '20px');
+  } 
+});
+
 // 메인 슬라이드 설정
 function mainSlider(){
   var main_Swiper2 = new Swiper('.renew2025 .main_slider_wrap2', {
