@@ -234,7 +234,7 @@
     left: 50%;
     top: 0;
     width: 1280px;
-    min-height: 242px;
+    min-height: 238px;
     padding: 16px 40px 28px;
     margin: 20px auto 17px !important;
     border-radius: 16px;
@@ -266,7 +266,6 @@
     position: relative;
     top: 0;
     height: 44px;
-    margin-bottom: 16px;
     border-bottom: 1px solid #918B87;
     gap: 40px;
     &-btn {
@@ -299,7 +298,7 @@
           display: block;
           width: 100%;
           height: 4px;
-          background-color: #2C2A27;
+          background-color: #F60000;
           clip-path: polygon(8px 0%, calc(100% - 8px) 0%, 100% 100%, 0% 100%);
         }
       }
@@ -315,11 +314,14 @@
     }
   }  
   .section_text_copy {
+    margin-top: 16px;
     .desc {
-      padding: 12px 8px;
-      color: #080707;
-      opacity: 0.8;
-      line-height: 1.1;
+      padding: 0 4px;
+      font-size: 14px;
+      font-weight: 400;
+      color: #2C2A27;
+      line-height: 1.6;
+      letter-spacing: -0.4px;
     }
   }
   .section_copy {
@@ -538,7 +540,7 @@
   .quick_step_wrap {
     display: flex;
     flex-direction: column;
-    margin-top: 8px;
+    margin-top: 12px;
     .input_wrap {
       width: 100%;
       gap: 16px;
@@ -638,7 +640,7 @@
     .exam_txt {
       position: relative;
       width: 100%;
-      margin-top: 8px;
+      margin-top: 12px;
       .text_type1 {
         float: none;
         padding-left: 12px;
@@ -664,10 +666,12 @@
     .quick_reservation_wrap {
       width: 100%;
       padding: 0;
+      margin-top: 24px;
       background: transparent;
       border-radius: 0;
     }
     .quick_step_wrap {
+      margin-top: 20px;
       .input_wrap {
         gap: 16px;
         justify-content: flex-start;
@@ -679,58 +683,12 @@
             bottom: 8px;
           }
           &.loct {
-            &::before {
-              left: 4px;
-              bottom: 12px;
-              height: 31px;
-              font-size: 24px;
-              font-weight: 900;
-              letter-spacing: -0.72px;
-              background: transparent;
-            }
             label {
-              left: -4px;
-              text-align: right;
-              .abbr {
-                & + span {
-                  width: 92px;
+              & .abbr {
+                &+span {
+                  width: 88px;
                 }
               }
-            }
-            input[type="text"] {
-              padding: 0 4px;
-            }
-            &.spot_proven {
-              &.on {
-                &::before {
-                  display: none;
-                }
-                label {
-                  opacity: 0;
-                }
-              }
-              &::before {
-                content: "From";
-                width: 68px;                
-                color: #181818;
-              }
-              
-            }
-            &.spot_destin {
-              &::before {
-                content: "To";
-                width: 34px;
-                color: #78716E;
-              }
-            }
-          }
-          &:has(label span.abbr){
-            &::before {
-              display: none;
-            }
-            label {
-              left: 4px;
-              text-align: left;
             }
           }
         }
@@ -770,7 +728,7 @@
       // 스타얼라이언스, 출국 귀국편 다른여정
       .btn_mile_wrap {
         display: none;
-        margin-top: 8px;
+        margin-top: 4px;
         .flex_wrap {
           display: flex;
           align-items: center;
@@ -1804,7 +1762,7 @@
               justify-content: center;
               width: 100%;
               height: 100%;
-              background-color: #F9F6F4;
+              background-color: #F2F0EB;
               font-size: 16px;
               font-weight: 500;
               color: #000;

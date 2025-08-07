@@ -119,8 +119,8 @@
       align-items: center;
       justify-content: space-between;
       .logo {
-        width: 242px;
-        height: 24px;
+        width: 216px;
+        height: 21px;
         margin: 0;
         background: url("../image/main/renew2025/logo_header.svg") no-repeat;
       }
@@ -136,6 +136,7 @@
         > a {
           min-width: auto;
           padding: 0 35px;
+          font-size: 20px;
           font-weight: 500;
           line-height: 83px;
         }
