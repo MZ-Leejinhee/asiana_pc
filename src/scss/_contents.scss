@@ -307,6 +307,7 @@
   // content 공통
   .quick-service__item {
     .inquiry_wrapper {
+      margin-top: 0 !important;
       box-shadow: none;
       .white_step_box {
         padding: 0;
@@ -468,6 +469,9 @@
           }
         }
       }
+      .shadow_layer {
+        top: 30px;
+      }
     }
     .rgt_wrap {
       margin-left: auto;
@@ -482,6 +486,8 @@
       transform: translateY(0);
       padding-left: 0;
       .date_lookup_area {
+        position: relative;
+        padding-right: 25px;
         // 체크박스 이미지 교체
         input[type="checkbox"] {
           & + label {
@@ -501,6 +507,17 @@
             }
           }
         }
+        &::after {
+          content: '';
+          position: absolute;
+          display: block;
+          right: 12px;
+          top: 50%;
+          width: 1px;
+          height: 18px;
+          background: #DAD8D2;
+          transform: translateY(-50%);
+        }
       }
     }
     .main_right_btnSet {
@@ -508,14 +525,6 @@
       display: flex;
       align-items: center;
       position: relative;
-      &::before {
-        content: '';
-        display: inline-block;
-        width: 1px;
-        height: 18px;
-        background: #DAD8D2;
-        margin: 0 12px;
-      }
       button {
         display: inline-flex;
         align-items: center;
@@ -607,23 +616,29 @@
       }
       .shadow_layer {
         width: 1280px;
-        top: 120px !important;
+        top: 133px !important;
         border-radius: 16px;
         &.search_flight {
           left: 0;
           transform: inherit;
           &.to {
-            left: 220px;
+            left: 238px;
           }
         }
       }
       .calendar_layer {
         width: 1280px;
-        top: 120px !important;
+        top: 133px !important;
         left: 50%;
         transform: translateX(-50%);
         .calendar_top {
           border-radius: 16px 16px 0 0;
+          select {
+            height: 40px;
+            color: #000;
+            font-size: 18px;
+            background-color: #fff;
+          }
         }
         .btn_step_wrap {
           border-radius: 0 0 16px 16px;
@@ -724,6 +739,12 @@
             background: url("../image/main/renew2025/ico_search.png");
           }
         }
+      }
+      .shadow_layer {
+        top: 95px !important;
+      }
+      .calendar_layer {
+        top: 95px !important;
       }
       // 스타얼라이언스, 출국 귀국편 다른여정
       .btn_mile_wrap {
