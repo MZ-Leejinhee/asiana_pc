@@ -708,6 +708,9 @@ nav .nav_cont .gnb_banner a .img_wrap img{width:auto; -o-object-fit:contain; obj
 .nav_right .search_area .btn_search{width:48px; height:48px; background:url(../image/main/renew2025/gnb_ico_search_off.svg) no-repeat center;}
 .nav_right .search_area .btn_search.on, .nav_right .search_area .btn_search:hover{background:url(../image/main/renew2025/gnb_ico_search_on.svg) no-repeat center;}
 
+/* location bar */
+.location_bar .inner{width:1280px;}
+
 /* renewal 2025 footer */
 footer{background:#efefef;}
 footer .inner{width:1280px;}
