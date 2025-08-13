@@ -1069,6 +1069,8 @@
           width: 520px !important;
           height: 520px;
           .img_wrap {
+            width: 100%;
+            height: 100%;
             border-radius: 20px;
             &::after {
               border-radius: 20px;
