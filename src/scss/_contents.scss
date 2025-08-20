@@ -292,10 +292,14 @@
         >span {
           display: none;
         }
+        >p {
+          max-width: none;
+        }
       }
       &--is-active {
         color: #000;
-        font-weight: bold;
+        font-weight: 400;
+        text-shadow: 0 0 0.6px currentColor, 0 0 0.6px currentColor;
         &::before {
           content: "";
           position: absolute;
@@ -652,7 +656,11 @@
       }
     }
     .btn_revsearch {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       width: 138px;
+      max-height: 55px;
       padding: 18px 16px;
       border-radius: 12px;
       background-color: #454B52;
@@ -677,6 +685,22 @@
           background: #000;
           border-radius: 100%;
           margin: -4px 4px 0 0;
+        }
+      }
+      &.eservationInquiry_txt {
+        width: calc(100% - 154px);
+        display: flex;
+        justify-content: space-between;
+        &::after {
+          display: none;
+        }
+        span {
+          &.ext2 {
+            width: 160px;
+          }
+          &.ext3 {
+            min-width: 150px;
+          }
         }
       }
     }
@@ -726,9 +750,13 @@
         .btn_revsearch {
           position: relative;
           box-sizing: border-box;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 4px;
           width: 162px;
           min-height: 58px;
-          padding: 14px 20px 14px 36px;
+          padding: 14px 20px;
           border: 1px solid #F2F0EB;
           border-radius: 12px;
           background-color: #F60000;
@@ -737,9 +765,7 @@
           letter-spacing: -1px;
           &::before {
             content: '';
-            position: absolute;
-            left: 28px;
-            display: block;
+            display: inline-block;
             width: 20px;
             height: 21px;
             background: url("../image/main/renew2025/ico_search.png");
@@ -791,8 +817,7 @@
       }
       .exam_txt {
         .kr_exclusive {
-          position: absolute;
-          right: 180px;
+          width: 342px;
         }
       }
       .shadow_layer {
@@ -817,10 +842,15 @@
         }
       }
       .exam_txt {
-        > span {
-          position: absolute;
-          top: -3px;
-          right: 350px;
+        &.eservationInquiry_txt {
+          justify-content: flex-end;
+          span {
+            position: absolute;
+            &.ext2 {
+              position: static;
+              width: 258px;
+            }
+          }
         }
       }
       .reserve_list_wrap {
@@ -851,10 +881,12 @@
         }
       }
       .exam_txt {
+        display: flex;
+        justify-content: flex-end;
+        width: calc(100% - 154px);
         height: 20px;
         > span {
-          position: absolute;
-          right: 324px;
+          width: 248px;
         }
       }
       .shadow_layer {
