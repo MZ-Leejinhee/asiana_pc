@@ -667,7 +667,7 @@ img[src="//code.nytive.com/track/85976.gif"]{display: none !important;}
 :lang(es) nav .nav_cont{left:-392px;}
 :lang(de) nav .nav_cont, :lang(fr) nav .nav_cont{left:-306px;}
 :lang(ru) nav .nav_list>li>a{font-size:18px; padding:0 30px;}
-:lang(ru) nav .nav_cont{left:-284px;}
+:lang(ru) nav .nav_cont{left:-304px;}
 .new_subscription{display:none !important;}
 .util_wrap .inner{width:1280px;}
 .util_wrap .util_menu>ul>li .btn_language{border:0;}

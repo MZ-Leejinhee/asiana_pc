@@ -1,0 +1,1316 @@
+<div class="quick-service">
+	<div class="quick-service__nav">
+		<button type="button" data-nav="reservation" class="quick-service__nav-btn quick-service__nav-btn--is-active"
+			onclick="action_logging({pagecode:'01_QIK_01'});" title="Đã chọn">
+			<div>
+				<span>
+					<h3 class="hidden">&gt;icon</h3>
+				</span>
+				<p>
+					Đặt chỗ chuyến đi
+				</p>
+			</div>
+		</button>
+		<button type="button" data-nav="reservation_inquiry" class="quick-service__nav-btn"
+			onclick="drawPnrList(); action_logging({pagecode:'01_QIK_02'});">
+			<div>
+				<span>
+					<h3 class="hidden">&gt;icon</h3>
+				</span>
+				<p>
+					Tìm “chuyến đi của tôi”
+				</p>
+			</div>
+		</button>
+		<button type="button" data-nav="check_in" class="quick-service__nav-btn"
+			onclick="drawCheckInList(); action_logging({pagecode:'01_QIK_03'});">
+			<div>
+				<span>
+					<h3 class="hidden">&gt;icon</h3>
+				</span>
+				<p>
+					Làm thủ tục chuyến bay
+				</p>
+			</div>
+		</button>
+		<button type="button" data-nav="departure_and_arrival_inquiries" class="quick-service__nav-btn"
+			onclick="action_logging({pagecode:'01_QIK_04'});">
+			<div>
+				<span>
+					<h3 class="hidden">&gt;icon</h3>
+				</span>
+				<p>
+					Tình trạng chuyến bay
+				</p>
+			</div>
+		</button>
+
+	</div>
+
+
+	<div data-content="reservation" class="quick-service__item quick-reservation quick-service__item--is-active">
+		<h3 class="hidden">Đặt chỗ chuyến đi</h3>
+
+		<div class="quick_reservation_wrap">
+
+			<div class="quick_tab_wrap">
+        <div class="tab_triptype">
+          <ul>
+            <li class="on">
+              <a href="javascript:sharpNothig();" title="Đã chọn">Khứ hồi</a>
+            </li>
+            <li>
+              <a href="javascript:sharpNothig();">Một chiều</a>
+            </li>
+            <li>
+              <a href="javascript:sharpNothig();" gourl="/I/VN/VI/RevenueRegistTravel.do">
+                <span class="arrow">Nhiều chặng</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+				<div class="mile_use">
+					<span class="txt">Sử dụng dặm</span>
+					<div class="btn_toggle_box">
+						<label class="switch" for="allChecked">
+							<span class="hidden">OFF</span>
+							<input type="checkbox" id="allChecked" data-type="all_ck_item" autocomplete="off" title="Sử dụng dặm">
+							<span class="slider"></span>
+						</label>
+					</div>
+				</div>
+				<span class="line"></span>
+
+				<div class="favroute_wrap">
+					<a href="javascript:sharpNothig();" class="fav_star" id="favoriteRoute" style="display: block;"
+						onclick="action_logging({pagecode:'01_book_04'});">
+						<span class="hidden">Chọn hành trình nhanh với các tuyến bay ưa thích</span>
+					</a>
+					<div class="shadow_layer intRoute">
+						<div class="inner">
+							<div class="route_list">
+								<p class="title">Tuyến bay ưa thích</p>
+								<ul id="favoriteRouteList"></ul>
+							</div>
+
+							<button type="button" class="btn_info02" id="setFavoriteInform">Tuyến bay ưa thích?</button>
+							<button type="button" class="btn_XS red" id="goLogin">Đăng nhập</button>
+
+
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close" id="closeFavoriteRoute"><span
+								class="hidden">Đóng</span></a>
+					</div>
+				</div>
+
+        <div class="rgt_wrap">
+          <div class="main_date_lookup_area">
+            <div class="date_lookup_area" id="viewCalendarDiv">
+              <input type="checkbox" id="viewCalendarChk" name="viewCalendarChk"><label for="viewCalendarChk">Kiểm tra
+                ngày gần sát</label>
+            </div>
+          </div>
+          
+          <div class="btn_wrap_riType2 coup1 main_right_btnSet">
+            <button type="button" class="btn_M btn_couponIcon" id="btn_coupon_layer"
+              style="border: solid 1px #b3000b;color: rgba(34,42,115,.8);font-weight: bold;">Tìm kiếm phiếu giảm
+              giá</button>
+          </div>
+        </div>
+
+				<div class="btn_mile_wrap">
+          <div class="flex_wrap">
+            <a href="javascript:sharpNothig();" class="btn_arrlink" id="openJawRED">Các chuyến bay nhiều thành phố</a>
+          </div>
+				</div>
+			</div>
+
+			<div class="quick_step_wrap">
+				<div class="input_wrap" name="itineraryR">
+
+					<div class="ipt_elt loct spot_proven">
+						<input type="hidden" id="departureAreaR" name="departureAreaR" value="">
+						<input type="hidden" id="departureAirportR" name="departureAirportR" value="">
+						<input type="hidden" id="departureCityR" name="departureCityR" value="">
+						<input type="hidden" id="departureCityNameR" name="departureCityNameR" value="">
+
+						<input type="hidden" id="departureAirportNameR" name="departureAirportNameR" value="">
+						<label for="txtDepartureAirportR" class="spot_place" id="labelDepartureAirportR" name="spot_place">Điểm
+							đi</label>
+						<input type="text" id="txtDepartureAirportR" name="txtDepartureAirportR"
+							class="spotentry ui-autocomplete-input" deparrtype="dep" style="width:165px;" autocomplete="off">
+						<input type="hidden" name="default" area="" airport="">
+						<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_depAllAirport1"
+							name="btn_layer1" seg="dep1" deparrtype="dep" onclick="javascript:onClickAirportIcon(this, 'R');"><span
+								class="hidden">Xem tất cả các thành phố</span></a>
+					</div>
+					<div class="shadow_layer search_flight" name="shadow_layer">
+						<div class="inner">
+							<div class="search_layer">
+								<div class="search_lately" name="search_lately">
+									<p class="title">Tìm kiếm gần đây</p>
+
+								</div>
+								<div class="route_list search_auto" id="divDepAirportACR" name="search_auto"
+									target="txtDepartureAirportR">
+									<p class="title">Hoàn tất tự động</p>
+									<div class="empty_box" name="empty_box">Không có sân bay nào phù hợp</div>
+
+									<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
+										style="display: none;"></ul>
+								</div>
+							</div>
+							<input type="hidden" name="default" area="" airport="">
+							<button type="button" class="btn_popup airport_open" id="btn_depAllAirport1" name="btn_layer1" seg="dep1"
+								deparrtype="dep" onclick="javascript:showAirportLayer(this, 'R');">Xem tất cả các thành phố</button>
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Đóng</span></a>
+					</div>
+
+					<div class="quickbookings_change">
+						<a href="javascript:swapLocations();">
+							<span class="hidden">체인지 버튼</span>
+						</a>
+					</div>
+
+					<div class="ipt_elt loct spot_destin">
+						<input type="hidden" id="arrivalAreaR" name="arrivalAreaR" value="">
+						<input type="hidden" id="arrivalAirportR" name="arrivalAirportR" value="">
+						<input type="hidden" id="arrivalCityR" name="arrivalCityR" value="">
+						<input type="hidden" id="arrivalCityNameR" name="arrivalCityNameR" value="">
+
+						<input type="hidden" id="arrivalAirportNameR" name="arrivalAirportNameR" value="">
+						<input type="hidden" id="arrivalDirectR" name="arrivalDirectR" value="">
+						<label for="txtArrivalAirportR" class="spot_place" id="labelArrivalAirportR" name="spot_place">Điểm
+							đến</label>
+						<input type="text" id="txtArrivalAirportR" name="txtArrivalAirportR" class="spotentry" deparrtype="arr"
+							style="width:165px;">
+						<input type="hidden" name="default" area="" airport="">
+						<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_arrAllAirport1"
+							name="btn_layer1" seg="arr1" deparrtype="arr" onclick="javascript:onClickAirportIcon(this, 'R');"><span
+								class="hidden">Xem tất cả các thành phố</span></a>
+					</div>
+					<div class="shadow_layer search_flight to" name="shadow_layer">
+						<div class="inner">
+							<div class="search_layer">
+								<div class="search_lately" name="search_lately">
+									<p class="title">Tìm kiếm gần đây</p>
+
+								</div>
+								<div class="route_list search_auto" id="divArrAirportACR" name="search_auto"
+									target="txtArrivalAirportR">
+									<p class="title">Hoàn tất tự động</p>
+									<div class="empty_box" name="empty_box">Không có sân bay nào phù hợp</div>
+
+								</div>
+							</div>
+							<input type="hidden" name="default" area="" airport="">
+							<button type="button" class="btn_popup airport_open" id="btn_arrAllAirport1" name="btn_layer1" seg="arr1"
+								deparrtype="arr" onclick="javascript:showAirportLayer(this, 'R');">Xem tất cả các thành phố</button>
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Đóng</span></a>
+					</div>
+
+					<div class="shadow_layer case2 select_airport" id="depAllAirportR" name="allAirportR" style="display: none;">
+						<div class="inner">
+							<h4 class="hidden">Chọn sân bay</h4>
+							<h5 class="hidden">Chuyến bay quốc tế</h5>
+							<div class="flights_list national">
+
+							</div>
+							<div class="recent_search_wrap">
+								<h4>Tìm kiếm gần đây</h4>
+								<div class="recent_srch_box" name="recent_srch_box">
+
+								</div>
+								<div class="btn_area">
+									<button type="button" class="btn_M gray" onclick="javascript:clickNextStep('allAirportR', 'R');">Tiếp
+										theo</button>
+								</div>
+							</div>
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close">
+							<span class="hidden">Đóng</span>
+						</a>
+					</div>
+
+					<div class="ipt_elt calr calendar_wrap" id="divCalendarContainer">
+						<label for="sCalendarR" name="calDesc"><span class="hidden">Chọn ngày</span></label>
+						<input type="text" id="sCalendarR" class="spotentry datepicker" readonly="" autocomplete="off"
+							data-dateformat="y.mm.dd" data-type="multi_step" style="width:165px;" placeholder="Ngày bay">
+						<input type="hidden" id="departureDate1" value="" name="departureDateR">
+						<input type="hidden" id="arrivalDate1" value="" name="arrivalDateR">
+						<a href="javascript:sharpNothig();" class="btn_airport calendar_focus"><span class="hidden">Xem lịch để chọn
+								ngày khởi hành</span></a>
+					</div>
+
+					<div class="calendar_layer">
+						<h4 class="hidden">Chọn ngày lên máy bay</h4>
+						<div class="cal_cont">
+							<h4 class="hidden">Lịch</h4>
+							<div class="calendar_top">
+								<select name="" id="" class="white" title="Năm và tháng lên máy bay">
+									<option value="">2017.08</option>
+								</select>
+
+								<button type="button" class="btn_XS btn_cal_red" id="btnLowerPrice"
+									onclick="submit_lowerPriceList();">Tìm kiếm nhanh giá vé thấp</button>
+							</div>
+							<div class="compareCalendar"></div>
+							<span href="#none" class="cal_status">Ngày khởi hành</span><a href="javascript:sharpNothig();"
+								class="cal_reset calReset"><span class="hidden">Làm mới lịch</span></a>
+							<a href="javascript:sharpNothig();" class="btn_cal_close"><span class="hidden">Đóng</span></a>
+						</div>
+						<div class="btn_step_wrap">
+							<button type="button" class="btn_M gray btnNextStep" id="calendarNext">Tiếp theo(Chọn hành khách)</button>
+						</div>
+					</div>
+
+					<div class="ipt_elt psng">
+						<div class="psg_nums" id="pax_nums">
+							<span adultdesc="Người lớn" style="display: inline;">Người lớn<span class="num">1</span></span>
+							<span childdesc="Trẻ em">Trẻ em<span class="num">0</span></span>
+							<span infantdesc="Trẻ sơ sinh">Trẻ sơ sinh<span class="num">0</span></span>
+						</div>
+						<label for="psng"><span class="hidden">Chọn số lượng hành khách</span></label>
+						<input type="text" id="psng" style="width:165px;" readonly="" placeholder="Hành khách">
+						<a href="javascript:sharpNothig();" class="btn_spot"><span class="hidden">Chọn số lượng hành
+								khách</span></a>
+					</div>
+					<div class="shadow_layer case2 layer_passenger">
+						<div class="inner">
+							<h4 class="layer_tit">Chọn hành khách</h4>
+							<div class="passengers">
+								<div class="area">
+									<h5 class="title_type3">Người lớn <span id="adultAge">(Tuổi 12 -)</span></h5>
+									<div class="btn_number_box" name="btn_number_box">
+										<input type="text" id="adultCount" name="adultCount" title="Người lớnSố hành khách" value="1"
+											onblur="removeChar(event, 'ADT')"
+											onkeypress="if(event.keyCode &lt;45 || event.keyCode &gt; 57) event.returnValue = false;"
+											style="IME-MODE:disabled;" autocomplete="off">
+										<button type="button" class="btn_number minus" name="btn_number"><span
+												class="hidden">Giảm</span></button>
+										<button type="button" class="btn_number plus" name="btn_number"><span
+												class="hidden">Tăng</span></button>
+									</div>
+								</div>
+								<div class="area">
+									<h5 class="title_type3">Trẻ em
+										<span id="childAge">(từ 2 đến 11 tuổi)</span>
+									</h5>
+									<div class="btn_number_box" name="btn_number_box">
+										<input type="text" id="childCount" name="childCount" title="Trẻ emSố hành khách" value="0"
+											onblur="removeChar(event, 'CHD')"
+											onkeypress="if(event.keyCode &lt;45 || event.keyCode &gt; 57) event.returnValue = false;"
+											style="IME-MODE:disabled;" autocomplete="off">
+										<button type="button" class="btn_number minus" name="btn_number" disabled=""><span
+												class="hidden">Giảm</span></button>
+										<button type="button" class="btn_number plus" name="btn_number"><span
+												class="hidden">Tăng</span></button>
+									</div>
+								</div>
+								<div class="area">
+									<h5 class="title_type3">Trẻ sơ sinh <span id="infantAge">(Dưới 2 tuổi())</span></h5>
+									<div class="btn_number_box" name="btn_number_box">
+										<input type="text" id="infantCount" name="infantCount" title="Trẻ sơ sinhSố hành khách" value="0"
+											onblur="removeChar(event, 'INF')"
+											onkeypress="if(event.keyCode &lt;45 || event.keyCode &gt; 57) event.returnValue = false;"
+											style="IME-MODE:disabled;" autocomplete="off">
+										<button type="button" class="btn_number minus" name="btn_number" disabled=""><span
+												class="hidden">Giảm</span></button>
+										<button type="button" class="btn_number plus" name="btn_number"><span
+												class="hidden">Tăng</span></button>
+									</div>
+								</div>
+							</div>
+
+							<div class="passengers_info">
+								<ul class="list_type3 fl">
+									<li id="passengerInfo">Quý khách có thể chọn tối đa 9 người cho đặt chỗ bao gồm người lớn, trẻ em và
+										trẻ sơ sinh.</li>
+									<li>Khi người lớn đi cùng trẻ em trong toàn bộ hành trình, có thể mua riêng vé trẻ em.</li>
+									<li>Trẻ sơ sinh là trẻ dưới 2 tuổi tính đến ngày lên máy bay, không chiếm ghế ngồi.</li>
+									<li>Theo Nghị định Thi hành của Điều 39-3 Khoản ④ của Đạo luật Bảo vệ Thông tin Cá nhân, khi trẻ vị
+										thành niên dưới 14 tuổi đặt chỗ, cần có sự đồng ý và xác nhận của người đại diện hợp pháp. Theo đó,
+										người lớn trên 14 tuổi phải đăng nhập và tiến hành đặt chỗ.</li>
+								</ul>
+								<button type="button" class="btn_popup fr" id="btn_ageCalc"
+									onclick="javascript:appendAgeCalculator();">Máy tính tuổi</button>
+							</div>
+						</div>
+						<div class="btn_step_wrap">
+							<button type="button" class="btn_M red" id="passengerNext">Tiếp theo(Chọn hạng ghế ngồi)</button>
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Đóng</span></a>
+					</div>
+
+					<div class="ipt_elt seat">
+						<label for="seat"><span class="hidden" id="seatClassText">Chọn hạng ghế ngồi</span></label>
+						<input type="text" id="seat" style="width:165px;" readonly="" placeholder="Hạng ghế">
+						<a href="javascript:sharpNothig();" class="btn_spot"><span class="hidden">Chọn hạng</span></a>
+					</div>
+					<div class="shadow_layer case2 layer_seat" id="after_select">
+						<div class="inner">
+							<div class="seat_cls">
+								<h4 class="layer_tit">Chọn hạng ghế ngồi</h4>
+								<h5 class="title_type3" name="cabinH5">Chuyến bay khởi hành và quay lại</h5>
+								<div class="tab_wrap" name="tabs" area="cabinClass">
+									<ul name="selectSeg1CabinClass" class="redCabinClass" style="display:none;">
+
+										<li class=""><a href="javascript:sharpNothig();" name="cabinClassAll" cabinclass="A"><span>Tất
+													cả</span></a></li>
+										<li class=""><a href="javascript:sharpNothig();" cabinclass="E"><span>Hạng phổ thông</span></a></li>
+										<li class=""><a href="javascript:sharpNothig();" cabinclass="B"><span>Hạng thương gia</span></a>
+										</li>
+										<li class="fst_cls" style="pointer-events: none; opacity: 0.4;"><a href="javascript:sharpNothig();"
+												cabinclass="F"><span>Hạng nhất</span></a></li>
+									</ul>
+									<input type="hidden" id="seg1cabinClass" name="seg1cabinClass" value="R">
+									<ul name="selectSeg1CabinClass" class="revCabinClass">
+
+										<li class="on">
+
+
+											<a href="javascript:sharpNothig();" cabinclass="R" title="Đã chọn"><span>Hạng phổ thông khuyến
+													mại</span></a>
+										</li>
+
+										<li>
+
+											<a href="javascript:sharpNothig();" cabinclass="E"><span>Hạng phổ thông cơ bản</span></a>
+										</li>
+
+										<li>
+
+											<a href="javascript:sharpNothig();" cabinclass="B"><span>Hạng thương gia</span></a>
+										</li>
+
+										<li class="fst_cls" style="pointer-events: none; opacity: 0.4;">
+
+											<a href="javascript:sharpNothig();" cabinclass="F"><span>Hạng nhất</span></a>
+										</li>
+									</ul>
+
+
+								</div>
+								<h5 class="title_type3 cabinClass" name="cabinH5" style="display:none;">Chuyến bay chiều về</h5>
+								<div class="tab_wrap cabinClass" name="tabs" style="display:none;">
+									<input type="hidden" id="seg2cabinClass" name="seg2cabinClass" value="E">
+									<ul name="selectSeg2CabinClass" class="revCabinClass">
+
+										<li>
+
+
+											<a href="javascript:sharpNothig();" cabinclass="R"><span>Hạng phổ thông khuyến mại</span></a>
+										</li>
+
+										<li class="on">
+
+											<a href="javascript:sharpNothig();" cabinclass="E"><span>Hạng phổ thông cơ bản</span></a>
+										</li>
+
+										<li>
+
+											<a href="javascript:sharpNothig();" cabinclass="B"><span>Hạng thương gia</span></a>
+										</li>
+
+										<li class="fst_cls" style="pointer-events: none; opacity: 0.4;">
+
+											<a href="javascript:sharpNothig();" cabinclass="F"><span>Hạng nhất</span></a>
+										</li>
+									</ul>
+								</div>
+								<div class="seat_check_area">
+									<input type="checkbox" id="check"><label for="check">Nâng hạng ghế</label>
+									<input type="checkbox" id="check1"><label for="check1">Hạng kết hợp cho chuyến bay khởi hành &amp;
+										quay lại</label>
+								</div>
+
+								<div id="checkAbled" style="display:none">
+									<br>※ đối với phần thưởng nâng hạng, vui lòng kiểm tra tình trạng còn chỗ ghế thưởng với trung tâm đặt
+									chỗ trước khi tiếp tục.
+								</div>
+							</div>
+
+							<div class="title_wrap_type3 china" style="display: none;">
+								<h4 class="fl layer_tit">Chọn loại tiền tệ</h4>
+
+								<div class="tooltip_wrap">
+									<a href="javascript:sharpNothig();" class="btn_info">Trợ giúp</a>
+									<div class="layer_tooltip bottom" style="width:800px;">
+										<div class="inner">
+											<p class="title">CNY&nbsp;Ghi chú khi được chọn</p>
+											<ul class="list_type2">
+												<li>Nếu chọn đồng nhân dân tệ (cny), alipay (支付宝) và union pay (银联) là các phương thức giao dịch
+													duy nhất hiện có.</li>
+												<li>Tuy nhiên, chỉ chấp nhận thẻ ghi nợ/thẻ tín dụng liên kết với alipay và union pay.</li>
+												<li>Nếu quý khách muốn chọn đơn vị tiền tệ nước ngoài, vui lòng chọn won (KRW).</li>
+											</ul>
+
+											<p class="title mar_to30">KRW&nbsp;Ghi chú khi được chọn</p>
+											<ul class="list_type2">
+												<li>Nếu quý khách muốn thực hiện giao dịch với ngoại tệ chứ không phải đồng nhân dân tệ (cny),
+													hãy chọn đồng won (krw).</li>
+												<li>Giá vé được thể hiện trong đặt chỗ (bước) là số tiền bằng nhân tệ (CNY) đã được quy đổi
+													thành won (KRW).</li>
+												<li>Số tiền giao dịch cuối cùng tương đương với số tiền được chuyển đổi từ tiền tệ Hàn Quốc sang
+													loại tiền được áp dụng cho bảng sao kê ngân hàng của quý khách.</li>
+												<li>Trong trường hợp này, quý khách có thể phải chịu phí giao dịch vùng nước ngoài và chênh lệch
+													tiền tệ.</li>
+											</ul>
+										</div>
+										<a href="javascript:sharpNothig();" class="tooltip_close"><span class="hidden">Đóng</span></a>
+									</div>
+								</div>
+							</div>
+							<div class="tab_wrap t2 currency china" style="display: none;">
+								<ul>
+									<li class="on"><a href="javascript:sharpNothig();" currency="CNY"><span>
+												<span class="txt">Nhân dân tệ (NDT)</span>
+												<span class="ico cny01"><span class="hidden">Thanh toán bằng alipay</span></span>
+												<span class="ico cny02"><span class="hidden">Thanh toán bằng china unionpay</span></span>
+												<span class="ico cny03"><span class="hidden">Thanh toán wechat</span></span>
+											</span></a></li>
+									<li><a href="javascript:sharpNothig();" currency="KRW"><span>
+												<span class="txt">Won (krw)</span>
+												<span class="ico card"><span class="hidden">Thanh toán bằng thẻ tín dụng</span></span>
+											</span></a></li>
+								</ul>
+							</div>
+
+
+							<!-- <div class="title_wrap_type3 payp" style="display: none;">
+						<h4 class="fl layer_tit">Chọn loại tiền tệ</h4>
+						<div class="tooltip_wrap">
+							<a href="#none" class="btn_info">Trợ giúp</a>
+							<div class="layer_tooltip bottom" style="width:800px; bottom:-180px;">
+								<div class="inner">
+									<p class="title">USD&nbsp;Ghi chú khi được chọn</p>
+									<ul class="list_type2">
+										<li> If USD is selected, only PayPal payment will be accepted.</li>
+										<li>only cards, Bank accounts and BNPL is possible</li>
+										<li>Please do not select USD if you are Paypal Korea Account Holder.</li>
+										<li>For payments made in currencies other than the card issuing country, overseas usage fees/card company fees may be additionally charged.</li>
+										<li>If you want to pay in Won (KRW), select Won (KRW) on the first screen.</li>
+									</ul>
+		
+									<p class="title mar_to30">KRW&nbsp;Ghi chú khi được chọn</p>
+									<ul class="list_type2">
+										<li>If you wish to perform transactions with a foreign currency other than USD, select Won(KRW).</li>
+										<li>The fare shown in the reservation(step) is the amount of USD converted into Won(KRW).</li>
+										<li>Số tiền giao dịch cuối cùng tương đương với số tiền được chuyển đổi từ tiền tệ Hàn Quốc sang loại tiền được áp dụng cho bảng sao kê ngân hàng của quý khách.</li>
+										<li>Trong trường hợp này, quý khách có thể phải chịu phí giao dịch vùng nước ngoài và chênh lệch tiền tệ.</li>
+									</ul>
+								</div>
+								<a href="#none" class="tooltip_close"><span class="hidden">Đóng</span></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tab_wrap t2 currency payp" style="display: none;">
+		                <ul>
+		                    <li class="on"><a href="#none" currency="KRW"><span>
+								<span class="txt">Won (krw)</span>
+								<span class="ico card"><span class="hidden">Thanh toán bằng thẻ tín dụng</span></span>
+							</span></a></li>
+							<li><a href="#none" currency="USD"><span>
+								<span class="txt">USD (PAYPAL)</span>
+								<span class="ico payp"><span class="hidden">PayPal</span></span>
+							</span></a></li>
+		                </ul>
+		            </div>-->
+
+						</div>
+						<div class="btn_step_wrap">
+							<button type="button" class="btn_M red" id="seatNext">Tiếp theo</button>
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Đóng</span></a>
+					</div>
+
+					<div class="shadow_layer case2 layer_coupon coupon_search_style1" id="coupon_layer">
+						<div class="inner">
+							<h4 class="layer_tit fl">Phiếu giảm giá hiện có</h4>
+							<div class="tooltip_wrap mar_b20">
+								<a href="javascript:sharpNothig();" class="btn_info">Trẻ nhỏ không có người lớn đi kèm không thể đặt chỗ
+									trực tuyến riêng.</a>
+								<div class="layer_tooltip" style="width:810px;">
+									<div class="inner">
+										<p class="title"></p>
+										<ul class="list_type2">
+											<li style="line-height:1.2;">Phiếu giảm giá chỉ có thể sử dụng trực tuyến và có thể tải xuống hoặc
+												nhập thủ công.</li>
+											<li style="line-height:1.2;">Giảm giá chỉ có thể áp dụng cho các dịch vụ bổ sung, chẳng hạn như
+												giá vé chuyến bay, chỗ ngồi có trả phí và hành lý. Không áp dụng phiếu giảm giá cho phụ phí xăng
+												dầu và các loại thuế.</li>
+											<li style="line-height:1.2;">Phiếu giảm giá chỉ có thể áp dụng một lần và chỉ có thể sử dụng 1
+												phiếu giảm giá cho vé chuyến bay hoặc các dịch vụ bổ sung.</li>
+											<li style="line-height:1.2;">Phiếu giảm giá không sử dụng được sau ngày hết hiệu lực hoặc nếu
+												thành phố khởi hành và thành phố điểm đến không khớp với phiếu giảm giá.</li>
+											<li style="line-height:1.2;">Không thể áp dụng phiếu giảm giá cho các chuyến bay liên danh hoặc
+												các chuyến bay khác.</li>
+											<li style="line-height:1.2;">Không thể sử dụng cho vé dặm hoặc phần thưởng nâng hạng.</li>
+											<li style="line-height:1.2;">Nếu quý khách thay đổi hành trình của một vé đã mua bằng phiếu giảm
+												giá, quý khách có thể phải bồi hoàn số tiền giảm giá và trả phí xuất lại vé, tùy thuộc vào điều
+												kiện sử dụng.</li>
+											<li style="line-height:1.2;">Vì không thể áp dụng phiếu giảm giá cho vé đã mua, quý khách phải
+												thanh toán phí hoàn vé và mua lại vé để áp dụng phiếu giảm giá.</li>
+											<li style="line-height:1.2;">Các sự kiện giảm giá của phiếu giảm giá có thể thay đổi mà không cần
+												thông báo.</li>
+											<li style="line-height:1.2;">Khi bạn hủy tư cách thành viên, bạn không thể sử dụng phiếu giảm giá
+												mà bạn có.</li>
+											<li style="line-height:1.2;">Để biết thêm chi tiết, vui lòng kiểm tra các điều kiện sử dụng cho
+												mỗi phiếu giảm giá.</li>
+											<li style="line-height:1.2;"> <a target="_blank"
+													href="https://flyasiana.com/C/VN/VI/contents/book-online?tabId=coupons"
+													style="margin-left:10px; text-decoration:underline; color:#6b2900;" rel="noopener">Sử dụng
+													Phiếu giảm giá</a></li>
+										</ul>
+									</div>
+									<a href="javascript:sharpNothig();" class="tooltip_close"><span class="hidden">Nếu quý khách thay đổi
+											hành trình của một vé đã mua bằng phiếu giảm giá, quý khách có thể phải bồi hoàn số tiền giảm giá
+											và trả phí xuất lại vé, tùy thuộc vào điều kiện sử dụng.</span></a>
+								</div>
+							</div>
+
+							<div class="itinerary_coupon_tBox">
+
+								<input type="text" id="txtNoLoginCouponCode" title="쿠폰코드 입력" class="white"
+									placeholder="Nhập mã phiếu giảm giá." style="display: none;">
+								<div class="coupon_search_bBox" id="divLoginCouponCode" style="display: none;">
+									<div class="left">
+										<input type="text" id="txtCouponCode" title="쿠폰코드 입력" class="white"
+											placeholder="Nhập mã phiếu giảm giá.">
+									</div>
+									<div class="right">
+										<button type="button" class="btn_M red" onclick="javascript:manualCouponStatusCheck();">Đăng
+											ký</button>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="itinerary_coupon">
+								<div class="coupon_slider ui_slider">
+									<div class="ui_slider_area" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);"
+										id="couponList">
+									</div>
+								</div>
+								<div class="btn_navigation">
+									<a href="javascript:sharpNothig();" class="btn_prev btn_coupon_prev swiper-button-disabled">Trước</a>
+									<a href="javascript:sharpNothig();" class="btn_next btn_coupon_next">Tiếp theo</a>
+								</div>
+								<div class="border_box coupon_no_box" style="display:none;">
+									<p class="icon_empty">Không có phiếu giảm giá nào để tải xuống.</p>
+								</div>
+							</div>
+							<ul class="list_type3 REVCoupon">
+								<li>Chọn coupon áp dụng để đặt chỗ với giá vé được giảm giá.</li>
+								<li>Vui lòng đọc kỹ hướng dẫn trước khi sử dụng phiếu giảm giá.</li>
+							</ul>
+							<ul class="list_type3 REDCoupon" style="display: none;">
+								<li>Chọn phiếu giảm giá để đặt chỗ với số dặm đã giảm giá.</li>
+								<li>Giảm giá qua phiếu giảm giá chỉ áp dụng khi hành khách sử dụng phiếu giảm giá.</li>
+								<li class="col_red">Để giảm giá vé, chủ sở hữu phiếu giảm giá phải được xuất vé riêng.</li>
+							</ul>
+						</div>
+						<div class="btn_wrap_leriType3">
+							<div class="left" id="todayClose">
+								<input type="checkbox" id="noToday2" name="noToday">
+								<label for="noToday2" class="pad_type1">Không hiển thị lại hôm nay</label>
+								<span class="alM"><a href="javascript:sharpNothig();" name="noTodayClose">[Đóng]</a></span>
+							</div>
+							<div class="right">
+								<button type="button" class="btn_M white" id="btnCouponNotApply">Không sử dụng phiếu giảm giá</button>
+
+								<button type="button" class="btn_M red" id="btnManualCouponApply"
+									onclick="javascript:manualCouponStatusCheck();" style="display: none;" disabled="">Áp dụng</button>
+
+								<button type="button" class="btn_M red" id="btnCouponApply" style="display: none;" disabled="">Sử dụng
+									phiếu giảm giá đã chọn</button>
+							</div>
+						</div>
+						<button type="button" class="btn_popup btn_allCoupon" id="btnShowCouponList"
+							title="Mở trong một cửa sổ mới">Xem tất cả phiếu giảm giá</button>
+						<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Đóng</span></a>
+					</div>
+
+					<button type="button" id="registTravel" class="btn_L gray btn_revsearch"
+						onclick="javascript:registTravelV();">Tìm kiếm</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<div id="marketingCouponBanner" class="floating_popup coupon_banner_floating" style="display: none;">
+						<div class="floating_container">
+							<div class="floating_content">
+								<dl>
+									<dt><span>Quý khách đã được tặng một phiếu giảm giá.</span></dt>
+									<dd><a href="javascript:sharpNothig();" id="btnShowCouponList" class="btn_arrow">Phiếu giảm giá của
+											tôi</a></dd>
+								</dl>
+							</div>
+							<a href="javascript:sharpNothig();" class="floating_close">Đóng</a>
+						</div>
+					</div>
+
+
+
+
+				</div>
+			</div>
+
+		</div>
+
+		<script type="text/javascript">
+			var jsJSON = JSON.parse('{"J0076":"10.000 KRW chuyển đổi thành <strong>1.000 USD</strong>.","J2013":"한글성 입력","J0075":"Nhập một định dạng email hợp lệ.","J2014":"한글이름 입력","J0078":"Vui lòng nhập mã số hội viên của quý khách","J2011":"한글성 입력(예:홍)","J0077":"Chọn hãng hàng không.","J2012":"한글이름 입력(예:길동)","J2017":"임직원 신청 정보에 동일한 아시아나클럽 회원번호가 있습니다. 다시 확인해 주십시오.","J0079":"Quý khách đã nhập mã số hội viên không chính xác. ","J2018":"임직원으로 등록된 아시아나클럽 회원번호가 존재합니다. 다시 확인해 주십시오.","J2015":"숫자 9자리를 입력해 주십시오.","J2016":"신청하신 임직원의 아시아나클럽 회원 정보상 이름 또는 회원번호가 맞지 않습니다.","J0070":"Ngày sinh mà quý khách đã nhập tương ứng với  trẻ em, dựa trên ngày lên máy bay quốc tế (#0).","J0072":"Năm quý khách nhập không hợp lệ.","CHK_BORDING_DATE":"Chọn ngày lên máy bay.","J0071":"Ngày sinh mà quý khách đã nhập tương ứng với một  người lớn, dựa theo ngày lên chuyến bay nội địa (#0).","J2010":"영문이름 입력","J0074":"Ngày quý khách đã nhập không hợp lệ.","J0073":"Tháng quý khách đã nhập không hợp lệ.","J2019":"다른 기업의 대표자로 등록된 임직원 정보입니다.","J0065":"Nhập ngày sinh.","J2002":"파일을 첨부해주십시오.","J0064":"Ngày sinh 8 chữ số","J2003":"파일당 최대 5MB까지 첨부 가능합니다.","J0067":"Ngày sinh mà quý khách đã nhập tương ứng với một  trẻ em, dựa theo ngày lên chuyến bay nội địa (#0).","J0066":"Ngày sinh mà quý khách đã nhập tương ứng với một trẻ sơ sinh, dựa theo ngày lên máy bay cho chuyến bay nội địa (#0).","J2001":"Nhập trường bắt buộc.","J0069":"Ngày sinh mà quý khách đã nhập tương ứng với  trẻ sơ sinh, dựa trên ngày lên máy bay quốc tế (#0).","J2006":"한글만 입력할 수 있습니다.","J0068":"Ngày sinh mà quý khách đã nhập tương ứng với một  người lớn, dựa theo ngày lên chuyến bay nội địa (#0).","J2007":"영어와 띄어쓰기만 입력할 수 있습니다.","J2004":"JPG, PDF, PNG 파일 형태로 첨부하시기 바랍니다.","J2005":"이메일 주소 형식이 맞지 않습니다.","NEED_TICKET_NUMBER":"There are passengers with the same names within this reservation. Please search with a ticket number (13 digits).","J0061":"Quý khách đã đăng nhập.","J0060":"Chọn sân bay.","J0063":"Nhập ngày sinh 8 chữ số (ví dụ: yyyymmdd)","J0062":"Quý khách có thể kiểm tra xem tình trạng của con mình có phải là trẻ&#47;sơ sinh hay không bằng cách nhập ngày sinh của trẻ.<br>","J2008":"최소 알파벳 2자 이상 입력하셔야 합니다.","J2009":"영문성 입력","J0098":"Chuyển đổi","J2035":"다른 기업의 임직원으로 등록된 임직원 정보입니다.\\n이전 기업에서 임직원 탈퇴 후 재신청 부탁드립니다.","J3003":"Không có sẵn do chính sách bảo mật","J0097":"Đã qua thời gian sự kiện.","J2036":"임직원으로 등록하신 회원이 휴면 계정일 경우 해당 회원이 로그인 및 휴면 해제를 완료한 후 예매 가능합니다.","J2033":"-Please check the notice page for any applicable entry restrictions by country/region prior to proceeding with a Star Alliance reservation.\\nThe notice can be accessed via the Customer Service → COVID-19 notifications\\n\\n-Entry restrictions by country/region and transfer information varies frequently due to COVID-19, Restrictions may change without prior notice\\n\\n-Please check the airport information on webpage of transit government, airport in case itinerary includes transferring terminal and flights.\\n\\n-Other notifications\\n-Japan (Narita Airport): Transferring ONLY available on the same day(NOT available on the different day notwithstanding within 24 hours)\\n→The above notifications may change without prior notice\\nAirport information by country/region needs to be checked.","J3001":"Vui lòng nhập địa chỉ email hợp lệ trong chính sách bảo mật của quý khách.","J0099":"Đang xử lý.","J2034":"임직원으로 등록할 회원이 휴면 계정일 경우 해당 회원이 로그인 및 휴면 해제를 완료한 후 진행이 가능합니다.","J3002":"Vui lòng nhập họ/tên hợp lệ","J2037":"Reservations can be made for up to 4 people","J2038":"중복된 파일이 존재합니다.","J0090":"Nhập họ (tiếng Anh).","J0092":"Không thể sử dụng được","J0091":"Chuyến bay này không cung cấp sơ đồ chỗ ngồi.","J0094":"Thiếu #0 dặm","J2031":"Tìm kiếm","J0093":"Có thể được sử dụng","J2032":"삭제","J0096":"Sử dụng dặm","J0095":"Số dặm của #0 là <span class=\\\"col_red\\\">&#35;&#123;1&#125;m</span>.</span>","J2030":"Đính kèm file","J0087":"Đóng","J2024":"비밀번호는 8 ~ 20자리로 대/소문자, 숫자, 특수문자 중 세가지 이상을 조합하여 입력해주세요.","J0086":"Xác nhận","J2025":"반복된 숫자(예시.1111)는 사용이 불가합니다.","J0089":"Chọn quốc gia.","J2022":"공백은 입력할 수 없습니다.","J0088":"Chọn vùng.","J2023":"특수문자는 #0 만 사용 가능합니다.","J2028":"비밀번호 규칙에 맞지 않습니다. 비밀번호 도움말을 확인해주세요.","J2029":"입력하신 신규 비밀번호와 일치하지 않습니다.","J2026":"연속 번호(예시.1234 or 1112)는 사용이 불가합니다.","J2027":"연속 번호(예시.4321 or 1112)는 사용이 불가합니다.","J0081":"Chọn số quốc gia.","J0080":"Mã số hội viên của quý khách đã được nhập thành công. ","J0083":"Chọn và nhấp vào ok để tự động nhập mã vùng.","J2020":"임직원 등록 신청이 완료되었습니다.","J0082":"Chọn quốc gia và vùng cho mã vùng.","J2021":"기존 비밀번호와 신규 비밀번호가 같을 수 없습니다.","J0085":"Quốc gia/khu vực","J0084":"Vùng","J4010":"Có thể chọn khi thanh toán","J4005":"Phiếu giảm giá đã được tải xuống. Không thể sử dụng phiếu giảm giá cho các điều kiện của hành trình mà quý khách đã nhập.","J4004":"Phiếu giảm giá này đã được tải xuống.","J4003":"Nhập mã phiếu giảm giá.","J4002":"Sắp được đóng","J4009":"Mã phiếu giảm giá mà quý khách đã nhập không hợp lệ. Vui lòng kiểm tra lại.","J4008":"Giá vé được giảm giá sẽ được áp dụng.","J4007":"Phiếu giảm giá không áp dụng cho các điều kiện của hành trình mà quý khách đã nhập.","J4006":"Phiếu giảm giá đã được tải xuống. Trước tiên quý khách phải chọn phiếu giảm giá để sử dụng.","J4001":"Dịch vụ bổ sung","J4000":"Vé máy bay","NEED_TICKET_NUMBER_OTHER":"Online Check-in is not available for this reservation. Please check in at the airport counter.","J5000":"Email đã được gửi đi.","J0806":"#0 không phải là trẻ sơ sinh vào ngày lên máy bay.","J0803":"20240512040000","J0802":"20240512000000","J0805":"#0 không phải là trẻ em trong ngày lên máy bay.","J0804":"Đang bảo trì hệ thống\\n00:00~04:00 ngày 12 tháng 5 năm 2024(chủ nhật) (KST)","W3205":"[Notice]\\nChuyến bay OZ3173 xuất phát từ Incheon (ICN) ngày 24 tháng 9 đi Thanh Đảo (TAO) chỉ có thể đi được cho người Hàn Quốc và chỉ giới hạn mua tối đa 3 chuyến, bao gồm cả bản thân mình.\\nVui lòng điều chỉnh số lượng hành khách và đăng ký thành viên trước rồi tiến hành mua.","J9998":"Tìm kiếm chuyến bay.","J9997":"Chúng tôi đang tìm kiếm<br>các chuyến bay giá rẻ nhất cho quý khách.","J9999":"<p class=\\\"tit\\\">Đang xử lý.</p>Vui lòng đợi và<br>không làm mới trang.","J6001":"필수 동의 항목에 체크해주시기 바랍니다.","J0610":"Hạng phổ thông flexi, hạng nhất","J7000":"기업우대 프로그램( Asiana Corporate Plus) 가입 국가와 항공권 출발 국가가 상이합니다. 접속하신 국가 사이트 또는 출발지를 확인하여 주십시요.","J0619":"Gửi phiếu giảm giá không thành công do lỗi.","J0612":"Hạng thương gia, hạng phổ thông linh hoạt","J0611":"Hạng thương gia, vé basic hạng phổ thông","J0614":"Hạng nhất, vé basic hạng phổ thông","J0613":"Hạng thương gia, hạng nhất","J0616":"Hạng nhất, hạng thương gia","J0615":"Hạng nhất, phổ thông linh hoạt","J0618":"Phiếu giảm giá đã được gửi.","J0617":"The phone number format does not match. Please re-enter.","J0609":"Hạng phổ thông linh hoạt, hạng thương gia","J0608":"Hạng phổ thông flexi, basic","J0601":"Hạng phổ thông cơ bản","J0603":"Hạng thương gia","J0602":"Hạng phổ thông flexi","J0605":"Phổ thông basic, flexi","J0604":"Hạng nhất","J0607":"Hạng phổ thông cơ bản, hạng nhất","J0606":"Hạng phổ thông cơ bản, hạng thương gia","J0511":"Hạng thương gia, hạng nhất","J0510":"Hạng phổ thông flexi, hạng nhất","J0513":"Giảm giá hạng phổ thông","J0512":"Phổ thông basic, flexi","J0500":"Chung","J0621":"Khoảng thời gian này không có các chuyến bay khởi hành.","J0620":"The phone number format does not match. Please re-enter.","J0509":"Hạng phổ thông cơ bản, hạng nhất","J0502":"Tất cả","J0623":"Khoảng thời gian loại trừ: ","J0501":"Hạng ghế","J0622":"Vui lòng kiểm tra thời gian đã loại trừ và chọn lại.","J0504":"Hạng phổ thông flexi","J0503":"Hạng phổ thông cơ bản","J0624":"Ngày bị loại trừ trong tuần: ","J0506":"Hạng nhất","J0505":"Hạng thương gia","J0508":"Hạng phổ thông linh hoạt, hạng thương gia","J0507":"Hạng phổ thông cơ bản, hạng thương gia","J0410":"Nhập thành phố khởi hành.","J0412":"Nhập tên của hành khách.","J0411":"Nhập thành phố điểm đến.","J0414":"Vui lòng kiểm tra số lượng chữ số.","J0413":"Nhập ngày lên máy bay.","J0416":"Đây là đặt chỗ nhóm.\\nquý khách có thể kiểm tra lịch trình cho đặt chỗ nhóm thông qua nơi mà quý khách đã đặt chỗ.","J0415":"Nhập số hiệu chuyến bay.","J0418":"Đặt chỗ này bao gồm hành khách trẻ sơ sinh. \\nquý khách có thể kiểm tra lịch trình đối với đặt chỗ này thông qua nơi mà quý khách đã đặt chỗ. \\n","J0417":"Thông tin đặt chỗ không chính xác.\\n* có thể xem đặt chỗ bằng dặm bay sau khi đăng nhập.","J0419":"Không tìm thấy thời gian làm thủ tục chuyến bay.","J0401":"Đã chọn","J0403":"Qua Incheon","J0402":"Chọn phiếu giảm giá.","J0405":"Quý khách phải vào mục “asiana của tôi” để cài đặt các tuyến bay ưa thích. quý khách muốn cài đặt các tuyến bay ưa thích?","J0404":"Nhiều thành phố","J0407":"Quý khách muốn đi đến trang đặt chỗ chuyến bay để chọn hành trình nhiều thành phố?","J0406":"Thành phố điểm đến","J0409":"Nhập mã số đặt chỗ của quý khách.","J0408":"Chọn hạng ghế.","NOLOGIN_PW_6":"Quý khách chỉ có thể thay đổi đặt chỗ của chính mình. vui lòng đăng nhập bằng id của quý khách.","J0430":"(dưới 2 tuổi)","NOLOGIN_PW_7":"Mật khẩu không khớp.","NOLOGIN_PW_8":"Thay đổi/hoàn tiền chọn ghế ngồi trực tuyến tại menu đăng nhập.\\nvui lòng đăng nhập trước hoặc liên hệ với Phòng vé của Asiana Airlines. Xin lưu ý rằng số của câu lạc bộ Asiana phải được nhập trước vào đơn đặt chỗ của bạn.","J0432":"(từ 2 đến 11 tuổi)","J0431":"(12 tuổi trở lên)","J0434":"(từ 2 đến 12 tuổi)","J0433":"(13 tuổi trở lên)","NOLOGIN_PW_9":"Đây là menu đăng nhập. Vui lòng tiếp tục sau khi đăng nhập thành công.","J0436":"Số trẻ sơ sinh không thể vượt quá số lượng người lớn đi kèm.","J0435":"Không có tìm kiếm tuyến bay nào gần đây.","J0438":"Chỉ có thể đặt vé dặm cho quý khách và các thành viên gia đình của quý khách, và không thể vượt quá năm người bao gồm người lớn và trẻ em.","J0437":"Số người trong hồ sơ đặt chỗ có thể không vượt quá \\n9 người, bao gồm người lớn, trẻ em và trẻ sơ sinh.","J0439":"Chọn số lượng hành khách.","J0421":"Đây là chuyến bay liên danh do air seoul khai thác.","J0420":"Thông tin đặt chỗ không chính xác.","J0423":"Nhập tên chuyến bay.","J0422":"Không thể làm thủ tục chuyến bay.","J0425":"Chọn ngày.","J0424":"Chỉ nhập số","J0427":"Các tuyến dịch vụ","J0426":"Đã xảy ra lỗi.","J0429":"Chọn sân bay.","J0428":"Khác","J0450":"Ngày sinh mà quý khách đã nhập tương ứng với  trẻ sơ sinh, dựa trên ngày lên máy bay quốc tế (#0).","J0210":"Chỉ áp dụng giảm giá cho một khách đi cùng đối với hành trình chuyến bay chiều về [#0].","J0452":"Ngày sinh mà quý khách đã nhập phù hợp với một  người lớn, dựa theo ngày lên máy bay chuyến bay quốc tế (#0).","J0451":"Ngày sinh mà quý khách đã nhập tương ứng với  trẻ em, dựa trên ngày lên máy bay quốc tế (#0).","J0212":"Vui lòng chọn chương trình giảm giá cá nhân lại lần nữa.","J0454":"Thành phố điểm đến","J0211":"Trên chuyến bay khởi hành [#0], chiết khấu cho người giám hộ đi kèm của người khuyết tật có công với nước chỉ có thể chọn nếu họ đi kèm với người khuyết tật có công với nước.","J0453":"Thành phố khởi hành","J0214":"Chỉ có thể chọn một du khách đi cùng cho hành trình chuyến bay khởi hành [#0].","J0456":"Chuyến bay khởi hành","J0213":"Chỉ giảm giá một lần cho người có công với phong trào độc lập của hàn quốc cho hành trình chuyến bay khứ hồi [#0].","J0455":"Ngày lên máy bay","J0216":"Chỉ áp dụng giảm giá cho một người giám hộ đi kèm trên chuyến bay khởi hành nếu mua vé máy bay cho một hành khách, với giấy tờ chứng minh về ưu đãi giảm giá, trên cùng hành trình trước khi lên chuyến bay. Phải đưa ra giấy tờ chứng minh cho ưu đãi giảm giá vào ngày lên máy bay. Nếu không thể đưa ra giấy tờ, quý khách phải mua vé máy bay với giá vé thông thường để lên máy bay.","J0458":"Không thể thực hiện đặt chỗ nếu hội viên đăng nhập là trẻ sơ sinh. \\nliên hệ với phòng vé.","J0215":"Chỉ có thể chọn một du khách đi cùng cho hành trình chuyến bay quay lại [#0].","J0457":"Chuyến bay khởi hành và quay lại","J0218":"Giảm giá cho một người giám hộ đi kèm trên chuyến bay khởi hành không thể vượt quá một hành khách có minh chứng giảm giá bằng giấy tờ. Kiểm tra hành khách đủ điều kiện được giảm giá.","J0217":"Không thể mua vé chuyến bay trực tuyến cho người giám hộ đi cùng lên máy bay cùng trẻ sơ sinh bị tàn tật trên hành trình khởi hành. Vui lòng mua vé qua phòng vé (1588-8000).","J0459":"người giám hộ đi kèm phải là cha mẹ hoặc người trên 18 tuổi. người giám hộ phải đi cùng hành trình trong cùng một khoang hành khách.Liên hệ với phòng vé trong trường hợp trẻ sơ sinh/trẻ em đi cùng với người giám hộ dưới 18 tuổi.","J0219":"Chỉ áp dụng giảm giá cho một người giám hộ đi cùng trên chuyến bay khởi hành nếu mua vé máy bay cho một hành khách, với giấy tờ chứng minh về ưu đãi giảm giá, trên cùng hành trình trước khi lên chuyến bay. nếu vé máy bay được hành khách mua riêng với giấy tờ chứng minh về ưu đãi giảm giá, quý khách sẽ không thể mua vé chuyến bay cho chỉ một người giám hộ đi cùng. vui lòng mua vé thông qua phòng vé (1588-8000).","J0441":"Quý khách có thể kiểm tra xem trẻ được xếp là là trẻ sơ sinh hay&#47;trẻ em bằng cách nhập ngày sinh của trẻ.<br>","J0440":"Máy tính tuổi","J0201":"Vui lòng chọn ngôn ngữ.","J0443":"Ngày sinh 8 chữ số","J0200":"Định dạng thư không chính xác. Vui lòng nhập lại.","J0442":"Nhập ngày sinh 8 chữ số (ví dụ: yyyymmdd)","J0203":"Mã số thẻ thành viên của quý khách chưa được nhập. ","J0445":"Đóng","J0202":"#0 sẽ được chuyển thành <strong>#1</strong>.","J0444":"Tính toán","J0205":"Lỗi mã giảm giá chuyến bay khởi hành!","J0447":"Ngày sinh mà quý khách đã nhập tương ứng với một  trẻ sơ sinh, dựa theo ngày lên máy bay cho chuyến bay nội địa (#0).","J0204":"Vui lòng chuẩn bị để xuất trình giấy tờ chứng minh để được giảm giá vào ngày lên máy bay. Nếu không thể xuất trình giấy tờ, quý khách phải mua vé máy bay với giá vé thông thường để lên máy bay.","J0446":"Nhập ngày sinh.","J0207":"Lỗi mã giảm giá chuyến bay quay lại!","J0449":"Ngày sinh mà quý khách đã nhập tương ứng với một  người lớn, dựa theo ngày lên chuyến bay nội địa (#0).","J0206":"Kiểm tra [#0].","J0448":"Ngày sinh mà quý khách đã nhập tương ứng với một  trẻ em, dựa theo ngày lên chuyến bay nội địa (#0).","J0209":"Kiểm tra [#0].","J0208":"Chỉ có một khách đi du lịch đi kèm cho hành trình chiều đi [#0].","J0230":"Giảm giá thuế sân bay cho một người giám hộ đi kèm trên chuyến bay quay lại không thể vượt quá một hành khách có minh chứng giảm giá bằng giấy tờ. Kiểm tra hành khách đủ điều kiện được giảm giá.","J0472":"Số dặm của #0 là <span class=\\\"col_red\\\">#1m</span>.","J0471":"Không áp dụng","J0232":"Mở rộng","J0474":"Đã qua thời gian sự kiện.","J0110":"Dặm","J0231":"Chỉ áp dụng giảm thuế sân bay cho một người giám hộ đi kèm trên chuyến bay trở về nếu vé máy bay được mua cho một hành khách, có giấy tờ chứng minh để giảm giá, trên hành trình tương tự trước khi lên máy bay. nếu vé máy bay được mua riêng từ hành khách có giấy tờ chứng giảm giá, quý khách sẽ không thể mua vé máy bay chỉ cho một người giám hộ đi kèm. vui lòng thực hiện mua vé thông qua trung tâm đặt chỗ theo số điện thoại (1588-8000).","J0473":"Sử dụng dặm","J0234":"Không thể chọn ngày trước ngày hôm nay.","J0476":"8 chữ số hoặc 6 chữ cái và chữ số","J0233":"Không thể xem các ngày cách nhau hơn một năm.","J0475":"Chuyển đổi","J0236":"Ngày quay lại sớm hơn ngày khởi hành.\\nkiểm tra lại ngày quay lại.","J0478":"Đang xử lý.</p>vui lòng đợi.<br> không làm mới trang.","J0235":"Ngày khởi hành muộn hơn ngày quay lại.\\nkiểm tra lại ngày khởi hành.","J0477":"Số gồm 13 chữ số","J0470":"Xem thêm","E_LastName":"Nhập Họ của hành khách.","J0036_2":"Đối với đặt chỗ dặm bay, bạn có thể kiểm tra đặt chỗ sau khi đăng nhập.","J0238":"Thấp nhất","J0237":"Ngày đến sớm hơn ngày khởi hành.","J0479":"8 chữ số hoặc 6 chữ cái và chữ số","J0239":"Không thể kéo dài phiên.","J0461":"Khi mua chuyến bay nội địa trực tuyến, quý khách phải mua vé khi đặt chỗ được thực hiện.\\nnếu quý khách không mua ngay lập tức, đặt chỗ sẽ không được hoàn tất.\\n\\nnếu quý khách không thanh toán, đặt chỗ của quý khách sẽ không được hoàn tất.\\n\\nvui lòng lưu ý rằng các mốc thời gian đối với tất cả các tuyến bay trong đặt chỗ của quý khách\\n và các vấn đề liên quan đến vận hành/không vận hành có thể thay đổi mà không có thông báo trước\\n, do thay đổi lịch trình và công việc bảo trì thường xuyên.\\n\\n* đối với các chuyến bay nội địa, hành khách không có thẻ căn cước có ảnh sẽ không thể làm thủ tục chuyến bay tại sân bay hoặc vào khu vực kiểm tra an ninh.","J0460":"Khi trẻ sơ sinh/trẻ em lên máy bay, vui lòng chuẩn bị các tài liệu có thể xác minh tuổi của trẻ (chính sách bảo hiểm, bản sao sổ đăng ký cư trú hoặc hộ chiếu) tại sân bay vào ngày chuyến bay.","J0100":"Vui lòng chờ.<br> không làm mới trang.","J0221":"Không thể mua vé chuyến bay trực tuyến cho người giám hộ đi cùng lên máy bay cùng trẻ sơ sinh bị tàn tật trên hành trình quay lại. Vui lòng mua vé qua phòng vé (1588-8000).","J0463":"Vui lòng chọn ngày khởi hành.","J0220":"Chỉ áp dụng giảm giá cho một người giám hộ đi cùng trên chuyến bay khứ hồi nếu mua vé máy bay cho một hành khách, với bằng giấy tờ chứng minh về ưu đãi giảm giá, trên cùng hành trình trước khi lên chuyến bay. phải đưa ra giấy tờ chứng minh cho ưu đãi giảm giá ngày lên máy bay. nếu không thể đưa ra giấy tờ, quý khách phải mua vé máy bay với giá vé thông thường để lên máy bay.","J0462":"Nếu có khả năng hành trình của quý khách sẽ thay đổi, chúng tôi khuyến nghị quý khách đặt chỗ từng chuyến bay một chiều riêng lẻ. \\n(khi quý khách khởi hành bằng vé khứ hồi, quý khách có thể gặp phải hạn chế nếu quý khách muốn thay đổi hành trình quay lại hoặc hoàn tiền.)","J0223":"Chỉ áp dụng giảm giá cho một người giám hộ đi kèm trên chuyến bay chiều về nếu vé máy bay được mua cho một hành khách, có giấy tờ chứng minh để giảm giá, trên hành trình tương tự trước khi lên máy bay. nếu vé máy bay được mua riêng từ hành khách có giấy tờ chứng giảm giá, quý khách sẽ không thể mua vé máy bay chỉ cho một người giám hộ đi kèm. vui lòng thực hiện mua vé thông qua trung tâm đặt chỗ theo số điện thoại (1588-8000).","J0465":"Không có mã số đặt chỗ phù hợp.","J0101":"Xóa","J0222":"Giảm giá cho một người giám hộ đi kèm trên chuyến bay quay lại không thể vượt quá một hành khách có bằng chứng giảm giá bằng giấy tờ. Kiểm tra hành khách đủ điều kiện được giảm giá.","J0464":"Vui lòng chọn ngày quay lại.","J0225":"Không thể mua vé chuyến bay qua internet với giảm giá thuế sân bay cho một người giám hộ đi cùng cho trẻ sơ sinh bị tàn tật trên hành trình khởi hành, vì vậy vui lòng mua vé qua phòng vé (1588-8000).","J0467":"Nhập họ (tiếng Anh).","J0224":"Việc giảm thuế sân bay cho một người giám hộ đi kèm trên chuyến bay khởi hành chỉ được áp dụng nếu vé máy bay được mua cho một hành khách, có giấy tờ chứng minh cho việc giảm giá, trên hành trình tương tự trước khi lên máy bay. vui lòng chuẩn bị xuất trình giấy tờ chứng minh cho việc giảm giá vào ngày lên máy bay. nếu không thể xuất trình, quý khách phải mua vé máy bay theo giá vé thông thường.","J0466":"Nhập mã số đặt chỗ.","CHK_SPECIAL_CHR":"Nhập mà không sử dụng ký tự hoặc số đặc biệt.","J0036_1":"Xác minh việc ghi lại dưới đây cho mục đích bảo mật.","J0227":"Chỉ áp dụng giảm giá thuế sân bay cho một người giám hộ đi cùng trên chuyến bay khởi hành nếu mua vé máy bay cho một hành khách, với giấy tờ chứng minh về ưu đãi giảm giá, trên cùng hành trình trước khi lên chuyến bay. nếu vé máy bay được hành khách mua riêng với giấy tờ chứng minh về ưu đãi giảm giá, quý khách sẽ không thể mua vé chuyến bay cho chỉ một người giám hộ đi cùng. vui lòng mua vé thông qua phòng vé (1588-8000).","J0469":"Chọn ","J0226":"Giảm giá thuế sân bay cho một người giám hộ đi kèm trên chuyến bay khởi hành không thể vượt quá một hành khách có minh chứng giảm giá bằng giấy tờ. Kiểm tra hành khách đủ điều kiện được giảm giá.","J0468":"Tải về","J0229":"Không thể mua vé chuyến bay qua internet với giảm giá thuế sân bay cho một người giám hộ đi cùng cho trẻ sơ sinh bị tàn tật trên hành trình chiều về, vì vậy vui lòng mua vé qua trung tâm đặt chỗ (1588-8000).","J0228":"Việc giảm thuế sân bay cho một người giám hộ đi kèm trên chuyến bay chiều về chỉ áp dụng nếu vé máy bay được mua cho một hành khách, có giấy tờ chứng minh cho việc giảm giá, trên hành trình tương tự trước khi lên máy bay. vui lòng chuẩn bị xuất trình giấy tờ chứng minh cho việc giảm giá vào ngày lên máy bay. nếu không thể xuất trình, quý khách phải mua vé máy bay theo giá vé thông thường.","J0010":"Số người trong hồ sơ đặt chỗ có thể không vượt quá \\n9 người, bao gồm người lớn, trẻ em và trẻ sơ sinh.","J0252":"Đóng","J0494":"Đủ điều kiện làm thủ tục chuyến bay tự động","J0251":"Không thể thực hiện đặt chỗ nếu hội viên đăng nhập là trẻ sơ sinh. \\nliên hệ với phòng vé.","J0493":"Đã áp dụng làm thủ tục chuyến bay tự động","J0012":"Chỉ có thể đặt vé dặm cho quý khách và các thành viên gia đình của quý khách, những người là hội viên Asiana, và không thể vượt quá 5 người bao gồm người lớn, trẻ em và trẻ sơ sinh.","J0254":"Vui lòng chọn sân bay khởi hành.","J0496":"Trợ giúp","J0011":"Vé dặm chỉ có thể được đặt cho quý khách và các thành viên gia đình của quý khách, và không được quá 8 người bao gồm người lớn và trẻ em.","J0253":"Bảng này bao gồm #1","J0495":"Tiết kiệm thời gian bằng cách điền vào mẫu đơn giản để nhận thẻ lên máy bay 24 giờ trước khi khởi hành.","J0014":"Không có mã số đặt chỗ phù hợp.","J0135":"Tuyến bay #0 đã được thay đổi thành #1.","J0498":"Chọn chỗ ngồi/làm thủ tục chuyến bay tự động  trạng thái yêu cầu","J0013":"Chọn số lượng hành khách.","J0497":"Xin lưu ý rằng có thể có các hạn chế cho một số hãng hàng không hỗ trợ thẻ lên máy bay trên điện thoại.","J0016":"Không có thành phố điểm đến nào cho thành phố khởi hành sau khi thay đổi.","J0015":"Chọn thành phố khởi hành và thành phố điểm đến.","J0136":"Đây là thời gian đặt chỗ của chuyến bay bổ sung cho chuseok &amp;#40;ngày lễ tạ ơn của hàn quốc&amp;#41;#0.\\nquý khách có thể đặt cho tối đa 6 người. vui lòng xác nhận số người một lần nữa.","J0499":"Asiana Airlines","J0490":"Đối với chuyến bay khởi hành từ Trung Quốc, ngày khởi hành phải ít nhất 2 ngày sau ngày xuất vé.","J0250":"Không thể đặt chỗ nếu hội viên đăng nhập là trẻ sơ sinh hoặc trẻ em. \\nliên hệ với trung tâm đặt chỗ.","J0492":"Đóng","J0491":"Mở rộng nội dung","J0018":"Một chiều","J0017":"Khứ hồi","J0019":"Không có tuyến bay ưa thích nào được lưu. quý khách có thể thiết lập các tuyến bay ưa thích từ asiana của tôi.","J0241":"<em id=\\\"topcounttime\\\" class=\\\"fo_bol\\\"></em> còn lại cho đến khi cài đặt lại tự động.","J0483":"Hạng phổ thông","J0240":"#0phút #1 giây","J0482":"Đó là một số 13 chữ số đối với vé điện tử.","J0001":"Tiếp theo","J0243":"Tự động thiết lập lại","J0485":"Hành trình cho chặng bay không trực tiếp của Asiana Airlines (#0) chỉ có thể được đặt chỗ 3 ngày trước ngày khởi hành.","J0242":"Kéo dài phiên","J0484":"Coupon này đã được tải xuống và sử dụng.","J0003":"Đầu tiên","J0245":"Thời gian còn lại <span id=\\\"startcounttime\\\" class=\\\"fo_bol\\\"></span>","J0487":"Quý khách có thể chọn tối đa 9 người cho đặt chỗ bao gồm người lớn, trẻ em và trẻ sơ sinh.","J0002":"Cuối cùng","J0123":"Số tiền ước tính danh sách giá vé","J0244":"Phiên sẽ đóng cửa vì lý do an ninh, và quý khách sẽ được chuyển đến trang chính.","J0486":"Quý khách có thể chọn tối đa năm người, bao gồm người lớn và trẻ em, để đặt chỗ.","J0005":"Thành phố khởi hành","J0247":"Kéo dài phiên","J0489":"Quý khách có thể chọn tối đa 5 người để đặt chỗ, bao gồm cả người lớn, trẻ em và trẻ sơ sinh.","J0004":"Trước","J0246":"Đóng phiên","J0488":"Có thể chọn ghế ngồi và làm thủ tục chuyến bay sau khi hoàn tất thanh toán.","J0481":"Số gồm 13 chữ số","J0480":"Nhập mã số đặt chỗ gồm 8 chữ số hoặc mã gồm 6 chữ và số.","J0007":"Ngày khởi hành&#47;ngày quay lại","J0249":"Thời gian còn lại <span id=\\\"ssostartcounttime\\\" class=\\\"fo_bol\\\"></span>","J0006":"Điểm đến","J0248":"<em id=\\\"ssotopcounttime\\\" class=\\\"fo_bol\\\"></em> còn lại cho đến khi tự động thiết lập lại.","J0009":"Số trẻ sơ sinh không thể vượt quá số lượng người lớn đi kèm.","J0008":"Ngày khởi hành","J0032":"Nhập tên hành khách.","J1000":"Ngày lên máy bay","J3300":"Đóng","J0031":"Nhập thành phố điểm đến.","J3301":"Mở rộng","J0034":"Nhập số vé máy bay.","J1002":"성인","J0033":"Nhập ngày lên máy bay.","J1001":"Đóng","J0036":"Thông tin đặt chỗ không chính xác.\\n* có thể xem đặt chỗ bằng dặm bay sau khi đăng nhập.","J1004":"검색 정보가 없습니다","J3304":"Vui lòng kiểm tra xem quý khách đã đọc và đồng ý với các quy định về hành lý.","J0035":"Đây là đặt chỗ nhóm.\\nquý khách có thể kiểm tra lịch trình cho đặt chỗ nhóm thông qua nơi mà quý khách đã đặt chỗ.","J1003":"본인","J3305":"Vui lòng đánh dấu xác nhận rằng quý khách đã đọc và chấp thuận thông báo pháp lý, thông tin về các vật dụng hạn chế mang trong hành lý xách tay và hành lý ký gửi, và các điều khoản vận chuyển quốc tế.","J0038":"Đặt chỗ này bao gồm một hành khách là trẻ sơ sinh. \\nquý khách có thể kiểm tra lịch trình đối với đặt chỗ này thông qua nơi mà quý khách đã đặt chỗ.","J1006":"임직원 회원 승인 동의에 체크하십시오.","J3302":"Vui lòng đọc và chấp nhận chính sách giá vé để tiếp tục.","J0037":"Thông tin đặt chỗ không chính xác.\\n* có thể xem đặt chỗ bằng dặm bay sau khi đăng nhập.","J1005":"탑승객","J3303":"Vui lòng kiểm tra nội dung chú ý theo từng tuyến / đồng ý.","J0030":"Nhập thành phố khởi hành.","J1008":"해당 노선은 선택이 불가합니다.","J3308":"Thông tin sẽ được nhập vào apis. \\n quý khách muốn nhập thông tin ngay bây giờ?","J0039":"Không tìm thấy thời gian làm thủ tục chuyến bay.","J1007":"개인 정보 활용 동의에 실패하였습니다.","J3306":"Thông tin giấy tờ thông hành của quý khách đã được nhập.","J1009":"예약인원은 9명을 초과할 수 없습니다.","J3307":"Không thể nhập thông tin giấy tờ thông hành.","J0021":"Chuyến bay khởi hành","J0020":"Quý khách phải vào mục “asiana của tôi” để cài đặt các tuyến bay ưa thích. quý khách muốn cài đặt các tuyến bay ưa thích?","J0023":"Không có tìm kiếm tuyến bay nào gần đây.","J0022":"Đã chọn","J0025":"Chọn sân bay đến cho hành trình.","J0024":"Chọn sân bay khởi hành cho hành trình.","J0027":"Nhiều thành phố","J0026":"Qua Incheon","J0261":"Có hơn sáu loại giảm giá cho chuyến bay nội địa. vui lòng kiểm tra lại mã giảm giá.","J0260":"Vui lòng xác nhận thông tin hội viên của quý khách trước khi tiếp tục.","J0029":"Nhập mã số đặt chỗ.","J0028":"Quý khách muốn đi đến trang đặt chỗ chuyến bay để chọn hành trình nhiều thành phố?","J0054":"Khó tìm kiếm các quy định về giá vé. liên hệ với phòng vé hoặc văn phòng chi nhánh.","J3201":"Miễn phí","J0053":"Chọn sân bay đến cho hành trình #0.","J3202":"Không được phép xuất lại","J0056":"Chọn ngôn ngữ của quý khách.","J0055":"Định dạng thư không chính xác. Vui lòng nhập lại.","J3321":"Bạn hãy đọc và chọn đồng ý với những điều cần lưu ý khi sử dụng chuyến bay nội địa nối chuyến.","J0058":"Đã xảy ra lỗi trong quá trình.","J0057":"Thành công","J3203":"Chỉ dành cho chuyến bay khởi hành","J0059":"Tìm kiếm","J3204":"Chỉ áp dụng cho chiều về","J0050":"(13 tuổi trở lên)","J0052":"Chọn sân bay khởi hành cho hành trình #0.","J0051":"(từ 2 đến 12 tuổi)","J0043":"Chỉ nhập số","J0042":"Nhập tên chuyến bay.","J1010":"선택삭제","J0045":"Các tuyến dịch vụ","J0044":"Chọn ngày.","J0047":"(dưới 2 tuổi)","J0046":"Khác","J0049":"(từ 2 đến 11 tuổi)","J0048":"(12 tuổi trở lên)","J0041":"Không thể làm thủ tục chuyến bay.","J0040":"Thông tin đặt chỗ không chính xác.","J3319":"Vui lòng kiểm tra thức ăn trên máy bay của Air Busan."}');
+			var userAge;
+
+
+			if ('true' == 'true') {
+				for (var i = 0, lsLang = localStorage.length; i < lsLang; i++) {
+					var lsKey = localStorage.key(i);
+					if (lsKey.indexOf('searchLately') > -1) {
+						localStorage.removeItem(lsKey);
+					}
+				}
+			}
+
+
+			document.addEventListener('DOMContentLoaded', function () {
+				try {
+					rtbMainHome('');
+				} catch (error) { }
+			});
+
+
+			function swapLocations() {
+				var depCode = $('#departureAirportR').val();
+				var arrCode = $('#arrivalAirportR').val();
+
+				if (!depCode || !arrCode) {
+					alert(jsJSON.J0015 || '출도착지를 모두 선택해주세요');
+					return false;
+				}
+
+				var fields = ['AreaR', 'AirportR', 'AirportNameR', 'CityR', 'CityNameR', 'DirectR'];
+
+				for (var i = 0; i < fields.length; i++) {
+					var field = fields[i];
+					var dep = $('#departure' + field);
+					var arr = $('#arrival' + field);
+					var temp = dep.val();
+					dep.val(arr.val());
+					arr.val(temp);
+				}
+
+				var txtDep = $('#txtDepartureAirportR');
+				var txtArr = $('#txtArrivalAirportR');
+				var tmpTxt = txtDep.val();
+				txtDep.val(txtArr.val());
+				txtArr.val(tmpTxt);
+
+				var depLabel = $('#labelDepartureAirportR');
+				var arrLabel = $('#labelArrivalAirportR');
+
+				var depAbbr = depLabel.find('.abbr');
+				var arrAbbr = arrLabel.find('.abbr');
+				var tmpAbbr = depAbbr.text();
+				depAbbr.text(arrAbbr.text());
+				arrAbbr.text(tmpAbbr);
+
+				var depNameSpan = depLabel.find('span').not('.abbr').not('.hidden');
+				var arrNameSpan = arrLabel.find('span').not('.abbr').not('.hidden');
+				var tmpName = depNameSpan.text();
+				depNameSpan.text(arrNameSpan.text());
+				arrNameSpan.text(tmpName);
+
+				var depDefault = $('#departureData1 input[name="default"]');
+				var arrDefault = $('#arrivalData1 input[name="default"]');
+
+				var tmpAirport = depDefault.attr('airport');
+				var tmpArea = depDefault.attr('area');
+
+				depDefault.attr('airport', arrDefault.attr('airport'));
+				depDefault.attr('area', arrDefault.attr('area'));
+
+				arrDefault.attr('airport', tmpAirport);
+				arrDefault.attr('area', tmpArea);
+			}
+
+			function onClickAirportIcon(obj, segType) {
+				showAirportLayer(obj, segType);
+			}
+		</script>
+
+	</div>
+
+	<div data-content="reservation_inquiry" class="quick-service__item quick-reservation_inquiry section02">
+		<div class="slide_inner">
+			<h3 class="hidden">Tìm “chuyến đi của tôi”</h3>
+			<div class="section_text_copy">
+				<p class="desc">
+					Kiểm tra hành trình của quý khách và các mục khác.
+				</p>
+			</div>
+
+			<form id="frmReservationDetail" name="frmReservationDetail" method="post" target="_self">
+				<input type="hidden" id="pnrAlpha" name="pnrAlpha">
+				<input type="hidden" id="pnrNumeric" name="pnrNumeric">
+				<input type="hidden" id="officeId" name="officeId">
+				<input type="hidden" id="bizType" name="bizType" value="REV">
+				<input type="hidden" id="lastName" name="lastName">
+				<input type="hidden" id="staralliance" name="staralliance">
+				<input type="hidden" id="depAirport" name="depAirport">
+				<input type="hidden" id="uniqueNo" name="uniqueNo">
+				<input type="hidden" id="sessionUniqueKey" name="sessionUniqueKey">
+			</form>
+			<div id="section_copyS" class="section_copy">
+				<h2>Tìm “chuyến đi của tôi”</h2>
+				<p class="desc">Kiểm tra hành trình của quý khách và các mục khác.</p>
+			</div>
+			<div id="schedule_summaryS" class="schedule_summary">
+			</div>
+			<div class="inquiry_wrapper logout" id="inquiryReserved">
+				<div id="defaultPNRSearch" class="white_step_box">
+
+					<div class="quick_step_wrap">
+						<div class="input_wrap" name="itineraryS">
+
+
+							<div class="ipt_elt">
+								<label for="reservationId"><span class="hidden">Mã đặt chỗ</span></label>
+								<input type="text" id="reservationId" maxlength="8" style="width:172px; ime-mode: disabled;"
+									placeholder="Mã đặt chỗ">
+							</div>
+
+							<div class="ipt_elt loct spot_proven">
+								<input type="hidden" id="departureAreaS" name="departureAreaS" value="">
+								<input type="hidden" id="departureAirportS" name="departureAirportS" value="">
+								<input type="hidden" id="departureCityS" name="departureCityS" value="">
+								<input type="hidden" id="departureCityNameS" name="departureCityNameS" value="">
+								<label for="txtDepartureAirportS" class="spot_place" id="labelDepartureAirportS" name="spot_place">Điểm
+									đi</label>
+								<input type="text" id="txtDepartureAirportS" name="txtDepartureAirportS"
+									class="spotentry ui-autocomplete-input" deparrtype="dep" style="width:172px;" autocomplete="off">
+								<input type="hidden" name="default" area="" airport="">
+								<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_depAllAirport1"
+									name="btn_layer1" seg="dep1" deparrtype="dep" onclick="javascript:showAirportLayer(this, 'S');"><span
+										class="hidden">Xem tất cả các thành phố</span></a>
+							</div>
+							<div class="shadow_layer search_flight" name="shadow_layer">
+								<div class="inner">
+									<div class="search_layer">
+										<div class="search_lately" name="search_lately">
+											<p class="title">Tìm kiếm gần đây</p>
+
+										</div>
+										<div class="route_list search_auto" id="divDepAirportACS" name="search_auto"
+											target="txtDepartureAirportS">
+											<p class="title">Hoàn tất tự động</p>
+											<div class="empty_box" name="empty_box">Không có sân bay nào phù hợp</div>
+											<ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
+												style="display: none;"></ul>
+										</div>
+									</div>
+									<input type="hidden" name="default" area="" airport="">
+									<button type="button" class="btn_popup airport_open" id="btn_depAllAirport1" name="btn_layer1"
+										seg="dep1" deparrtype="dep" onclick="javascript:showAirportLayer(this, 'S');">Xem tất cả các thành
+										phố</button>
+								</div>
+								<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Đóng</span></a>
+							</div>
+
+							<div class="ipt_elt loct spot_destin">
+								<input type="hidden" id="arrivalAreaS" name="arrivalAreaS" value="">
+								<input type="hidden" id="arrivalAirportS" name="arrivalAirportS" value="">
+								<input type="hidden" id="arrivalCityS" name="arrivalCityS" value="">
+								<input type="hidden" id="arrivalCityNameS" name="arrivalCityNameS" value="">
+								<label for="txtArrivalAirportS" class="spot_place" id="labelArrivalAirportS" name="spot_place">Điểm
+									đến</label>
+								<input type="text" id="txtArrivalAirportS" name="txtArrivalAirportS" class="spotentry" deparrtype="arr"
+									style="width:172px;">
+								<input type="hidden" name="default" area="" airport="">
+								<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_arrAllAirport1"
+									name="btn_layer1" seg="arr1" deparrtype="arr" onclick="javascript:showAirportLayer(this, 'S');"><span
+										class="hidden">Xem tất cả các thành phố</span></a>
+							</div>
+							<div class="shadow_layer search_flight to" name="shadow_layer">
+								<div class="inner">
+									<div class="search_layer">
+										<div class="search_lately" name="search_lately">
+											<p class="title">Tìm kiếm gần đây</p>
+
+										</div>
+										<div class="route_list search_auto" id="divArrAirportACS" name="search_auto"
+											target="txtArrivalAirportS">
+											<p class="title">Hoàn tất tự động</p>
+											<div class="empty_box" name="empty_box">Không có sân bay nào phù hợp</div>
+
+										</div>
+									</div>
+									<input type="hidden" name="default" area="" airport="">
+									<button type="button" class="btn_popup airport_open" id="btn_arrAllAirport1" name="btn_layer1"
+										seg="arr1" deparrtype="arr" onclick="javascript:showAirportLayer(this, 'S');">Xem tất cả các thành
+										phố</button>
+								</div>
+								<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Đóng</span></a>
+							</div>
+
+
+
+							<div class="shadow_layer case2 select_airport" id="depAllAirportS" name="allAirportS"
+								style="display: none;">
+								<div class="inner">
+									<h4 class="hidden">Chọn sân bay</h4>
+									<h5 class="hidden">Chuyến bay quốc tế</h5>
+									<div class="flights_list national">
+
+									</div>
+									<div class="recent_search_wrap">
+										<h4>Tìm kiếm gần đây</h4>
+										<div class="recent_srch_box" name="recent_srch_box">
+
+										</div>
+										<div class="btn_area">
+											<button type="button" class="btn_M gray"
+												onclick="javascript:clickNextStep('allAirportS', 'S');">Tiếp theo</button>
+										</div>
+									</div>
+								</div>
+								<a href="javascript:sharpNothig();" class="layer_close">
+									<span class="hidden">Đóng</span>
+								</a>
+							</div>
+
+							<div class="ipt_elt calr calendar_wrap">
+								<label for="sCalendarS" name="calDesc"><span class="hidden">Chọn ngày</span></label>
+								<input type="text" id="sCalendarS" class="spotentry datepicker" readonly="" autocomplete="off"
+									data-dateformat="y.mm.dd" data-type="single" style="width:172px;" placeholder="Ngày bay">
+								<input type="hidden" id="departureDate1" value="" name="departureDateS">
+								<input type="hidden" id="arrivalDate1" value="" name="arrivalDateS">
+								<a href="javascript:sharpNothig();" class="btn_airport calendar_focus"><span class="hidden">Xem lịch để
+										chọn ngày khởi hành</span></a>
+							</div>
+
+							<div class="calendar_layer">
+								<h4 class="hidden">Chọn ngày lên máy bay</h4>
+								<div class="cal_cont">
+									<h4 class="hidden">Lịch</h4>
+									<div class="calendar_top">
+										<select name="" id="" class="white" title="Năm và tháng lên máy bay">
+											<option value="">2017.08</option>
+										</select>
+									</div>
+									<div class="compareCalendar"></div>
+									<a href="javascript:sharpNothig();" class="cal_status">Ngày bay</a><a href="javascript:sharpNothig();"
+										class="cal_reset"><span class="hidden">Làm mới lịch</span></a>
+									<a href="javascript:sharpNothig();" class="btn_cal_close"><span class="hidden">Đóng</span></a>
+								</div>
+							</div>
+
+							<div class="ipt_elt">
+								<label for="passengerName"><span class="hidden">Họ</span></label>
+								<input type="text" id="passengerName" style="width:172px;" placeholder="Họ">
+							</div>
+
+							<div class="ipt_elt">
+								<label for="passengerFirstName"><span class="hidden">tên đầu tiên</span></label>
+								<input type="text" id="passengerFirstName" placeholder="tên đầu tiên">
+							</div>
+
+              <div class="eservationInquiry_btn_area">
+                <button type="button" id="goPNRList" class="btn_M gray btn_revsearch" onclick="javascript:PNRListV();">Tìm
+                  “chuyến đi của tôi”</button>
+              </div>
+						</div>
+						<p class="exam_txt eservationInquiry_txt">
+							<span class="text_type1 ext1">Nhập mã gồm 8 số hoặc mã gồm 6 chữ và số</span>
+
+							<span>
+								<span class="text_type1 ext2">Ví dụ: &nbsp;KIM</span>
+								<span class="text_type1 ext3">Ví dụ: &nbsp;CHEOLSU</span>
+							</span>
+
+						</p>
+						
+					</div>
+
+				</div>
+			</div>
+
+			<a href="javascript:sharpNothig();" class="btn_fold open" id="foldSection2"><span class="hidden">Mở rộng phạm vi
+					tìm kiếm</span></a>
+		</div>
+	</div>
+
+	<div data-content="check_in" class="quick-service__item quick-check_in section03">
+		<div class="slide_inner">
+			<h3 class="hidden">Làm thủ tục chuyến bay</h3>
+			<div class="section_text_copy">
+				<p class="desc">
+					Nhận thẻ lên máy bay với ghế ngồi đã chọn trước và không mất nhiều thời gian chờ đợi tại sân bay.
+				</p>
+			</div>
+
+			<div id="section_copyC" class="section_copy">
+				<h2>Làm thủ tục chuyến bay</h2>
+				<p class="desc">Nhận thẻ lên máy bay với ghế ngồi đã chọn trước và không mất nhiều thời gian chờ đợi tại sân
+					bay.</p>
+			</div>
+			<div id="schedule_summaryC" class="schedule_summary">
+			</div>
+			<div class="inquiry_wrapper no_onlinecheck noevent" id="inquiryCheckin">
+
+				<div id="defaultCheckInSearch" class="white_step_box">
+
+					<div class="quick_step_wrap">
+						<div class="input_wrap" name="itineraryC">
+
+
+							<div class="ipt_elt">
+								<select id="checkInType" title="Tìm kiếm danh mục" style="width:210px">
+									<option value="resNo">Mã đặt chỗ</option>
+									<option value="fltNo">Số vé chuyến bay</option>
+								</select>
+							</div>
+
+							<div class="ipt_elt">
+								<label for="checkinNum"><span class="hidden">Mã gồm 8 số hoặc mã gồm 6 chữ và số</span></label>
+								<input type="text" id="checkinNum" maxlength="8"
+									style="width:335px; ime-mode: disabled; text-transform: uppercase;"
+									placeholder="Mã gồm 8 số hoặc mã gồm 6 chữ và số"
+									onkeyup="this.value=this.value.replace(/[^a-zA-z0-9]/g,'')">
+							</div>
+
+							<div class="ipt_elt">
+								<select title="Chọn ngày lên máy bay" id="departureDateC" name="departureDateC" style="width:250px;">
+									<option value="">Chọn ngày lên máy bay</option>
+									<option value="20250820">2025.08.20 (Thứ Tư)</option>
+									<option value="20250821">2025.08.21 (thứ năm)</option>
+									<option value="20250822">2025.08.22 (Thứ Sáu)</option>
+									<option value="20250823">2025.08.23 (thứ bảy)</option>
+								</select>
+							</div>
+
+
+							<div class="ipt_elt">
+								<label for="passengerLastNameC"><span class="hidden">Họ</span></label>
+								<input type="text" id="passengerLastNameC" placeholder="Họ">
+							</div>
+
+							<button type="button" class="btn_M gray btn_revsearch" onclick="javascript:CheckInV();">Tìm kiếm</button>
+						</div>
+						<p class="exam_txt eservationInquiry_txt">
+							<span>
+
+								<span class="text_type1 ext2">Ví dụ: &nbsp;KIM</span>
+							</span>
+						</p>
+
+            <div class="reserve_list_wrap" id="checkInListDiv">
+              <div class="unview_txt">
+                <p class="text_type2 gray">Bật cửa sổ bật lên để làm thủ tục chuyến bay.
+                </p>
+              </div>
+            </div>
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+
+
+
+
+
+			<a href="javascript:sharpNothig();" class="btn_fold open" id="foldSection3"><span class="hidden">Mở rộng phạm vi
+					tìm kiếm</span></a>
+
+			<input type="hidden" id="checkInVerifiSession" value="9b600773-e5cd-4950-95f2-11f4ee7b27d6">
+
+			<form name="preSeatFrm" id="preSeatFrm" method="post">
+				<input type="hidden" name="callPage" id="callPage" value="MAIN">
+				<input type="hidden" name="bizType" id="bizTypeC" value="">
+				<input type="hidden" name="sessionUniqueKey" id="sessionUniqueKeyC" value="">
+				<input type="hidden" name="isPnrDetailNoCurr" id="isPnrDetailNoCurr" value="">
+				<input type="hidden" name="isPnrDetailNotOZStock" id="isPnrDetailNotOZStock" value="">
+			</form>
+			<form name="searchReservationForm" id="searchReservationForm" method="post">
+				<input type="hidden" name="reservationId" value="">
+				<input type="hidden" name="departureDate" value="">
+				<input type="hidden" name="passengerLastName" value="">
+				<input type="hidden" name="callType" value="IBE">
+			</form>
+		</div>
+	</div>
+
+	<div data-content="departure_and_arrival_inquiries"
+		class="quick-service__item quick-departure_and_arrival_inquiries section04">
+		<h3 class="hidden">Tình trạng chuyến bay</h3>
+		<div class="section_text_copy">
+			<p class="desc">
+				Hành khách có thể kiểm tra chi tiết hành trình điểm đi hoặc điểm đến.
+			</p>
+		</div>
+
+		<div class="inquiry_wrapper" id="inquiryDeparture">
+			<div class="white_step_box">
+
+				<div class="quick_step_wrap">
+					<div class="input_wrap" name="itineraryF">
+
+
+						<div class="ipt_elt">
+							<input type="hidden" id="searchFMCType" name="searchFMCType" value="line">
+							<select title="Tìm kiếm danh mục" style="width:215px" id="inqSelect">
+								<option value="line">Tìm theo hành trình</option>
+								<option value="num">Tìm kiếm theo số hiệu chuyến bay</option>
+							</select>
+						</div>
+
+						<div class="ipt_elt oznum">
+
+							<span style="display:inline-block; height:46px; line-height:46px;">OZ</span>
+							<input type="text" id="ozNum" maxlength="4" style="width:310px" title="Chuyến bay số"
+								placeholder="Chỉ nhập số">
+						</div>
+
+						<div class="ipt_elt loct spot_proven">
+							<input type="hidden" id="departureAreaF" name="departureAreaF" value="">
+							<input type="hidden" id="departureAirportF" name="departureAirportF" value="">
+							<input type="hidden" id="departureCityF" name="departureCityF" value="">
+							<input type="hidden" id="departureCityNameF" name="departureCityNameF" value="">
+							<label for="txtDepartureAirportF" class="spot_place" id="labelDepartureAirportF" name="spot_place"
+								style="opacity: 1;">Điểm đi</label>
+							<input type="text" id="txtDepartureAirportF" name="txtDepartureAirportF"
+								class="spotentry ui-autocomplete-input" deparrtype="dep" style="width:215px;" autocomplete="off">
+							<input type="hidden" name="default" area="" airport="">
+							<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_depAllAirport1"
+								name="btn_layer1" seg="dep1" deparrtype="dep" onclick="javascript:showAirportLayer(this, 'F');"><span
+									class="hidden">Xem tất cả các thành phố</span></a>
+						</div>
+						<div class="shadow_layer search_flight" name="shadow_layer" style="display: none;">
+							<div class="inner">
+								<div class="search_layer">
+									<div class="search_lately" name="search_lately">
+										<p class="title">Tìm kiếm gần đây</p>
+
+									</div>
+									<div class="route_list search_auto" id="divDepAirportACF" name="search_auto"
+										target="txtDepartureAirportF">
+										<p class="title">Hoàn tất tự động</p>
+										<div class="empty_box" name="empty_box">Không có sân bay nào phù hợp</div>
+										<ul id="ui-id-3" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
+											style="display: none;"></ul>
+									</div>
+								</div>
+								<input type="hidden" name="default" area="" airport="">
+								<button type="button" class="btn_popup airport_open" id="btn_depAllAirport1" name="btn_layer1"
+									seg="dep1" deparrtype="dep" onclick="javascript:showAirportLayer(this, 'F');">Xem tất cả các thành
+									phố</button>
+							</div>
+							<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Đóng</span></a>
+						</div>
+
+						<div class="ipt_elt loct spot_destin">
+							<input type="hidden" id="arrivalAreaF" name="arrivalAreaF" value="">
+							<input type="hidden" id="arrivalAirportF" name="arrivalAirportF" value="">
+							<input type="hidden" id="arrivalCityF" name="arrivalCityF" value="">
+							<input type="hidden" id="arrivalCityNameF" name="arrivalCityNameF" value="">
+							<label for="txtArrivalAirportF" class="spot_place" id="labelArrivalAirportF" name="spot_place"
+								style="opacity: 1;">Điểm đến</label>
+							<input type="text" id="txtArrivalAirportF" name="txtArrivalAirportF" class="spotentry" deparrtype="arr"
+								style="width:215px;">
+							<input type="hidden" name="default" area="" airport="">
+							<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_arrAllAirport1"
+								name="btn_layer1" seg="arr1" deparrtype="arr" onclick="javascript:showAirportLayer(this, 'F');"><span
+									class="hidden">Xem tất cả các thành phố</span></a>
+						</div>
+						<div class="shadow_layer search_flight to" style="display: none;">
+							<div class="inner">
+								<div class="search_layer">
+									<div class="search_lately" name="search_lately">
+										<p class="title">Tìm kiếm gần đây</p>
+
+									</div>
+									<div class="route_list search_auto" id="divArrAirportACF" name="search_auto"
+										target="txtArrivalAirportF">
+										<p class="title">Hoàn tất tự động</p>
+										<div class="empty_box" name="empty_box">Không có sân bay nào phù hợp</div>
+									</div>
+								</div>
+								<input type="hidden" name="default" area="" airport="">
+								<button type="button" class="btn_popup airport_open" id="btn_arrAllAirport1" name="btn_layer1"
+									seg="arr1" deparrtype="arr" onclick="javascript:showAirportLayer(this, 'F');">Xem tất cả các thành
+									phố</button>
+							</div>
+							<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Đóng</span></a>
+						</div>
+
+						<div class="shadow_layer case2 select_airport" id="depAllAirportF" name="allAirportF"
+							style="display: none;">
+							<div class="inner">
+								<h4 class="hidden">Chọn sân bay</h4>
+								<h5 class="hidden">Chuyến bay quốc tế</h5>
+								<div class="flights_list national">
+
+								</div>
+								<div class="recent_search_wrap">
+									<h4>Tìm kiếm gần đây</h4>
+									<div class="recent_srch_box" name="recent_srch_box">
+
+									</div>
+									<div class="btn_area">
+										<button type="button" class="btn_M gray"
+											onclick="javascript:clickNextStep('allAirportF', 'F');">Tiếp theo</button>
+									</div>
+								</div>
+							</div>
+							<a href="javascript:sharpNothig();" class="layer_close">
+								<span class="hidden">Đóng</span>
+							</a>
+						</div>
+
+						<div class="ipt_elt calr calendar_wrap">
+							<label for="sCalendarT" name="calDesc"><span class="hidden">날짜 선택</span></label>
+							<input type="text" id="sCalendarT" class="spotentry datepicker" readonly="" autocomplete="off"
+								data-dateformat="y.mm.dd D" data-type="single_status" placeholder="탑승일">
+							<input type="hidden" id="departureDate1" value="" name="departureDateC">
+							<input type="hidden" id="arrivalDate1" value="" name="arrivalDateC">
+							<a href="javascript:sharpNothig();" class="btn_airport calendar_focus"><span class="hidden">탑승일 선택
+									달력보기</span></a>
+						</div>
+						<div class="calendar_layer">
+							<h4 class="hidden">탑승일 선택</h4>
+							<div class="cal_cont">
+								<h4 class="hidden">달력</h4>
+								<div class="calendar_top"></div>
+								<div class="compareCalendar"></div>
+								<span href="#none" class="cal_status">가는 날</span><a href="javascript:sharpNothig();"
+									class="cal_reset calReset"><span class="hidden">달력 새로고침</span></a>
+								<a href="javascript:sharpNothig();" class="btn_cal_close"><span class="hidden">닫기</span></a>
+							</div>
+						</div>
+
+
+						<button type="button" id="searchDepArr" class="btn_M gray btn_revsearch">Tìm kiếm</button>
+					</div>
+					<p class="exam_txt">
+						<span class="text_type1 ext3">Dựa trên ngày khởi hành tại địa phương</span>
+					</p>
+				</div>
+
+			</div>
+		</div>
+		<a href="javascript:sharpNothig();" class="btn_fold open2" id="foldSection4"><span class="hidden">Mở rộng phạm vi
+				tìm kiếm</span></a>
+
+		<div id="searchDepArrResult" class="departure_list_wrap" style="display: none;">
+
+		</div>
+
+	</div>
+
+	<div data-content="hotel_rentalcars" class="quick-service__item quick-hotel_rentalcars">
+		<h3 class="hidden">Khách sạn/Thuê xe</h3>
+		<div class="hotel_section_text_copy">
+			<p class="desc">
+				Từ khách sạn đến xe thuê, hãy khám phá các quyền lợi đặc biệt chỉ có với Asiana Airlines.
+			</p>
+		</div>
+		<div class="hotel_rentalcars_area">
+			<ul>
+				<li class="hotel_inner">
+					<div>
+						<img src="https://ozimg.flyasiana.com/editor/image/20210608/7c55e434-15e7-4e73-b842-608887a44527.jpeg"
+							alt="Tích lũy 3 dặm cho mỗi 1.000 KRW chi tiêu trên Booking.com Asiana Airlines là hãng hàng không duy nhất có thêm ưu đãi tới 8% quyền lợi hoàn tiền bổ sung.">
+					</div>
+					<div>
+						<a href="javascript:void(0);" title="Đặt khách sạn"
+							onclick="action_logging({pagecode:'01_AFF_01'}); cms.goToLink('https://sp.booking.com/?aid=2333178', '_blank')">
+							Đặt khách sạn
+						</a>
+					</div>
+				</li>
+				<li class="rentalcars_inner">
+					<div>
+						<img src="https://ozimg.flyasiana.com/editor/image/20210608/0fdd3e6b-f723-43a7-8a9e-9d168246caec.jpeg"
+							alt="Lợi ích tích lũy dặm: 5 dặm/1,000won / Hãy tìm giá rẻ nhất tại trang web lớn nhất thế giới Rentalcars.com.">
+					</div>
+					<div>
+						<a href="javascript:void(0);" title="Đặt thuê xe"
+							onclick="action_logging({pagecode:'01_AFF_02'}); cms.goToLink('https://asianaairlines.rentalcars.com/?preflang=vi&amp;prefcurrency=KRW&amp;adplat=quicksearch', '_blank')">
+							Đặt thuê xe
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-content="golf_reservation" class="quick-service__item quick-hotel_rentalcars">
+		<h3 class="hidden">해외골프 예약</h3>
+		<div class="hotel_section_text_copy">
+			<p class="desc">
+				해외 골프장 티타임 확정을 실시간으로!
+			</p>
+		</div>
+		<div class="hotel_rentalcars_area">
+			<ul style="justify-content: center;">
+				<li style="border: none;" class="rentalcars_inner">
+					<div style="width: 298px;margin: 0 auto;">
+						<img src="https://ozimg.flyasiana.com/editor/image/20231006/0d265b7d-8c2f-4ceb-b6b3-9b721a2f6026.png"
+							alt="AGL 1000원당 2마일 적립 해외 골프 예역, AGL과 함께 손쉽고 빠르게">
+					</div>
+					<div>
+						<a href="javascript:void(0);"
+							onclick="action_logging({pagecode:'01_GOLF_01'}); cms.goToLink('https://asiana.agltiger.com/', '_blank')"
+							title="해외골프 예약하기">
+							해외 골프 예약하기
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+</div>

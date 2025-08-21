@@ -1,0 +1,1327 @@
+<div class="quick-service">
+	<div class="quick-service__nav">
+		<button type="button" data-nav="reservation" class="quick-service__nav-btn quick-service__nav-btn--is-active"
+			onclick="action_logging({pagecode:'01_QIK_01'});" title="Выбрано">
+			<div>
+				<span>
+					<h3 class="hidden">&gt;icon</h3>
+				</span>
+				<p>
+					Забронировать поездку
+				</p>
+			</div>
+		</button>
+		<button type="button" data-nav="reservation_inquiry" class="quick-service__nav-btn"
+			onclick="drawPnrList(); action_logging({pagecode:'01_QIK_02'});">
+			<div>
+				<span>
+					<h3 class="hidden">&gt;icon</h3>
+				</span>
+				<p>
+					Найти мою поездку
+				</p>
+			</div>
+		</button>
+		<button type="button" data-nav="check_in" class="quick-service__nav-btn"
+			onclick="drawCheckInList(); action_logging({pagecode:'01_QIK_03'});">
+			<div>
+				<span>
+					<h3 class="hidden">&gt;icon</h3>
+				</span>
+				<p>
+					Регистрация на рейс
+				</p>
+			</div>
+		</button>
+		<button type="button" data-nav="departure_and_arrival_inquiries" class="quick-service__nav-btn"
+			onclick="action_logging({pagecode:'01_QIK_04'});">
+			<div>
+				<span>
+					<h3 class="hidden">&gt;icon</h3>
+				</span>
+				<p>
+					Статус рейса
+				</p>
+			</div>
+		</button>
+
+	</div>
+
+	<div data-content="reservation" class="quick-service__item quick-reservation quick-service__item--is-active">
+		<h3 class="hidden">Забронировать поездку</h3>
+		<div class="quick_reservation_wrap">
+
+			<div class="quick_tab_wrap">
+        <div class="tab_triptype">
+          <ul>
+            <li class="on">
+              <a href="javascript:sharpNothig();" title="Выбрано">Туда-обратно</a>
+            </li>
+            <li>
+              <a href="javascript:sharpNothig();">В одну сторону</a>
+            </li>
+            <li>
+              <a href="javascript:sharpNothig();" gourl="/I/UZ/RU/RevenueRegistTravel.do">
+                <span class="arrow">Несколько пунктов назначения</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+				<div class="mile_use">
+					<span class="txt">Использование миль</span>
+					<div class="btn_toggle_box">
+						<label class="switch" for="allChecked">
+							<span class="hidden">OFF</span>
+							<input type="checkbox" id="allChecked" data-type="all_ck_item" autocomplete="off"
+								title="Использование миль">
+							<span class="slider"></span>
+						</label>
+					</div>
+				</div>
+				<span class="line"></span>
+				
+
+				<div class="favroute_wrap">
+					<a href="javascript:sharpNothig();" class="fav_star" id="favoriteRoute" style="display: block;"
+						onclick="action_logging({pagecode:'01_book_04'});">
+						<span class="hidden">Быстрый выбор маршрута из списка предпочтительных маршрутов</span>
+					</a>
+					<div class="shadow_layer intRoute">
+						<div class="inner">
+							<div class="route_list">
+								<p class="title">Предпочтительный маршрут</p>
+								<ul id="favoriteRouteList"></ul>
+							</div>
+
+							<button type="button" class="btn_info02" id="setFavoriteInform">Предпочтительные маршруты?</button>
+							<button type="button" class="btn_XS red" id="goLogin">Войти</button>
+
+
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close" id="closeFavoriteRoute"><span
+								class="hidden">Закрыть</span></a>
+					</div>
+				</div>
+
+        <div class="rgt_wrap">
+          <div class="main_date_lookup_area">
+            <div class="date_lookup_area" id="viewCalendarDiv">
+              <input type="checkbox" id="viewCalendarChk" name="viewCalendarChk"><label for="viewCalendarChk">Проверить
+                ближайшие даты</label>
+            </div>
+          </div>
+  
+  
+          <div class="btn_wrap_riType2 coup1 main_right_btnSet">
+            <button type="button" class="btn_M btn_couponIcon" id="btn_coupon_layer"
+              style="border: solid 1px #b3000b;color: rgba(34,42,115,.8);font-weight: bold;">Посмотреть купон</button>
+          </div>
+        </div>
+			</div>
+
+			<div class="quick_step_wrap">
+				<div class="input_wrap" name="itineraryR">
+
+					<div class="ipt_elt loct spot_proven">
+						<input type="hidden" id="departureAreaR" name="departureAreaR" value="">
+						<input type="hidden" id="departureAirportR" name="departureAirportR" value="">
+						<input type="hidden" id="departureCityR" name="departureCityR" value="">
+						<input type="hidden" id="departureCityNameR" name="departureCityNameR" value="">
+
+						<input type="hidden" id="departureAirportNameR" name="departureAirportNameR" value="">
+						<label for="txtDepartureAirportR" class="spot_place" id="labelDepartureAirportR" name="spot_place">Город
+							вылета</label>
+						<input type="text" id="txtDepartureAirportR" name="txtDepartureAirportR"
+							class="spotentry ui-autocomplete-input" deparrtype="dep" style="width:165px;" autocomplete="off">
+						<input type="hidden" name="default" area="" airport="">
+						<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_depAllAirport1"
+							name="btn_layer1" seg="dep1" deparrtype="dep" onclick="javascript:onClickAirportIcon(this, 'R');"><span
+								class="hidden">Смотреть все города</span></a>
+					</div>
+					<div class="shadow_layer search_flight" name="shadow_layer">
+						<div class="inner">
+							<div class="search_layer">
+								<div class="search_lately" name="search_lately">
+									<p class="title">Недавние запросы</p>
+
+								</div>
+								<div class="route_list search_auto" id="divDepAirportACR" name="search_auto"
+									target="txtDepartureAirportR">
+									<p class="title">Автозаполнение</p>
+									<div class="empty_box" name="empty_box">Нет подходящего аэропорта</div>
+
+									<ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
+										style="display: none;"></ul>
+								</div>
+							</div>
+							<input type="hidden" name="default" area="" airport="">
+							<button type="button" class="btn_popup airport_open" id="btn_depAllAirport1" name="btn_layer1" seg="dep1"
+								deparrtype="dep" onclick="javascript:showAirportLayer(this, 'R');">Смотреть все города</button>
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Закрыть</span></a>
+					</div>
+
+					<div class="quickbookings_change">
+						<a href="javascript:swapLocations();">
+							<span class="hidden">체인지 버튼</span>
+						</a>
+					</div>
+
+					<div class="ipt_elt loct spot_destin">
+						<input type="hidden" id="arrivalAreaR" name="arrivalAreaR" value="">
+						<input type="hidden" id="arrivalAirportR" name="arrivalAirportR" value="">
+						<input type="hidden" id="arrivalCityR" name="arrivalCityR" value="">
+						<input type="hidden" id="arrivalCityNameR" name="arrivalCityNameR" value="">
+
+						<input type="hidden" id="arrivalAirportNameR" name="arrivalAirportNameR" value="">
+						<input type="hidden" id="arrivalDirectR" name="arrivalDirectR" value="">
+						<label for="txtArrivalAirportR" class="spot_place" id="labelArrivalAirportR" name="spot_place">Место
+							прибытия</label>
+						<input type="text" id="txtArrivalAirportR" name="txtArrivalAirportR" class="spotentry" deparrtype="arr"
+							style="width:165px;">
+						<input type="hidden" name="default" area="" airport="">
+						<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_arrAllAirport1"
+							name="btn_layer1" seg="arr1" deparrtype="arr" onclick="javascript:onClickAirportIcon(this, 'R');"><span
+								class="hidden">Смотреть все города</span></a>
+					</div>
+					<div class="shadow_layer search_flight to" name="shadow_layer">
+						<div class="inner">
+							<div class="search_layer">
+								<div class="search_lately" name="search_lately">
+									<p class="title">Недавние запросы</p>
+
+								</div>
+								<div class="route_list search_auto" id="divArrAirportACR" name="search_auto"
+									target="txtArrivalAirportR">
+									<p class="title">Автозаполнение</p>
+									<div class="empty_box" name="empty_box">Нет подходящего аэропорта</div>
+
+								</div>
+							</div>
+							<input type="hidden" name="default" area="" airport="">
+							<button type="button" class="btn_popup airport_open" id="btn_arrAllAirport1" name="btn_layer1" seg="arr1"
+								deparrtype="arr" onclick="javascript:showAirportLayer(this, 'R');">Смотреть все города</button>
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Закрыть</span></a>
+					</div>
+
+					<div class="shadow_layer case2 select_airport" id="depAllAirportR" name="allAirportR" style="display: none;">
+						<div class="inner">
+							<h4 class="hidden">Выбрать аэропорт</h4>
+							<h5 class="hidden">Международные рейсы</h5>
+							<div class="flights_list national">
+
+							</div>
+							<div class="recent_search_wrap">
+								<h4>Недавние запросы</h4>
+								<div class="recent_srch_box" name="recent_srch_box">
+
+								</div>
+								<div class="btn_area">
+									<button type="button" class="btn_M gray"
+										onclick="javascript:clickNextStep('allAirportR', 'R');">Далее</button>
+								</div>
+							</div>
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close">
+							<span class="hidden">Закрыть</span>
+						</a>
+					</div>
+
+					<div class="ipt_elt calr calendar_wrap" id="divCalendarContainer">
+						<label for="sCalendarR" name="calDesc"><span class="hidden">Выбрать дату</span></label>
+						<input type="text" id="sCalendarR" class="spotentry datepicker" readonly="" autocomplete="off"
+							data-dateformat="y.mm.dd" data-type="multi_step" style="width:165px;" placeholder="Дата посадки на рейс">
+						<input type="hidden" id="departureDate1" value="" name="departureDateR">
+						<input type="hidden" id="arrivalDate1" value="" name="arrivalDateR">
+						<a href="javascript:sharpNothig();" class="btn_airport calendar_focus"><span class="hidden">Посмотреть
+								календарь для выбора даты вылета</span></a>
+					</div>
+
+					<div class="calendar_layer">
+						<h4 class="hidden">Выберите дату посадки на рейс</h4>
+						<div class="cal_cont">
+							<h4 class="hidden">Календарь</h4>
+							<div class="calendar_top">
+								<select name="" id="" class="white" title="Год и месяц посадки">
+									<option value="">2017.08</option>
+								</select>
+
+								<button type="button" class="btn_XS btn_cal_red" id="btnLowerPrice"
+									onclick="submit_lowerPriceList();">Мгновенный поиск низких цен</button>
+							</div>
+							<div class="compareCalendar"></div>
+							<span href="#none" class="cal_status">Дата туда</span><a href="javascript:sharpNothig();"
+								class="cal_reset calReset"><span class="hidden">Обновить календарь</span></a>
+							<a href="javascript:sharpNothig();" class="btn_cal_close"><span class="hidden">Закрыть</span></a>
+						</div>
+						<div class="btn_step_wrap">
+							<button type="button" class="btn_M gray btnNextStep" id="calendarNext">Далее(Выберите пассажира)</button>
+						</div>
+					</div>
+
+					<div class="ipt_elt psng">
+						<div class="psg_nums" id="pax_nums">
+							<span adultdesc="Взрослый" style="display: inline;">Взрослый<span class="num">1</span></span>
+							<span childdesc="Дети">Дети<span class="num">0</span></span>
+							<span infantdesc="Младенцы">Младенцы<span class="num">0</span></span>
+						</div>
+						<label for="psng"><span class="hidden">Укажите количество пассажиров</span></label>
+						<input type="text" id="psng" style="width:165px;" readonly="" placeholder="Пассажир">
+						<a href="javascript:sharpNothig();" class="btn_spot"><span class="hidden">Укажите количество
+								пассажиров</span></a>
+					</div>
+					<div class="shadow_layer case2 layer_passenger">
+						<div class="inner">
+							<h4 class="layer_tit">Выберите пассажира</h4>
+							<div class="passengers">
+								<div class="area">
+									<h5 class="title_type3">Взрослый <span id="adultAge">(Возраст 12 -)</span></h5>
+									<div class="btn_number_box" name="btn_number_box">
+										<input type="text" id="adultCount" name="adultCount" title="ВзрослыйКоличество пассажиров" value="1"
+											onblur="removeChar(event, 'ADT')"
+											onkeypress="if(event.keyCode &lt;45 || event.keyCode &gt; 57) event.returnValue = false;"
+											style="IME-MODE:disabled;" autocomplete="off">
+										<button type="button" class="btn_number minus" name="btn_number"><span
+												class="hidden">Уменьшить</span></button>
+										<button type="button" class="btn_number plus" name="btn_number"><span
+												class="hidden">увеличить</span></button>
+									</div>
+								</div>
+								<div class="area">
+									<h5 class="title_type3">Дети
+										<span id="childAge">(От 2 до 11&nbsp;лет)</span>
+									</h5>
+									<div class="btn_number_box" name="btn_number_box">
+										<input type="text" id="childCount" name="childCount" title="ДетиКоличество пассажиров" value="0"
+											onblur="removeChar(event, 'CHD')"
+											onkeypress="if(event.keyCode &lt;45 || event.keyCode &gt; 57) event.returnValue = false;"
+											style="IME-MODE:disabled;" autocomplete="off">
+										<button type="button" class="btn_number minus" name="btn_number" disabled=""><span
+												class="hidden">Уменьшить</span></button>
+										<button type="button" class="btn_number plus" name="btn_number"><span
+												class="hidden">увеличить</span></button>
+									</div>
+								</div>
+								<div class="area">
+									<h5 class="title_type3">Младенцы <span id="infantAge">(До 2 лет)</span></h5>
+									<div class="btn_number_box" name="btn_number_box">
+										<input type="text" id="infantCount" name="infantCount" title="МладенцыКоличество пассажиров"
+											value="0" onblur="removeChar(event, 'INF')"
+											onkeypress="if(event.keyCode &lt;45 || event.keyCode &gt; 57) event.returnValue = false;"
+											style="IME-MODE:disabled;" autocomplete="off">
+										<button type="button" class="btn_number minus" name="btn_number" disabled=""><span
+												class="hidden">Уменьшить</span></button>
+										<button type="button" class="btn_number plus" name="btn_number"><span
+												class="hidden">увеличить</span></button>
+									</div>
+								</div>
+							</div>
+
+							<div class="passengers_info">
+								<ul class="list_type3 fl">
+									<li id="passengerInfo">Вы можете выбрать до 9&nbsp;человек при бронировании, включая взрослых, детей и
+										младенцев.</li>
+									<li>Если взрослый сопровождает ребенка на всех сегментах поездки, детский билет может быть приобретен
+										отдельно.</li>
+									<li>Младенцами считаются дети, не достигшие возраста 2&nbsp;лет на момент посадки на борт воздушного
+										судна, не занимающие отдельное место в самолете.</li>
+									<li>В соответствии с постановлением об исполнении пункта ④ статьи 39-3 Закона о защите персональных
+										данных для оформления бронирования несовершеннолетним пассажиром в возрасте до 14&nbsp;лет требуется
+										согласие и подтверждение от законного представителя. Соответственно, взрослый старше 14 лет должен
+										войти в систему и продолжить оформление бронирования.</li>
+								</ul>
+								<button type="button" class="btn_popup fr" id="btn_ageCalc"
+									onclick="javascript:appendAgeCalculator();">Калькулятор возраста</button>
+							</div>
+						</div>
+						<div class="btn_step_wrap">
+							<button type="button" class="btn_M red" id="passengerNext">Далее(Выберите класс обслуживания)</button>
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Закрыть</span></a>
+					</div>
+
+					<div class="ipt_elt seat">
+						<label for="seat"><span class="hidden" id="seatClassText">Выберите класс обслуживания</span></label>
+						<input type="text" id="seat" style="width:165px;" readonly="" placeholder="Класс обслуживания">
+						<a href="javascript:sharpNothig();" class="btn_spot"><span class="hidden">Выбрать класс
+								обслуживания</span></a>
+					</div>
+					<div class="shadow_layer case2 layer_seat" id="after_select">
+						<div class="inner">
+							<div class="seat_cls">
+								<h4 class="layer_tit">Выберите класс обслуживания</h4>
+								<h5 class="title_type3" name="cabinH5">Вылетающие и прибывающие рейсы</h5>
+								<div class="tab_wrap" name="tabs" area="cabinClass">
+									<ul name="selectSeg1CabinClass" class="redCabinClass" style="display:none;">
+
+										<li class=""><a href="javascript:sharpNothig();" name="cabinClassAll"
+												cabinclass="A"><span>Все</span></a></li>
+										<li class=""><a href="javascript:sharpNothig();" cabinclass="E"><span>Путешествие,
+													поездка</span></a></li>
+										<li class=""><a href="javascript:sharpNothig();" cabinclass="B"><span>Бизнес</span></a></li>
+										<li class="fst_cls" style="pointer-events: none; opacity: 0.4;"><a href="javascript:sharpNothig();"
+												cabinclass="F"><span>Первый</span></a></li>
+									</ul>
+									<input type="hidden" id="seg1cabinClass" name="seg1cabinClass" value="R">
+									<ul name="selectSeg1CabinClass" class="revCabinClass">
+
+										<li class="on">
+
+
+											<a href="javascript:sharpNothig();" cabinclass="R" title="Выбрано"><span>Эконом Basic</span></a>
+										</li>
+
+										<li>
+
+											<a href="javascript:sharpNothig();" cabinclass="E"><span> Эконом Flexi </span></a>
+										</li>
+
+										<li>
+
+											<a href="javascript:sharpNothig();" cabinclass="B"><span>Бизнес</span></a>
+										</li>
+
+										<li class="fst_cls" style="pointer-events: none; opacity: 0.4;">
+
+											<a href="javascript:sharpNothig();" cabinclass="F"><span>Первый</span></a>
+										</li>
+									</ul>
+
+
+								</div>
+								<h5 class="title_type3 cabinClass" name="cabinH5" style="display:none;">Рейс обратно</h5>
+								<div class="tab_wrap cabinClass" name="tabs" style="display:none;">
+									<input type="hidden" id="seg2cabinClass" name="seg2cabinClass" value="E">
+									<ul name="selectSeg2CabinClass" class="revCabinClass">
+
+										<li>
+
+
+											<a href="javascript:sharpNothig();" cabinclass="R"><span>Эконом Basic</span></a>
+										</li>
+
+										<li class="on">
+
+											<a href="javascript:sharpNothig();" cabinclass="E"><span> Эконом Flexi </span></a>
+										</li>
+
+										<li>
+
+											<a href="javascript:sharpNothig();" cabinclass="B"><span>Бизнес</span></a>
+										</li>
+
+										<li class="fst_cls" style="pointer-events: none; opacity: 0.4;">
+
+											<a href="javascript:sharpNothig();" cabinclass="F"><span>Первый</span></a>
+										</li>
+									</ul>
+								</div>
+								<div class="seat_check_area">
+									<input type="checkbox" id="check"><label for="check">Искать только тарифы с возможностью повышения
+										класса обслуживания</label>
+									<input type="checkbox" id="check1"><label for="check1">Выбрать разные классы для рейсов вылета и
+										возвращения</label>
+								</div>
+
+								<div id="checkAbled" style="display:none">
+									<br>※ Чтобы повысить класс обслуживания с использованием миль, пожалуйста, проверьте оставшиеся места
+									в бизнес-классе, которые можно повысить в Центре бронирования, перед тем, как продолжить бронирование.
+								</div>
+							</div>
+
+							<div class="title_wrap_type3 china" style="display: none;">
+								<h4 class="fl layer_tit">Выбрать денежную единицу</h4>
+
+								<div class="tooltip_wrap">
+									<a href="javascript:sharpNothig();" class="btn_info">Помощь</a>
+									<div class="layer_tooltip bottom" style="width:800px;">
+										<div class="inner">
+											<p class="title">CNY&nbsp;Обратите внимание при выборе</p>
+											<ul class="list_type2">
+												<li>При выборе юаня (CNY) произвести оплату можно только через Alipay (支付宝) и Union Pay (银联).
+												</li>
+												<li>При этом приниматься будут только банковские карты, привязанные к Alipay и Union Pay.</li>
+												<li>Если вы хотите выбрать иностранную валюту, выберите вону (KRW).</li>
+											</ul>
+
+											<p class="title mar_to30">KRW&nbsp;Обратите внимание при выборе</p>
+											<ul class="list_type2">
+												<li>Если вы хотите произвести оплату в иностранной валюте, но не в юанях (CNY), выберите вону
+													(KRW).</li>
+												<li>Тариф, сообщаемый на этапе бронирования, — это сумма в юанях (CNY), конвертированная в сумму
+													в вонах (KRW).</li>
+												<li>Итоговая сумма транзакции равна сумме, конвертированной из суммы в корейской валюте в сумму
+													в валюте вашего счета.</li>
+												<li>В этом случае может взиматься дополнительная плата за обработку международной транзакции и
+													обмен валюты.</li>
+											</ul>
+										</div>
+										<a href="javascript:sharpNothig();" class="tooltip_close"><span class="hidden">Закрыть</span></a>
+									</div>
+								</div>
+							</div>
+							<div class="tab_wrap t2 currency china" style="display: none;">
+								<ul>
+									<li class="on"><a href="javascript:sharpNothig();" currency="CNY"><span>
+												<span class="txt">Юань (CNY)</span>
+												<span class="ico cny01"><span class="hidden">Оплата через ALIPAY</span></span>
+												<span class="ico cny02"><span class="hidden">Оплата через China Unionpay</span></span>
+												<span class="ico cny03"><span class="hidden">WeChat Pay</span></span>
+											</span></a></li>
+									<li><a href="javascript:sharpNothig();" currency="KRW"><span>
+												<span class="txt">Вона (KRW)</span>
+												<span class="ico card"><span class="hidden">Оплата кредитной картой</span></span>
+											</span></a></li>
+								</ul>
+							</div>
+
+
+							<!-- <div class="title_wrap_type3 payp" style="display: none;">
+						<h4 class="fl layer_tit">Выбрать денежную единицу</h4>
+						<div class="tooltip_wrap">
+							<a href="#none" class="btn_info">Помощь</a>
+							<div class="layer_tooltip bottom" style="width:800px; bottom:-180px;">
+								<div class="inner">
+									<p class="title">USD&nbsp;Обратите внимание при выборе</p>
+									<ul class="list_type2">
+										<li> If USD is selected, only PayPal payment will be accepted.</li>
+										<li>only cards, Bank accounts and BNPL is possible</li>
+										<li>Please do not select USD if you are Paypal Korea Account Holder.</li>
+										<li>For payments made in currencies other than the card issuing country, overseas usage fees/card company fees may be additionally charged.</li>
+										<li>If you want to pay in Won (KRW), select Won (KRW) on the first screen.</li>
+									</ul>
+		
+									<p class="title mar_to30">KRW&nbsp;Обратите внимание при выборе</p>
+									<ul class="list_type2">
+										<li>If you wish to perform transactions with a foreign currency other than USD, select Won(KRW).</li>
+										<li>The fare shown in the reservation(step) is the amount of USD converted into Won(KRW).</li>
+										<li>Итоговая сумма транзакции равна сумме, конвертированной из суммы в корейской валюте в сумму в валюте вашего счета.</li>
+										<li>В этом случае может взиматься дополнительная плата за обработку международной транзакции и обмен валюты.</li>
+									</ul>
+								</div>
+								<a href="#none" class="tooltip_close"><span class="hidden">Закрыть</span></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tab_wrap t2 currency payp" style="display: none;">
+		                <ul>
+		                    <li class="on"><a href="#none" currency="KRW"><span>
+								<span class="txt">Вона (KRW)</span>
+								<span class="ico card"><span class="hidden">Оплата кредитной картой</span></span>
+							</span></a></li>
+							<li><a href="#none" currency="USD"><span>
+								<span class="txt">USD (PAYPAL)</span>
+								<span class="ico payp"><span class="hidden">PayPal</span></span>
+							</span></a></li>
+		                </ul>
+		            </div>-->
+
+						</div>
+						<div class="btn_step_wrap">
+							<button type="button" class="btn_M red" id="seatNext">Далее</button>
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Закрыть</span></a>
+					</div>
+
+					<div class="shadow_layer case2 layer_coupon coupon_search_style1" id="coupon_layer">
+						<div class="inner">
+							<h4 class="layer_tit fl">Доступные купоны</h4>
+							<div class="tooltip_wrap mar_b20">
+								<a href="javascript:sharpNothig();" class="btn_info">Ребенок без сопровождения не может бронировать
+									отдельный билет онлайн.</a>
+								<div class="layer_tooltip" style="width:810px;">
+									<div class="inner">
+										<p class="title"></p>
+										<ul class="list_type2">
+											<li style="line-height:1.2;">Купоны можно использовать только онлайн, и?их можно загрузить или
+												ввести вручную.</li>
+											<li style="line-height:1.2;">Скидки применяются только к дополнительным услугам, таким как тарифы
+												на рейсы, платные места и багаж. Купоны не применяются к топливным сборам и налогам.</li>
+											<li style="line-height:1.2;">Купоны можно использовать только один раз, и только один купон может
+												быть использован для оплаты авиабилета или дополнительных услуг.</li>
+											<li style="line-height:1.2;">Купоны нельзя использовать после истечения срока действия, или если
+												города вылета и прибытия не совпадают с&nbsp;указанными в&nbsp;купоне.</li>
+											<li style="line-height:1.2;">Купоны на скидку недействительны для совместных рейсов и рейсов
+												других авиакомпаний.</li>
+											<li style="line-height:1.2;">Недоступно при приобретении премиальных билетов или премиальном
+												повышении класса обслуживания.</li>
+											<li style="line-height:1.2;">Если вы измените маршрут билета, приобретенного с купоном, в
+												зависимости от условий использования может быть произведено возмещение суммы скидки и сбора за
+												переоформление билета.</li>
+											<li style="line-height:1.2;">Поскольку купон нельзя применить к ранее приобретенным билетам, для
+												использования купона необходимо вернуть билет и оплатить штраф за возврат средств, а затем
+												повторно приобрести билет.</li>
+											<li style="line-height:1.2;">Условия применения купонов на скидку могут изменяться без
+												предупреждения.</li>
+											<li style="line-height:1.2;">При отмене членства вы не можете использовать купон на скидку,
+												который у вас есть.</li>
+											<li style="line-height:1.2;">С более подробной информацией можно ознакомиться в условиях
+												использования каждого вида купонов.</li>
+											<li style="line-height:1.2;"> <a target="_blank"
+													href="https://flyasiana.com/C/UZ/RU/contents/book-online?tabId=coupons"
+													style="margin-left:10px; text-decoration:underline; color:#6b2900;"
+													rel="noopener">Использование купонов на скидкуКупоны</a></li>
+										</ul>
+									</div>
+									<a href="javascript:sharpNothig();" class="tooltip_close"><span class="hidden">Если вы измените
+											маршрут билета, приобретенного с купоном, в зависимости от условий использования может быть
+											произведено возмещение суммы скидки и сбора за переоформление билета.</span></a>
+								</div>
+							</div>
+
+							<div class="itinerary_coupon_tBox">
+
+								<input type="text" id="txtNoLoginCouponCode" title="쿠폰코드 입력" class="white"
+									placeholder="Введите код купона." style="display: none;">
+								<div class="coupon_search_bBox" id="divLoginCouponCode" style="display: none;">
+									<div class="left">
+										<input type="text" id="txtCouponCode" title="쿠폰코드 입력" class="white"
+											placeholder="Введите код купона.">
+									</div>
+									<div class="right">
+										<button type="button" class="btn_M red"
+											onclick="javascript:manualCouponStatusCheck();">Регистрация</button>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="itinerary_coupon">
+								<div class="coupon_slider ui_slider">
+									<div class="ui_slider_area" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);"
+										id="couponList">
+									</div>
+								</div>
+								<div class="btn_navigation">
+									<a href="javascript:sharpNothig();" class="btn_prev btn_coupon_prev swiper-button-disabled">Назад</a>
+									<a href="javascript:sharpNothig();" class="btn_next btn_coupon_next">Вперед</a>
+								</div>
+								<div class="border_box coupon_no_box" style="display:none;">
+									<p class="icon_empty">Нет доступных для загрузки купонов.</p>
+								</div>
+							</div>
+							<ul class="list_type3 REVCoupon">
+								<li>Выберите соответствующий купон для совершения бронирования по тарифу со скидкой.</li>
+								<li>Перед использованием купона внимательно ознакомьтесь с&nbsp;инструкциями.</li>
+							</ul>
+							<ul class="list_type3 REDCoupon" style="display: none;">
+								<li>Чтобы применить скидку во время бронирования, выберите купон.</li>
+								<li>Скидка по купону действует только в случае использования купона пассажиром.</li>
+								<li class="col_red">Для получения скидки по купону его владелец должен иметь отдельно выданный билет.
+								</li>
+							</ul>
+						</div>
+						<div class="btn_wrap_leriType3">
+							<div class="left" id="todayClose">
+								<input type="checkbox" id="noToday2" name="noToday">
+								<label for="noToday2" class="pad_type1">Не показывать больше сегодня</label>
+								<span class="alM"><a href="javascript:sharpNothig();" name="noTodayClose">[Закрыть]</a></span>
+							</div>
+							<div class="right">
+								<button type="button" class="btn_M white" id="btnCouponNotApply">Не использовать купон</button>
+
+								<button type="button" class="btn_M red" id="btnManualCouponApply"
+									onclick="javascript:manualCouponStatusCheck();" style="display: none;"
+									disabled="">Подтвердить</button>
+
+								<button type="button" class="btn_M red" id="btnCouponApply" style="display: none;" disabled="">Применить
+									выбранный купон</button>
+							</div>
+						</div>
+						<button type="button" class="btn_popup btn_allCoupon" id="btnShowCouponList"
+							title="Открыть в новом окне">Смотреть все купоны</button>
+						<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Закрыть</span></a>
+					</div>
+
+					<button type="button" id="registTravel" class="btn_L gray btn_revsearch"
+						onclick="javascript:registTravelV();">Посмотреть</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<div id="marketingCouponBanner" class="floating_popup coupon_banner_floating" style="display: none;">
+						<div class="floating_container">
+							<div class="floating_content">
+								<dl>
+									<dt><span>Вы получили купон на скидку.</span></dt>
+									<dd><a href="javascript:sharpNothig();" id="btnShowCouponList" class="btn_arrow">Мои купоны</a></dd>
+								</dl>
+							</div>
+							<a href="javascript:sharpNothig();" class="floating_close">Закрыть</a>
+						</div>
+					</div>
+
+
+
+
+				</div>
+        <div class="btn_mile_wrap">
+          <div class="flex_wrap">
+            <a href="javascript:sharpNothig();" class="btn_arrlink" id="openJawRED">Маршрут с разными пунктами
+              вылета/прилета</a>
+          </div>
+        </div>
+			</div>
+
+		</div>
+
+		<script type="text/javascript">
+			var jsJSON = JSON.parse('{"J0076":"10&nbsp;000 южнокорейских вон равны <strong>1000&nbsp;долл.&nbsp;США</strong>.","J2013":"한글성 입력","J0075":"Укажите адрес эл.&nbsp;почты в правильном формате.","J2014":"한글이름 입력","J0078":"Ввести номер участника","J2011":"한글성 입력(예:홍)","J0077":"Выберите авиакомпанию.","J2012":"한글이름 입력(예:길동)","J2017":"임직원 신청 정보에 동일한 아시아나클럽 회원번호가 있습니다. 다시 확인해 주십시오.","J0079":"Введен неправильный номер участника. ","J2018":"임직원으로 등록된 아시아나클럽 회원번호가 존재합니다. 다시 확인해 주십시오.","J2015":"숫자 9자리를 입력해 주십시오.","J2016":"신청하신 임직원의 아시아나클럽 회원 정보상 이름 또는 회원번호가 맞지 않습니다.","J0070":"Пассажир с указанной вами датой рождения будет считаться  ребенком  на дату посадки (#0) на международный рейс.","J0072":"Указанный вами год недопустим.","CHK_BORDING_DATE":"Выберите дату посадки на рейс.","J0071":"Пассажир с указанной вами датой рождения будет считаться  взрослым  на дату посадки (#0) на внутренний рейс.","J2010":"영문이름 입력","J0074":"Указанный вами день недопустим.","J0073":"Указанный вами месяц недопустим.","J2019":"다른 기업의 대표자로 등록된 임직원 정보입니다.","J0065":"Укажите дату рождения.","J2002":"파일을 첨부해주십시오.","J0064":"Дата рождения (8&nbsp;цифр)","J2003":"파일당 최대 5MB까지 첨부 가능합니다.","J0067":"Пассажир с указанной вами датой рождения будет считаться  ребенком  на дату посадки (#0) на внутренний рейс.","J0066":"Пассажир с указанной вами датой рождения будет считаться младенцем на дату посадки (#0) на внутренний рейс.","J2001":"Заполните обязательные поля.","J0069":"Пассажир с указанной вами датой рождения будет считаться  младенцем  на дату посадки (#0) на международный рейс.","J2006":"한글만 입력할 수 있습니다.","J0068":"Пассажир с указанной вами датой рождения будет считаться  взрослым на дату посадки (#0) на внутренний рейс.","J2007":"영어와 띄어쓰기만 입력할 수 있습니다.","J2004":"JPG, PDF, PNG 파일 형태로 첨부하시기 바랍니다.","J2005":"이메일 주소 형식이 맞지 않습니다.","NEED_TICKET_NUMBER":"There are passengers with the same names within this reservation. Please search with a ticket number (13 digits).","J0061":"Вы уже вошли в систему.","J0060":"Выберите аэропорт.","J0063":"Введите дату рождения из 8&nbsp;цифр без разделителя (пример: 19700131)","J0062":"Вы можете узнать статус своего ребенка («младенец»&#47;«ребенок»), указав дату его рождения.<br>","J2008":"최소 알파벳 2자 이상 입력하셔야 합니다.","J2009":"영문성 입력","J0098":"Конвертировать","J2035":"다른 기업의 임직원으로 등록된 임직원 정보입니다.\\n이전 기업에서 임직원 탈퇴 후 재신청 부탁드립니다.","J3003":"Недоступно из-за политики безопасности","J0097":"Период акции закончился.","J2036":"임직원으로 등록하신 회원이 휴면 계정일 경우 해당 회원이 로그인 및 휴면 해제를 완료한 후 예매 가능합니다.","J2033":"-Please check the notice page for any applicable entry restrictions by country/region prior to proceeding with a Star Alliance reservation.\\nThe notice can be accessed via the Customer Service → COVID-19 notifications\\n\\n-Entry restrictions by country/region and transfer information varies frequently due to COVID-19, Restrictions may change without prior notice\\n\\n-Please check the airport information on webpage of transit government, airport in case itinerary includes transferring terminal and flights.\\n\\n-Other notifications\\n-Japan (Narita Airport): Transferring ONLY available on the same day(NOT available on the different day notwithstanding within 24 hours)\\n→The above notifications may change without prior notice\\nAirport information by country/region needs to be checked.","J3001":"Пожалуйста, введите другой адрес электронной почты в вашей политике безопасности.","J0099":"Обработка.","J2034":"임직원으로 등록할 회원이 휴면 계정일 경우 해당 회원이 로그인 및 휴면 해제를 완료한 후 진행이 가능합니다.","J3002":"Не может быть использован на английском языке и имя","J2037":"Reservations can be made for up to 4 people","J2038":"중복된 파일이 존재합니다.","J0090":"Укажите фамилию (на английском языке).","J0092":"Невозможно использовать","J0091":"Карта мест для данного рейса отсутствует.","J0094":"Недостает #0 миль","J2031":"Искать","J0093":"Можно использовать","J2032":"삭제","J0096":"Использовать мили","J0095":"Баланс миль #0: <span class=\\\"col_red\\\">&#35;&#123;1&#125;M</span>.</span>","J2030":"Прикрепить файл","J0087":"Закрыть","J2024":"비밀번호는 8 ~ 20자리로 대/소문자, 숫자, 특수문자 중 세가지 이상을 조합하여 입력해주세요.","J0086":"Подтвердить","J2025":"반복된 숫자(예시.1111)는 사용이 불가합니다.","J0089":"Выберите страну.","J2022":"공백은 입력할 수 없습니다.","J0088":"Выберите регион.","J2023":"특수문자는 #0 만 사용 가능합니다.","J2028":"비밀번호 규칙에 맞지 않습니다. 비밀번호 도움말을 확인해주세요.","J2029":"입력하신 신규 비밀번호와 일치하지 않습니다.","J2026":"연속 번호(예시.1234 or 1112)는 사용이 불가합니다.","J2027":"연속 번호(예시.4321 or 1112)는 사용이 불가합니다.","J0081":"Выберите код страны.","J0080":"Ваш номер участника успешно введен. ","J0083":"Чтобы ввести территориальный код автоматически, сделайте свой выбор и нажмите «ОК».","J2020":"임직원 등록 신청이 완료되었습니다.","J0082":"Для указания территориального кода выберите страну и регион.","J2021":"기존 비밀번호와 신규 비밀번호가 같을 수 없습니다.","J0085":"Выбор региона/Выбор страны","J0084":"Выбрать регион","J4010":"Возможность выбора при оплате","J4005":"Купоны загружены. Купон на скидку не может быть использован при указанных условиях маршрута.","J4004":"Этот купон уже загружен.","J4003":"Введите код купона.","J4002":"Скоро закроется","J4009":"Указанный код купона на скидку недействителен. Попробуйте еще раз.","J4008":"Будет применен тариф со скидкой.","J4007":"Купон на скидку не используется при указанных условиях маршрута.","J4006":"Купоны загружены. Чтобы использовать купон, его нужно сначала выбрать.","J4001":"Дополнительные услуги","J4000":"Билет","NEED_TICKET_NUMBER_OTHER":"Online Check-in is not available for this reservation. Please check in at the airport counter.","J5000":"Электронное письмо отправлено.","J0806":"#0 не будет младенцем на дату посадки на рейс.","J0803":"20240512040000","J0802":"20240512000000","J0805":"#0 не будет ребенком на дату посадки на рейс.","J0804":"На сайте проводятся технические работы.\\n12.05.2024 (Вскр) 00:00~04:00 (по Корейскому времени)","W3205":"[Notice]\\n24 сентября — рейс O173173 в Инчхон (МКН) и прибывающий в Циндао (ТАО) ограничен покупкой до 3 штук, включая внутренних авиалиний.\\nПосле того, как мы зарегистрируемся с пассажирами и подпишем заявку на покупку, мы вас запросим..","J9998":"Идет поиск рейсов.","J9997":"Идет поиск<br>самых дешевых рейсов.","J9999":"<p class=\\\"tit\\\">Идет обработка запроса.</p>Не обновляйте страницу.<br>Пожалуйста, подождите.","J6001":"필수 동의 항목에 체크해주시기 바랍니다.","J0610":"Эконом Flexi,, Первый　","J7000":"기업우대 프로그램( Asiana Corporate Plus) 가입 국가와 항공권 출발 국가가 상이합니다. 접속하신 국가 사이트 또는 출발지를 확인하여 주십시요.","J0619":"Не удалось отправить купон из-за ошибки.","J0612":"Бизнес,  Эконом Flexi","J0611":"Бизнес, Эконом Basic","J0614":"Первый, Эконом Basic","J0613":"Бизнес, Первый　","J0616":"Первый, Бизнес","J0615":"Первый,  Эконом Flexi ","J0618":"Купон был отправлен.","J0617":"The phone number format does not match. Please re-enter.","J0609":"Эконом Flexi, Бизнес","J0608":"Эконом Flexi, Basic","J0601":"Эконом Basic","J0603":"Бизнес　","J0602":"Эконом Flexi","J0605":"Эконом Basic, Flexi","J0604":"Первый　","J0607":"Эконом Basic, Первый　","J0606":"Эконом Basic, Бизнес　","J0511":"Бизнес, первый","J0510":"Эконом Flexi, Первый","J0513":"Эконом (Discounted)","J0512":"Эконом Basic, Flexi","J0500":"Общие положения","J0621":"Этот период не включает вылеты.","J0620":"The phone number format does not match. Please re-enter.","J0509":"Эконом Basic, Первый класс","J0502":"Все","J0623":"Исключенный период: ","J0501":"Класс обслуживания","J0622":"Проверьте исключенный период и повторите выбор.","J0504":"Эконом Flexi","J0503":"Эконом Basic","J0624":"Исключенный день недели: ","J0506":"Первый класс","J0505":"Бизнес","J0508":"Эконом Flexi, Бизнес-класс","J0507":"Эконом Basic, Бизнес","J0410":"Ввести город вылета.","J0412":"Ввести имя пассажира.","J0411":"Ввести город прибытия.","J0414":"Проверьте количество цифр.","J0413":"Ввести дату посадки на рейс.","J0416":"Это групповое бронирование.\\nУточнить расписание для групповых бронирований можно по месту оформления бронирования.","J0415":"Ввести номер рейса.","J0418":"Данное бронирование включает пассажира-младенца. \\nУточнить расписание для данного бронирования можно по месту оформления бронирования. \\n","J0417":"Информация о бронировании некорректна.\\n* Премиальные бронирования можно будет просмотреть после входа в систему.","J0419":"Сроки регистрации на рейс не найдены.","J0401":"Выбрано","J0403":"Сложный маршрут","J0402":"Выберите купон.","J0405":"Для указания предпочтительных маршрутов перейдите в раздел «Моя Asiana». Хотите указать предпочтительные маршруты?","J0404":"Несколько пунктов назначения","J0407":"Желаете перейти на страницу «Бронирование рейса» и выбрать сложный маршрут?","J0406":"Место прибытия","J0409":"Ввести номер бронирования.","J0408":"Укажите класс обслуживания.","NOLOGIN_PW_6":"Вы можете вносить изменения только в свои бронирования. Пожалуйста войдите в свой аккаунт используя ID.","J0430":"(до 2&nbsp;лет)","NOLOGIN_PW_7":"Введенный пароль не совпадает","NOLOGIN_PW_8":"Изменение/возврат назначенного места онлайн находится в меню входа в систему.\\nСначала войдите в систему или обратитесь в центр бронирования Asiana Airlines. Пожалуйста, обратите внимание, что номер клуба Asiana должен быть предварительно введен в бронирование.","J0432":"(от 2 до 11&nbsp;лет)","J0431":"(старше 12 лет)","J0434":"(От 2 до 12&nbsp;лет)","J0433":"(старше 13 лет)","NOLOGIN_PW_9":"This is the Log-in menu. Please continue after successfully logging-in.","J0436":"Количество младенцев не должно превышать количество сопровождающих взрослых.","J0435":"Нет недавних запросов маршрутов.","J0438":"Премиальные билеты можно забронировать только для вас и членов вашей семьи, являющихся участниками программы лояльности Asiana. Бронирование может включать до пяти человек, в том числе взрослых и детей.","J0437":"В одном бронировании может быть указано не более \\n9 человек, включая взрослых, детей и младенцев.","J0439":"Укажите количество пассажиров.","J0421":"This is a codeshare flight operated by AIR SEOUL.","J0420":"Неверные сведения о бронировании.","J0423":"Введите номер рейса","J0422":"Не удалось зарегистрироваться на рейс.","J0425":"Выберите дату.","J0424":"В этом поле допустимо использование только цифровых символов.","J0427":"Направления&nbsp;выполняемые Asiana Airlines","J0426":"Произошла ошибка.","J0429":"Выберите аэропорт.","J0428":"Другое","J0450":"Пассажир с указанной вами датой рождения будет считаться  младенцем  на дату посадки (#0) на международный рейс.","J0210":"Только одному сопровождающему доступна скидка по маршруту обратного рейса [#0].","J0452":"Пассажир с указанной вами датой рождения будет считаться  взрослым   на дату посадки (#0) на международный рейс.","J0451":"Пассажир с указанной вами датой рождения будет считаться  ребенком  на дату посадки (#0) на международный рейс.","J0212":"Выберите персональную скидку снова.","J0454":"Место прибытия","J0211":"Для рейса вылета [#0] можно выбрать скидку для человека, сопровождающего пассажира с ограниченными возможностями, имеющего заслуги перед государством, только если он сопровождает пассажира с ограниченными возможностями, имеющего заслуги перед государством.","J0453":"Город вылета","J0214":"Только одного сопровождающего можно выбрать для получения скидки по маршруту рейса вылета [#0].","J0456":"Рейс туда","J0213":"Только одному патриоту движения за независимость доступна скидка по маршруту обратного рейса [#0].","J0455":"Дата посадки на рейс","J0216":"Скидка на одного сопровождающего для рейса вылета доступна только в случае, если билет был куплен для одного пассажира, имеющего документальное подтверждение для получения скидки по такому же маршруту до посадки на борт. Документальное подтверждение для получения скидки необходимо предоставить в день посадки на борт. При отсутствии необходимых документов для посадки на борт вам придется купить авиабилет по обычному тарифу.","J0458":"Бронирование недоступно, если пользователь, вошедший в систему, является младенцем. \\nОбратитесь в центр бронирования.","J0215":"Только одного сопровождающего можно выбрать для получения скидки по маршруту обратного рейса [#0].","J0457":"Вылетающие и прибывающие рейсы","J0218":"Скидка на одного сопровождающего для рейса вылета не может распространяться на более чем одного пассажира, имеющего документальное подтверждение для получения скидки. Проверьте пассажира, которому доступна скидка.","J0217":"Авиабилеты на маршруты вылета для людей, сопровождающих в полете младенцев с ограниченными возможностями, нельзя купить онлайн. Совершите покупку через центр бронирования (1588-8000).","J0459":"Сопровождающим может быть родитель ребенка или взрослый старше 18 лет. Маршрутная квитанция сопровождающего должна быть идентичной маршруту ребенка с.В случае сопровождения младенца/ребенка законным представителем, не достигшем возраста 18&nbsp;лет, обратитесь в центр бронирования.","J0219":"Скидка на одного сопровождающего для рейса вылета доступна только в случае, если билет был куплен для одного пассажира, имеющего документальное подтверждение для получения скидки по такому же маршруту до посадки на борт. Если авиабилет был куплен отдельно от пассажира, имеющего документальное подтверждение для получения скидки, вы не сможете купить авиабилет лишь для одного сопровождающего. Совершите покупку через центр бронирования (1588-8000).","J0441":"Вы можете отметить статус ребенка как «младенец»&#47;«ребенок» после ввода его даты рождения.<br>","J0440":"Калькулятор возраста","J0201":"Выберите язык.","J0443":"Дата рождения (8&nbsp;цифр)","J0200":"Неверный формат почтового адреса. Введите данные еще раз.","J0442":"Введите дату рождения из 8&nbsp;цифр без разделителя (пример: 19700131)","J0203":"Не введен номер участника. ","J0445":"Закрыть","J0202":"#0 будут конвертированы в <strong>#1</strong>.","J0444":"Подсчитать","J0205":"Ошибка кода скидки для рейса вылета!","J0447":"Пассажир с указанной вами датой рождения будет считаться  младенцем  на дату посадки (#0) на внутренний рейс.","J0204":"Будьте готовы предоставить документальное подтверждение для получения скидки в день посадки на борт. При отсутствии необходимых документов для посадки на борт вам придется купить авиабилет по обычному тарифу.","J0446":"Укажите дату рождения.","J0207":"Ошибка кода скидки для обратно рейса!","J0449":"Пассажир с указанной вами датой рождения будет считаться  взрослым  на дату посадки (#0) на внутренний рейс.","J0206":"Проверьте [#0].","J0448":"Пассажир с указанной вами датой рождения будет считаться  ребенком  на дату посадки (#0) на внутренний рейс.","J0209":"Проверьте [#0].","J0208":"Только одному сопровождающему доступна скидка по маршруту рейса вылета [#0].","J0230":"Скидка на аэропортовый сбор для одного сопровождающего для обратного рейса не может распространяться на более чем одного пассажира, имеющего документальное подтверждение для получения скидки. Проверьте пассажира, которому доступна скидка.","J0472":"Баланс миль #0: <span class=\\\"col_red\\\">#1M</span>.","J0471":"Недоступно","J0232":"Развернуть","J0474":"Период акции закончился.","J0110":"Мили","J0231":"Скидка на аэропортовый сбор для одного сопровождающего для обратного рейса доступна только в случае, если билет был куплен для одного пассажира, имеющего документальное подтверждение для получения скидки по такому же маршруту до посадки на борт. Если авиабилет был куплен отдельно от пассажира, имеющего документальное подтверждение для получения скидки, вы не сможете купить авиабилет лишь для одного сопровождающего. Совершите покупку через центр бронирования (1588-8000).","J0473":"Использовать мили","J0234":"Невозможно выбрать дату ранее сегодняшнего дня.","J0476":"8 цифр или 6 англ. букв и цифр","J0233":"Невозможно отобразить даты ранее одного года.","J0475":"Конвертировать","J0236":"Дата возвращения ранее даты вылета.\\nПроверьте дату возвращения еще раз.","J0478":"Обработка.</p>Подождите.<br> Не обновляйте страницу.","J0235":"Дата вылета позднее даты обратного рейса.\\nПроверьте дату вылета еще раз.","J0477":"13-значное число","J0470":"Посмотреть ещё","E_LastName":"Ввести Фамилия пассажира.","J0036_2":"Премиальные бронирования можно будет просмотреть после входа в систему.","J0238":"Самая низкая","J0237":"Дата прибытия раньше даты вылета.","J0479":"8 цифр или 6 англ. букв и цифр","J0239":"Не удалось продлить сеанс.","J0461":"При приобретении билета на внутренние рейсы онлайн вы должны произвести оплату во время бронирования.\\nЕсли вы не осуществите оплату сразу, ваше бронирование не будет оформлено.\\n\\nЕсли вы не осуществите оплату, ваше бронирование не будет оформлено.\\n\\nОбращаем ваше внимание на то, что время по всем маршрутам вашего бронирования\\n, а также осуществление/неосуществление рейсов может изменяться без предупреждения\\n ввиду регулярных изменений в расписании или технического обслуживания.\\n\\n* Пассажиры внутренних рейсов, не имеющие удостоверения личности с фотографией, не могут зарегистрироваться на рейс в аэропорту и пройти в зону досмотра.","J0460":"При посадке на рейс младенца/ребенка подготовьте для предъявления в день вылета в аэропорту документы, подтверждающие его возраст (страховой полис, копию страницы с пропиской или паспорт).","J0100":"Подождите.<br> Не обновляйте страницу.","J0221":"Авиабилеты на обратные маршруты для людей, сопровождающих в полете младенцев с ограниченными возможностями, нельзя купить онлайн. Совершите покупку через центр бронирования (1588-8000).","J0463":"Выберите дату отправления.","J0220":"Скидка на одного сопровождающего для обратного рейса доступна только в случае, если билет был куплен для одного пассажира, имеющего документальное подтверждение для получения скидки по такому же маршруту до посадки на борт. Документальное подтверждение для получения скидки необходимо предоставить в день посадки на борт. При отсутствии необходимых документов для посадки на борт вам придется купить авиабилет по обычному тарифу.","J0462":"При наличии вероятности изменения вашего маршрута рекомендуем вам отдельно бронировать билеты в каждую сторону. \\n(После вылета по маршруту туда и обратно возможны ограничения на внесение изменений в обратный маршрут или получение возмещения.)","J0223":"Скидка на одного сопровождающего для обратного рейса доступна только в случае, если билет был куплен для пассажира, имеющего документальное подтверждение для получения скидки по такому же маршруту до посадки на борт. Если авиабилет был куплен отдельно от пассажира, имеющего документальное подтверждение для получения скидки, вы не сможете купить авиабилет лишь для одного сопровождающего. Совершите покупку через центр бронирования (1588-8000).","J0465":"Соответствующих номеров бронирования нет.","J0101":"Удалить","J0222":"Скидка на одного сопровождающего для обратного рейса не может распространяться на более чем одного пассажира, имеющего документальное подтверждение для получения скидки. Проверьте пассажира, которому доступна скидка.","J0464":"Выберите дату возвращения.","J0225":"Авиабилеты со скидкой на аэропортовый сбор для маршрутов вылета для одного человека, сопровождающего в полете младенца с ограниченными возможностями, нельзя купить через Интернет; совершите покупку через центр бронирования (1588-8000).","J0467":"Укажите фамилию (на английском языке).","J0224":"Скидка на аэропортовый сбор для одного сопровождающего для рейса вылета доступна только с случае, если билет был куплен для одного пассажира, имеющего документальное подтверждение для получения скидки по такому же маршруту до посадки на борт. Будьте готовы предоставить документальное подтверждение для получения скидки в день посадки на борт. При отсутствии необходимых документов для посадки на борт вам придется купить авиабилет по обычному тарифу.","J0466":"Укажите номер бронирования.","CHK_SPECIAL_CHR":"Введите текст, не используя специальные знаки или цифры.","J0036_1":"В целях безопасности введите указанный ниже текст.","J0227":"Скидка на аэропортовый сбор для одного сопровождающего для рейса вылета доступна только с случае, если билет был куплен для одного пассажира, имеющего документальное подтверждение для получения скидки по такому же маршруту до посадки на борт. Если авиабилет был куплен отдельно от пассажира, имеющего документальное подтверждение для получения скидки, вы не сможете купить авиабилет лишь для одного сопровождающего. Совершите покупку через центр бронирования (1588-8000).","J0469":"Выбрать","J0226":"Скидка на аэропортовый сбор для одного сопровождающего для рейса вылета не может распространяться на более чем одного пассажира, имеющего документальное подтверждение для получения скидки. Проверьте пассажира, которому доступна скидка.","J0468":"Скачать","J0229":"Авиабилеты со скидкой на аэропортовый сбор для обратного маршрута для одного человека, сопровождающего в полете младенца с ограниченными возможностями, нельзя купить через Интернет; совершите покупку через центр бронирования (1588-8000).","J0228":"Скидка на аэропортовый сбор для одного сопровождающего для обратного рейса доступна только в случае, если билет был куплен для одного пассажира, имеющего документальное подтверждение для получения скидки по такому же маршруту до посадки на борт. Будьте готовы предоставить документальное подтверждение для получения скидки в день посадки на борт. При отсутствии необходимых документов для посадки на борт вам придется купить авиабилет по обычному тарифу.","J0010":"В одном бронировании может быть указано не более \\n9 человек, включая взрослых, детей и младенцев.","J0252":"Закрыть","J0494":"Возможна автоматическая регистрация на рейс","J0251":"Бронирование недоступно, если пользователь, вошедший в систему, является младенцем. \\nОбратитесь в центр бронирования.","J0493":"Автоматическая регистрация на рейс применена","J0012":"Премиальные билеты можно забронировать только для вас и членов вашей семьи, у которых есть членство в программе лояльности Asiana. Бронирование может включать до 5 человек, включая взрослых, детей и младенцев.","J0254":"Выберите аэропорт отправления.","J0496":"Помощь","J0011":"Премиальные билеты можно забронировать только для вас и членов вашей семьи, являющихся участниками программы лояльности Asiana. Бронирование может включать до пяти человек, в том числе взрослых и детей.","J0253":"Эта таблица содержит #1","J0495":"Вы сэкономите время, если заполните простую форму на получение посадочного талона за 24 часа до вылета.","J0014":"Соответствующих номеров бронирования нет.","J0135":"Сегмент #0 поменялся на сегмент #1.","J0498":"Статус заявки на выбор места/автоматическую регистрацию","J0013":"Укажите количество пассажиров.","J0497":"Внимание! Могут быть ограничения: некоторые авиалинии не поддерживают мобильные посадочные талоны.","J0016":"После внесения изменений города прибытия по рейсам с вылетом из указанного города отсутствуют.","J0015":"Выберите город вылета и город прибытия.","J0136":"This is reservation period of the extra flight for ChuSeok (the Korean Thanksgiving day) #0.\\nYou may reserve up to 6 people. Please confirm the number of people once again.","J0499":"Asiana Airlines","J0490":"Онлайн-бронирование авиабилета возможно не позднее, чем за 2 дней до вылета.","J0250":"Бронирование недоступно, если пользователь, вошедший в систему, является младенцем или ребенком. \\nОбратитесь в центр бронирования.","J0492":"Закрыть","J0491":"Развернуть текст","J0018":"В одну сторону","J0017":"Туда-обратно","J0019":"Нет сохраненных предпочтительных маршрутов. Вы можете указать предпочтительные маршруты в разделе «Моя Asiana».","J0241":"<em id=\\\"topCountTime\\\" class=\\\"fo_bol\\\"></em> осталось до автоматического сброса.","J0483":"Путешествие, поездка","J0240":"#0минут #1секунд","J0482":"Номер билета состоит из 13 знаков.","J0001":"Далее","J0243":"автоматического сброса","J0485":"Маршрут для непрямого участка Asiana Airlines (#0) можно забронировать только за 3 дня до вылета.","J0242":"Продлить сеанс","J0484":"Этот купон уже был загружен и использован.","J0003":"Первый","J0245":"Осталось времени: <span id=\\\"startCountTime\\\" class=\\\"fo_bol\\\"></span>","J0487":"Вы можете выбрать до 9&nbsp;человек при бронировании, включая взрослых, детей и младенцев.","J0002":"Последний","J0123":"Приблизительные тарифы","J0244":"Сеанс завершится из соображений безопасности и защиты персональных данных. Вы будете перенаправлены на главную страницу веб-сайта Asiana Airlines.","J0486":"Вы можете выбрать при бронировании до пяти человек, включая взрослых и детей.","J0005":"Город вылета","J0247":"Продлить сеанс","J0489":"Вы можете выбрать при бронировании до пяти человек, включая взрослых, детей и младенцев.","J0004":"Предыдущее","J0246":"Сеанс завершен","J0488":"Выбор места и регистрация на рейс возможны только после завершения процесса оплаты.","J0481":"13-значное число","J0480":"Введите 8-значное число или 6-значный буквенно-цифровой код номера бронирования.","J0007":"Дата вылета&#47;прибытия","J0249":"Осталось времени: <span id=\\\"ssoStartCountTime\\\" class=\\\"fo_bol\\\"></span>","J0006":"Место прибытия","J0248":"<em id=\\\"ssoTopCountTime\\\" class=\\\"fo_bol\\\"></em> осталось до автоматического сброса.","J0009":"Количество младенцев не должно превышать количество сопровождающих взрослых.","J0008":"Дата вылета","J0032":"Укажите имя пассажира.","J1000":"Дата посадки на рейс","J3300":"Закрыть","J0031":"Укажите город прибытия.","J3301":"Развернуть","J0034":"Укажите номер авиабилета.","J1002":"성인","J0033":"Укажите дату посадки на рейс.","J1001":"Закрыть","J0036":"Информация о бронировании некорректна.\\n* Премиальные бронирования можно будет просмотреть после входа в систему.","J1004":"검색 정보가 없습니다","J3304":"Подтвердите, что вы прочитали и согласны с правилами провоза багажа.","J0035":"Это групповое бронирование.\\nУточнить расписание для групповых бронирований можно по месту оформления бронирования.","J1003":"본인","J3305":"Подтвердите, что вы прочитали и согласны с правовыми положениями, информацией о предметах, запрещенных к перевозке в ручной клади и зарегистрированном багаже, а также с условиями международных перевозок.","J0038":"Данное бронирование включает пассажира-младенца. \\nУточнить расписание для данного бронирования можно по месту оформления бронирования.","J1006":"임직원 회원 승인 동의에 체크하십시오.","J3302":"Чтобы продолжить, прочитайте и примите правила применения тарифов.","J0037":"Информация о бронировании некорректна.\\n* Премиальные бронирования можно будет просмотреть после входа в систему.","J1005":"탑승객","J3303":"Пожалуйста, проверьте/проверите меры предосторожности по маршруту.","J0030":"Укажите город вылета.","J1008":"해당 노선은 선택이 불가합니다.","J3308":"Информация будет введена в APIS. \\n Ввести информацию сейчас?","J0039":"Сроки регистрации на рейс не найдены.","J1007":"개인 정보 활용 동의에 실패하였습니다.","J3306":"Данные вашего проездного документа введены.","J1009":"예약인원은 9명을 초과할 수 없습니다.","J3307":"Не удалось ввести данные вашего проездного документа.","J0021":"Рейс туда","J0020":"Для указания предпочтительных маршрутов перейдите в раздел «Моя Asiana». Хотите указать предпочтительные маршруты?","J0023":"Нет недавних запросов маршрутов.","J0022":"Выбрано","J0025":"Выберите аэропорт прибытия для маршрута.","J0024":"Выберите аэропорт вылета для маршрута.","J0027":"Несколько пунктов назначения","J0026":"Сложный маршрут","J0261":"На внутренний рейс указано более шести типов скидок. Проверьте код скидки еще раз.","J0260":"ПРОВЕРЬТЕ ЛИЧНЫЕ ДАННЫЕ ПЕРЕД БРОНИРОВАНИЕМ И ОФОРМЛЕНИЕМ БИЛЕТА.","J0029":"Укажите номер бронирования.","J0028":"Желаете перейти на страницу «Бронирование рейса» и выбрать сложный маршрут?","J0054":"Искать правила тарифов через Интернет достаточно сложно. Обратитесь в центр бронирования или представительство авиакомпании.","J3201":"Бесплатно","J0053":"Выберите аэропорт прибытия для Маршрута #0.","J3202":"Перевыпуск невозможен","J0056":"Выберите язык.","J0055":"Неверный формат почтового адреса. Введите данные еще раз.","J3321":"Пожалуйста, ознакомьтесь/согласитесь с мерами предосторожности на внутренних рейсов при транзитном перелете","J0058":"В процессе произошла ошибка.","J0057":"Успешно","J3203":"Только для вылета","J0059":"Все","J3204":"Только для возврата","J0050":"(старше 13 лет)","J0052":"Выберите аэропорт вылета для Маршрута #0.","J0051":"(От 2 до 12&nbsp;лет)","J0043":"В этом поле допустимо использование только цифровых символов.","J0042":"Введите номер рейса","J1010":"선택삭제","J0045":"Направления&nbsp;выполняемые Asiana Airlines","J0044":"Выберите дату.","J0047":"(до 2&nbsp;лет)","J0046":"Другое","J0049":"(от 2 до 11&nbsp;лет)","J0048":"(старше 12 лет)","J0041":"Не удалось зарегистрироваться на рейс.","J0040":"Неверные сведения о бронировании.","J3319":"&nbsp;Пожалуйста проверьте информацию о бортовом питании на совместном рейсе с Air Busan."}');
+			var userAge;
+
+
+			if ('true' == 'true') {
+				for (var i = 0, lsLang = localStorage.length; i < lsLang; i++) {
+					var lsKey = localStorage.key(i);
+					if (lsKey.indexOf('searchLately') > -1) {
+						localStorage.removeItem(lsKey);
+					}
+				}
+			}
+
+
+			document.addEventListener('DOMContentLoaded', function () {
+				try {
+					rtbMainHome('');
+				} catch (error) { }
+			});
+
+
+			function swapLocations() {
+				var depCode = $('#departureAirportR').val();
+				var arrCode = $('#arrivalAirportR').val();
+
+				if (!depCode || !arrCode) {
+					alert(jsJSON.J0015 || '출도착지를 모두 선택해주세요');
+					return false;
+				}
+
+				var fields = ['AreaR', 'AirportR', 'AirportNameR', 'CityR', 'CityNameR', 'DirectR'];
+
+				for (var i = 0; i < fields.length; i++) {
+					var field = fields[i];
+					var dep = $('#departure' + field);
+					var arr = $('#arrival' + field);
+					var temp = dep.val();
+					dep.val(arr.val());
+					arr.val(temp);
+				}
+
+				var txtDep = $('#txtDepartureAirportR');
+				var txtArr = $('#txtArrivalAirportR');
+				var tmpTxt = txtDep.val();
+				txtDep.val(txtArr.val());
+				txtArr.val(tmpTxt);
+
+				var depLabel = $('#labelDepartureAirportR');
+				var arrLabel = $('#labelArrivalAirportR');
+
+				var depAbbr = depLabel.find('.abbr');
+				var arrAbbr = arrLabel.find('.abbr');
+				var tmpAbbr = depAbbr.text();
+				depAbbr.text(arrAbbr.text());
+				arrAbbr.text(tmpAbbr);
+
+				var depNameSpan = depLabel.find('span').not('.abbr').not('.hidden');
+				var arrNameSpan = arrLabel.find('span').not('.abbr').not('.hidden');
+				var tmpName = depNameSpan.text();
+				depNameSpan.text(arrNameSpan.text());
+				arrNameSpan.text(tmpName);
+
+				var depDefault = $('#departureData1 input[name="default"]');
+				var arrDefault = $('#arrivalData1 input[name="default"]');
+
+				var tmpAirport = depDefault.attr('airport');
+				var tmpArea = depDefault.attr('area');
+
+				depDefault.attr('airport', arrDefault.attr('airport'));
+				depDefault.attr('area', arrDefault.attr('area'));
+
+				arrDefault.attr('airport', tmpAirport);
+				arrDefault.attr('area', tmpArea);
+			}
+
+			function onClickAirportIcon(obj, segType) {
+				showAirportLayer(obj, segType);
+			}
+		</script>
+
+	</div>
+
+	<div data-content="reservation_inquiry" class="quick-service__item quick-reservation_inquiry section02">
+		<div class="slide_inner">
+			<h3 class="hidden">Найти мою поездку</h3>
+			<div class="section_text_copy">
+				<p class="desc">
+					Вы можете удобно проверить детали маршрута забронированного билета.
+				</p>
+			</div>
+
+			<form id="frmReservationDetail" name="frmReservationDetail" method="post" target="_self">
+				<input type="hidden" id="pnrAlpha" name="pnrAlpha">
+				<input type="hidden" id="pnrNumeric" name="pnrNumeric">
+				<input type="hidden" id="officeId" name="officeId">
+				<input type="hidden" id="bizType" name="bizType" value="REV">
+				<input type="hidden" id="lastName" name="lastName">
+				<input type="hidden" id="staralliance" name="staralliance">
+				<input type="hidden" id="depAirport" name="depAirport">
+				<input type="hidden" id="uniqueNo" name="uniqueNo">
+				<input type="hidden" id="sessionUniqueKey" name="sessionUniqueKey">
+			</form>
+			<div id="section_copyS" class="section_copy">
+				<h2>Найти мою поездку</h2>
+				<p class="desc">Вы можете удобно проверить детали маршрута забронированного билета.</p>
+			</div>
+			<div id="schedule_summaryS" class="schedule_summary">
+			</div>
+			<div class="inquiry_wrapper logout" id="inquiryReserved">
+				<div id="defaultPNRSearch" class="white_step_box">
+
+					<div class="quick_step_wrap">
+						<div class="input_wrap" name="itineraryS">
+
+
+							<div class="ipt_elt">
+								<label for="reservationId"><span class="hidden">Номер бронирования</span></label>
+								<input type="text" id="reservationId" maxlength="8" style="width:172px; ime-mode: disabled;"
+									placeholder="Номер бронирования">
+							</div>
+
+							<div class="ipt_elt loct spot_proven">
+								<input type="hidden" id="departureAreaS" name="departureAreaS" value="">
+								<input type="hidden" id="departureAirportS" name="departureAirportS" value="">
+								<input type="hidden" id="departureCityS" name="departureCityS" value="">
+								<input type="hidden" id="departureCityNameS" name="departureCityNameS" value="">
+								<label for="txtDepartureAirportS" class="spot_place" id="labelDepartureAirportS" name="spot_place">Город
+									вылета</label>
+								<input type="text" id="txtDepartureAirportS" name="txtDepartureAirportS"
+									class="spotentry ui-autocomplete-input" deparrtype="dep" style="width:172px;" autocomplete="off">
+								<input type="hidden" name="default" area="" airport="">
+								<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_depAllAirport1"
+									name="btn_layer1" seg="dep1" deparrtype="dep" onclick="javascript:showAirportLayer(this, 'S');"><span
+										class="hidden">Смотреть все города</span></a>
+							</div>
+							<div class="shadow_layer search_flight" name="shadow_layer">
+								<div class="inner">
+									<div class="search_layer">
+										<div class="search_lately" name="search_lately">
+											<p class="title">Недавние запросы</p>
+
+										</div>
+										<div class="route_list search_auto" id="divDepAirportACS" name="search_auto"
+											target="txtDepartureAirportS">
+											<p class="title">Автозаполнение</p>
+											<div class="empty_box" name="empty_box">Нет подходящего аэропорта</div>
+											<ul id="ui-id-3" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
+												style="display: none;"></ul>
+										</div>
+									</div>
+									<input type="hidden" name="default" area="" airport="">
+									<button type="button" class="btn_popup airport_open" id="btn_depAllAirport1" name="btn_layer1"
+										seg="dep1" deparrtype="dep" onclick="javascript:showAirportLayer(this, 'S');">Смотреть все
+										города</button>
+								</div>
+								<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Закрыть</span></a>
+							</div>
+
+							<div class="ipt_elt loct spot_destin">
+								<input type="hidden" id="arrivalAreaS" name="arrivalAreaS" value="">
+								<input type="hidden" id="arrivalAirportS" name="arrivalAirportS" value="">
+								<input type="hidden" id="arrivalCityS" name="arrivalCityS" value="">
+								<input type="hidden" id="arrivalCityNameS" name="arrivalCityNameS" value="">
+								<label for="txtArrivalAirportS" class="spot_place" id="labelArrivalAirportS" name="spot_place">Место
+									прибытия</label>
+								<input type="text" id="txtArrivalAirportS" name="txtArrivalAirportS" class="spotentry" deparrtype="arr"
+									style="width:172px;">
+								<input type="hidden" name="default" area="" airport="">
+								<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_arrAllAirport1"
+									name="btn_layer1" seg="arr1" deparrtype="arr" onclick="javascript:showAirportLayer(this, 'S');"><span
+										class="hidden">Смотреть все города</span></a>
+							</div>
+							<div class="shadow_layer search_flight to" name="shadow_layer">
+								<div class="inner">
+									<div class="search_layer">
+										<div class="search_lately" name="search_lately">
+											<p class="title">Недавние запросы</p>
+
+										</div>
+										<div class="route_list search_auto" id="divArrAirportACS" name="search_auto"
+											target="txtArrivalAirportS">
+											<p class="title">Автозаполнение</p>
+											<div class="empty_box" name="empty_box">Нет подходящего аэропорта</div>
+
+										</div>
+									</div>
+									<input type="hidden" name="default" area="" airport="">
+									<button type="button" class="btn_popup airport_open" id="btn_arrAllAirport1" name="btn_layer1"
+										seg="arr1" deparrtype="arr" onclick="javascript:showAirportLayer(this, 'S');">Смотреть все
+										города</button>
+								</div>
+								<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Закрыть</span></a>
+							</div>
+
+
+
+							<div class="shadow_layer case2 select_airport" id="depAllAirportS" name="allAirportS"
+								style="display: none;">
+								<div class="inner">
+									<h4 class="hidden">Выбрать аэропорт</h4>
+									<h5 class="hidden">Международные рейсы</h5>
+									<div class="flights_list national">
+
+									</div>
+									<div class="recent_search_wrap">
+										<h4>Недавние запросы</h4>
+										<div class="recent_srch_box" name="recent_srch_box">
+
+										</div>
+										<div class="btn_area">
+											<button type="button" class="btn_M gray"
+												onclick="javascript:clickNextStep('allAirportS', 'S');">Далее</button>
+										</div>
+									</div>
+								</div>
+								<a href="javascript:sharpNothig();" class="layer_close">
+									<span class="hidden">Закрыть</span>
+								</a>
+							</div>
+
+							<div class="ipt_elt calr calendar_wrap">
+								<label for="sCalendarS" name="calDesc"><span class="hidden">Выбрать дату</span></label>
+								<input type="text" id="sCalendarS" class="spotentry datepicker" readonly="" autocomplete="off"
+									data-dateformat="y.mm.dd" data-type="single" style="width:172px;" placeholder="Дата посадки на рейс">
+								<input type="hidden" id="departureDate1" value="" name="departureDateS">
+								<input type="hidden" id="arrivalDate1" value="" name="arrivalDateS">
+								<a href="javascript:sharpNothig();" class="btn_airport calendar_focus"><span class="hidden">Посмотреть
+										календарь для выбора даты вылета</span></a>
+							</div>
+
+							<div class="calendar_layer">
+								<h4 class="hidden">Выберите дату посадки на рейс</h4>
+								<div class="cal_cont">
+									<h4 class="hidden">Календарь</h4>
+									<div class="calendar_top">
+										<select name="" id="" class="white" title="Год и месяц посадки">
+											<option value="">2017.08</option>
+										</select>
+									</div>
+									<div class="compareCalendar"></div>
+									<a href="javascript:sharpNothig();" class="cal_status">Дата посадки на рейс</a><a
+										href="javascript:sharpNothig();" class="cal_reset"><span class="hidden">Обновить
+											календарь</span></a>
+									<a href="javascript:sharpNothig();" class="btn_cal_close"><span class="hidden">Закрыть</span></a>
+								</div>
+							</div>
+
+							<div class="ipt_elt">
+								<label for="passengerName"><span class="hidden">Фамилия пассажира</span></label>
+								<input type="text" id="passengerName" style="width:172px;" placeholder="Фамилия пассажира">
+							</div>
+
+							<div class="ipt_elt">
+								<label for="passengerFirstName"><span class="hidden">имя пассажира</span></label>
+								<input type="text" id="passengerFirstName" placeholder="имя пассажира">
+							</div>
+
+              <div class="eservationInquiry_btn_area">
+                <button type="button" id="goPNRList" class="btn_M gray btn_revsearch" onclick="javascript:PNRListV();">Найти мою
+                  поездку</button>
+              </div>
+
+						</div>
+						<p class="exam_txt eservationInquiry_txt">
+							<span class="text_type1 ext1">Введите 8-значное число или 6-значный буквенно-цифровой код номера
+								бронирования.</span>
+
+							<span>
+								<span class="text_type1 ext2">Пример: &nbsp;KIM</span>
+								<span class="text_type1 ext3">Пример: &nbsp;CHEOLSU</span>
+							</span>
+
+						</p>
+						
+					</div>
+
+				</div>
+			</div>
+
+			<a href="javascript:sharpNothig();" class="btn_fold open" id="foldSection2"><span class="hidden">Расширить
+					диапазон поиска</span></a>
+		</div>
+	</div>
+
+	<div data-content="check_in" class="quick-service__item quick-check_in section03">
+		<div class="slide_inner">
+			<h3 class="hidden">Регистрация на рейс</h3>
+			<div class="section_text_copy">
+				<p class="desc">
+					Получите свой посадочный талон с заранее выбранным местом, чтобы не тратить на это время в аэропорту.
+				</p>
+			</div>
+
+			<div id="section_copyC" class="section_copy">
+				<h2>Check-in</h2>
+				<p class="desc">Получите свой посадочный талон с заранее выбранным местом, чтобы не тратить на это время в
+					аэропорту.</p>
+			</div>
+			<div id="schedule_summaryC" class="schedule_summary">
+			</div>
+			<div class="inquiry_wrapper no_onlinecheck noevent" id="inquiryCheckin">
+				
+				<div id="defaultCheckInSearch" class="white_step_box">
+
+					<div class="quick_step_wrap">
+						<div class="input_wrap" name="itineraryC">
+
+
+							<div class="ipt_elt">
+								<select id="checkInType" title="Категория поиска" style="width:210px">
+									<option value="resNo">Номер бронирования</option>
+									<option value="fltNo">Номер билета</option>
+								</select>
+							</div>
+
+							<div class="ipt_elt">
+								<label for="checkinNum"><span class="hidden">8 цифр или 6 англ. букв и цифр</span></label>
+								<input type="text" id="checkinNum" maxlength="8"
+									style="width:335px; ime-mode: disabled; text-transform: uppercase;"
+									placeholder="8 цифр или 6 англ. букв и цифр"
+									onkeyup="this.value=this.value.replace(/[^a-zA-z0-9]/g,'')">
+							</div>
+
+							<div class="ipt_elt">
+								<select title="Выберите дату посадки на рейс" id="departureDateC" name="departureDateC"
+									style="width:250px;">
+									<option value="">Выберите дату посадки на рейс</option>
+									<option value="20250820">2025.08.20 (Ср)</option>
+									<option value="20250821">2025.08.21 (Чет)</option>
+									<option value="20250822">2025.08.22 (Пят)</option>
+									<option value="20250823">2025.08.23 (Субб)</option>
+								</select>
+							</div>
+
+
+							<div class="ipt_elt">
+								<label for="passengerLastNameC"><span class="hidden">Фамилия пассажира</span></label>
+								<input type="text" id="passengerLastNameC" placeholder="Фамилия пассажира">
+							</div>
+
+							<button type="button" class="btn_M gray btn_revsearch" onclick="javascript:CheckInV();">Запрос на
+								бронирование</button>
+						</div>
+						<p class="exam_txt eservationInquiry_txt">
+							<span>
+
+								<span class="text_type1 ext2">Пример: &nbsp;KIM</span>
+							</span>
+						</p>
+            <div class="reserve_list_wrap" id="checkInListDiv">
+              <div class="unview_txt">
+                <p class="text_type2 gray">Активируйте всплывающие окна.
+                </p>
+              </div>
+            </div>
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+
+
+
+
+
+			<a href="javascript:sharpNothig();" class="btn_fold open" id="foldSection3"><span class="hidden">Расширить
+					диапазон поиска</span></a>
+
+			<input type="hidden" id="checkInVerifiSession" value="c7ee70a6-2e77-4fcf-8d4a-5a35454c3a74">
+
+			<form name="preSeatFrm" id="preSeatFrm" method="post">
+				<input type="hidden" name="callPage" id="callPage" value="MAIN">
+				<input type="hidden" name="bizType" id="bizTypeC" value="">
+				<input type="hidden" name="sessionUniqueKey" id="sessionUniqueKeyC" value="">
+				<input type="hidden" name="isPnrDetailNoCurr" id="isPnrDetailNoCurr" value="">
+				<input type="hidden" name="isPnrDetailNotOZStock" id="isPnrDetailNotOZStock" value="">
+			</form>
+			<form name="searchReservationForm" id="searchReservationForm" method="post">
+				<input type="hidden" name="reservationId" value="">
+				<input type="hidden" name="departureDate" value="">
+				<input type="hidden" name="passengerLastName" value="">
+				<input type="hidden" name="callType" value="IBE">
+			</form>
+		</div>
+	</div>
+
+	<div data-content="departure_and_arrival_inquiries"
+		class="quick-service__item quick-departure_and_arrival_inquiries section04">
+		<h3 class="hidden">Статус рейса</h3>
+		<div class="section_text_copy">
+			<p class="desc">
+				Вы можете проверить точное время вылета/прибытия.
+			</p>
+		</div>
+
+		<div class="inquiry_wrapper" id="inquiryDeparture">
+			<div class="white_step_box">
+
+				<div class="quick_step_wrap">
+					<div class="input_wrap" name="itineraryF">
+
+
+						<div class="ipt_elt">
+							<input type="hidden" id="searchFMCType" name="searchFMCType" value="line">
+							<select title="Категория поиска" style="width:215px" id="inqSelect">
+								<option value="line">Выбрать направление</option>
+								<option value="num">Выбрать рейс</option>
+							</select>
+						</div>
+
+						<div class="ipt_elt oznum">
+
+							<span style="display:inline-block; height:46px; line-height:46px;">OZ</span>
+							<input type="text" id="ozNum" maxlength="4" style="width:310px" title="Номер рейса"
+								placeholder="Вводите только цифры">
+						</div>
+
+						<div class="ipt_elt loct spot_proven">
+							<input type="hidden" id="departureAreaF" name="departureAreaF" value="">
+							<input type="hidden" id="departureAirportF" name="departureAirportF" value="">
+							<input type="hidden" id="departureCityF" name="departureCityF" value="">
+							<input type="hidden" id="departureCityNameF" name="departureCityNameF" value="">
+							<label for="txtDepartureAirportF" class="spot_place" id="labelDepartureAirportF" name="spot_place"
+								style="opacity: 1;">Город вылета</label>
+							<input type="text" id="txtDepartureAirportF" name="txtDepartureAirportF"
+								class="spotentry ui-autocomplete-input" deparrtype="dep" style="width:215px;" autocomplete="off">
+							<input type="hidden" name="default" area="" airport="">
+							<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_depAllAirport1"
+								name="btn_layer1" seg="dep1" deparrtype="dep" onclick="javascript:showAirportLayer(this, 'F');"><span
+									class="hidden">Смотреть все города</span></a>
+						</div>
+						<div class="shadow_layer search_flight" name="shadow_layer" style="display: none;">
+							<div class="inner">
+								<div class="search_layer">
+									<div class="search_lately" name="search_lately">
+										<p class="title">Недавние запросы</p>
+
+									</div>
+									<div class="route_list search_auto" id="divDepAirportACF" name="search_auto"
+										target="txtDepartureAirportF">
+										<p class="title">Автозаполнение</p>
+										<div class="empty_box" name="empty_box">Нет подходящего аэропорта</div>
+										<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
+											style="display: none;"></ul>
+									</div>
+								</div>
+								<input type="hidden" name="default" area="" airport="">
+								<button type="button" class="btn_popup airport_open" id="btn_depAllAirport1" name="btn_layer1"
+									seg="dep1" deparrtype="dep" onclick="javascript:showAirportLayer(this, 'F');">Смотреть все
+									города</button>
+							</div>
+							<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Закрыть</span></a>
+						</div>
+
+						<div class="ipt_elt loct spot_destin">
+							<input type="hidden" id="arrivalAreaF" name="arrivalAreaF" value="">
+							<input type="hidden" id="arrivalAirportF" name="arrivalAirportF" value="">
+							<input type="hidden" id="arrivalCityF" name="arrivalCityF" value="">
+							<input type="hidden" id="arrivalCityNameF" name="arrivalCityNameF" value="">
+							<label for="txtArrivalAirportF" class="spot_place" id="labelArrivalAirportF" name="spot_place"
+								style="opacity: 1;">Место прибытия</label>
+							<input type="text" id="txtArrivalAirportF" name="txtArrivalAirportF" class="spotentry" deparrtype="arr"
+								style="width:215px;">
+							<input type="hidden" name="default" area="" airport="">
+							<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_arrAllAirport1"
+								name="btn_layer1" seg="arr1" deparrtype="arr" onclick="javascript:showAirportLayer(this, 'F');"><span
+									class="hidden">Смотреть все города</span></a>
+						</div>
+						<div class="shadow_layer search_flight to" style="display: none;">
+							<div class="inner">
+								<div class="search_layer">
+									<div class="search_lately" name="search_lately">
+										<p class="title">Недавние запросы</p>
+
+									</div>
+									<div class="route_list search_auto" id="divArrAirportACF" name="search_auto"
+										target="txtArrivalAirportF">
+										<p class="title">Автозаполнение</p>
+										<div class="empty_box" name="empty_box">Нет подходящего аэропорта</div>
+									</div>
+								</div>
+								<input type="hidden" name="default" area="" airport="">
+								<button type="button" class="btn_popup airport_open" id="btn_arrAllAirport1" name="btn_layer1"
+									seg="arr1" deparrtype="arr" onclick="javascript:showAirportLayer(this, 'F');">Смотреть все
+									города</button>
+							</div>
+							<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">Закрыть</span></a>
+						</div>
+
+						<div class="shadow_layer case2 select_airport" id="depAllAirportF" name="allAirportF"
+							style="display: none;">
+							<div class="inner">
+								<h4 class="hidden">Выбрать аэропорт</h4>
+								<h5 class="hidden">Международные рейсы</h5>
+								<div class="flights_list national">
+
+								</div>
+								<div class="recent_search_wrap">
+									<h4>Недавние запросы</h4>
+									<div class="recent_srch_box" name="recent_srch_box">
+
+									</div>
+									<div class="btn_area">
+										<button type="button" class="btn_M gray"
+											onclick="javascript:clickNextStep('allAirportF', 'F');">Далее</button>
+									</div>
+								</div>
+							</div>
+							<a href="javascript:sharpNothig();" class="layer_close">
+								<span class="hidden">Закрыть</span>
+							</a>
+						</div>
+
+						<div class="ipt_elt calr calendar_wrap">
+							<label for="sCalendarT" name="calDesc"><span class="hidden">날짜 선택</span></label>
+							<input type="text" id="sCalendarT" class="spotentry datepicker" readonly="" autocomplete="off"
+								data-dateformat="y.mm.dd D" data-type="single_status" placeholder="탑승일">
+							<input type="hidden" id="departureDate1" value="" name="departureDateC">
+							<input type="hidden" id="arrivalDate1" value="" name="arrivalDateC">
+							<a href="javascript:sharpNothig();" class="btn_airport calendar_focus"><span class="hidden">탑승일 선택
+									달력보기</span></a>
+						</div>
+						<div class="calendar_layer">
+							<h4 class="hidden">탑승일 선택</h4>
+							<div class="cal_cont">
+								<h4 class="hidden">달력</h4>
+								<div class="calendar_top"></div>
+								<div class="compareCalendar"></div>
+								<span href="#none" class="cal_status">가는 날</span><a href="javascript:sharpNothig();"
+									class="cal_reset calReset"><span class="hidden">달력 새로고침</span></a>
+								<a href="javascript:sharpNothig();" class="btn_cal_close"><span class="hidden">닫기</span></a>
+							</div>
+						</div>
+
+
+						<button type="button" id="searchDepArr" class="btn_M gray btn_revsearch">Статус рейса</button>
+					</div>
+					<p class="exam_txt">
+						<span class="text_type1 ext3">По городу вылета</span>
+					</p>
+				</div>
+
+			</div>
+		</div>
+		<a href="javascript:sharpNothig();" class="btn_fold open2" id="foldSection4"><span class="hidden">Расширить диапазон
+				поиска</span></a>
+
+		<div id="searchDepArrResult" class="departure_list_wrap" style="display: none;">
+
+		</div>
+
+	</div>
+
+	<div data-content="hotel_rentalcars" class="quick-service__item quick-hotel_rentalcars">
+		<h3 class="hidden">Гостиница/Прокат автомобилей </h3>
+		<div class="hotel_section_text_copy">
+			<p class="desc">
+				Ознакомьтесь со специальными предложениями, от отелей до аренды автомобилей, доступными только клиентам Asiana
+				Airlines.
+			</p>
+		</div>
+		<div class="hotel_rentalcars_area">
+			<ul>
+				<li class="hotel_inner">
+					<div>
+						<img src="https://ozimg.flyasiana.com/editor/image/20210608/cd895a28-25ab-432a-844b-309d611d3a53.jpeg"
+							alt="Получайте по 3&nbsp;мили за каждые 1000&nbsp;южнокорейских&nbsp;вон, потраченных на Booking.com Только Asiana Airlines предлагает до 8% дополнительного кешбэка.">
+					</div>
+					<div>
+						<a href="javascript:void(0);" title="Забронировать гостиницу"
+							onclick="action_logging({pagecode:'01_AFF_01'}); cms.goToLink('https://sp.booking.com/?aid=2333178', '_blank')">
+							Забронировать гостиницу
+						</a>
+					</div>
+				</li>
+				<li class="rentalcars_inner">
+					<div>
+						<img src="https://ozimg.flyasiana.com/editor/image/20210608/b1de073b-e34a-452b-b30e-d8186bc381be.jpeg"
+							alt="С каждой 1,000 вон начисляется 5 миль в качестве бонуса. / Используйте услуги крупнейшего в мире сайта Rentalcars.com по самым низким ценам">
+					</div>
+					<div>
+						<a href="javascript:void(0);" title="Заказать прокат автомобиля"
+							onclick="action_logging({pagecode:'01_AFF_02'}); cms.goToLink('https://asianaairlines.rentalcars.com/?preflang=ru&amp;prefcurrency=KRW&amp;adplat=quicksearch', '_blank')">
+							Заказать прокат автомобиля
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-content="golf_reservation" class="quick-service__item quick-hotel_rentalcars">
+		<h3 class="hidden">해외골프 예약</h3>
+		<div class="hotel_section_text_copy">
+			<p class="desc">
+				해외 골프장 티타임 확정을 실시간으로!
+			</p>
+		</div>
+		<div class="hotel_rentalcars_area">
+			<ul style="justify-content: center;">
+				<li style="border: none;" class="rentalcars_inner">
+					<div style="width: 298px;margin: 0 auto;">
+						<img src="https://ozimg.flyasiana.com/editor/image/20231006/0d265b7d-8c2f-4ceb-b6b3-9b721a2f6026.png"
+							alt="AGL 1000원당 2마일 적립 해외 골프 예역, AGL과 함께 손쉽고 빠르게">
+					</div>
+					<div>
+						<a href="javascript:void(0);"
+							onclick="action_logging({pagecode:'01_GOLF_01'}); cms.goToLink('https://asiana.agltiger.com/', '_blank')"
+							title="해외골프 예약하기">
+							해외 골프 예약하기
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+</div>

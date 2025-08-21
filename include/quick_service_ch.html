@@ -1,0 +1,1276 @@
+<div class="quick-service" style="margin-top: 579px;">
+	<div class="quick-service__nav">
+		<button type="button" data-nav="reservation" class="quick-service__nav-btn quick-service__nav-btn--is-active"
+			onclick="action_logging({pagecode:'01_QIK_01'});" title="已选择">
+			<div>
+				<span>
+					<h3 class="hidden">&gt;icon</h3>
+				</span>
+				<p>
+					预订机票
+				</p>
+			</div>
+		</button>
+		<button type="button" data-nav="reservation_inquiry" class="quick-service__nav-btn"
+			onclick="drawPnrList(); action_logging({pagecode:'01_QIK_02'});">
+			<div>
+				<span>
+					<h3 class="hidden">&gt;icon</h3>
+				</span>
+				<p>
+					预订查询
+				</p>
+			</div>
+		</button>
+		<button type="button" data-nav="check_in" class="quick-service__nav-btn"
+			onclick="drawCheckInList(); action_logging({pagecode:'01_QIK_03'});">
+			<div>
+				<span>
+					<h3 class="hidden">&gt;icon</h3>
+				</span>
+				<p>
+					办理值机
+				</p>
+			</div>
+		</button>
+		<button type="button" data-nav="departure_and_arrival_inquiries" class="quick-service__nav-btn"
+			onclick="action_logging({pagecode:'01_QIK_04'});">
+			<div>
+				<span>
+					<h3 class="hidden">&gt;icon</h3>
+				</span>
+				<p>
+					航班查询
+				</p>
+			</div>
+		</button>
+
+	</div>
+
+
+	<div data-content="reservation" class="quick-service__item quick-reservation quick-service__item--is-active">
+		<h3 class="hidden">预订机票</h3>
+		<div class="quick_reservation_wrap">
+
+			<div class="quick_tab_wrap">
+        <div class="tab_triptype">
+          <ul>
+            <li class="on">
+              <a href="javascript:sharpNothig();" title="已选择">往返</a>
+            </li>
+            <li>
+              <a href="javascript:sharpNothig();">单程</a>
+            </li>
+            <li>
+              <a href="javascript:sharpNothig();" gourl="/I/CN/CH/RevenueRegistTravel.do">
+                <span class="arrow">多航段</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+				<div class="mile_use">
+					<span class="txt">使用里程</span>
+					<div class="btn_toggle_box">
+						<label class="switch" for="allChecked">
+							<span class="hidden">OFF</span>
+							<input type="checkbox" id="allChecked" data-type="all_ck_item" autocomplete="off" title="使用里程">
+							<span class="slider"></span>
+						</label>
+					</div>
+				</div>
+				<span class="line"></span>
+
+				<div class="favroute_wrap">
+					<a href="javascript:sharpNothig();" class="fav_star" id="favoriteRoute" style="display: block;"
+						onclick="action_logging({pagecode:'01_book_04'});">
+						<span class="hidden">通过关注航线快速选择行程</span>
+					</a>
+					<div class="shadow_layer intRoute">
+						<div class="inner">
+							<div class="route_list">
+								<p class="title">关注航线</p>
+								<ul id="favoriteRouteList"></ul>
+							</div>
+
+							<button type="button" class="btn_info02" id="setFavoriteInform">关注航线?</button>
+							<button type="button" class="btn_XS red" id="goLogin">登录</button>
+
+
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close" id="closeFavoriteRoute"><span
+								class="hidden">关闭</span></a>
+					</div>
+				</div>
+
+        <div class="rgt_wrap">
+          <div class="main_date_lookup_area">
+            <div class="date_lookup_area" id="viewCalendarDiv">
+              <input type="checkbox" id="viewCalendarChk" name="viewCalendarChk"><label
+                for="viewCalendarChk">查找最近的日期</label>
+            </div>
+          </div>
+
+          <div class="btn_wrap_riType2 coup1 main_right_btnSet">
+            <button type="button" class="btn_M btn_couponIcon" id="btn_coupon_layer"
+              style="border: solid 1px #b3000b;color: rgba(34,42,115,.8);font-weight: bold;">查询优惠券</button>
+          </div>
+        </div>
+			</div>
+
+			<div class="quick_step_wrap">
+				<div class="input_wrap" name="itineraryR">
+
+					<div class="ipt_elt loct spot_proven">
+						<input type="hidden" id="departureAreaR" name="departureAreaR" value="">
+						<input type="hidden" id="departureAirportR" name="departureAirportR" value="">
+						<input type="hidden" id="departureCityR" name="departureCityR" value="">
+						<input type="hidden" id="departureCityNameR" name="departureCityNameR" value="">
+
+						<input type="hidden" id="departureAirportNameR" name="departureAirportNameR" value="">
+						<label for="txtDepartureAirportR" class="spot_place" id="labelDepartureAirportR"
+							name="spot_place">出发地</label>
+						<input type="text" id="txtDepartureAirportR" name="txtDepartureAirportR"
+							class="spotentry ui-autocomplete-input" deparrtype="dep" style="width:165px;" autocomplete="off">
+						<input type="hidden" name="default" area="" airport="">
+						<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_depAllAirport1"
+							name="btn_layer1" seg="dep1" deparrtype="dep" onclick="javascript:onClickAirportIcon(this, 'R');"><span
+								class="hidden">查看所有城市</span></a>
+					</div>
+					<div class="shadow_layer search_flight" name="shadow_layer">
+						<div class="inner">
+							<div class="search_layer">
+								<div class="search_lately" name="search_lately">
+									<p class="title">最近搜索</p>
+
+								</div>
+								<div class="route_list search_auto" id="divDepAirportACR" name="search_auto"
+									target="txtDepartureAirportR">
+									<p class="title">自动完成</p>
+									<div class="empty_box" name="empty_box">没有匹配的机场。</div>
+
+									<ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
+										style="display: none;"></ul>
+								</div>
+							</div>
+							<input type="hidden" name="default" area="" airport="">
+							<button type="button" class="btn_popup airport_open" id="btn_depAllAirport1" name="btn_layer1" seg="dep1"
+								deparrtype="dep" onclick="javascript:showAirportLayer(this, 'R');">查看所有城市</button>
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">关闭</span></a>
+					</div>
+
+					<div class="quickbookings_change">
+						<a href="javascript:swapLocations();">
+							<span class="hidden">체인지 버튼</span>
+						</a>
+					</div>
+
+					<div class="ipt_elt loct spot_destin">
+						<input type="hidden" id="arrivalAreaR" name="arrivalAreaR" value="">
+						<input type="hidden" id="arrivalAirportR" name="arrivalAirportR" value="">
+						<input type="hidden" id="arrivalCityR" name="arrivalCityR" value="">
+						<input type="hidden" id="arrivalCityNameR" name="arrivalCityNameR" value="">
+
+						<input type="hidden" id="arrivalAirportNameR" name="arrivalAirportNameR" value="">
+						<input type="hidden" id="arrivalDirectR" name="arrivalDirectR" value="">
+						<label for="txtArrivalAirportR" class="spot_place" id="labelArrivalAirportR" name="spot_place">到达地</label>
+						<input type="text" id="txtArrivalAirportR" name="txtArrivalAirportR" class="spotentry" deparrtype="arr"
+							style="width:165px;">
+						<input type="hidden" name="default" area="" airport="">
+						<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_arrAllAirport1"
+							name="btn_layer1" seg="arr1" deparrtype="arr" onclick="javascript:onClickAirportIcon(this, 'R');"><span
+								class="hidden">查看所有城市</span></a>
+					</div>
+					<div class="shadow_layer search_flight to" name="shadow_layer">
+						<div class="inner">
+							<div class="search_layer">
+								<div class="search_lately" name="search_lately">
+									<p class="title">最近搜索</p>
+
+								</div>
+								<div class="route_list search_auto" id="divArrAirportACR" name="search_auto"
+									target="txtArrivalAirportR">
+									<p class="title">自动完成</p>
+									<div class="empty_box" name="empty_box">没有匹配的机场。</div>
+
+								</div>
+							</div>
+							<input type="hidden" name="default" area="" airport="">
+							<button type="button" class="btn_popup airport_open" id="btn_arrAllAirport1" name="btn_layer1" seg="arr1"
+								deparrtype="arr" onclick="javascript:showAirportLayer(this, 'R');">查看所有城市</button>
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">关闭</span></a>
+					</div>
+
+					<div class="shadow_layer case2 select_airport" id="depAllAirportR" name="allAirportR" style="display: none;">
+						<div class="inner">
+							<h4 class="hidden">选择机场</h4>
+							<h5 class="hidden">国际航班</h5>
+							<div class="flights_list national">
+
+							</div>
+							<div class="recent_search_wrap">
+								<h4>最近搜索</h4>
+								<div class="recent_srch_box" name="recent_srch_box">
+
+								</div>
+								<div class="btn_area">
+									<button type="button" class="btn_M gray"
+										onclick="javascript:clickNextStep('allAirportR', 'R');">下一步</button>
+								</div>
+							</div>
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close">
+							<span class="hidden">关闭</span>
+						</a>
+					</div>
+
+					<div class="ipt_elt calr calendar_wrap" id="divCalendarContainer">
+						<label for="sCalendarR" name="calDesc"><span class="hidden">选择日期</span></label>
+						<input type="text" id="sCalendarR" class="spotentry datepicker" readonly="" autocomplete="off"
+							data-dateformat="y.mm.dd" data-type="multi_step" style="width:165px;" placeholder="搭乘日">
+						<input type="hidden" id="departureDate1" value="" name="departureDateR">
+						<input type="hidden" id="arrivalDate1" value="" name="arrivalDateR">
+						<a href="javascript:sharpNothig();" class="btn_airport calendar_focus"><span
+								class="hidden">查看乘机日选择日历</span></a>
+					</div>
+
+					<div class="calendar_layer">
+						<h4 class="hidden">选择搭乘日</h4>
+						<div class="cal_cont">
+							<h4 class="hidden">日历</h4>
+							<div class="calendar_top">
+								<select name="" id="" class="white" title="乘机年份与月份">
+									<option value="">2017.08</option>
+								</select>
+
+								<button type="button" class="btn_XS btn_cal_red" id="btnLowerPrice"
+									onclick="submit_lowerPriceList();">快速查询最低价格</button>
+							</div>
+							<div class="compareCalendar"></div>
+							<span href="#none" class="cal_status">去程日期</span><a href="javascript:sharpNothig();"
+								class="cal_reset calReset"><span class="hidden">刷新日历</span></a>
+							<a href="javascript:sharpNothig();" class="btn_cal_close"><span class="hidden">关闭</span></a>
+						</div>
+						<div class="btn_step_wrap">
+							<button type="button" class="btn_M gray btnNextStep" id="calendarNext">下一步(选择乘客)</button>
+						</div>
+					</div>
+
+					<div class="ipt_elt psng">
+						<div class="psg_nums" id="pax_nums">
+							<span adultdesc="成人" style="display: inline;">成人<span class="num">1</span></span>
+							<span childdesc="儿童">儿童<span class="num">0</span></span>
+							<span infantdesc="婴儿">婴儿<span class="num">0</span></span>
+						</div>
+						<label for="psng"><span class="hidden">选择乘客数</span></label>
+						<input type="text" id="psng" style="width:165px;" readonly="" placeholder="乘客">
+						<a href="javascript:sharpNothig();" class="btn_spot"><span class="hidden">选择乘客数</span></a>
+					</div>
+					<div class="shadow_layer case2 layer_passenger">
+						<div class="inner">
+							<h4 class="layer_tit">选择乘客</h4>
+							<div class="passengers">
+								<div class="area">
+									<h5 class="title_type3">成人 <span id="adultAge">(12 岁~)</span></h5>
+									<div class="btn_number_box" name="btn_number_box">
+										<input type="text" id="adultCount" name="adultCount" title="成人乘机人员" value="1"
+											onblur="removeChar(event, 'ADT')"
+											onkeypress="if(event.keyCode &lt;45 || event.keyCode &gt; 57) event.returnValue = false;"
+											style="IME-MODE:disabled;" autocomplete="off">
+										<button type="button" class="btn_number minus" name="btn_number"><span
+												class="hidden">减少</span></button>
+										<button type="button" class="btn_number plus" name="btn_number"><span
+												class="hidden">增加</span></button>
+									</div>
+								</div>
+								<div class="area">
+									<h5 class="title_type3">儿童
+										<span id="childAge">（2周岁~12周岁）</span>
+									</h5>
+									<div class="btn_number_box" name="btn_number_box">
+										<input type="text" id="childCount" name="childCount" title="儿童乘机人员" value="0"
+											onblur="removeChar(event, 'CHD')"
+											onkeypress="if(event.keyCode &lt;45 || event.keyCode &gt; 57) event.returnValue = false;"
+											style="IME-MODE:disabled;" autocomplete="off">
+										<button type="button" class="btn_number minus" name="btn_number" disabled=""><span
+												class="hidden">减少</span></button>
+										<button type="button" class="btn_number plus" name="btn_number"><span
+												class="hidden">增加</span></button>
+									</div>
+								</div>
+								<div class="area">
+									<h5 class="title_type3">婴儿 <span id="infantAge">(不满 2 周岁)</span></h5>
+									<div class="btn_number_box" name="btn_number_box">
+										<input type="text" id="infantCount" name="infantCount" title="婴儿乘机人员" value="0"
+											onblur="removeChar(event, 'INF')"
+											onkeypress="if(event.keyCode &lt;45 || event.keyCode &gt; 57) event.returnValue = false;"
+											style="IME-MODE:disabled;" autocomplete="off">
+										<button type="button" class="btn_number minus" name="btn_number" disabled=""><span
+												class="hidden">减少</span></button>
+										<button type="button" class="btn_number plus" name="btn_number"><span
+												class="hidden">增加</span></button>
+									</div>
+								</div>
+							</div>
+
+							<div class="passengers_info">
+								<ul class="list_type3 fl">
+									<li id="passengerInfo">可预订人员包含成人、儿童、婴儿，且最多可选择 9 人。</li>
+									<li>所有乘机航段都有成人陪伴的情况下，儿童可单独购买机票。</li>
+									<li>以乘机日为基准，未满2周岁的婴儿不占座位。</li>
+									<li>根据《个人信息保护法》第 39 条第 3 款第 ④ 项强化施行令的规定，未满14周岁的未成年人在购买机票时，须得到法定代理人的同意和认证，因此需要由满14岁以上的成人为其登录后，再进行机票预订。
+									</li>
+								</ul>
+								<button type="button" class="btn_popup fr" id="btn_ageCalc"
+									onclick="javascript:appendAgeCalculator();">年龄计算器</button>
+							</div>
+						</div>
+						<div class="btn_step_wrap">
+							<button type="button" class="btn_M red" id="passengerNext">下一步(选择座位等级)</button>
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">关闭</span></a>
+					</div>
+
+					<div class="ipt_elt seat">
+						<label for="seat"><span class="hidden" id="seatClassText">选择座位等级</span></label>
+						<input type="text" id="seat" style="width:165px;" readonly="" placeholder="舱位等级">
+						<a href="javascript:sharpNothig();" class="btn_spot"><span class="hidden">选择座位等级</span></a>
+					</div>
+					<div class="shadow_layer case2 layer_seat" id="after_select">
+						<div class="inner">
+							<div class="seat_cls">
+								<h4 class="layer_tit">选择座位等级</h4>
+								<h5 class="title_type3" name="cabinH5">出发、到达航班</h5>
+								<div class="tab_wrap" name="tabs" area="cabinClass">
+									<ul name="selectSeg1CabinClass" class="redCabinClass" style="display:none;">
+
+										<li class=""><a href="javascript:sharpNothig();" name="cabinClassAll"
+												cabinclass="A"><span>全部</span></a></li>
+										<li class=""><a href="javascript:sharpNothig();" cabinclass="E"><span>经济舱</span></a></li>
+										<li class=""><a href="javascript:sharpNothig();" cabinclass="B"><span>商务舱</span></a></li>
+										<li class="fst_cls" style="pointer-events: none; opacity: 0.4;"><a href="javascript:sharpNothig();"
+												cabinclass="F"><span>头等舱</span></a></li>
+									</ul>
+									<input type="hidden" id="seg1cabinClass" name="seg1cabinClass" value="R">
+									<ul name="selectSeg1CabinClass" class="revCabinClass">
+
+										<li class="on">
+
+
+											<a href="javascript:sharpNothig();" cabinclass="R" title="已选择"><span>经济舱特价</span></a>
+										</li>
+
+										<li>
+
+											<a href="javascript:sharpNothig();" cabinclass="E"><span>经济舱一般</span></a>
+										</li>
+
+										<li>
+
+											<a href="javascript:sharpNothig();" cabinclass="B"><span>商务舱</span></a>
+										</li>
+
+										<li class="fst_cls" style="pointer-events: none; opacity: 0.4;">
+
+											<a href="javascript:sharpNothig();" cabinclass="F"><span>头等舱</span></a>
+										</li>
+									</ul>
+
+
+								</div>
+								<h5 class="title_type3 cabinClass" name="cabinH5" style="display:none;">回程航班</h5>
+								<div class="tab_wrap cabinClass" name="tabs" style="display:none;">
+									<input type="hidden" id="seg2cabinClass" name="seg2cabinClass" value="E">
+									<ul name="selectSeg2CabinClass" class="revCabinClass">
+
+										<li>
+
+
+											<a href="javascript:sharpNothig();" cabinclass="R"><span>经济舱特价</span></a>
+										</li>
+
+										<li class="on">
+
+											<a href="javascript:sharpNothig();" cabinclass="E"><span>经济舱一般</span></a>
+										</li>
+
+										<li>
+
+											<a href="javascript:sharpNothig();" cabinclass="B"><span>商务舱</span></a>
+										</li>
+
+										<li class="fst_cls" style="pointer-events: none; opacity: 0.4;">
+
+											<a href="javascript:sharpNothig();" cabinclass="F"><span>头等舱</span></a>
+										</li>
+									</ul>
+								</div>
+								<div class="seat_check_area">
+									<input type="checkbox" id="check"><label for="check">只查询可升舱的票价</label>
+									<input type="checkbox" id="check1"><label for="check1">出发、到达航班不同的座位等级</label>
+								</div>
+
+								<div id="checkAbled" style="display:none">
+									<br>※ 如需购买里程升舱机票，请事先通过预订销售中心确认可升舱的商务舱剩余座位后，再进行购买。
+								</div>
+							</div>
+
+							<div class="title_wrap_type3 china" style="display: none;">
+								<h4 class="fl layer_tit">选择结算币种</h4>
+
+								<div class="tooltip_wrap">
+									<a href="javascript:sharpNothig();" class="btn_info">帮助</a>
+									<div class="layer_tooltip bottom" style="width:800px;">
+										<div class="inner">
+											<p class="title">CNY&nbsp;选择时的注意事项</p>
+											<ul class="list_type2">
+												<li>选择人民币(CNY)后，只能通过Alipay（支付宝）或 Union Pay（银联）支付。</li>
+												<li>但只能使用与Alipay或Union Pay绑定的银行卡或可支付人民币的借记卡和信用卡</li>
+												<li>如果需要外汇结算，请选择韩元(KRW)。</li>
+											</ul>
+
+											<p class="title mar_to30">KRW&nbsp;选择时的注意事项</p>
+											<ul class="list_type2">
+												<li>不用人民币(CNY)，而是需要用外汇结算时，请选择韩元(KRW)。</li>
+												<li>在预订阶段显示的票价是将人民币(CNY)折合成韩元(KRW)的金额。</li>
+												<li>最终支付金额是将韩元金额按照信用卡明细为准的货币重新换算后的金额。</li>
+												<li>此时，将发生海外地区交易手续费和汇率差。</li>
+											</ul>
+										</div>
+										<a href="javascript:sharpNothig();" class="tooltip_close"><span class="hidden">关闭</span></a>
+									</div>
+								</div>
+							</div>
+							<div class="tab_wrap t2 currency china" style="display: none;">
+								<ul>
+									<li class="on"><a href="javascript:sharpNothig();" currency="CNY"><span>
+												<span class="txt">人民币 (CNY)</span>
+												<span class="ico cny01"><span class="hidden">ALIPAY支付</span></span>
+												<span class="ico cny02"><span class="hidden">China Unionpay支付</span></span>
+												<span class="ico cny03"><span class="hidden">微信支付</span></span>
+											</span></a></li>
+									<li><a href="javascript:sharpNothig();" currency="KRW"><span>
+												<span class="txt">韩元(KRW)</span>
+												<span class="ico card"><span class="hidden">信用卡结算</span></span>
+											</span></a></li>
+								</ul>
+							</div>
+
+
+							<!-- <div class="title_wrap_type3 payp" style="display: none;">
+						<h4 class="fl layer_tit">选择结算币种</h4>
+						<div class="tooltip_wrap">
+							<a href="#none" class="btn_info">帮助</a>
+							<div class="layer_tooltip bottom" style="width:800px; bottom:-180px;">
+								<div class="inner">
+									<p class="title">USD&nbsp;选择时的注意事项</p>
+									<ul class="list_type2">
+										<li> If USD is selected, only PayPal payment will be accepted.</li>
+										<li>only cards, Bank accounts and BNPL is possible</li>
+										<li>Please do not select USD if you are Paypal Korea Account Holder.</li>
+										<li>For payments made in currencies other than the card issuing country, overseas usage fees/card company fees may be additionally charged.</li>
+										<li>If you want to pay in Won (KRW), select Won (KRW) on the first screen.</li>
+									</ul>
+		
+									<p class="title mar_to30">KRW&nbsp;选择时的注意事项</p>
+									<ul class="list_type2">
+										<li>If you wish to perform transactions with a foreign currency other than USD, select Won(KRW).</li>
+										<li>The fare shown in the reservation(step) is the amount of USD converted into Won(KRW).</li>
+										<li>最终支付金额是将韩元金额按照信用卡明细为准的货币重新换算后的金额。</li>
+										<li>此时，将发生海外地区交易手续费和汇率差。</li>
+									</ul>
+								</div>
+								<a href="#none" class="tooltip_close"><span class="hidden">关闭</span></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tab_wrap t2 currency payp" style="display: none;">
+		                <ul>
+		                    <li class="on"><a href="#none" currency="KRW"><span>
+								<span class="txt">韩元(KRW)</span>
+								<span class="ico card"><span class="hidden">信用卡结算</span></span>
+							</span></a></li>
+							<li><a href="#none" currency="USD"><span>
+								<span class="txt">USD (PAYPAL)</span>
+								<span class="ico payp"><span class="hidden">PayPal</span></span>
+							</span></a></li>
+		                </ul>
+		            </div>-->
+
+						</div>
+						<div class="btn_step_wrap">
+							<button type="button" class="btn_M red" id="seatNext">下一步</button>
+						</div>
+						<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">关闭</span></a>
+					</div>
+
+					<div class="shadow_layer case2 layer_coupon coupon_search_style1" id="coupon_layer">
+						<div class="inner">
+							<h4 class="layer_tit fl">可使用的优惠券</h4>
+							<div class="tooltip_wrap mar_b20">
+								<a href="javascript:sharpNothig();" class="btn_info">无成人陪伴的儿童/青少年不允许通过网络单独购票</a>
+								<div class="layer_tooltip" style="width:810px;">
+									<div class="inner">
+										<p class="title"></p>
+										<ul class="list_type2">
+											<li style="line-height:1.2;">优惠券只能线上使用，可以下载或者直接输入使用。
+											</li>
+											<li style="line-height:1.2;">折扣仅用于航空票价及收费座位/行李等附加服务中，优惠券折扣不适用于燃油附加费及税费。</li>
+											<li style="line-height:1.2;">持有的优惠券只能使用一次,机票或附加服务只能使用一次优惠券。</li>
+											<li style="line-height:1.2;">出发抵达地与优惠券不符，或者已过有效期的优惠券不能使用。</li>
+											<li style="line-height:1.2;">代码共享航班及包含其他航空公司航段的机票不可使用折扣优惠券。</li>
+											<li style="line-height:1.2;">使用奖励机票或升舱时不可使用。</li>
+											<li style="line-height:1.2;">如在使用优惠券后需更改机票日程，根据使用条件，可能会补收折扣金额并产生改票手续费。</li>
+											<li style="line-height:1.2;">已购买的机票无法享受优惠券折扣，如需使用优惠券，需要退票后重新购买，退票时可能产生退票手续费。</li>
+											<li style="line-height:1.2;">优惠券折扣活动根据情况可能在未提前通知的情况下更改。</li>
+											<li style="line-height:1.2;">当您取消会员资格时，您将无法使用您拥有的优惠券。</li>
+											<li style="line-height:1.2;">其他具体事项请参考各优惠券使用条件。</li>
+											<li style="line-height:1.2;"> <a target="_blank"
+													href="https://flyasiana.com/C/CN/CH/contents/book-online?tabId=coupons"
+													style="margin-left:10px; text-decoration:underline; color:#6b2900;"
+													rel="noopener">折扣优惠券使用指南</a></li>
+										</ul>
+									</div>
+									<a href="javascript:sharpNothig();" class="tooltip_close"><span
+											class="hidden">如在使用优惠券后需更改机票日程，根据使用条件，可能会补收折扣金额并产生改票手续费。</span></a>
+								</div>
+							</div>
+
+							<div class="itinerary_coupon_tBox">
+
+								<input type="text" id="txtNoLoginCouponCode" title="쿠폰코드 입력" class="white" placeholder="请输入优惠券码。"
+									style="display: none;">
+								<div class="coupon_search_bBox" id="divLoginCouponCode" style="display: none;">
+									<div class="left">
+										<input type="text" id="txtCouponCode" title="쿠폰코드 입력" class="white" placeholder="请输入优惠券码。">
+									</div>
+									<div class="right">
+										<button type="button" class="btn_M red" onclick="javascript:manualCouponStatusCheck();">注册</button>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="itinerary_coupon">
+								<div class="coupon_slider ui_slider">
+									<div class="ui_slider_area" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);"
+										id="couponList">
+									</div>
+								</div>
+								<div class="btn_navigation">
+									<a href="javascript:sharpNothig();" class="btn_prev btn_coupon_prev swiper-button-disabled">上一幻灯片</a>
+									<a href="javascript:sharpNothig();" class="btn_next btn_coupon_next">下一幻灯片</a>
+								</div>
+								<div class="border_box coupon_no_box" style="display:none;">
+									<p class="icon_empty">无可下载的优惠券。</p>
+								</div>
+							</div>
+							<ul class="list_type3 REVCoupon">
+								<li>选择可使用的优惠券后，可按折扣价格进行预订。</li>
+								<li>使用优惠券之前请务必仔细阅读注意事项。</li>
+							</ul>
+							<ul class="list_type3 REDCoupon" style="display: none;">
+								<li>选择优惠券后，可按折扣里程进行预订。</li>
+								<li>仅限优惠券持有人搭乘时方可享受优惠券折扣。</li>
+								<li class="col_red">为了适用优惠券折扣，持有优惠券的会员请单独出票。</li>
+							</ul>
+						</div>
+						<div class="btn_wrap_leriType3">
+							<div class="left" id="todayClose">
+								<input type="checkbox" id="noToday2" name="noToday">
+								<label for="noToday2" class="pad_type1">今日不打开本窗口</label>
+								<span class="alM"><a href="javascript:sharpNothig();" name="noTodayClose">[关闭]</a></span>
+							</div>
+							<div class="right">
+								<button type="button" class="btn_M white" id="btnCouponNotApply">不选择优惠券</button>
+
+								<button type="button" class="btn_M red" id="btnManualCouponApply"
+									onclick="javascript:manualCouponStatusCheck();" style="display: none;" disabled="">应用</button>
+
+								<button type="button" class="btn_M red" id="btnCouponApply" style="display: none;"
+									disabled="">使用选择的优惠券</button>
+							</div>
+						</div>
+						<button type="button" class="btn_popup btn_allCoupon" id="btnShowCouponList"
+							title="在新窗口中打开">查看所有优惠券</button>
+						<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">关闭</span></a>
+					</div>
+
+					<button type="button" id="registTravel" class="btn_L gray btn_revsearch"
+						onclick="javascript:registTravelV();">查询</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<div id="marketingCouponBanner" class="floating_popup coupon_banner_floating" style="display: none;">
+						<div class="floating_container">
+							<div class="floating_content">
+								<dl>
+									<dt><span>折扣优惠券礼物已到达。</span></dt>
+									<dd><a href="javascript:sharpNothig();" id="btnShowCouponList" class="btn_arrow">确认优惠券</a></dd>
+								</dl>
+							</div>
+							<a href="javascript:sharpNothig();" class="floating_close">关闭</a>
+						</div>
+					</div>
+
+
+
+
+				</div>
+        <div class="btn_mile_wrap">
+          <div class="flex-wrap">
+            <a href="javascript:sharpNothig();" class="btn_arrlink" id="openJawRED">出境/返回城市相异的行程</a>
+          </div>
+        </div>
+			</div>
+
+		</div>
+
+		<script type="text/javascript">
+			var jsJSON = JSON.parse('{"J0076":"KRW10000 换算为 <strong>USD1000</strong>","J2013":"한글성 입력","J0075":"请输入正确的邮箱格式。","J2014":"한글이름 입력","J0078":"请输入会员号码。","J2011":"한글성 입력(예:홍)","J0077":"请选择航空公司","J2012":"한글이름 입력(예:길동)","J2017":"임직원 신청 정보에 동일한 아시아나클럽 회원번호가 있습니다. 다시 확인해 주십시오.","J0079":"会员号码不正确。","J2018":"임직원으로 등록된 아시아나클럽 회원번호가 존재합니다. 다시 확인해 주십시오.","J2015":"숫자 9자리를 입력해 주십시오.","J2016":"신청하신 임직원의 아시아나클럽 회원 정보상 이름 또는 회원번호가 맞지 않습니다.","J0070":"以国际航线乘机日 (#0) 为准，输入的出生日期为 儿童。","J0072":"输入的年无效。","CHK_BORDING_DATE":"请选择乘机日期。","J0071":"以韩国国内航线乘机日 (#0) 为准，输入的出生日期为 成人。","J2010":"영문이름 입력","J0074":"输入的日无效。","J0073":"输入的月无效。","J2019":"다른 기업의 대표자로 등록된 임직원 정보입니다.","J0065":"请输入出生日期。","J2002":"파일을 첨부해주십시오.","J0064":"8 位出生日期","J2003":"파일당 최대 5MB까지 첨부 가능합니다.","J0067":"以韩国国内航线乘机日 (#0) 为准，输入的出生日期为 儿童。","J0066":"以韩国国内航线乘机日 (#0) 为准，输入的出生日期为 婴儿。","J2001":"请输入必填项目。","J0069":"以国际航线乘机日 (#0) 为准，输入的出生日期为 婴儿。","J2006":"한글만 입력할 수 있습니다.","J0068":"以韩国国内航线乘机日 (#0) 为准，输入的出生日期为 成人。","J2007":"영어와 띄어쓰기만 입력할 수 있습니다.","J2004":"JPG, PDF, PNG 파일 형태로 첨부하시기 바랍니다.","J2005":"이메일 주소 형식이 맞지 않습니다.","NEED_TICKET_NUMBER":"There are passengers with the same names within this reservation. Please search with a ticket number (13 digits).","J0061":"已为登录状态。","J0060":"请选择机场。","J0063":"输入 8 位出生日期（例：19700131）","J0062":"选择儿童的出生日期，可确认是否为婴儿&#47;儿童<br>。","J2008":"최소 알파벳 2자 이상 입력하셔야 합니다.","J2009":"영문성 입력","J0098":"转换","J2035":"다른 기업의 임직원으로 등록된 임직원 정보입니다.\\n이전 기업에서 임직원 탈퇴 후 재신청 부탁드립니다.","J3003":"由于安全策略而不可用","J0097":"活动时间已结束。","J2036":"임직원으로 등록하신 회원이 휴면 계정일 경우 해당 회원이 로그인 및 휴면 해제를 완료한 후 예매 가능합니다.","J2033":"-Please check the notice page for any applicable entry restrictions by country/region prior to proceeding with a Star Alliance reservation.\\nThe notice can be accessed via the Customer Service → COVID-19 notifications\\n\\n-Entry restrictions by country/region and transfer information varies frequently due to COVID-19, Restrictions may change without prior notice\\n\\n-Please check the airport information on webpage of transit government, airport in case itinerary includes transferring terminal and flights.\\n\\n-Other notifications\\n-Japan (Narita Airport): Transferring ONLY available on the same day(NOT available on the different day notwithstanding within 24 hours)\\n→The above notifications may change without prior notice\\nAirport information by country/region needs to be checked.","J3001":"请在您的安全策略中输入其他电子邮件地址.","J0099":"正在处理。","J2034":"임직원으로 등록할 회원이 휴면 계정일 경우 해당 회원이 로그인 및 휴면 해제를 완료한 후 진행이 가능합니다.","J3002":"不能用英文和名字","J2037":"最多仅可购买4张机票。","J2038":"중복된 파일이 존재합니다.","J0090":"请输入姓（英文）。","J0092":"无法扣除","J0091":"为不支持座位图的航班。","J0094":"#0 里程不足","J2031":"查找","J0093":"可以扣除","J2032":"삭제","J0096":"适用里程","J0095":"#0 持有的里程为 <span class=\\\"col_red\\\">&#35;&#123;1&#125;M</span>。</span>","J2030":"添加附件","J0087":"关闭","J2024":"비밀번호는 8 ~ 20자리로 대/소문자, 숫자, 특수문자 중 세가지 이상을 조합하여 입력해주세요.","J0086":"确定","J2025":"반복된 숫자(예시.1111)는 사용이 불가합니다.","J0089":"请选择国家。","J2022":"공백은 입력할 수 없습니다.","J0088":"请选择地区。","J2023":"특수문자는 #0 만 사용 가능합니다.","J2028":"비밀번호 규칙에 맞지 않습니다. 비밀번호 도움말을 확인해주세요.","J2029":"입력하신 신규 비밀번호와 일치하지 않습니다.","J2026":"연속 번호(예시.1234 or 1112)는 사용이 불가합니다.","J2027":"연속 번호(예시.4321 or 1112)는 사용이 불가합니다.","J0081":"选择区号","J0080":"会员号码输入成功。","J0083":"选择后点击确认时，将自动输入相应区号。","J2020":"임직원 등록 신청이 완료되었습니다.","J0082":"请选择要输入区号的地区及国家。","J2021":"기존 비밀번호와 신규 비밀번호가 같을 수 없습니다.","J0085":"选择国家/地区","J0084":"选择地区","J4010":"付款时可选","J4005":"已下载优惠券。但输入的行程不可使用折扣优惠券。","J4004":"已下载的优惠券。","J4003":"请输入优惠券码。","J4002":"即将结束","J4009":"输入的折扣优惠券码无效。 请再次确认。","J4008":"适用折扣优惠券票价。","J4007":"输入的行程不可使用折扣优惠券。","J4006":"已下载优惠券。如欲使用相应优惠券，请选择。","J4001":"附加服务","J4000":"机票","NEED_TICKET_NUMBER_OTHER":"Online Check-in is not available for this reservation. Please check in at the airport counter.","J5000":"邮件已发送。","J0806":"#0 的年龄在乘机当日不是婴儿。","J0803":"20240512040000","J0802":"20240512000000","J0805":"#0 的年龄在乘机当日不是儿童。","J0804":"正在进行系统维护。\\n2024年5月 12日 (周日) 00:00~04:00 (韩国时间基准)","W3205":"[温馨提示]\\n9月24日仁川(ICN)始发前往青岛(TAO)的OZ3173航班仅限韩国国籍乘客乘机，购买该航线机票时，包含本人在内最多仅限购买3张机票。\\n请购票时调整乘机人数，并在购票前注册会员后再进行购买，敬请注意。","J9998":"正在努力查找航班。","J9997":"正在为您寻找<br>最低价机票。","J9999":"<p class=”tit”>正在处理。</p>请不要刷新页面，<br>请稍候。","J6001":"필수 동의 항목에 체크해주시기 바랍니다.","J0610":"经济舱一般, 头等舱","J7000":"기업우대 프로그램( Asiana Corporate Plus) 가입 국가와 항공권 출발 국가가 상이합니다. 접속하신 국가 사이트 또는 출발지를 확인하여 주십시요.","J0619":"由于错误，优惠券发送失败。","J0612":"商务舱, 经济舱一般","J0611":"商务舱, 经济舱特价","J0614":"头等舱, 经济舱特价","J0613":"商务舱, 头等舱","J0616":"头等舱, 商务舱","J0615":"头等舱, 经济舱一般","J0618":"优惠券已发送。","J0617":"The phone number format does not match. Please re-enter.","J0609":"经济舱一般, 商务舱","J0608":"经济舱一般, 经济舱特价","J0601":"经济舱特价","J0603":"商务舱","J0602":"经济舱一般","J0605":"经济舱特价, 经济舱一般","J0604":"头等舱","J0607":"经济舱特价, 头等舱","J0606":"经济舱特价, 商务舱","J0511":"商务舱，头等舱","J0510":"经济舱一般, 头等舱","J0513":"经济舱折扣","J0512":"经济舱特价, 经济舱一般","J0500":"一般","J0621":"所选日期不适用。","J0620":"The phone number format does not match. Please re-enter.","J0509":"经济舱特价, 头等舱","J0502":"全部","J0623":"不可预订日期: ","J0501":"舱位等级","J0622":"请确认以下不可预订日期后重新选择。","J0504":"经济舱一般","J0503":"经济舱特价","J0624":"不可预订星期: ","J0506":"头等舱","J0505":"商务舱","J0508":"经济舱一般, 商务舱","J0507":"经济舱特价, 商务舱","J0410":"请输入出发地。","J0412":"请输入乘客名。","J0411":"请输入到达地。","J0414":"请确认位数。","J0413":"请输入乘机日。","J0416":"为团体预订。\\n团体预订请通过预订处确认日程。","J0415":"请输入票号。","J0418":"乘客为携带婴儿的预订。\\n请通过预订处确认日程。 \\n","J0417":"预订信息不正确。\\n* 登录后可查询里程预订","J0419":"搜索可值机时间段失败。","J0401":"已选择","J0403":"联程航段","J0402":"请选择优惠券。","J0405":"若欲设置关注航线，应跳转至我的韩亚。是否要设置关注航线？","J0404":"多航段","J0407":"为选择多航段行程，是否要跳转至预订机票界面？","J0406":"到达地","J0409":"请输入预约号。","J0408":"请选择舱位。","NOLOGIN_PW_6":"仅限本人预订可进行变更。请使用预订时的ID登录。","J0430":"（不满 2 周岁）","NOLOGIN_PW_7":"密码错误。","NOLOGIN_PW_8":"选择“非登录预订查询”功能查询预订记录，并使用“座位安排”功能选定座位后，将不允许再次变更。如需变更，需在预订记录中输入乘机人会员号码，并登录该会员账号后重新查询该预订，方可变更座位。如有疑问，请联系预订中心咨询。 请注意，韩亚俱乐部号码必须预先输入您的预订。","J0432":"（满 2 周岁~不满 12 周岁）","J0431":"(12周岁以上)","J0434":"（满 2 周岁~不满 13 周岁）","J0433":"(13周岁以上)","NOLOGIN_PW_9":"以下功能仅限会员使用。\\n请先会员登录后使用。","J0436":"幼儿乘客人数不得超过成人乘客人数。","J0435":"无最近搜索的航线。","J0438":"里程奖励机票预订仅限本人及家庭会员，包括成人、儿童在内，不可超过 5 人。","J0437":"包括成人、儿童、婴儿在内，订票人数不得超过 \\n9 人。","J0439":"请选择搭乘人数。","J0421":"This is a codeshare flight operated by AIR SEOUL.","J0420":"预订信息不正确。","J0423":"请输入航班号。","J0422":"值机失败。","J0425":"请选择日期。","J0424":"请只输入数字。","J0427":"通航城市","J0426":"发生错误。","J0429":"请选择机场。","J0428":"其他","J0450":"以国际航线乘机日 (#0) 为准，输入的出生日期为 婴儿。","J0210":"返回航班 [#0] 仅 1 名同行者可享受折扣。","J0452":"以国际航线乘机日 (#0) 为准，输入的出生日期为 成人。","J0451":"以国际航线乘机日 (#0) 为准，输入的出生日期为  儿童。","J0212":"请重新选择个人折扣。","J0454":"到达地","J0211":"出发航班 [#0] 仅在与独立有功者同行时可选择。","J0453":"出发地","J0214":"出发航班 [#0] 仅 1 名同行者可选择。","J0456":"去程航班","J0213":"返回航班 [#0] 仅在与独立有功者同行时可选择。","J0455":"搭乘日","J0216":"出发行程同行监护人单人折扣仅在与持有折扣凭证的 1 名旅客以相同日程同时购买机票后同行登机方可适用，乘机当天请出示折扣证明文件。若未携带，则在机场以正常票价购买机票后方可登机。","J0458":"登录的会员为婴儿时，不可进行预订。请咨询\\b预订中心。","J0215":"返回航班 [#0] 仅 1 名同行者可选择。","J0457":"出发、到达航班","J0218":"出发行程同行监护人单人折扣不可选择超出 1 名的持有折扣凭证的旅客。请确认折扣对象。","J0217":"出发行程与婴儿残疾人共同登机的 1 名同行监护人不可网上购买机票，请通过预订中心 (400-650-8000) 购买。","J0459":"陪伴婴儿/儿童搭乘航班时，同行的监护人应为其父母或满 18 周岁以上的成人。婴儿/儿童与未满 18 周岁的青少年同行的情况，请咨询预订中心。","J0219":"出发行程同行监护人单人折扣仅在与持有折扣凭证的乘客以相同日程同时购买机票后同行登机方可适用。与持有折扣凭证的乘客分开购买机票的情况下，不可网上单独购买 1 名同行监护人机票，请通过预订中心 (400-650-8000) 购买。","J0441":"选择需计算的儿童出生日期后，可确认有无婴儿/；儿童 <br>。","J0440":"年龄计算器","J0201":"请选择语言。","J0443":"8 位出生日期","J0200":"邮箱格式有误。请重新输入。","J0442":"输入 8 位出生日期（例：19700131）","J0203":"会员号码输入失败。","J0445":"关闭","J0202":"#0 换算为<strong>#1</strong>。","J0444":"计算","J0205":"出发航班折扣代码错误！","J0447":"以韩国国内航线乘机日 (#0) 为准，输入的出生日期为  婴儿。","J0204":"乘机当天请出示折扣证明文件。若未携带，则在机场以正常票价购买机票后方可登机。","J0446":"请输入出生日期。","J0207":"返回航班折扣代码错误！","J0449":"以韩国国内航线乘机日 (#0) 为准，输入的出生日期为 成人。","J0206":"请确认 [#0]。","J0448":"以韩国国内航线乘机日 (#0) 为准，输入的出生日期为 儿童。","J0209":"请确认 [#0]。","J0208":"出发航班 [#0] 仅 1 名同行者可享受折扣。","J0230":"返回行程同行监护人单人机场税费折扣不可选择超出 1 名的持有折扣凭证的旅客。请确认折扣对象。","J0472":"#0 持有的里程为 <span class=\\\"col_red\\\">#1M</span>。","J0471":"不适用","J0232":"展开","J0474":"活动时间已结束。","J0110":"英里","J0231":"返回行程同行监护人单人机场税费折扣仅在与持有折扣凭证的乘客以相同日程同时购买机票后同行登机方可适用。与持有折扣凭证的乘客分开购买机票的情况下，不可网上单独购买 1 名同行监护人机票，请通过预订中心 (400-650-8000) 购买。","J0473":"适用里程","J0234":"无法选择早于今天的日期。","J0476":"8位数字或6位英文/数字组合","J0233":"相隔 1 年以上的日期无法查询。","J0475":"转换","J0236":"返回日期早于出发日期。\\n请确认返回日期。","J0478":"正在处理。</p>请勿刷新页面，<br>请稍等。","J0235":"出发日期晚于返回日期。\\n请确认出发日期。","J0477":"13 位数字","J0470":"查看更多","E_LastName":"请输入乘客姓。","J0036_2":"登录后可查询里程预订","J0238":"最低","J0237":"到达日期先于出发日期。","J0479":"8位数字或6位英文/数字组合","J0239":"会话延长失败。","J0461":"网上购买韩国国内航线机票时，应在预订的同时购买\\n若不购买，则预订未完成。\\n\\n乘客的预订时间因定期行程更改及定期整备作业\\n所有航线有可能在无预告的情况下\\n发生时间更改及承运/不承运，敬请注意。\\n\\n※ 搭乘韩国国内航线航班时，未携带贴有照片的身份证的旅客，不可在机场值机及进入安检站。","J0460":"儿童/婴儿搭乘时，旅行当天在机场请携带可确认年龄的文件（医疗保险证、身份证副本、护照中选择一项）。","J0100":"请勿刷新页面，<br>请稍等。","J0221":"返回行程与婴儿残疾人共同登机的 1 名同行监护人不可网上购买机票，请通过预订中心 (400-650-8000) 购买。","J0463":"请选择出发日期。","J0220":"返回行程同行监护人单人折扣仅在与持有折扣凭证的 1 名旅客以相同日程同时购买机票后同行登机方可适用，乘机当天请出示折扣证明文件。若未携带，则在机场以正常票价购买机票后方可登机。","J0462":"若行程存在更改的可能性，单程出票更加方便。\\n（往返票有可能在出发后不可更改返回航班的行程，或退票时受限。）","J0223":"返回行程同行监护人单人折扣仅在与持有折扣凭证的 1 名乘客以相同日程同时购买机票后同行登机方可适用。与持有折扣凭证的乘客分开购买机票的情况下，不可网上单独购买 1 名同行监护人机票，请通过预订中心 (400-650-8000) 购买。","J0465":"无此预订号。","J0101":"删除","J0222":"返回行程同行监护人单人折扣不可选择超出 1 名的持有折扣凭证的旅客。请确认折扣对象。","J0464":"请选择回程日期。","J0225":"出发行程与婴儿残疾人共同登机的 1 名同行监护人机场税费折扣不可网上购买机票，请通过预订中心 (400-650-8000) 购买。","J0467":"请输入姓（英文）。","J0224":"出发行程同行监护人单人机场税费折扣仅在与持有折扣凭证的 1 名旅客以相同日程同时购买机票后同行登机方可适用，乘机当天请出示折扣证明文件。若未携带，则在机场以正常票价购买机票后方可登机。","J0466":"请输入预订号。","CHK_SPECIAL_CHR":"请输入除特殊符号/数字以外的字符。","J0036_1":"为保证安全，请进行以下 CAPTCHA 验证。","J0227":"出发行程同行监护人单人机场税费折扣仅在与持有折扣凭证的乘客以相同日程同时购买机票后同行登机方可适用。与持有折扣凭证的乘客分开购买机票的情况下，不可网上单独购买 1 名同行监护人机票，请通过预订中心 (400-650-8000) 购买。","J0469":"选择","J0226":"出发行程同行监护人单人机场税费折扣不可选择超出 1 名的持有折扣凭证的旅客。请确认折扣对象。","J0468":"下载","J0229":"返回行程与婴儿残疾人共同登机的 1 名同行监护人机场税费折扣不可网上购买机票，请通过预订中心 (400-650-8000) 购买。","J0228":"返回行程同行监护人单人机场税费折扣仅在与持有折扣凭证的 1 名旅客以相同日程同时购买机票后同行登机方可适用，乘机当天请出示折扣证明文件。若未携带，则在机场以正常票价购买机票后方可登机。","J0010":"包括成人、儿童、婴儿在内，订票人数不得超过 \\n9 人。","J0252":"关闭","J0494":"可申请自动值机","J0251":"登录的会员为婴儿时，不可进行预订。\\n请咨询预订中心。","J0493":"自动值机申请完成","J0012":"里程奖励机票预订仅限本人及家庭会员，包括成人、儿童、婴儿在内，不可超过 5 人。","J0254":"请选择出发地机场。","J0496":"帮助","J0011":"里程奖励机票预订仅限本人及家庭会员，包括成人、儿童在内，不可超过 8 人。","J0253":"由#1构成的表格。","J0495":"输入简单信息后，即可提前在出发24小时前收到电子机票，将大大减少机场的候机时间。","J0014":"无此预订号。","J0135":"#0航段已改为#1。","J0498":"座位安排/自助值机申请明细表","J0013":"请选择搭乘人数。","J0497":"但是，对于不支持电子机票的部分国外航空公司，将限制机票的传送。","J0016":"不存在更改后出发地相关的到达地。","J0015":"请选择出发地及到达地。","J0136":"This is reservation period of the extra flight for ChuSeok (the Korean Thanksgiving day) #0.\\nYou may reserve up to 6 people. Please confirm the number of people once again.","J0499":"韩亚航空","J0490":"自今日+2日起出发航班可以进行预订。","J0250":"登录会员为儿童时不可进行预订。\\n请咨询预订中心。","J0492":"内容折叠","J0491":"详细内容","J0018":"单程","J0017":"往返","J0019":"无设置的关注路线。可以在我的韩亚中设置关注航线。","J0241":"距自动初始化剩余 <em id=\\\"topCountTime\\\" class=\\\"fo_bol\\\"></em>。","J0483":"经济舱","J0240":"#0 分 #1 秒","J0482":"此为电子客票（e-ticket）的13位票号。","J0001":"下一步","J0243":"距自动初始化","J0485":"韩亚航空非直飞航段(#0)的行程，预订时间截止到出发(去程)前3天。","J0242":"延长会话","J0484":"完成下载后使用或赠送的优惠券。","J0003":"最初","J0245":"剩余时间 <span id=\\\"startCountTime\\\" class=\\\"fo_bol\\\"></span>","J0487":"可预订人员包含成人、儿童、婴儿，且最多可选择 9 人。","J0002":"最后","J0123":"预计总额票价目录","J0244":"出于安全原因及为保护个人数据，会话结束，将跳转至韩亚航空首页。","J0486":"包括成人、儿童在内，订票人数不得超过 5 人。","J0005":"出发地","J0247":"会话延长","J0489":"包括成人、?童、??在?，?票人?不得超? 5 人。","J0004":"上一步","J0246":"会话结束","J0488":"付費優選座位/值机在支付机票后方可使用。","J0481":"13 位数字","J0480":"预定号码请输入 8 位数字或 6 位英文/数字组合。","J0007":"出发日期&#47;回程日期","J0249":"剩余时间 <span id=\\\"ssoStartCountTime\\\" class=\\\"fo_bol\\\"></span>","J0006":"到达地","J0248":"自动初始化剩余 <em id=\\\"ssoTopCountTime\\\" class=\\\"fo_bol\\\"></em>。","J0009":"幼儿乘客人数不得超过成人乘客人数。","J0008":"出发日期","J0032":"请输入乘客名。","J1000":"搭乘日","J3300":"关闭","J0031":"请输入到达地。","J3301":"展开","J0034":"请输入机票号。","J1002":"성인","J0033":"请输入搭乘日期。","J1001":"关闭","J0036":"预订信息不正确。\\n* 登录后可查询里程预订","J1004":"검색 정보가 없습니다","J3304":"请勾选确认及同意行李规定。","J0035":"为团体预订。\\n团体预订请通过预订处确认日程。","J1003":"본인","J3305":"请勾选确认及同意法定公告文及携带登机及托运行李运输限制物品指南、国际运输条款。","J0038":"乘客为携带婴儿的预订。\\n请通过预订处确认日程。","J1006":"임직원 회원 승인 동의에 체크하십시오.","J3302":"请确认票价规定，并选择同意。","J0037":"预订信息不正确。\\n* 登录后可查询里程预订","J1005":"탑승객","J3303":"请确认各路线的注意事项/确认同意。","J0030":"请输入出发地。","J1008":"해당 노선은 선택이 불가합니다.","J3308":"必须要输入乘客信息事先确认(APIS)。\\n您现在要输入吗？","J0039":"搜索可值机时间段失败。","J1007":"개인 정보 활용 동의에 실패하였습니다.","J3306":"旅行文件信息已正常输入。","J1009":"예약인원은 9명을 초과할 수 없습니다.","J3307":"旅行文件信息输入失败。","J0021":"去程航班","J0020":"若欲设置关注航线，应跳转至我的韩亚。是否要设置关注航线？","J0023":"无最近搜索的航线。","J0022":"已选择","J0025":"请选择行程的到达机场。","J0024":"请选择行程的出发机场。","J0027":"多航段","J0026":"联程航段","J0261":"国内航班折扣优惠有6种以上。请再次确认折扣优惠代码。","J0260":"请确认会员的个人信息后再进行机票预订。","J0029":"请输入预订号。","J0028":"为选择多航段行程，是否要跳转至预订机票界面？","J0054":"线上票价规定难以查询。请咨询预订中心或支店。","J3201":"免费","J0053":"请选择第 #0 个行程的到达机场。","J3202":"不允许改票","J0056":"请选择语言。","J0055":"邮箱格式有误。请重新输入。","J3321":"请确认及同意转机专用内航机相关注意事项。","J0058":"在处理的过程中， 出现了错误。","J0057":"成功","J3203":"只限出发","J0059":"全部","J3204":"只为退货","J0050":"(13周岁以上)","J0052":"请选择第 #0 个行程的出发机场。","J0051":"（2周岁~11周岁）","J0043":"请只输入数字。","J0042":"请输入航班号。","J1010":"선택삭제","J0045":"通航城市","J0044":"请选择日期。","J0047":"（2周岁以下）","J0046":"其他","J0049":"（满 2 周岁~不满 12 周岁）","J0048":"(12周岁以上)","J0041":"值机失败。","J0040":"预订信息不正确。","J3319":"请确认釜山航空机内餐的相关信息。"}');
+			var userAge;
+
+
+			if ('true' == 'true') {
+				for (var i = 0, lsLang = localStorage.length; i < lsLang; i++) {
+					var lsKey = localStorage.key(i);
+					if (lsKey.indexOf('searchLately') > -1) {
+						localStorage.removeItem(lsKey);
+					}
+				}
+			}
+
+
+			document.addEventListener('DOMContentLoaded', function () {
+				try {
+					rtbMainHome('');
+				} catch (error) { }
+			});
+
+
+			function swapLocations() {
+				var depCode = $('#departureAirportR').val();
+				var arrCode = $('#arrivalAirportR').val();
+
+				if (!depCode || !arrCode) {
+					alert(jsJSON.J0015 || '출도착지를 모두 선택해주세요');
+					return false;
+				}
+
+				var fields = ['AreaR', 'AirportR', 'AirportNameR', 'CityR', 'CityNameR', 'DirectR'];
+
+				for (var i = 0; i < fields.length; i++) {
+					var field = fields[i];
+					var dep = $('#departure' + field);
+					var arr = $('#arrival' + field);
+					var temp = dep.val();
+					dep.val(arr.val());
+					arr.val(temp);
+				}
+
+				var txtDep = $('#txtDepartureAirportR');
+				var txtArr = $('#txtArrivalAirportR');
+				var tmpTxt = txtDep.val();
+				txtDep.val(txtArr.val());
+				txtArr.val(tmpTxt);
+
+				var depLabel = $('#labelDepartureAirportR');
+				var arrLabel = $('#labelArrivalAirportR');
+
+				var depAbbr = depLabel.find('.abbr');
+				var arrAbbr = arrLabel.find('.abbr');
+				var tmpAbbr = depAbbr.text();
+				depAbbr.text(arrAbbr.text());
+				arrAbbr.text(tmpAbbr);
+
+				var depNameSpan = depLabel.find('span').not('.abbr').not('.hidden');
+				var arrNameSpan = arrLabel.find('span').not('.abbr').not('.hidden');
+				var tmpName = depNameSpan.text();
+				depNameSpan.text(arrNameSpan.text());
+				arrNameSpan.text(tmpName);
+
+				var depDefault = $('#departureData1 input[name="default"]');
+				var arrDefault = $('#arrivalData1 input[name="default"]');
+
+				var tmpAirport = depDefault.attr('airport');
+				var tmpArea = depDefault.attr('area');
+
+				depDefault.attr('airport', arrDefault.attr('airport'));
+				depDefault.attr('area', arrDefault.attr('area'));
+
+				arrDefault.attr('airport', tmpAirport);
+				arrDefault.attr('area', tmpArea);
+			}
+
+			function onClickAirportIcon(obj, segType) {
+				showAirportLayer(obj, segType);
+			}
+		</script>
+
+	</div>
+
+	<div data-content="reservation_inquiry" class="quick-service__item quick-reservation_inquiry section02">
+		<div class="slide_inner">
+			<h3 class="hidden">预订查询</h3>
+			<div class="section_text_copy">
+				<p class="desc">
+					可便捷确认已预订的机票行程
+				</p>
+			</div>
+
+			<form id="frmReservationDetail" name="frmReservationDetail" method="post" target="_self">
+				<input type="hidden" id="pnrAlpha" name="pnrAlpha">
+				<input type="hidden" id="pnrNumeric" name="pnrNumeric">
+				<input type="hidden" id="officeId" name="officeId">
+				<input type="hidden" id="bizType" name="bizType" value="REV">
+				<input type="hidden" id="lastName" name="lastName">
+				<input type="hidden" id="staralliance" name="staralliance">
+				<input type="hidden" id="depAirport" name="depAirport">
+				<input type="hidden" id="uniqueNo" name="uniqueNo">
+				<input type="hidden" id="sessionUniqueKey" name="sessionUniqueKey">
+			</form>
+			<div id="section_copyS" class="section_copy">
+				<h2>预订查询
+				</h2>
+				<p class="desc">可便捷确认已预订的机票行程</p>
+			</div>
+			<div id="schedule_summaryS" class="schedule_summary">
+			</div>
+			<div class="inquiry_wrapper logout" id="inquiryReserved">
+				<div id="defaultPNRSearch" class="white_step_box">
+
+					<div class="quick_step_wrap">
+						<div class="input_wrap" name="itineraryS">
+
+
+							<div class="ipt_elt">
+								<label for="reservationId"><span class="hidden">预订号码</span></label>
+								<input type="text" id="reservationId" maxlength="8" style="width:172px; ime-mode: disabled;"
+									placeholder="预订号码">
+							</div>
+
+							<div class="ipt_elt loct spot_proven">
+								<input type="hidden" id="departureAreaS" name="departureAreaS" value="">
+								<input type="hidden" id="departureAirportS" name="departureAirportS" value="">
+								<input type="hidden" id="departureCityS" name="departureCityS" value="">
+								<input type="hidden" id="departureCityNameS" name="departureCityNameS" value="">
+								<label for="txtDepartureAirportS" class="spot_place" id="labelDepartureAirportS"
+									name="spot_place">出发地</label>
+								<input type="text" id="txtDepartureAirportS" name="txtDepartureAirportS"
+									class="spotentry ui-autocomplete-input" deparrtype="dep" style="width:172px;" autocomplete="off">
+								<input type="hidden" name="default" area="" airport="">
+								<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_depAllAirport1"
+									name="btn_layer1" seg="dep1" deparrtype="dep" onclick="javascript:showAirportLayer(this, 'S');"><span
+										class="hidden">查看所有城市</span></a>
+							</div>
+							<div class="shadow_layer search_flight" name="shadow_layer">
+								<div class="inner">
+									<div class="search_layer">
+										<div class="search_lately" name="search_lately">
+											<p class="title">最近搜索</p>
+
+										</div>
+										<div class="route_list search_auto" id="divDepAirportACS" name="search_auto"
+											target="txtDepartureAirportS">
+											<p class="title">自动完成</p>
+											<div class="empty_box" name="empty_box">没有匹配的机场。</div>
+											<ul id="ui-id-3" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
+												style="display: none;"></ul>
+										</div>
+									</div>
+									<input type="hidden" name="default" area="" airport="">
+									<button type="button" class="btn_popup airport_open" id="btn_depAllAirport1" name="btn_layer1"
+										seg="dep1" deparrtype="dep" onclick="javascript:showAirportLayer(this, 'S');">查看所有城市</button>
+								</div>
+								<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">关闭</span></a>
+							</div>
+
+							<div class="ipt_elt loct spot_destin">
+								<input type="hidden" id="arrivalAreaS" name="arrivalAreaS" value="">
+								<input type="hidden" id="arrivalAirportS" name="arrivalAirportS" value="">
+								<input type="hidden" id="arrivalCityS" name="arrivalCityS" value="">
+								<input type="hidden" id="arrivalCityNameS" name="arrivalCityNameS" value="">
+								<label for="txtArrivalAirportS" class="spot_place" id="labelArrivalAirportS"
+									name="spot_place">到达地</label>
+								<input type="text" id="txtArrivalAirportS" name="txtArrivalAirportS" class="spotentry" deparrtype="arr"
+									style="width:172px;">
+								<input type="hidden" name="default" area="" airport="">
+								<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_arrAllAirport1"
+									name="btn_layer1" seg="arr1" deparrtype="arr" onclick="javascript:showAirportLayer(this, 'S');"><span
+										class="hidden">查看所有城市</span></a>
+							</div>
+							<div class="shadow_layer search_flight to" name="shadow_layer">
+								<div class="inner">
+									<div class="search_layer">
+										<div class="search_lately" name="search_lately">
+											<p class="title">最近搜索</p>
+
+										</div>
+										<div class="route_list search_auto" id="divArrAirportACS" name="search_auto"
+											target="txtArrivalAirportS">
+											<p class="title">自动完成</p>
+											<div class="empty_box" name="empty_box">没有匹配的机场。</div>
+
+										</div>
+									</div>
+									<input type="hidden" name="default" area="" airport="">
+									<button type="button" class="btn_popup airport_open" id="btn_arrAllAirport1" name="btn_layer1"
+										seg="arr1" deparrtype="arr" onclick="javascript:showAirportLayer(this, 'S');">查看所有城市</button>
+								</div>
+								<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">关闭</span></a>
+							</div>
+
+
+
+							<div class="shadow_layer case2 select_airport" id="depAllAirportS" name="allAirportS"
+								style="display: none;">
+								<div class="inner">
+									<h4 class="hidden">选择机场</h4>
+									<h5 class="hidden">国际航班</h5>
+									<div class="flights_list national">
+
+									</div>
+									<div class="recent_search_wrap">
+										<h4>最近搜索</h4>
+										<div class="recent_srch_box" name="recent_srch_box">
+
+										</div>
+										<div class="btn_area">
+											<button type="button" class="btn_M gray"
+												onclick="javascript:clickNextStep('allAirportS', 'S');">下一步</button>
+										</div>
+									</div>
+								</div>
+								<a href="javascript:sharpNothig();" class="layer_close">
+									<span class="hidden">关闭</span>
+								</a>
+							</div>
+
+							<div class="ipt_elt calr calendar_wrap">
+								<label for="sCalendarS" name="calDesc"><span class="hidden">选择日期</span></label>
+								<input type="text" id="sCalendarS" class="spotentry datepicker" readonly="" autocomplete="off"
+									data-dateformat="y.mm.dd" data-type="single" style="width:172px;" placeholder="搭乘日">
+								<input type="hidden" id="departureDate1" value="" name="departureDateS">
+								<input type="hidden" id="arrivalDate1" value="" name="arrivalDateS">
+								<a href="javascript:sharpNothig();" class="btn_airport calendar_focus"><span
+										class="hidden">查看乘机日选择日历</span></a>
+							</div>
+
+							<div class="calendar_layer">
+								<h4 class="hidden">选择搭乘日</h4>
+								<div class="cal_cont">
+									<h4 class="hidden">日历</h4>
+									<div class="calendar_top">
+										<select name="" id="" class="white" title="乘机年份与月份">
+											<option value="">2017.08</option>
+										</select>
+									</div>
+									<div class="compareCalendar"></div>
+									<a href="javascript:sharpNothig();" class="cal_status">搭乘日</a><a href="javascript:sharpNothig();"
+										class="cal_reset"><span class="hidden">刷新日历</span></a>
+									<a href="javascript:sharpNothig();" class="btn_cal_close"><span class="hidden">关闭</span></a>
+								</div>
+							</div>
+
+							<div class="ipt_elt">
+								<label for="passengerName"><span class="hidden">乘客姓氏</span></label>
+								<input type="text" id="passengerName" style="width:172px;" placeholder="乘客姓氏">
+							</div>
+
+							<div class="ipt_elt">
+								<label for="passengerFirstName"><span class="hidden">乘客名氏</span></label>
+								<input type="text" id="passengerFirstName" placeholder="乘客名氏">
+							</div>
+
+							<div class="eservationInquiry_btn_area">
+								<button type="button" id="goPNRList" class="btn_M gray btn_revsearch" onclick="javascript:PNRListV();">预订查询
+								</button>
+							</div>
+
+						</div>
+						<p class="exam_txt eservationInquiry_txt">
+							<span class="text_type1 ext1">预订号码请输入 8 位数字或 6 位英文/数字组合。</span>
+
+							<span>
+								<span class="text_type1 ext2">例： &nbsp;KIM</span>
+								<span class="text_type1 ext3">例： &nbsp;CHEOLSU</span>
+							</span>
+
+						</p>
+						
+					</div>
+
+				</div>
+			</div>
+
+			<a href="javascript:sharpNothig();" class="btn_fold open" id="foldSection2"><span class="hidden">展开查询领域</span></a>
+		</div>
+	</div>
+
+	<div data-content="check_in" class="quick-service__item quick-check_in section03">
+		<div class="slide_inner">
+			<h3 class="hidden">办理值机</h3>
+			<div class="section_text_copy">
+				<p class="desc">
+					提前选择喜欢座位的登机牌，以缩短您在机场的等待时间
+				</p>
+			</div>
+
+			<div id="section_copyC" class="section_copy">
+				<h2>办理值机</h2>
+				<p class="desc">提前选择喜欢座位的登机牌，以缩短您在机场的等待时间</p>
+			</div>
+			<div id="schedule_summaryC" class="schedule_summary">
+			</div>
+			<div class="inquiry_wrapper no_onlinecheck noevent" id="inquiryCheckin">
+
+				<div id="defaultCheckInSearch" class="white_step_box">
+
+					<div class="quick_step_wrap">
+						<div class="input_wrap" name="itineraryC">
+
+
+							<div class="ipt_elt">
+								<select id="checkInType" title="查询分类" style="width:210px">
+									<option value="resNo">预订号码</option>
+									<option value="fltNo">机票号码</option>
+								</select>
+							</div>
+
+							<div class="ipt_elt">
+								<label for="checkinNum"><span class="hidden">8位数字或6位英文/数字组合</span></label>
+								<input type="text" id="checkinNum" maxlength="8"
+									style="width:335px; ime-mode: disabled; text-transform: uppercase;" placeholder="8位数字或6位英文/数字组合"
+									onkeyup="this.value=this.value.replace(/[^a-zA-z0-9]/g,'')">
+							</div>
+
+							<div class="ipt_elt">
+								<select title="搭乘日" id="departureDateC" name="departureDateC" style="width:250px;">
+									<option value="">搭乘日</option>
+									<option value="20250820">2025.08.20 (周三)</option>
+									<option value="20250821">2025.08.21 (周四)</option>
+									<option value="20250822">2025.08.22 (周五)</option>
+									<option value="20250823">2025.08.23 (周六)</option>
+								</select>
+							</div>
+
+
+							<div class="ipt_elt">
+								<label for="passengerLastNameC"><span class="hidden">乘客姓氏</span></label>
+								<input type="text" id="passengerLastNameC" placeholder="乘客姓氏">
+							</div>
+
+							<button type="button" class="btn_M gray btn_revsearch" onclick="javascript:CheckInV();">查询</button>
+						</div>
+						<p class="exam_txt eservationInquiry_txt">
+							<span>
+
+								<span class="text_type1 ext2">例： &nbsp;KIM</span>
+							</span>
+						</p>
+            <div class="reserve_list_wrap" id="checkInListDiv">
+              <div class="unview_txt">
+                <p class="text_type2 gray">请允许浏览器的弹出窗口设置。
+                </p>
+              </div>
+            </div>
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+
+
+
+
+
+			<a href="javascript:sharpNothig();" class="btn_fold open" id="foldSection3"><span class="hidden">展开查询领域</span></a>
+
+			<input type="hidden" id="checkInVerifiSession" value="4d70bd6d-3224-43a4-99de-baafe9d5dfa2">
+
+			<form name="preSeatFrm" id="preSeatFrm" method="post">
+				<input type="hidden" name="callPage" id="callPage" value="MAIN">
+				<input type="hidden" name="bizType" id="bizTypeC" value="">
+				<input type="hidden" name="sessionUniqueKey" id="sessionUniqueKeyC" value="">
+				<input type="hidden" name="isPnrDetailNoCurr" id="isPnrDetailNoCurr" value="">
+				<input type="hidden" name="isPnrDetailNotOZStock" id="isPnrDetailNotOZStock" value="">
+			</form>
+			<form name="searchReservationForm" id="searchReservationForm" method="post">
+				<input type="hidden" name="reservationId" value="">
+				<input type="hidden" name="departureDate" value="">
+				<input type="hidden" name="passengerLastName" value="">
+				<input type="hidden" name="callType" value="IBE">
+			</form>
+		</div>
+	</div>
+
+	<div data-content="departure_and_arrival_inquiries"
+		class="quick-service__item quick-departure_and_arrival_inquiries section04">
+		<h3 class="hidden">航班查询</h3>
+		<div class="section_text_copy">
+			<p class="desc">
+				可详细确认通航城市出发到达行程。
+			</p>
+		</div>
+
+		<div class="inquiry_wrapper" id="inquiryDeparture">
+			<div class="white_step_box">
+
+				<div class="quick_step_wrap">
+					<div class="input_wrap" name="itineraryF">
+
+
+						<div class="ipt_elt">
+							<input type="hidden" id="searchFMCType" name="searchFMCType" value="line">
+							<select title="查询分类" style="width:215px" id="inqSelect">
+								<option value="line">航线查询</option>
+								<option value="num">航班号查询</option>
+							</select>
+						</div>
+
+						<div class="ipt_elt oznum">
+
+							<span style="display:inline-block; height:46px; line-height:46px;">OZ</span>
+							<input type="text" id="ozNum" maxlength="4" style="width:310px" title="航班号" placeholder="仅输入数字">
+						</div>
+
+						<div class="ipt_elt loct spot_proven">
+							<input type="hidden" id="departureAreaF" name="departureAreaF" value="">
+							<input type="hidden" id="departureAirportF" name="departureAirportF" value="">
+							<input type="hidden" id="departureCityF" name="departureCityF" value="">
+							<input type="hidden" id="departureCityNameF" name="departureCityNameF" value="">
+							<label for="txtDepartureAirportF" class="spot_place" id="labelDepartureAirportF" name="spot_place"
+								style="opacity: 1;">出发地</label>
+							<input type="text" id="txtDepartureAirportF" name="txtDepartureAirportF"
+								class="spotentry ui-autocomplete-input" deparrtype="dep" style="width:215px;" autocomplete="off">
+							<input type="hidden" name="default" area="" airport="">
+							<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_depAllAirport1"
+								name="btn_layer1" seg="dep1" deparrtype="dep" onclick="javascript:showAirportLayer(this, 'F');"><span
+									class="hidden">查看所有城市</span></a>
+						</div>
+						<div class="shadow_layer search_flight" name="shadow_layer" style="display: none;">
+							<div class="inner">
+								<div class="search_layer">
+									<div class="search_lately" name="search_lately">
+										<p class="title">最近搜索</p>
+
+									</div>
+									<div class="route_list search_auto" id="divDepAirportACF" name="search_auto"
+										target="txtDepartureAirportF">
+										<p class="title">自动完成</p>
+										<div class="empty_box" name="empty_box">没有匹配的机场。</div>
+										<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
+											style="display: none;"></ul>
+									</div>
+								</div>
+								<input type="hidden" name="default" area="" airport="">
+								<button type="button" class="btn_popup airport_open" id="btn_depAllAirport1" name="btn_layer1"
+									seg="dep1" deparrtype="dep" onclick="javascript:showAirportLayer(this, 'F');">查看所有城市</button>
+							</div>
+							<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">关闭</span></a>
+						</div>
+
+						<div class="ipt_elt loct spot_destin">
+							<input type="hidden" id="arrivalAreaF" name="arrivalAreaF" value="">
+							<input type="hidden" id="arrivalAirportF" name="arrivalAirportF" value="">
+							<input type="hidden" id="arrivalCityF" name="arrivalCityF" value="">
+							<input type="hidden" id="arrivalCityNameF" name="arrivalCityNameF" value="">
+							<label for="txtArrivalAirportF" class="spot_place" id="labelArrivalAirportF" name="spot_place"
+								style="opacity: 1;">到达地</label>
+							<input type="text" id="txtArrivalAirportF" name="txtArrivalAirportF" class="spotentry" deparrtype="arr"
+								style="width:215px;">
+							<input type="hidden" name="default" area="" airport="">
+							<a href="javascript:sharpNothig();" class="btn_airport airport_open" id="btn_arrAllAirport1"
+								name="btn_layer1" seg="arr1" deparrtype="arr" onclick="javascript:showAirportLayer(this, 'F');"><span
+									class="hidden">查看所有城市</span></a>
+						</div>
+						<div class="shadow_layer search_flight to" style="display: none;">
+							<div class="inner">
+								<div class="search_layer">
+									<div class="search_lately" name="search_lately">
+										<p class="title">最近搜索</p>
+
+									</div>
+									<div class="route_list search_auto" id="divArrAirportACF" name="search_auto"
+										target="txtArrivalAirportF">
+										<p class="title">自动完成</p>
+										<div class="empty_box" name="empty_box">没有匹配的机场。</div>
+									</div>
+								</div>
+								<input type="hidden" name="default" area="" airport="">
+								<button type="button" class="btn_popup airport_open" id="btn_arrAllAirport1" name="btn_layer1"
+									seg="arr1" deparrtype="arr" onclick="javascript:showAirportLayer(this, 'F');">查看所有城市</button>
+							</div>
+							<a href="javascript:sharpNothig();" class="layer_close"><span class="hidden">关闭</span></a>
+						</div>
+
+						<div class="shadow_layer case2 select_airport" id="depAllAirportF" name="allAirportF"
+							style="display: none;">
+							<div class="inner">
+								<h4 class="hidden">选择机场</h4>
+								<h5 class="hidden">国际航班</h5>
+								<div class="flights_list national">
+
+								</div>
+								<div class="recent_search_wrap">
+									<h4>最近搜索</h4>
+									<div class="recent_srch_box" name="recent_srch_box">
+
+									</div>
+									<div class="btn_area">
+										<button type="button" class="btn_M gray"
+											onclick="javascript:clickNextStep('allAirportF', 'F');">下一步</button>
+									</div>
+								</div>
+							</div>
+							<a href="javascript:sharpNothig();" class="layer_close">
+								<span class="hidden">关闭</span>
+							</a>
+						</div>
+
+						<div class="ipt_elt calr calendar_wrap">
+							<label for="sCalendarT" name="calDesc"><span class="hidden">날짜 선택</span></label>
+							<input type="text" id="sCalendarT" class="spotentry datepicker" readonly="" autocomplete="off"
+								data-dateformat="y.mm.dd D" data-type="single_status" placeholder="탑승일">
+							<input type="hidden" id="departureDate1" value="" name="departureDateC">
+							<input type="hidden" id="arrivalDate1" value="" name="arrivalDateC">
+							<a href="javascript:sharpNothig();" class="btn_airport calendar_focus"><span class="hidden">탑승일 선택
+									달력보기</span></a>
+						</div>
+						<div class="calendar_layer">
+							<h4 class="hidden">탑승일 선택</h4>
+							<div class="cal_cont">
+								<h4 class="hidden">달력</h4>
+								<div class="calendar_top"></div>
+								<div class="compareCalendar"></div>
+								<span href="#none" class="cal_status">가는 날</span><a href="javascript:sharpNothig();"
+									class="cal_reset calReset"><span class="hidden">달력 새로고침</span></a>
+								<a href="javascript:sharpNothig();" class="btn_cal_close"><span class="hidden">닫기</span></a>
+							</div>
+						</div>
+
+
+						<button type="button" id="searchDepArr" class="btn_M gray btn_revsearch">查询</button>
+					</div>
+					<p class="exam_txt">
+						<span class="text_type1 ext3">出发地基准</span>
+					</p>
+				</div>
+
+			</div>
+		</div>
+		<a href="javascript:sharpNothig();" class="btn_fold open2" id="foldSection4"><span class="hidden">展开查询领域</span></a>
+
+		<div id="searchDepArrResult" class="departure_list_wrap" style="display: none;">
+
+		</div>
+
+	</div>
+
+	<div data-content="hotel_rentalcars" class="quick-service__item quick-hotel_rentalcars">
+		<h3 class="hidden">酒店/租车</h3>
+		<div class="hotel_section_text_copy">
+			<p class="desc">
+				酒店和租车，专属优惠只在韩亚航空！
+			</p>
+		</div>
+		<div class="hotel_rentalcars_area">
+			<ul>
+				<li class="hotel_inner">
+					<div>
+						<img src="https://ozimg.flyasiana.com/editor/image/20210608/211ce1b1-0eac-4af6-8e1b-f7d93c38e83f.jpeg"
+							alt="通过 Booking.com 订购，每 1,000 韩元累计 3 英里飞行里程 还有韩亚航空独家附赠的返现奖励，最高可达 8%。">
+					</div>
+					<div>
+						<a href="javascript:void(0);" title="酒店预订"
+							onclick="action_logging({pagecode:'01_AFF_01'}); cms.goToLink('https://sp.booking.com/?aid=2333178', '_blank')">
+							酒店预订
+						</a>
+					</div>
+				</li>
+				<li class="rentalcars_inner">
+					<div>
+						<img src="https://ozimg.flyasiana.com/editor/image/20210608/ca311ec2-873a-4e9d-a57d-0d1f4c8c0deb.jpeg"
+							alt="每1,000韩元可累积5英里 / 以低廉的价格，享用全世界最大规模的租车网站 Rentalcars.com。">
+					</div>
+					<div>
+						<a href="javascript:void(0);" title="租车预订"
+							onclick="action_logging({pagecode:'01_AFF_02'}); cms.goToLink('https://asianaairlines.rentalcars.com/?preflang=zh&amp;prefcurrency=KRW&amp;adplat=quicksearch', '_blank')">
+							租车预订
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-content="golf_reservation" class="quick-service__item quick-hotel_rentalcars">
+		<h3 class="hidden">해외골프 예약</h3>
+		<div class="hotel_section_text_copy">
+			<p class="desc">
+				해외 골프장 티타임 확정을 실시간으로!
+			</p>
+		</div>
+		<div class="hotel_rentalcars_area">
+			<ul style="justify-content: center;">
+				<li style="border: none;" class="rentalcars_inner">
+					<div style="width: 298px;margin: 0 auto;">
+						<img src="https://ozimg.flyasiana.com/editor/image/20231006/0d265b7d-8c2f-4ceb-b6b3-9b721a2f6026.png"
+							alt="AGL 1000원당 2마일 적립 해외 골프 예역, AGL과 함께 손쉽고 빠르게">
+					</div>
+					<div>
+						<a href="javascript:void(0);"
+							onclick="action_logging({pagecode:'01_GOLF_01'}); cms.goToLink('https://asiana.agltiger.com/', '_blank')"
+							title="해외골프 예약하기">
+							해외 골프 예약하기
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+</div>
