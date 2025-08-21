@@ -1276,6 +1276,10 @@
         }
       }
     }
+    // 최저가 항공권 없을 때
+    .no_special_wrap {
+      width: 1280px;
+    }
   }
   // event
   .event_title_area {
@@ -1470,6 +1474,30 @@
           border-radius: 12px;
         }
       }      
+    }
+  }
+  // 이벤트 없을 때
+  .noevent_wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 1280px;
+    padding: 70px 0;
+    &::after {
+      display: none;
+    }
+    .evt_info {
+      width: 50%;
+      h2 {
+        font-size: 22px;
+        letter-spacing: -.66px;
+      }
+      .desc {
+        font-size: 16px;
+      }
+    }
+    .evt_img {
+      float: none;
+      width: auto;
     }
   }
   .section05 {
@@ -2002,6 +2030,10 @@
           background: url("../image/main/renew2025/ico_arrT_black.png") no-repeat center;
         }
       }
+    }
+    &.only_goTop {
+      top: auto;
+      bottom: 60px;
     }
   }
   @media (max-height: 850px) {

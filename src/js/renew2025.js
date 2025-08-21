@@ -96,7 +96,7 @@ function mainSlider(){
       if ($('.main_slider_wrap2 .swiper-slide').length == 3) {
         swiperm.stopAutoplay();
         swiperm.lockSwipes();
-        $('.main_slider_wrap2 .swiper-button-prev,.main_slider_wrap .swiper-button-next,.main_slider_wrap .mp_wrap').hide();
+        $('.main_slider_wrap2 .swiper-button-prev, .main_slider_wrap2 .swiper-button-next').hide();
       } else {
         $('.main_slider_wrap2 .ps').on('click', function () {
           if ($(this).hasClass('stop')) {
@@ -340,3 +340,15 @@ $(window).on('scroll', function () {
 
   tooltipPosition();
 })();
+
+// 우측 탑 버튼만 있을 때 위치
+$(function () {
+  var $wing = $('.right_wing .inner');
+  if (
+    $wing.find('.best_week').length === 0 &&
+    $wing.find('.btn_coupon').length === 0 &&
+    $wing.find('.btn_chatbot').length === 0
+  ) {
+    $('.right_wing').addClass('only_goTop');
+  }
+});
