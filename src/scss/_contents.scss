@@ -245,7 +245,7 @@
     padding: 16px 40px 28px;
     margin: 20px auto 17px !important;
     border-radius: 16px;
-    background-color: rgba(255, 255, 255, 0.96);    
+    background-color: #fff;    
     transform: none !important;
     box-shadow: rgba(0, 0, 0, .05) 5px 5px 3px !important;
     z-index: 300;
@@ -1839,7 +1839,7 @@
   }
   .right_wing {
     position: fixed;
-    top: 43%;
+    bottom: 13.2%;
     right: 20px;
     width: 160px;
     transform: translateY(-10%);
@@ -2013,13 +2013,15 @@
           display: block;
           width: auto;
           position: absolute;
-          top: 58px;
-          right: 0;
+          top: 0;
+          right: 85%;
           opacity: 0;
           visibility: hidden;
           z-index: 1;
           .arrow {
-            right: 65px;
+            top: 20px;
+            right: -18px;
+            transform: rotate(90deg);
           }
           .hdlayer {
             padding: 10px 4px 10px 8px;
@@ -2072,7 +2074,7 @@
   @media (max-height: 850px) {
     .right_wing {
       top: auto;
-      bottom: 20px;
+      bottom: 70px;
       transform: translateY(0);
     }
   }

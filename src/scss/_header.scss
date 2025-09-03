@@ -123,13 +123,10 @@
     }
     .h_inner {
       width: 1280px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       .logo {
         width: 216px;
         height: 21px;
-        margin: 0;
+        margin: 30px 158px 0 0;
         background: url("../image/main/renew2025/logo_header.svg") no-repeat;
       }
       &::after {
@@ -276,11 +273,9 @@
 
   //nav_right
   .nav_right {
-    display: flex;
-    align-items: center;
-    margin-top: 0;
+    margin-top: 22px;
     .chatbot_area {
-      padding-right: 14px;
+      padding-right: 10px;
       .btn_chatbot {
         width: 48px;
         height: 48px;
@@ -293,10 +288,11 @@
       }
     }
     .myasiana_area {
+      top: -4px;
       .btn_myasiana {
         width: 48px;
         height: 48px;
-        margin-right: 4px;
+        margin-right: 0;
         background: url("../image/main/renew2025/gnb_ico_myasiana_off.svg") no-repeat center;
         &.on,
         &:hover {
@@ -309,6 +305,7 @@
       }
     }
     .search_area {
+      top: -4px;
       .btn_search {
         width: 48px;
         height: 48px;
@@ -326,5 +323,11 @@
 .location_bar {
   .inner {
     width: 1280px;
+  }
+}
+
+#booking_header {
+  .all_menu {
+    right: 16px;
   }
 }
