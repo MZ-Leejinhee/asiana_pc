@@ -17,6 +17,7 @@ function urgentNoticePopup() {
     $noticeSlide.find('.noti_detail_wrap').hide();
     $noticeSlide.find('.noti_btn_box, .ps, .btn_arrow').show();
     if (notices_Swiper && notices_Swiper.startAutoplay) {
+	  $('.notice_slideWrap .ps a').removeClass('stop');
       notices_Swiper.startAutoplay();
     }
   }
@@ -45,11 +46,9 @@ function urgentNoticePopup() {
 urgentNoticePopup();
 
 // 퀵서비스 blur 처리 막기
-$('.quick-service__nav-btn, .sub_quick-service_btn').on('click', function (e) {
-  window.quickAreaOpen = function () {
-    return false;
-  };
-});
+window.quickAreaOpen = function () {
+  return false;
+};
 
 // 퀵서비스 마일리지사용 체크 시 여백
 $(document).on('change', '.mile_use input:checkbox', function() {

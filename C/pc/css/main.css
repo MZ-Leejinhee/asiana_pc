@@ -2089,7 +2089,7 @@ html[lang="JA"].ie11 .notice_box section > article:nth-child(2) ul li.flag_on .t
 .renew2025 .section01 .contents_area{padding-top:60px;}
 
 /* 퀵서비스 영역 */
-.renew2025 .quick-service{position:absolute; left:50%; top:0; width:1280px; min-height:238px; padding:16px 40px 28px; margin:20px auto 17px !important; border-radius:16px; background-color:rgba(255,255,255,.96); transform:none !important; box-shadow:rgba(0, 0, 0, .05) 5px 5px 3px !important; z-index:300; transform:translate(-50%, 0) !important;}
+.renew2025 .quick-service{position:absolute; left:50%; top:0; width:1280px; min-height:238px; padding:16px 40px 28px; margin:20px auto 17px !important; border-radius:16px; background-color:#fff; transform:none !important; box-shadow:rgba(0, 0, 0, .05) 5px 5px 3px !important; z-index:300; transform:translate(-50%, 0) !important;}
 .renew2025 .quick-service .calendar_layer, .renew2025 .quick-service .shadow_layer{border-radius:16px;}
 .renew2025 .quick-service .shadow_layer .btn_step_wrap{border-radius:0 0 16px 16px;}
 .renew2025 .quick-service .calendar_layer .calendar_top{border-radius:16px 16px 0 0;}
@@ -2355,7 +2355,7 @@ html[lang="JA"].ie11 .notice_box section > article:nth-child(2) ul li.flag_on .t
 
 /* 우측 플로팅 */
 .renew2025 .right_wing_subbtn{display:none !important;}
-.renew2025 .right_wing{position:fixed; top:43%; right:20px; width:160px; transform:translateY(-10%); z-index:1000;}
+.renew2025 .right_wing{position:fixed; bottom:13.2%; right:20px; width:160px; transform:translateY(-10%); z-index:1000;}
 .renew2025 .right_wing.only_goTop{top:auto; bottom:60px;}
 .renew2025 .right_wing .inner .best_week .best_tit{display:flex; align-items:center; justify-content:center; position:relative; width:100%; height:79px; padding-top:20px; border-radius:16px 16px 0 0; background-color:#2c2a27; font-size:16px; font-weight:700; color:rgba(255,255,255,.8); box-sizing:border-box;}
 .renew2025 .right_wing .inner .best_week .best_tit::before{content:""; position:absolute; top:20px; width:32px; height:22px; background:url(../image/main/renew2025/ico_pin.svg) no-repeat; animation:rotate-axis 2.5s cubic-bezier(.53,0,.51,1) infinite; transform-style:preserve-3d; backface-visibility:hidden;}
@@ -2377,8 +2377,8 @@ html[lang="JA"].ie11 .notice_box section > article:nth-child(2) ul li.flag_on .t
 .renew2025 .right_wing .inner .btn_coupon_text{font-size:0; display:block; width:52px; height:52px; background:url(../image/main/renew2025/ico_gift.svg) no-repeat center;}
 .renew2025 .right_wing .inner .btn_chatbot{position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; width:160px; height:66px; margin-top:8px; border-radius:20px; background-color:#ffc2d7;}
 .renew2025 .right_wing .inner .btn_chatbot-text{font-size:0; display:block; width:56px; height:42px; animation:bounceDownUp 4s ease-in infinite; animation-play-state:running; background:url(../image/main/renew2025/ico_chatbot.svg) no-repeat center;}
-.renew2025 .right_wing .inner .btn_chatbot .hdlayer_wrap{display:block; width:auto; position:absolute; top:58px; right:0; opacity:0; visibility:hidden; z-index:1;}
-.renew2025 .right_wing .inner .btn_chatbot .hdlayer_wrap .arrow{right:65px;}
+.renew2025 .right_wing .inner .btn_chatbot .hdlayer_wrap{display:block; width:auto; position:absolute; top:0; right:85%; opacity:0; visibility:hidden; z-index:1;}
+.renew2025 .right_wing .inner .btn_chatbot .hdlayer_wrap .arrow{top:20px; right:-18px; transform:rotate(90deg);}
 .renew2025 .right_wing .inner .btn_chatbot .hdlayer_wrap .hdlayer{padding:10px 4px 10px 8px; white-space:nowrap;}
 .renew2025 .right_wing .inner .btn_chatbot.show .hdlayer_wrap, .renew2025 .right_wing .inner .btn_chatbot:focus .hdlayer_wrap, .renew2025 .right_wing .inner .btn_chatbot:hover .hdlayer_wrap{opacity:1; visibility:visible;}
 .renew2025 .right_wing .inner .btn_chatbot.show .btn_chatbot-text, .renew2025 .right_wing .inner .btn_chatbot:focus .btn_chatbot-text, .renew2025 .right_wing .inner .btn_chatbot:hover .btn_chatbot-text{animation-play-state:paused;}
@@ -2387,7 +2387,7 @@ html[lang="JA"].ie11 .notice_box section > article:nth-child(2) ul li.flag_on .t
 .renew2025 .right_wing .inner #goTop{display:none; width:160px; height:36px; margin-top:8px; border-radius:20px; background-color:#f2f3f4;}
 .renew2025 .right_wing .inner #goTop::before{width:32px; height:32px; background-position:0 0; background:url(../image/main/renew2025/ico_arrT_black.png) no-repeat center;}
 @media (max-height:850px){
-.renew2025 .right_wing{top:auto; bottom:20px; transform:translateY(0);}
+.renew2025 .right_wing{top:auto; bottom:70px; transform:translateY(0);}
 }
 
 /* animation */
