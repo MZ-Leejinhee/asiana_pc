@@ -2137,7 +2137,7 @@ html[lang="JA"].ie11 .notice_box section > article:nth-child(2) ul li.flag_on .t
 .renew2025 .quick_tab_wrap .main_date_lookup_area .date_lookup_area input[type=checkbox]:hover+label{background:url(../image/main/renew2025/img_checkbox_hover.png) no-repeat left center;}
 .renew2025 .quick_tab_wrap .main_date_lookup_area .date_lookup_area input[type=checkbox]:checked+label{background:url(../image/main/renew2025/img_checkbox_on.png) no-repeat left center;}
 .renew2025 .quick_tab_wrap .main_date_lookup_area .date_lookup_area::after{content:""; position:absolute; display:block; right:12px; top:50%; width:1px; height:18px; background:#dad8d2; transform:translateY(-50%);}
-.renew2025 .quick_tab_wrap .main_right_btnSet{margin-top:0; display:flex; align-items:center; position:relative;}
+.renew2025 .quick_tab_wrap .main_right_btnSet{margin-top:0; position:relative;}
 .renew2025 .quick_tab_wrap .main_right_btnSet button{display:inline-flex; align-items:center; min-height:20px; padding:0; margin-left:0; border:0 !important; background-color:transparent; color:#2c2a27 !important; font-size:14px; font-weight:400 !important; text-decoration:underline;}
 .renew2025 .quick_tab_wrap .main_right_btnSet button::before{width:20px; height:20px; margin-right:6px; background:url(../image/main/renew2025/ico_coupon.png) no-repeat left center;}
 .renew2025 .quick_step_wrap{display:flex; flex-direction:column; margin-top:12px;}
