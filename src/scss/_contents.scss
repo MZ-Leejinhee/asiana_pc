@@ -375,7 +375,7 @@
             align-items: center;
             justify-content: center;
             height: 40px;
-            padding: 10px 32px;
+            padding: 10px 15px;
             color: #454B52;
             font-size: 14px;
             font-weight: 700;
@@ -1070,7 +1070,8 @@
         right: 0;
         display: inline-flex;
         align-items: center;
-        min-width: 90px;
+        min-width: 94px;
+        width: auto;
         height: 30px;
         padding: 0 12px;
         border: 1px solid #DAD8D2;
@@ -1080,6 +1081,8 @@
         font-weight: 500;
         line-height: 30px;
         &::after {
+          position: relative;
+          top: 1px;
           width: 12px;
           height: 24px;
           margin-left: 2px;
@@ -1110,6 +1113,31 @@
             img {
               width: 100%;
               height: 100%;
+            }
+          }
+        }
+        .info_detail {
+          .route {
+            padding: 0 32px;
+            display: flex;
+            justify-content: center;
+            .loca {
+              min-width: 125px;
+            }
+            .mid {
+              width: 204px;
+              margin: 0;
+              > span {
+                &.line {
+                  &.left {
+                    width: 70px;
+                  }
+                  &.right {
+                    width: 70px;
+                    background-position: -390px -63px;
+                  }
+                }
+              }
             }
           }
         }
@@ -1354,8 +1382,8 @@
         right: 0;
         display: inline-flex;
         align-items: center;
-        width: 90px;
-        min-width: auto;
+        min-width: 94px;
+        width: auto;
         height: 30px;
         padding: 0 12px;
         border: 1px solid #dad8d2;
@@ -1367,6 +1395,8 @@
         line-height: 30px;
         &::after {
           content: "";
+          position: relative;
+          top: 1px;
           width: 12px;
           height: 24px;
           margin-left: 2px;
@@ -1465,7 +1495,7 @@
         }
       }
       .info_img {
-        width: 200px;
+        width: 202px;
         height: 129px;
         border-radius: 12px;
         img {
@@ -1511,6 +1541,10 @@
         height: 52px; 
         background-image: url("../image/main/renew2025/evt_bookmark_off.png");
         background-position: center;
+        &.on {
+          background-image: url("../image/main/renew2025/evt_bookmark_on.png");
+          background-position: center;
+        }
       }
     }
   }
@@ -1980,13 +2014,12 @@
           width: auto;
           position: absolute;
           top: 58px;
-          right: 50%;
-          transform: translateX(50%);
+          right: 0;
           opacity: 0;
           visibility: hidden;
           z-index: 1;
           .arrow {
-            right: 76px;
+            right: 65px;
           }
           .hdlayer {
             padding: 10px 4px 10px 8px;

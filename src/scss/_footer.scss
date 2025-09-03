@@ -106,7 +106,7 @@
           }
         }
         .skytrax {
-          width: 116px;
+          width: 118px;
           height: 68px;
           background: url("../image/main/renew2025/footer_skytrax_logo.svg") no-repeat center;
           background-size: cover;
@@ -115,6 +115,63 @@
           img {
             width: 87px;
           }
+        }
+      }
+      // 다국어 skytrax 로고
+      &.eng {
+        .special_logo {
+          .skytrax {
+            background: url("../image/main/renew2025/footer_skytrax_logo_en.svg") no-repeat center;
+            background-size: cover;
+          }
+        }
+      }
+      &.jpn {
+        .skytrax {
+          background: url("../image/main/renew2025/footer_skytrax_logo_ja.svg") no-repeat center;
+          background-size: cover;
+        }
+      }
+      &.sim {
+        .skytrax {
+          background: url("../image/main/renew2025/footer_skytrax_logo_ch.svg") no-repeat center;
+          background-size: cover;
+        }
+      }
+      &.tre {
+        .skytrax {
+          background: url("../image/main/renew2025/footer_skytrax_logo_zh.svg") no-repeat center;
+          background-size: cover;
+        }
+      }
+      &.рус {
+        .skytrax {
+          background: url("../image/main/renew2025/footer_skytrax_logo_ru.svg") no-repeat center;
+          background-size: cover;
+        }
+      }
+      &.deu {
+        .skytrax {
+          background: url("../image/main/renew2025/footer_skytrax_logo_de.svg") no-repeat center;
+          background-size: cover;
+        }
+      }
+      &.fra {
+        .skytrax {
+          background: url("../image/main/renew2025/footer_skytrax_logo_fr.svg") no-repeat center;
+          background-size: cover;
+        }
+      }
+      &.esp {
+        .skytrax {
+          background: url("../image/main/renew2025/footer_skytrax_logo_es.svg") no-repeat center;
+          background-size: cover;
+        }
+      }
+      &.viet {
+        .skytrax {
+          background: url("../image/main/renew2025/footer_skytrax_logo_vi.svg") no-repeat center;
+          background-size: cover;
         }
       }
       .sns_wrap {
@@ -146,6 +203,10 @@
               &.wechat {
                 background-position: -300px 0;
               }
+            }
+            span {
+              font-size: 10px !important;
+              color: #1f1d1d !important;
             }
           }
         }
