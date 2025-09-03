@@ -242,8 +242,7 @@ function eventSlider2() {
     pagination: '.evt_paging',
     paginationType: 'custom',
     paginationCustomRender: function (swiper, current, total) {
-      if (current < 1) current = 1;
-      
+      if(current == 0 || total == 0) return;
       var formattedCurrent = current < 10 ? '0' + current : current;
       var formattedTotal = total < 10 ? '0' + total : total;
       return '<span class="current">' + formattedCurrent + '</span> / <span class="total">' + formattedTotal + '</span>';
