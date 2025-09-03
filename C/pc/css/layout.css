@@ -670,7 +670,7 @@ img[src="//code.nytive.com/track/85976.gif"]{display: none !important;}
 :lang(ru) nav .nav_cont{left:-304px;}
 .new_subscription{display:none !important;}
 .util_wrap .inner{width:1280px;}
-.util_wrap .util_menu>ul>li .btn_language{border:0;}
+.util_wrap .util_menu>ul>li .btn_language{border-color:transparent;}
 header.main.fixed_white{border-bottom:1px solid #f2f0eb; transition:none;}
 header.open .header_bg{border-top:5px solid #f2f0eb;}
 header .h_inner{width:1280px; display:flex; align-items:center; justify-content:space-between;}
@@ -716,7 +716,7 @@ footer{background:#efefef;}
 footer .inner{width:1280px;}
 footer .foot_menuwrap dl dt a{font-weight:800; color:#454b52;}
 footer .foot_menuwrap dl dd ul li a, footer .foot_menuwrap dl dd ul li.privacy_policy a{font-weight:400; color:#1f1d1d;}
-footer address{padding:0 0 80px;}
+footer address{padding:0 0 100px;}
 footer address .info_wrap li ul li{font-size:14px; color:#807f7e;}
 footer address .info_wrap li ul li::before{background:#78716e; opacity:.3;}
 footer address .info_wrap li ul li .corp{color:#454b52;}
@@ -729,7 +729,16 @@ footer address .special_logo{margin-top:38px;}
 footer address .special_logo>ul>li{margin-left:32px;}
 footer address .special_logo>ul>li:first-child{margin-left:0;}
 footer address .special_logo .star_men .star_members{width:228px; height:24px; background:url(../image/main/renew2025/footer_star_logo.svg) no-repeat center;}
-footer address .special_logo .skytrax{width:116px; height:68px; background:url(../image/main/renew2025/footer_skytrax_logo.svg) no-repeat center; background-size:cover;}
+footer address .special_logo .skytrax{width:118px; height:68px; background:url(../image/main/renew2025/footer_skytrax_logo.svg) no-repeat center; background-size:cover;}
+.renew2025 footer address.eng .special_logo .skytrax{background:url(../image/main/renew2025/footer_skytrax_logo_en.svg) no-repeat center; background-size:cover;}
+.renew2025 footer address.jpn .special_logo .skytrax{background:url(../image/main/renew2025/footer_skytrax_logo_ja.svg) no-repeat center; background-size:cover;}
+.renew2025 footer address.sim .special_logo .skytrax{background:url(../image/main/renew2025/footer_skytrax_logo_ch.svg) no-repeat center; background-size:cover;}
+.renew2025 footer address.tre .special_logo .skytrax{background:url(../image/main/renew2025/footer_skytrax_logo_zh.svg) no-repeat center; background-size:cover;}
+.renew2025 footer address.рус .special_logo .skytrax{background:url(../image/main/renew2025/footer_skytrax_logo_ru.svg) no-repeat center; background-size:cover;}
+.renew2025 footer address.deu .special_logo .skytrax{background:url(../image/main/renew2025/footer_skytrax_logo_de.svg) no-repeat center; background-size:cover;}
+.renew2025 footer address.fra .special_logo .skytrax{background:url(../image/main/renew2025/footer_skytrax_logo_fr.svg) no-repeat center; background-size:cover;}
+.renew2025 footer address.esp .special_logo .skytrax{background:url(../image/main/renew2025/footer_skytrax_logo_es.svg) no-repeat center; background-size:cover;}
+.renew2025 footer address.viet .special_logo .skytrax{background:url(../image/main/renew2025/footer_skytrax_logo_vi.svg) no-repeat center; background-size:cover;}
 footer address .special_logo .saekDong img{width:87px;}
 footer address .sns_wrap .sns_list li a{width:50px; height:50px; background:url(../image/main/renew2025/footer_sns.png); background-size:auto 50px;}
 footer address .sns_wrap .sns_list li a.youtube{background-position:0 0;}
@@ -739,4 +748,5 @@ footer address .sns_wrap .sns_list li a.twitter{background-position:-150px 0;}
 footer address .sns_wrap .sns_list li a.xiaohongshu{background-position:-200px 0;}
 footer address .sns_wrap .sns_list li a.weibo{background-position:-250px 0;}
 footer address .sns_wrap .sns_list li a.wechat{background-position:-300px 0;}
+footer address .sns_wrap .sns_list li span {font-size:10px !important; color:#1f1d1d !important;}
 footer address .qrcode{position:absolute; right:0;}
